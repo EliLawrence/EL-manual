@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>6 Data access | The OBIS manual</title>
-  <meta name="description" content="6 Data access | The OBIS manual" />
+  <title>3 Data Formatting | The OBIS manual</title>
+  <meta name="description" content="3 Data Formatting | The OBIS manual" />
   <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="6 Data access | The OBIS manual" />
+  <meta property="og:title" content="3 Data Formatting | The OBIS manual" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="6 Data access | The OBIS manual" />
+  <meta name="twitter:title" content="3 Data Formatting | The OBIS manual" />
   
   
   
@@ -28,8 +28,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="data_publication.html"/>
-<link rel="next" href="dataquality.html"/>
+<link rel="prev" href="data_format.html"/>
+<link rel="next" href="examples.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -274,44 +274,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="data-access" class="section level1 hasAnchor" number="6">
-<h1><span class="header-section-number">6</span> Data access<a href="access.html#data-access" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="mapper" class="section level2 hasAnchor" number="6.1">
-<h2><span class="header-section-number">6.1</span> Mapper<a href="access.html#mapper" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<ul>
-<li><a href="https://mapper.obis.org" class="uri">https://mapper.obis.org</a></li>
-</ul>
-<p>The mapper allows users to visualize and inspect subsets of OBIS data. A variety of filters (taxonomic, geographic, time, data quality) is available and multiple layers can be combined in a single view. Layers can be downloaded as CSV files.</p>
+<div id="data-formatting" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">3</span> Data Formatting<a href="formatting.html#data-formatting" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>(PAGE UNDER DEVELOPMENT)</p>
+<p>Formatting data is hard! This topic will help you format data for OBIS.
+This is all placeholder text to make sure my branch is working.</p>
+<div id="darwin-core-term-checklist-for-obis" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Darwin Core Term Checklist for OBIS<a href="formatting.html#darwin-core-term-checklist-for-obis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>For your convenience, we have created a <a href="https://docs.google.com/spreadsheets/d/1kLc2HZDWf2lpkmQfwyXNkxJdXSth8CTA/edit?usp=sharing&amp;ouid=109350792326616218070&amp;rtpof=true&amp;sd=true">checklist</a> of all the Darwin Core terms relevant for OBIS data providers. You can reference this list to quickly see which terms are required by OBIS, which file (Event, Occurrence, eMoF, DNA) they belong in, and which Darwin Core class it relates to.</p>
+<p>Note that when you publish the dataset into the IPT, if you use a term not on this list it will be an unmapped field and will <strong>not</strong> be published alongside your data.</p>
 </div>
-<div id="r-package" class="section level2 hasAnchor" number="6.2">
-<h2><span class="header-section-number">6.2</span> R package<a href="access.html#r-package" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<ul>
-<li><a href="https://github.com/iobis/robis" class="uri">https://github.com/iobis/robis</a></li>
-</ul>
-<p>The robis R package has been developed to facilitate connecting to the OBIS API from R. The package can be installed <a href="https://cran.r-project.org/web/packages/robis/index.html">from CRAN</a> or <a href="https://github.com/iobis/robis">from GitHub</a> (latest development version). The package documentation including a function reference and a <a href="https://iobis.github.io/robis/articles/getting-started.html">getting started vignette</a> is available at <a href="https://iobis.github.io/robis/">https://iobis.github.io/robis/</a>.</p>
-</div>
-<div id="api" class="section level2 hasAnchor" number="6.3">
-<h2><span class="header-section-number">6.3</span> API<a href="access.html#api" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<ul>
-<li><a href="https://api.obis.org/" class="uri">https://api.obis.org/</a></li>
-</ul>
-<p>Both the mapper and the R package are based on the OBIS API which can be used by third party developers as well.</p>
-</div>
-<div id="full-exports" class="section level2 hasAnchor" number="6.4">
-<h2><span class="header-section-number">6.4</span> Full exports<a href="access.html#full-exports" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<ul>
-<li><a href="https://obis.org/data/access/" class="uri">https://obis.org/data/access/</a></li>
-</ul>
-<p>Full exports of the quality controlled presence records as CSV or Parquet (see below).</p>
+<div id="the-obis-data-life-cycle-management-flow" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> The OBIS Data Life Cycle &amp; management flow<a href="formatting.html#the-obis-data-life-cycle-management-flow" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>OBIS Data Life Cycle</strong></p>
+<p>The basic data life cycle for contributions to OBIS can be broken down into six steps:</p>
+<ol style="list-style-type: decimal">
+<li>Deciding data structure</li>
+<li>Data formatting</li>
+<li>Quality control</li>
+<li>Publishing</li>
+<li>Data access (downloading)</li>
+<li>Data visualization</li>
+</ol>
 
-</div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="data_publication.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="dataquality.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="data_format.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="examples.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

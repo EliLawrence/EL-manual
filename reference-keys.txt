@@ -55,6 +55,9 @@ a-special-case-habitat-types
 when-to-use-event-core
 when-to-use-occurrence-core
 recommended-reading
+data-formatting
+darwin-core-term-checklist-for-obis
+the-obis-data-life-cycle-management-flow
 examples-env-data-and-dna-derived-data
 edna-dna-derived-data
 edna-data-from-monterey-bay-california
