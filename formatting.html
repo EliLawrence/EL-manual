@@ -28,7 +28,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="data_format.html"/>
+<link rel="prev" href="nodes.html"/>
 <link rel="next" href="identifiers.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -157,21 +157,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="2.1" data-path="contribute.html"><a href="contribute.html#why-publish-data-to-obis"><i class="fa fa-check"></i><b>2.1</b> Why publish data to OBIS?</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="data_flow_overview.html"><a href="data_flow_overview.html"><i class="fa fa-check"></i><b>3</b> Data management flow in OBIS</a>
+<li class="chapter" data-level="3" data-path="data_standards.html"><a href="data_standards.html"><i class="fa fa-check"></i><b>3</b> Data management in OBIS</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="data_flow_overview.html"><a href="data_flow_overview.html#obis-data-life-cycle"><i class="fa fa-check"></i><b>3.1</b> OBIS Data Life Cycle</a></li>
-<li class="chapter" data-level="3.2" data-path="nodes.html"><a href="nodes.html"><i class="fa fa-check"></i><b>3.2</b> OBIS nodes</a>
+<li class="chapter" data-level="3.1" data-path="data_standards.html"><a href="data_standards.html#biodiversity-data-standards"><i class="fa fa-check"></i><b>3.1</b> Biodiversity data standards</a></li>
+<li class="chapter" data-level="3.2" data-path="data_standards.html"><a href="data_standards.html#obis-data-life-cycle"><i class="fa fa-check"></i><b>3.2</b> OBIS Data Life Cycle</a></li>
+<li class="chapter" data-level="3.3" data-path="darwin_core.html"><a href="darwin_core.html"><i class="fa fa-check"></i><b>3.3</b> Darwin Core</a>
 <ul>
-<li class="chapter" data-level="3.2.1" data-path="nodes.html"><a href="nodes.html#terms-of-reference-of-obis-nodes"><i class="fa fa-check"></i><b>3.2.1</b> Terms of Reference of OBIS nodes</a></li>
-<li class="chapter" data-level="3.2.2" data-path="nodes.html"><a href="nodes.html#how-to-become-an-obis-node"><i class="fa fa-check"></i><b>3.2.2</b> How to become an OBIS node</a></li>
-<li class="chapter" data-level="3.2.3" data-path="nodes.html"><a href="nodes.html#obis-node-health-status-check-and-transition-strategy"><i class="fa fa-check"></i><b>3.2.3</b> OBIS Node Health Status Check and Transition Strategy</a></li>
+<li class="chapter" data-level="3.3.1" data-path="data_format.html"><a href="data_format.html"><i class="fa fa-check"></i><b>3.3.1</b> Darwin Core Archive</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="data_standards.html"><a href="data_standards.html"><i class="fa fa-check"></i><b>3.3</b> Biodiversity data standards</a>
+<li class="chapter" data-level="3.4" data-path="relational_db.html"><a href="relational_db.html"><i class="fa fa-check"></i><b>3.4</b> Relational databases: the underlying framework of OBIS</a></li>
+<li class="chapter" data-level="3.5" data-path="eml.html"><a href="eml.html"><i class="fa fa-check"></i><b>3.5</b> Ecological Metadata Language</a></li>
+<li class="chapter" data-level="3.6" data-path="nodes.html"><a href="nodes.html"><i class="fa fa-check"></i><b>3.6</b> OBIS nodes</a>
 <ul>
-<li class="chapter" data-level="3.3.1" data-path="darwin_core.html"><a href="darwin_core.html"><i class="fa fa-check"></i><b>3.3.1</b> Darwin Core</a></li>
-<li class="chapter" data-level="3.3.2" data-path="relational_db.html"><a href="relational_db.html"><i class="fa fa-check"></i><b>3.3.2</b> Relational databases: the underlying framework of OBIS</a></li>
-<li class="chapter" data-level="3.3.3" data-path="eml.html"><a href="eml.html"><i class="fa fa-check"></i><b>3.3.3</b> Ecological Metadata Language</a></li>
-<li class="chapter" data-level="3.3.4" data-path="data_format.html"><a href="data_format.html"><i class="fa fa-check"></i><b>3.3.4</b> Darwin Core Archive and dataset structure</a></li>
+<li class="chapter" data-level="3.6.1" data-path="nodes.html"><a href="nodes.html#terms-of-reference-of-obis-nodes"><i class="fa fa-check"></i><b>3.6.1</b> Terms of Reference of OBIS nodes</a></li>
+<li class="chapter" data-level="3.6.2" data-path="nodes.html"><a href="nodes.html#how-to-become-an-obis-node"><i class="fa fa-check"></i><b>3.6.2</b> How to become an OBIS node</a></li>
+<li class="chapter" data-level="3.6.3" data-path="nodes.html"><a href="nodes.html#obis-node-health-status-check-and-transition-strategy"><i class="fa fa-check"></i><b>3.6.3</b> OBIS Node Health Status Check and Transition Strategy</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="formatting.html"><a href="formatting.html"><i class="fa fa-check"></i><b>4</b> Data Formatting</a>
@@ -283,14 +283,32 @@ This is all placeholder text to make sure my branch is working.</p>
 </div>
 <div id="dataset-structure" class="section level2 hasAnchor" number="4.2">
 <h2><span class="header-section-number">4.2</span> Dataset structure<a href="formatting.html#dataset-structure" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="when-to-use-event-core" class="section level4 hasAnchor" number="4.2.0.1">
+<h4><span class="header-section-number">4.2.0.1</span> When to use Event Core<a href="formatting.html#when-to-use-event-core" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li>When the dataset contains abiotic measurements, or other biological measurements which are related to an entire sample (not a single specimen)</li>
+<li>When specific details are known about how a biological sample was taken and processed. These details can be expressed using the eMoF and the newly developed <a href="https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/Q01/">Q01 vocabulary</a>.</li>
+</ul>
+<p>Event Core should be used in combination with the Occurrence Extension and the eMoF.</p>
+</div>
+<div id="when-to-use-occurrence-core" class="section level4 hasAnchor" number="4.2.0.2">
+<h4><span class="header-section-number">4.2.0.2</span> When to use Occurrence Core<a href="formatting.html#when-to-use-occurrence-core" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li>No information on how the data was sampled or samples were processed.</li>
+<li>No abiotic measurements are taken or provided</li>
+<li>Biological measurements are made on individual specimens (each specimen is a single occurrence record)</li>
+<li>This is often the case for museum collections, citations of occurrences from literature, individual sightings.</li>
+</ul>
+<p>Datasets formatted in Occurrence Core can use the eMoF Extension for biotic measurements or facts.</p>
 
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="data_format.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="nodes.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="identifiers.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>

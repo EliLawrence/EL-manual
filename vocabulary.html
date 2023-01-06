@@ -157,21 +157,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="2.1" data-path="contribute.html"><a href="contribute.html#why-publish-data-to-obis"><i class="fa fa-check"></i><b>2.1</b> Why publish data to OBIS?</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="data_flow_overview.html"><a href="data_flow_overview.html"><i class="fa fa-check"></i><b>3</b> Data management flow in OBIS</a>
+<li class="chapter" data-level="3" data-path="data_standards.html"><a href="data_standards.html"><i class="fa fa-check"></i><b>3</b> Data management in OBIS</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="data_flow_overview.html"><a href="data_flow_overview.html#obis-data-life-cycle"><i class="fa fa-check"></i><b>3.1</b> OBIS Data Life Cycle</a></li>
-<li class="chapter" data-level="3.2" data-path="nodes.html"><a href="nodes.html"><i class="fa fa-check"></i><b>3.2</b> OBIS nodes</a>
+<li class="chapter" data-level="3.1" data-path="data_standards.html"><a href="data_standards.html#biodiversity-data-standards"><i class="fa fa-check"></i><b>3.1</b> Biodiversity data standards</a></li>
+<li class="chapter" data-level="3.2" data-path="data_standards.html"><a href="data_standards.html#obis-data-life-cycle"><i class="fa fa-check"></i><b>3.2</b> OBIS Data Life Cycle</a></li>
+<li class="chapter" data-level="3.3" data-path="darwin_core.html"><a href="darwin_core.html"><i class="fa fa-check"></i><b>3.3</b> Darwin Core</a>
 <ul>
-<li class="chapter" data-level="3.2.1" data-path="nodes.html"><a href="nodes.html#terms-of-reference-of-obis-nodes"><i class="fa fa-check"></i><b>3.2.1</b> Terms of Reference of OBIS nodes</a></li>
-<li class="chapter" data-level="3.2.2" data-path="nodes.html"><a href="nodes.html#how-to-become-an-obis-node"><i class="fa fa-check"></i><b>3.2.2</b> How to become an OBIS node</a></li>
-<li class="chapter" data-level="3.2.3" data-path="nodes.html"><a href="nodes.html#obis-node-health-status-check-and-transition-strategy"><i class="fa fa-check"></i><b>3.2.3</b> OBIS Node Health Status Check and Transition Strategy</a></li>
+<li class="chapter" data-level="3.3.1" data-path="data_format.html"><a href="data_format.html"><i class="fa fa-check"></i><b>3.3.1</b> Darwin Core Archive</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="data_standards.html"><a href="data_standards.html"><i class="fa fa-check"></i><b>3.3</b> Biodiversity data standards</a>
+<li class="chapter" data-level="3.4" data-path="relational_db.html"><a href="relational_db.html"><i class="fa fa-check"></i><b>3.4</b> Relational databases: the underlying framework of OBIS</a></li>
+<li class="chapter" data-level="3.5" data-path="eml.html"><a href="eml.html"><i class="fa fa-check"></i><b>3.5</b> Ecological Metadata Language</a></li>
+<li class="chapter" data-level="3.6" data-path="nodes.html"><a href="nodes.html"><i class="fa fa-check"></i><b>3.6</b> OBIS nodes</a>
 <ul>
-<li class="chapter" data-level="3.3.1" data-path="darwin_core.html"><a href="darwin_core.html"><i class="fa fa-check"></i><b>3.3.1</b> Darwin Core</a></li>
-<li class="chapter" data-level="3.3.2" data-path="relational_db.html"><a href="relational_db.html"><i class="fa fa-check"></i><b>3.3.2</b> Relational databases: the underlying framework of OBIS</a></li>
-<li class="chapter" data-level="3.3.3" data-path="eml.html"><a href="eml.html"><i class="fa fa-check"></i><b>3.3.3</b> Ecological Metadata Language</a></li>
-<li class="chapter" data-level="3.3.4" data-path="data_format.html"><a href="data_format.html"><i class="fa fa-check"></i><b>3.3.4</b> Darwin Core Archive and dataset structure</a></li>
+<li class="chapter" data-level="3.6.1" data-path="nodes.html"><a href="nodes.html#terms-of-reference-of-obis-nodes"><i class="fa fa-check"></i><b>3.6.1</b> Terms of Reference of OBIS nodes</a></li>
+<li class="chapter" data-level="3.6.2" data-path="nodes.html"><a href="nodes.html#how-to-become-an-obis-node"><i class="fa fa-check"></i><b>3.6.2</b> How to become an OBIS node</a></li>
+<li class="chapter" data-level="3.6.3" data-path="nodes.html"><a href="nodes.html#obis-node-health-status-check-and-transition-strategy"><i class="fa fa-check"></i><b>3.6.3</b> OBIS Node Health Status Check and Transition Strategy</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="formatting.html"><a href="formatting.html"><i class="fa fa-check"></i><b>4</b> Data Formatting</a>
@@ -278,6 +278,78 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="how-to-correctly-map-emof-terms-to-preferred-bodc-vocabulary" class="section level3 hasAnchor" number="4.7.2">
 <h3><span class="header-section-number">4.7.2</span> How to correctly map eMoF terms to preferred BODC vocabulary<a href="vocabulary.html#how-to-correctly-map-emof-terms-to-preferred-bodc-vocabulary" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="measurementorfact-vocabularies" class="section level5 hasAnchor" number="4.7.2.0.1">
+<h5><span class="header-section-number">4.7.2.0.1</span> MeasurementOrFact vocabularies<a href="vocabulary.html#measurementorfact-vocabularies" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>The MeasurementOrFact terms <code>measurementType</code>, <code>measurementValue</code> and <code>measurementUnit</code> are completely unconstrained and can be populated with free text annotation. While free text offers the advantage of capturing complex and as yet unclassified information, the inevitable semantic heterogeneity (e.g. of spelling or wording) becomes a major challenge for effective data integration and analysis. Hence, OBIS added 3 new terms: <code>measurementTypeID</code>, <code>measurementValueID</code> and <code>measurementUnitID</code> to standardise the measurement types, values and units. Note that <code>measurementValueID</code> is not used for standardizing numeric measurements. The three new terms should be populated using controlled vocabularies referenced using Unique Resource Identifiers (URIs). OBIS recommends to use the internationally recognized <a href="http://www.bodc.ac.uk/resources/products/web_services/vocab/">NERC Vocabulary Server</a>, developed by the British Oceanographic Data Centre (BODC), which can be searched through <a href="https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search">https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/</a>.</p>
+<p>The following vocabularies are recommended for populating <code>measurementTypeID</code>, <code>measurementValueID</code>, and <code>measurementUnitID</code>:</p>
+<div id="measurementtypeid" class="section level6 hasAnchor" number="4.7.2.0.1.1">
+<h6><span class="header-section-number">4.7.2.0.1.1</span> measurementTypeID<a href="vocabulary.html#measurementtypeid" class="anchor-section" aria-label="Anchor link to header"></a></h6>
+<ul>
+<li>BODC Parameter Usage Vocabulary (P01)
+<ul>
+<li>documentation: <a href="https://github.com/nvs-vocabs/P01">https://github.com/nvs-vocabs/P01</a></li>
+<li>vocabulary: <a href="http://vocab.nerc.ac.uk/collection/P01/current/">http://vocab.nerc.ac.uk/collection/P01/current/</a></li>
+<li>search: <a href="https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/P01/">https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/P01/</a></li>
+</ul></li>
+<li>OBIS sampling instruments and methods attributes (Q01)
+<ul>
+<li>vocabulary: <a href="http://vocab.nerc.ac.uk/collection/Q01/current/">http://vocab.nerc.ac.uk/collection/Q01/current/</a></li>
+<li>search: <a href="https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/Q01/">https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/Q01/</a></li>
+</ul></li>
+</ul>
+</div>
+<div id="measurementvalueid" class="section level6 hasAnchor" number="4.7.2.0.1.2">
+<h6><span class="header-section-number">4.7.2.0.1.2</span> measurementValueID<a href="vocabulary.html#measurementvalueid" class="anchor-section" aria-label="Anchor link to header"></a></h6>
+<ul>
+<li>Sampling instruments and sensors (SeaVoX Device Catalogue)
+<ul>
+<li>documentation: <a href="https://github.com/nvs-vocabs/L22">https://github.com/nvs-vocabs/L22</a></li>
+<li>vocabulary: <a href="http://vocab.nerc.ac.uk/collection/L22/current">http://vocab.nerc.ac.uk/collection/L22/current</a></li>
+<li>search: <a href="https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/L22/">https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/L22/</a></li>
+</ul></li>
+<li>Sampling instrument categories (SeaDataNet device categories)
+<ul>
+<li>documentation: <a href="https://github.com/nvs-vocabs/L05">https://github.com/nvs-vocabs/L05</a></li>
+<li>vocabulary: <a href="http://vocab.nerc.ac.uk/collection/L05/current">http://vocab.nerc.ac.uk/collection/L05/current</a></li>
+<li>search: <a href="https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/L05/">https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/L05/</a></li>
+</ul></li>
+<li>Vessels (ICES Platform Codes)
+<ul>
+<li>vocabulary: <a href="http://vocab.nerc.ac.uk/collection/C17/current">http://vocab.nerc.ac.uk/collection/C17/current</a></li>
+<li>search: <a href="https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/C17/">https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/C17/</a></li>
+</ul></li>
+<li>Sex (Gender)
+<ul>
+<li>documentation: <a href="https://github.com/nvs-vocabs/S10">https://github.com/nvs-vocabs/S10</a></li>
+<li>vocabulary: <a href="http://vocab.nerc.ac.uk/collection/S10/current/">http://vocab.nerc.ac.uk/collection/S10/current/</a></li>
+<li>search: <a href="https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/S10/">https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/S10/</a><br />
+</li>
+</ul></li>
+<li>Lifestage
+<ul>
+<li>documentation: <a href="https://github.com/nvs-vocabs/S11">https://github.com/nvs-vocabs/S11</a></li>
+<li>vocabulary: <a href="http://vocab.nerc.ac.uk/collection/S11/current/">http://vocab.nerc.ac.uk/collection/S11/current/</a></li>
+<li>search: <a href="https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/S11/">https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/S11/</a></li>
+</ul></li>
+<li>Papers or manuals on the sampling protocol used
+<ul>
+<li>DOI</li>
+<li>Handle for publications on IOC’s <a href="http://www.oceanbestpractices.net/">Ocean Best Practices repository</a>, for example: <a href="http://hdl.handle.net/11329/304">http://hdl.handle.net/11329/304</a></li>
+</ul></li>
+</ul>
+</div>
+<div id="measurementunitid" class="section level6 hasAnchor" number="4.7.2.0.1.3">
+<h6><span class="header-section-number">4.7.2.0.1.3</span> MeasurementUnitID<a href="vocabulary.html#measurementunitid" class="anchor-section" aria-label="Anchor link to header"></a></h6>
+<ul>
+<li>Units
+<ul>
+<li>documentation: <a href="https://github.com/nvs-vocabs/P06">https://github.com/nvs-vocabs/P06</a></li>
+<li>vocabulary: <a href="http://vocab.nerc.ac.uk/collection/P06/current">http://vocab.nerc.ac.uk/collection/P06/current</a></li>
+<li>search: <a href="https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/P06/">https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/P06/</a></li>
+</ul></li>
+</ul>
+</div>
+</div>
 </div>
 <div id="requesting-new-vocabulary-terms" class="section level3 hasAnchor" number="4.7.3">
 <h3><span class="header-section-number">4.7.3</span> Requesting new vocabulary terms<a href="vocabulary.html#requesting-new-vocabulary-terms" class="anchor-section" aria-label="Anchor link to header"></a></h3>
