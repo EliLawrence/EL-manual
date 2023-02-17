@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>5 Data quality control | The OBIS manual</title>
-  <meta name="description" content="5 Data quality control | The OBIS manual" />
+  <title>4 Data Formatting | The OBIS manual</title>
+  <meta name="description" content="4 Data Formatting | The OBIS manual" />
   <meta name="generator" content="bookdown 0.32 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="5 Data quality control | The OBIS manual" />
+  <meta property="og:title" content="4 Data Formatting | The OBIS manual" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="5 Data quality control | The OBIS manual" />
+  <meta name="twitter:title" content="4 Data Formatting | The OBIS manual" />
   
   
   
@@ -28,8 +28,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="examples.html"/>
-<link rel="next" href="mofreports.html"/>
+<link rel="prev" href="nodes.html"/>
+<link rel="next" href="identifiers.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -271,21 +271,45 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="data-quality-control" class="section level1 hasAnchor" number="5">
-<h1><span class="header-section-number">5</span> Data quality control<a href="data_qc.html#data-quality-control" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>OBIS ignores records that do not meet a number of standards. For example, all species names need to be matched against an authoritative taxonomic register, such as the World Register of Marine Species. In addition, quality is checked against the OBIS required fields as well as against any impossible values. OBIS checks, rejects and reports the data quality back to the OBIS nodes, but never change records. The OBIS tier 2 nodes are responsible for the data quality and communicate errors back to the data providers. A number of QC tools are developed to help data providers and OBIS nodes:</p>
+<div id="data-formatting" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">4</span> Data Formatting<a href="formatting.html#data-formatting" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>(PAGE UNDER DEVELOPMENT)</p>
+<p>Formatting data is hard! This topic will help you format data for OBIS.
+This is all placeholder text to make sure my branch is working.</p>
+<div id="darwin-core-term-checklist-for-obis" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Darwin Core Term Checklist for OBIS<a href="formatting.html#darwin-core-term-checklist-for-obis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>For your convenience, we have created a <a href="https://docs.google.com/spreadsheets/d/1kLc2HZDWf2lpkmQfwyXNkxJdXSth8CTA/edit?usp=sharing&amp;ouid=109350792326616218070&amp;rtpof=true&amp;sd=true">checklist</a> of all the Darwin Core terms relevant for OBIS data providers. You can reference this list to quickly see which terms are required by OBIS, which file (Event, Occurrence, eMoF, DNA) they belong in, and which Darwin Core class it relates to.</p>
+<p>Note that when you publish the dataset into the IPT, if you use a term not on this list it will be an unmapped field and will <strong>not</strong> be published alongside your data.</p>
+</div>
+<div id="dataset-structure" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Dataset structure<a href="formatting.html#dataset-structure" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="when-to-use-event-core" class="section level4 hasAnchor" number="4.2.0.1">
+<h4><span class="header-section-number">4.2.0.1</span> When to use Event Core<a href="formatting.html#when-to-use-event-core" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
-<li><a href="name_matching.html">QC tool for species names</a></li>
-<li><a href="lifewatch_qc.html">QC tool for geography and data format</a></li>
+<li>When the dataset contains abiotic measurements, or other biological measurements which are related to an entire sample (not a single specimen)</li>
+<li>When specific details are known about how a biological sample was taken and processed. These details can be expressed using the eMoF and the newly developed <a href="https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/Q01/">Q01 vocabulary</a>.</li>
 </ul>
+<p>Event Core should be used in combination with the Occurrence Extension and the eMoF.</p>
+</div>
+<div id="when-to-use-occurrence-core" class="section level4 hasAnchor" number="4.2.0.2">
+<h4><span class="header-section-number">4.2.0.2</span> When to use Occurrence Core<a href="formatting.html#when-to-use-occurrence-core" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li>No information on how the data was sampled or samples were processed.</li>
+<li>No abiotic measurements are taken or provided</li>
+<li>Biological measurements are made on individual specimens (each specimen is a single occurrence record)</li>
+<li>This is often the case for museum collections, citations of occurrences from literature, individual sightings.</li>
+</ul>
+<p>Datasets formatted in Occurrence Core can use the eMoF Extension for biotic measurements or facts.</p>
 
+</div>
+</div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="examples.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="mofreports.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="nodes.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="identifiers.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
