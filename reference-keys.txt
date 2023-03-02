@@ -11,6 +11,7 @@ how-to-contribute-data-to-obis
 why-publish-data-to-obis
 how-to-handle-sensitive-data
 obis-data-life-cycle
+who-is-responsible-for-each-phase
 biodiversity-data-standards
 darwin-core
 introduction-to-darwin-core
