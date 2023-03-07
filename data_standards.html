@@ -179,11 +179,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.4.2.1" data-path="data_format.html"><a href="data_format.html#darwin-core-archive-1"><i class="fa fa-check"></i><b>2.4.2.1</b> Darwin Core Archive</a></li>
 <li class="chapter" data-level="2.4.2.2" data-path="data_format.html"><a href="data_format.html#obis-holds-more-than-just-species-occurrences-the-env-data-approach"><i class="fa fa-check"></i><b>2.4.2.2</b> OBIS holds more than just species occurrences: the ENV-DATA approach</a></li>
 <li class="chapter" data-level="2.4.2.3" data-path="relational_db.html"><a href="relational_db.html"><i class="fa fa-check"></i><b>2.4.2.3</b> Relational databases: the underlying framework of OBIS</a></li>
+<li class="chapter" data-level="2.4.2.4" data-path="relational_db.html"><a href="relational_db.html#how-to-avoid-redundancy"><i class="fa fa-check"></i><b>2.4.2.4</b> How to avoid redundancy</a></li>
 </ul></li>
-<li class="chapter" data-level="2.4.3" data-path="relational_db.html"><a href="relational_db.html#how-to-avoid-redundancy"><i class="fa fa-check"></i><b>2.4.3</b> How to avoid redundancy</a></li>
-<li class="chapter" data-level="2.4.4" data-path="eml.html"><a href="eml.html"><i class="fa fa-check"></i><b>2.4.4</b> Ecological Metadata Language</a>
+<li class="chapter" data-level="2.4.3" data-path="eml.html"><a href="eml.html"><i class="fa fa-check"></i><b>2.4.3</b> Ecological Metadata Language</a>
 <ul>
-<li class="chapter" data-level="2.4.4.1" data-path="eml.html"><a href="eml.html#scenarios"><i class="fa fa-check"></i><b>2.4.4.1</b> Scenarios</a></li>
+<li class="chapter" data-level="2.4.3.1" data-path="eml.html"><a href="eml.html#scenarios"><i class="fa fa-check"></i><b>2.4.3.1</b> Scenarios</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2.5" data-path="nodes.html"><a href="nodes.html"><i class="fa fa-check"></i><b>2.5</b> OBIS nodes</a>
@@ -344,7 +344,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="obis-data-life-cycle" class="section level2 hasAnchor" number="2.3">
 <h2><span class="header-section-number">2.3</span> OBIS Data Life Cycle<a href="data_standards.html#obis-data-life-cycle" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><img src="images/OBISdataLifeCycle.png" class="img-responsive" display: inline-block/></p>
+<p><img align="right" src="images/OBISdataLifeCycle.png" class="img-responsive" display: inline-block/></p>
 <p>The basic data life cycle for contributions to OBIS can be broken down into six step-by-step phases:</p>
 <ol style="list-style-type: decimal">
 <li>Data structure</li>
@@ -359,6 +359,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Depending on your data structure, you will then format data into a <a href="data_format.html">DwC-A</a> format with the appropriate Core table (<a href="format_event">Event</a> or <a href="format_occurrence.html">Occurrence</a>)) with any applicable extension tables. Any biotic or abiotic measurements will be moved into the <a href="link%20#22+">extendedMeasurementOrFact table</a>. Before proceeding to the <a href="data_publication.html">publishing</a> stage, there are a number of <a href="dataquality.html">quality control</a> steps to complete.</p>
 <p>Once your data has been published, you and others can <a href="access.html">access</a> datasets through various avenues and it becomes part of OBIS’ global database!</p>
 <p>This may seem like a daunting process at first glance, but this manual will walk you through each step, and the OBIS community is full of <a href="gethelp.html">helpful resources</a>. Throughout the manual you will find tutorials and tools to guide you from start to finish through the OBIS data life cycle.</p>
+<p><br clear="left"/></p>
 <div id="who-is-responsible-for-each-phase" class="section level4 hasAnchor" number="2.3.0.1">
 <h4><span class="header-section-number">2.3.0.1</span> Who is responsible for each phase?<a href="data_standards.html#who-is-responsible-for-each-phase" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Phases 1 through 3 are the responsibilities of the data provider, while Phases 3 and 4 are shared between the data provider and the node manager. Data users are involved in Phases 5 and 6.</p>
