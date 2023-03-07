@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>2.5 OBIS nodes | The OBIS manual</title>
-  <meta name="description" content="2.5 OBIS nodes | The OBIS manual" />
+  <title>3.4 Darwin Core Term Checklist for OBIS | The OBIS manual</title>
+  <meta name="description" content="3.4 Darwin Core Term Checklist for OBIS | The OBIS manual" />
   <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="2.5 OBIS nodes | The OBIS manual" />
+  <meta property="og:title" content="3.4 Darwin Core Term Checklist for OBIS | The OBIS manual" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="2.5 OBIS nodes | The OBIS manual" />
+  <meta name="twitter:title" content="3.4 Darwin Core Term Checklist for OBIS | The OBIS manual" />
   
   
   
@@ -28,8 +28,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="eml.html"/>
-<link rel="next" href="formatting.html"/>
+<link rel="prev" href="identifiers.html"/>
+<link rel="next" href="format_occurrence.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -269,78 +269,313 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="obis-nodes" class="section level2 hasAnchor" number="2.5">
-<h2><span class="header-section-number">2.5</span> OBIS nodes<a href="nodes.html#obis-nodes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>OBIS Nodes are either national projects, programmes, institutes or organizations, National Ocean Data Centers or regional or international projects, programmes and institutions or organization that carry out data management functions. OBIS nodes are responsible for representing all aspects of OBIS within a particular region or taxonomic domain. The node is intended to establish relationships with key data providers within their geographical (or taxonomic) area of responsibility and bring data and corresponding meta data into the global database to be shared with the OBIS community. Nodes are responsible for all aspects of the data from gaining permission to provide access to the data, to ensuring a certain level of data quality and for the transfer of these datasets to the global OBIS database. In addition, Nodes provide support for the full implementation of OBIS worldwide by serving on the IODE Steering Group for OBIS and any relevant Task Teams. Each node may also maintain a data presence on the Internet representing their specific area of responsibility.</p>
-<p>The OBIS system architecture is structured on the basis of three tiers of OBIS nodes. At tier I is the aggregate global database and is managed by the project office in Ostend (Belgium). Tier I is also responsible for providing data access, web services, statistics and data products. Tier II nodes are responsible for many of the quality control and other data management tasks that were originally born by the global database. This helps to reduce the cost born by the Project Office and build a stronger network capacity. An added benefit of this structure is the ability to accept tier III nodes. These tier III nodes are willing participants in adding data to the OBIS network, but may not have the expertise or resource base to meet all of the responsibilities of a tier II node. The addition of tier III nodes provides two added benefits to the network. First, expanded capacity for reaching out to the science community and second an opportunity for larger tier II nodes to mentor smaller or new member nodes. Tier II and III nodes will coordinate outreach to respective data providers. Only Tier II and global thematic taxonomic Nodes would feed the global dataset directly.</p>
-<div id="terms-of-reference-of-obis-nodes" class="section level3 hasAnchor" number="2.5.1">
-<h3><span class="header-section-number">2.5.1</span> Terms of Reference of OBIS nodes<a href="nodes.html#terms-of-reference-of-obis-nodes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<ul>
-<li>Receiving or harvesting marine biodiversity data (and metadata) from national, regional and international programs, and the scientific community at large, and from tier III nodes by tier II nodes, and from tier II nodes by tier I nodes</li>
-<li>Perform data validation (using standards, tools and best practices), as described in the OBIS manual (Tier II)</li>
-<li>Reporting the results of quality control directly to data collectors/originator (or tier III node) as part of the quality assurance activity</li>
-<li>Making data (and metadata) available to OBIS using agreed upon standards and formats which are described in the OBIS Manual (Tier II), making data available to tier II nodes (Tier III)</li>
-<li>Become a member of the IODE steering group for OBIS, attend the SG-OBIS annual meeting and report on node activities</li>
-<li>Provide indicators on up-time, responsiveness and data processed by nodes and present a report to SG-OBIS</li>
-<li>Customer support (data queries, analyses, feedback).</li>
-<li>Outreach and Capacity Building (i.e., providing expertise, training and support in data management, technologies, standards and best practices).</li>
-<li>Control data access, terms of use and sharing policies</li>
-<li>Comply with the IOC/OBIS data policy for using and sharing OBIS data</li>
-<li>Build customized data portals (optional)</li>
-<li>Engage in stakeholder groups (recommended)</li>
-<li>Contribute to the development of standards and best practices in OBIS (recommended)</li>
-<li>Contribute to the development of open-source tools in OBIS (recommended)</li>
-<li>Ensuring the long-term preservation of the data, metadata and associated information required for correct interpretation of the data (including version-control) (recommended)</li>
-</ul>
-</div>
-<div id="how-to-become-an-obis-node" class="section level3 hasAnchor" number="2.5.2">
-<h3><span class="header-section-number">2.5.2</span> How to become an OBIS node<a href="nodes.html#how-to-become-an-obis-node" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>OBIS nodes now operate under the IODE network as either National Oceanographic Data Centres (NODCs) or Associate Data Unites (ADUs). Prospective nodes are required to apply to the IODE for membership.</p>
-<p>The procedure to become an OBIS node is as follows:</p>
-<ul>
-<li>If you are an existing NODC (within the IODE network) and the OBIS node activities fall under the activities of the NODC:
-<ul>
-<li>Send a letter expressing your interest to become an OBIS node (including contact information of the OBIS node manager, and geographical/thematic scope of your OBIS node)</li>
-</ul></li>
-<li>If you are not an existing NODC:
-<ul>
-<li>Email your <a href="http://iode.org/index.php?option=com_oe&amp;task=viewDocumentRecord&amp;docID=11793">application form</a> to become an IODE Associate Data Unit (ADU), with a specific role as OBIS node. Applications for ADU membership in OBIS shall be reviewed by the IODE Officers in consultation with the IODE Steering Group for OBIS.</li>
-</ul></li>
-</ul>
-</div>
-<div id="obis-node-health-status-check-and-transition-strategy" class="section level3 hasAnchor" number="2.5.3">
-<h3><span class="header-section-number">2.5.3</span> OBIS Node Health Status Check and Transition Strategy<a href="nodes.html#obis-node-health-status-check-and-transition-strategy" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>OBIS nodes should operate under IODE as either IODE/ADU or IODE/NODC. As such OBIS nodes are a member of the IODE network.</p>
-<p>The IODE Steering Group (SG) for OBIS evaluates the health status of OBIS nodes at each annual SG meeting, and considers an OBIS node as <strong>inactive</strong> when it meets any of the following conditions:</p>
-<ol style="list-style-type: decimal">
-<li>The OBIS node manager recurrently fails to answer the communications from the project manager or the SG co-chairs in the last 12 months</li>
-<li>The OBIS node manager or a representative fails to attend (personally or virtually) the last 2 SG meetings without any written reason</li>
-<li>The OBIS node does not have an IPT</li>
-<li>The OBIS node has an IPT, but it has not been running for the last 12 months</li>
-<li>The datasets in the OBIS node’s IPT have been removed and not restored in the last 12 months (without any explanation)</li>
-<li>The OBIS node has not provided new data for the last 2 years</li>
-</ol>
-<p>The OBIS Secretariat prepares a health status check report of each OBIS node based on the six items above and informs the OBIS node manager on their status 3 months before the SG meeting. At the SG meeting, the SG-OBIS co-chair will present the results of the OBIS nodes health status check report including a listing of the inactive OBIS nodes.
-The SG-OBIS members representing active OBIS Nodes will make one of the following decisions:</p>
-<ol style="list-style-type: decimal">
-<li>Request the inactive OBIS node to submit a plan with actions, deliverables and times to improve their performance, within 3 months, to the OBIS Secretariat. This plan is reviewed and accepted by the OBIS-Executive Committee
-Or</li>
-<li>Provide a recommendation to the IOC Committee on IODE to remove the OBIS node from the IODE network.</li>
-</ol>
-<p>In either case, the OBIS Secretariat will inform the OBIS node manager of the SG-OBIS decision, with a copy to the IODE officers and the IODE national coordinator for data management of the country concerned.</p>
-<p>The IODE Committee is requested to consider the recommendation from the OBIS Steering Group and it may either accept the recommendation or request the inactive OBIS node to submit an action plan (option 1).</p>
-<p>When the inactive OBIS node is removed from the IODE network, the SG-OBIS will ask whether another OBIS node is interested in taking over the responsibilities of the removed OBIS node, until a new OBIS node in the country/region is established.</p>
+<div id="darwin-core-term-checklist-for-obis" class="section level2 hasAnchor" number="3.4">
+<h2><span class="header-section-number">3.4</span> Darwin Core Term Checklist for OBIS<a href="checklist.html#darwin-core-term-checklist-for-obis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>For your convenience, we have created a checklist of all the Darwin Core terms relevant for OBIS data providers. You can reference this list to quickly see which terms are required by OBIS, which file (Event, Occurrence, eMoF, DNA) they belong in, and which Darwin Core class it relates to.</p>
+<p>Note that when you publish the dataset into the IPT, if you use a term not on this list it will be an unmapped field and will <strong>not</strong> be published alongside your data.</p>
+<table style="width:100%;">
+<colgroup>
+<col width="13%" />
+<col width="16%" />
+<col width="13%" />
+<col width="14%" />
+<col width="11%" />
+<col width="14%" />
+<col width="14%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Term</th>
+<th>OBIS</th>
+<th>Required</th>
+<th>DarwinCore Class</th>
+<th>Event</th>
+<th>Occurrence</th>
+<th>eMoF</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>eventDate</td>
+<td>required</td>
+<td>event</td>
+<td>x</td>
+<td>x</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>eventID</td>
+<td>required</td>
+<td>event</td>
+<td>x</td>
+<td>x</td>
+<td>x</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>decimalLatitude</td>
+<td>required</td>
+<td>location</td>
+<td>x</td>
+<td>x</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>decimalLongitude</td>
+<td>required</td>
+<td>location</td>
+<td>x</td>
+<td>x</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>occurrenceID</td>
+<td>required</td>
+<td>occurrence</td>
+<td>x</td>
+<td>x</td>
+<td>x</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>occurrenceStatus</td>
+<td>required</td>
+<td>occurrence</td>
+<td>x</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>basisOfRecord</td>
+<td>required</td>
+<td>record</td>
+<td>x</td>
+<td>x</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>scientificName</td>
+<td>required</td>
+<td>taxon</td>
+<td>x</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>scientificNameID</td>
+<td>required</td>
+<td>taxon</td>
+<td></td>
+<td>x</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>DNA_sequence</td>
+<td>strongly recommended</td>
+<td>dna</td>
+<td></td>
+<td></td>
+<td></td>
+<td>x</td>
+</tr>
+<tr class="odd">
+<td>env_broad_scale</td>
+<td>strongly recommended</td>
+<td>dna</td>
+<td></td>
+<td></td>
+<td></td>
+<td>x</td>
+</tr>
+<tr class="even">
+<td>env_local scale</td>
+<td>recommended</td>
+<td>dna</td>
+<td></td>
+<td></td>
+<td></td>
+<td>x</td>
+</tr>
+<tr class="odd">
+<td>env_medium</td>
+<td>strongly recommended</td>
+<td>dna</td>
+<td></td>
+<td></td>
+<td></td>
+<td>x</td>
+</tr>
+<tr class="even">
+<td>lib_layout</td>
+<td>recommended</td>
+<td>dna</td>
+<td></td>
+<td></td>
+<td></td>
+<td>x</td>
+</tr>
+<tr class="odd">
+<td>nucl_acid_amp</td>
+<td>recommended</td>
+<td>dna</td>
+<td></td>
+<td></td>
+<td></td>
+<td>x</td>
+</tr>
+<tr class="even">
+<td>nucl_acid_ext</td>
+<td>recommended</td>
+<td>dna</td>
+<td></td>
+<td></td>
+<td></td>
+<td>x</td>
+</tr>
+<tr class="odd">
+<td>otu_class_appr</td>
+<td>recommended</td>
+<td>dna</td>
+<td></td>
+<td></td>
+<td></td>
+<td>x</td>
+</tr>
+<tr class="even">
+<td>otu_db</td>
+<td>recommended</td>
+<td>dna</td>
+<td></td>
+<td></td>
+<td></td>
+<td>x</td>
+</tr>
+<tr class="odd">
+<td>otu_seq_comp_appr</td>
+<td>recommended</td>
+<td>dna</td>
+<td></td>
+<td></td>
+<td></td>
+<td>x</td>
+</tr>
+<tr class="even">
+<td>pcr_primer_forward strongly</td>
+<td>recommended</td>
+<td>dna</td>
+<td></td>
+<td></td>
+<td></td>
+<td>x</td>
+</tr>
+<tr class="odd">
+<td>pcr_primer_name_forward</td>
+<td>strongly recommended</td>
+<td>dna</td>
+<td></td>
+<td></td>
+<td></td>
+<td>x</td>
+</tr>
+<tr class="even">
+<td>pcr_primer_name_reverse</td>
+<td>strongly recommended</td>
+<td>dna</td>
+<td></td>
+<td></td>
+<td></td>
+<td>x</td>
+</tr>
+<tr class="odd">
+<td>pcr_primer_reference</td>
+<td>strongly recommended</td>
+<td>dna</td>
+<td></td>
+<td></td>
+<td></td>
+<td>x</td>
+</tr>
+<tr class="even">
+<td>pcr_primer_reverse</td>
+<td>strongly recommended</td>
+<td>dna</td>
+<td></td>
+<td></td>
+<td></td>
+<td>x</td>
+</tr>
+<tr class="odd">
+<td>samp_name</td>
+<td>recommended</td>
+<td>dna</td>
+<td></td>
+<td></td>
+<td></td>
+<td>x</td>
+</tr>
+<tr class="even">
+<td>samp_vol_we_dna_ext</td>
+<td>recommended dna</td>
+<td></td>
+<td></td>
+<td></td>
+<td>x</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>seq_meth</td>
+<td>recommended</td>
+<td>dna</td>
+<td></td>
+<td></td>
+<td></td>
+<td>x</td>
+</tr>
+<tr class="even">
+<td>sop</td>
+<td>recommended</td>
+<td>dna</td>
+<td></td>
+<td></td>
+<td></td>
+<td>x</td>
+</tr>
+<tr class="odd">
+<td>target_gene</td>
+<td>strongly recommended</td>
+<td>dna</td>
+<td></td>
+<td></td>
+<td></td>
+<td>x</td>
+</tr>
+<tr class="even">
+<td>target_subfragment</td>
+<td>strongly recommended</td>
+<td>dna</td>
+<td></td>
+<td></td>
+<td></td>
+<td>x</td>
+</tr>
+</tbody>
+</table>
 
-</div>
-</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="eml.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="formatting.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="identifiers.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="format_occurrence.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
