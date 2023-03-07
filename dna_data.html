@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>4.1.2 Geographic and data format quality control | The OBIS manual</title>
-  <meta name="description" content="4.1.2 Geographic and data format quality control | The OBIS manual" />
+  <title>3.10.1 DNA dervived data | The OBIS manual</title>
+  <meta name="description" content="3.10.1 DNA dervived data | The OBIS manual" />
   <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="4.1.2 Geographic and data format quality control | The OBIS manual" />
+  <meta property="og:title" content="3.10.1 DNA dervived data | The OBIS manual" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="4.1.2 Geographic and data format quality control | The OBIS manual" />
+  <meta name="twitter:title" content="3.10.1 DNA dervived data | The OBIS manual" />
   
   
   
@@ -28,8 +28,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="name_matching.html"/>
-<link rel="next" href="common_qc.html"/>
+<link rel="prev" href="examples.html"/>
+<link rel="next" href="other_data_types.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -342,60 +342,651 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="geographic-and-data-format-quality-control" class="section level3 hasAnchor" number="4.1.2">
-<h3><span class="header-section-number">4.1.2</span> Geographic and data format quality control<a href="lifewatch_qc.html#geographic-and-data-format-quality-control" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>These Data validation and QC services are available on the LifeWatch portal at <a href="http://www.lifewatch.be/data-services">http://www.lifewatch.be/data-services</a>.</p>
-<div id="geographical-service" class="section level4 hasAnchor" number="4.1.2.1">
-<h4><span class="header-section-number">4.1.2.1</span> Geographical service<a href="lifewatch_qc.html#geographical-service" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>This service allows to upload a file and to plot the listed coordinates on a map. Using this web service does not require knowledge of GIS. This service allows a visual check of the available locations and makes it possible to easily identify points on land or outside the scope or study area. Geographic data are essential for OBIS and the experience is that a lot of these data is incomplete or contains errors. A visual check of the position of the sampling locations is thus a simple way of filtering out obvious errors and improving the data quality. Latitude and longitude need to be in WGS84, decimal degrees. This format is also necessary for the OBIS Schema and for uploading the dataset to IPT (Darwin Core).</p>
+<div id="dna-dervived-data" class="section level3 hasAnchor" number="3.10.1">
+<h3><span class="header-section-number">3.10.1</span> DNA dervived data<a href="dna_data.html#dna-dervived-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>OBIS recognizes the vast amount of data generated from marine DNA sampling, especially from eDNA sequencing. Thus we have been developing a bioinformatics pipeline to facilitate publication of this data into OBIS. The pipeline was initially developed for the <a href="https://pacman.obis.org/">PacMAN project (Pacific Islands Marine Bioinvasions Alert Network)</a>.</p>
+<p>Broadly speaking, it creates a framework that receives raw sequence data from eDNA samples, cleans, aligns, classifies sequences, and finally outputs a DwC-compatible table. The pipeline is currently under development and for now only accepts CO1 data. It will be extended to include other genetic markers in the future. More details about the PacMAN pipeline can be found on its <a href="https://github.com/iobis/PacMAN-pipeline">associated GitHub repository</a>. Once fully online, we will provide guidelines on how to use the pipeline.</p>
+<p>OBIS is developing guidelines and pipelines to accept other data types, such as:</p>
+<ul>
+<li><a href="other_data_types#multimedia-data.html">Acoustic</a></li>
+<li><a href="other_data_types#multimedia-data.html">Imaging</a></li>
+<li><a href="other_data_types#tracking-data.html">Tracking</a></li>
+<li><a href="other_data_typeshabitat-data.html">Habitat</a></li>
+</ul>
+<div id="edna-dna-derived-data" class="section level4 hasAnchor" number="3.10.1.1">
+<h4><span class="header-section-number">3.10.1.1</span> eDNA &amp; DNA derived data<a href="dna_data.html#edna-dna-derived-data" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The following example use cases draw on both the <a href="https://docs.gbif-uat.org/publishing-dna-derived-data/1.0/en/">GBIF guide</a> and the <a href="https://rs.gbif-uat.org/extensions.html#http">DNA derived data extension</a> to illustrate how to incorporate a DNA derived data extension file into a Darwin Core archive. Note: for the purposes of this section, only required Occurrence core terms are shown, in addition to all eDNA &amp; DNA specific terms. For additional Occurrence core terms, refer to <a href="darwin_core.html#occurrence">Occurrence</a>.</p>
+<div id="edna-data-from-monterey-bay-california" class="section level5 hasAnchor" number="3.10.1.1.1">
+<h5><span class="header-section-number">3.10.1.1.1</span> eDNA data from Monterey Bay, California<a href="dna_data.html#edna-data-from-monterey-bay-california" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>The data for this example is from the use case <a href="https://www1.usgs.gov/obis-usa/ipt/resource?r=18s_monterey_bay_time_series_edna">“18S Monterey Bay Time Series: an eDNA data set from Monterey Bay, California, including years 2006, 2013 - 2016’</a>. The data from this study originate from marine filtered seawater samples that have undergone metabarcoding of the 18S V9 region.</p>
+<p><strong>Occurrence core:</strong></p>
+<p>We can populate the Occurrence core with all the required and highly recommended fields, as well as considering the eDNA and DNA specific fields. The Occurrence core contain the taxonomic identification of each ASV observed; its number of reads, as well as relevant metadata including the sample collection location, references for the identification procedure, and links to archived sequences.</p>
+<p><code>OccurrenceID</code> and <code>basisOfRecord</code> are some of the required Occurrence core terms, in addition to the highly recommended fields of <code>organismQuantity</code> and <code>organismQuantityType</code>. A selection of samples from this plate were included in another publication (Djurhuus et al., 2020),which is recorded in <code>identificationReferences</code> along with the GitHub repository where the data can be found.</p>
+<table>
+<colgroup>
+<col width="22%" />
+<col width="13%" />
+<col width="14%" />
+<col width="17%" />
+<col width="31%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>occurrenceID</th>
+<th>basisOfRecord</th>
+<th>organismQuantity</th>
+<th>OrganismQuantityType</th>
+<th>associatedSequences</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>11216c01_12_edna_1_S_occ1</td>
+<td>MaterialSample</td>
+<td>19312</td>
+<td>DNA sequence reads</td>
+<td>NCBI BioProject acc. nr. PRJNA433203</td>
+</tr>
+<tr class="even">
+<td>11216c01_12_edna_2_S_occ1</td>
+<td>MaterialSample</td>
+<td>16491</td>
+<td>DNA sequence reads</td>
+<td>NCBI BioProject acc. nr. PRJNA433203</td>
+</tr>
+<tr class="odd">
+<td>11216c01_12_edna_3_S_occ1</td>
+<td>MaterialSample</td>
+<td>21670</td>
+<td>DNA sequence reads</td>
+<td>NCBI BioProject acc. nr. PRJNA433203</td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col width="11%" />
+<col width="14%" />
+<col width="34%" />
+<col width="38%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>sampleSizeValue</th>
+<th>sampleSizeUnit</th>
+<th>identificationReferences</th>
+<th>identificationRemarks</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>147220</td>
+<td>DNA sequence reads</td>
+<td>GitHub repository <a href="https://doi.org/10.1038/s41467-019-14105-1">Djurhuus et al. 2020</a></td>
+<td>unassigned, Genbank nr Release 221 September 20 2017</td>
+</tr>
+<tr class="even">
+<td>121419</td>
+<td>DNA sequence reads</td>
+<td>GitHub repository <a href="https://doi.org/10.1038/s41467-019-14105-1">Djurhuus et al. 2020</a></td>
+<td>unassigned, Genbank nr Release 221 September 20 2017</td>
+</tr>
+<tr class="odd">
+<td>161525</td>
+<td>DNA sequence reads</td>
+<td>GitHub repository <a href="https://doi.org/10.1038/s41467-019-14105-1">Djurhuus et al. 2020</a></td>
+<td>unassigned, Genbank nr Release 221 September 20 2017</td>
+</tr>
+</tbody>
+</table>
+<p><strong>DNA Derived Data extension:</strong></p>
+<p>Next, we can create the <strong>DNA Derived Data extension</strong> which will be connected to the Occurrence core with the use of <code>occurrenceID</code>. This extension contains the DNA sequences and relevant DNA metadata, including sequencing procedures, primers used and SOP’s. The recommended use of ENVO’s biome classes were applied to describe the environmental system from which the sample was extracted. The samples were collected by CTD rosette and filtered by a peristaltic pump system. Illumina MiSeq metabarcoding was applied for the target_gene 18S and the target_subfragment, V9 region. URL’s are provided for the protocols followed for nucleic acids extraction and amplification.</p>
+<p>For a detailed description of the steps taken to process the data, including algorithms used, see the original publication. Adding Operational Taxonomic Unit (OTU) related data are highly recommended and should be as complete as possible, for example:</p>
+<table>
+<colgroup>
+<col width="20%" />
+<col width="22%" />
+<col width="22%" />
+<col width="34%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>occurrenceID</th>
+<th>env-broad_scale</th>
+<th>env_local_scale</th>
+<th>env_medium</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>11216c01_12_edna_1_S_occ1</td>
+<td>marine biome (ENVO:00000447)</td>
+<td>coastal water (ENVO:00001250)</td>
+<td>waterborne particulate matter (ENVO:01000436)</td>
+</tr>
+<tr class="even">
+<td>11216c01_12_edna_2_S_occ1</td>
+<td>marine biome (ENVO:00000447)</td>
+<td>coastal water (ENVO:00001250)</td>
+<td>waterborne particulate matter (ENVO:01000436)</td>
+</tr>
+<tr class="odd">
+<td>11216c01_12_edna_3_S_occ1</td>
+<td>marine biome (ENVO:00000447)</td>
+<td>coastal water (ENVO:00001250)</td>
+<td>waterborne particulate matter (ENVO:01000436)</td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col width="16%" />
+<col width="32%" />
+<col width="32%" />
+<col width="9%" />
+<col width="9%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>samp_vol_we_dna_ext</th>
+<th>nucl_acid_ext</th>
+<th>nucl_acid_amp</th>
+<th>lib_layout</th>
+<th>target_gene</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1000ml</td>
+<td><a href="https://www.protocols.io/view/mbari-environmental-dna-edna-extraction-using-qiag-bp2l647d5vqe/v1">dx.doi.org/10.17504/protocols.io.xjufknw</a></td>
+<td><a href="https://www.protocols.io/view/environmental-dna-edna-18s-metabarcoding-illumina-6qpvrydzgmkn/v2">dx.doi.org/10.17504/protocols.io.n2vdge6</a></td>
+<td>paired</td>
+<td>18S</td>
+</tr>
+<tr class="even">
+<td>1000ml</td>
+<td><a href="https://www.protocols.io/view/mbari-environmental-dna-edna-extraction-using-qiag-bp2l647d5vqe/v1">dx.doi.org/10.17504/protocols.io.xjufknw</a></td>
+<td><a href="https://www.protocols.io/view/environmental-dna-edna-18s-metabarcoding-illumina-6qpvrydzgmkn/v2">dx.doi.org/10.17504/protocols.io.n2vdge6</a></td>
+<td>paired</td>
+<td>18S</td>
+</tr>
+<tr class="odd">
+<td>1000ml</td>
+<td><a href="https://www.protocols.io/view/mbari-environmental-dna-edna-extraction-using-qiag-bp2l647d5vqe/v1">dx.doi.org/10.17504/protocols.io.xjufknw</a></td>
+<td><a href="https://www.protocols.io/view/environmental-dna-edna-18s-metabarcoding-illumina-6qpvrydzgmkn/v2">dx.doi.org/10.17504/protocols.io.n2vdge6</a></td>
+<td>paired</td>
+<td>18S</td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col width="15%" />
+<col width="15%" />
+<col width="13%" />
+<col width="55%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>target_subfragment</th>
+<th>seq_meth</th>
+<th>otu_class_appr</th>
+<th>otu_seq_comp_appr</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>V9</td>
+<td>Illumina MiSeq 2x250</td>
+<td>dada2;1.14.0;ASV</td>
+<td>blast;2.9.0+;80% identity;e-value cutoff: x MEGAN6;6.18.5;bitscore: 100 :2%</td>
+</tr>
+<tr class="even">
+<td>V9</td>
+<td>Illumina MiSeq 2x250</td>
+<td>dada2;1.14.0;ASV</td>
+<td>blast;2.9.0+;80% identity;e-value cutoff: x MEGAN6;6.18.5;bitscore: 100 :2%</td>
+</tr>
+<tr class="odd">
+<td>V9</td>
+<td>Illumina MiSeq 2x250</td>
+<td>dada2;1.14.0;ASV</td>
+<td>blast;2.9.0+;80% identity;e-value cutoff: x MEGAN6;6.18.5;bitscore: 100 :2%</td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col width="16%" />
+<col width="64%" />
+<col width="18%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>otu_db</th>
+<th>sop</th>
+<th>DNA_sequence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Genbank nr;221</td>
+<td><a href="https://www.protocols.io/view/mbari-environmental-dna-edna-extraction-using-qiag-bp2l647d5vqe/v1">dx.doi.org/10.17504/protocols.io.xjufknw</a> or GitHub repository</td>
+<td>GCTACTACCGATT…</td>
+</tr>
+<tr class="even">
+<td>Genbank nr;221</td>
+<td><a href="https://www.protocols.io/view/mbari-environmental-dna-edna-extraction-using-qiag-bp2l647d5vqe/v1">dx.doi.org/10.17504/protocols.io.xjufknw</a> or GitHub repository</td>
+<td>GCTACTACCGATT…</td>
+</tr>
+<tr class="odd">
+<td>Genbank nr;221</td>
+<td><a href="https://www.protocols.io/view/mbari-environmental-dna-edna-extraction-using-qiag-bp2l647d5vqe/v1">dx.doi.org/10.17504/protocols.io.xjufknw</a> or GitHub repository</td>
+<td>GCTACTACCGATT…</td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col width="16%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="22%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>pcr_primer_forward</th>
+<th>pcr_primer_reverse</th>
+<th>pcr_primer_name_forward</th>
+<th>pcr_primer_name_reverse</th>
+<th>pcr_primer_reference</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>GTACACACCGCCCGTC</td>
+<td>TGATCCTTCTGCAGGTTCACCTAC</td>
+<td>1391f</td>
+<td>EukBr</td>
+<td>Amaral-Zettler et al. 2009</td>
+</tr>
+<tr class="even">
+<td>GTACACACCGCCCGTC</td>
+<td>TGATCCTTCTGCAGGTTCACCTAC</td>
+<td>1391f</td>
+<td>EukBr</td>
+<td>Amaral-Zettler et al. 2009</td>
+</tr>
+<tr class="odd">
+<td>GTACACACCGCCCGTC</td>
+<td>TGATCCTTCTGCAGGTTCACCTAC</td>
+<td>1391f</td>
+<td>EukBr</td>
+<td>Amaral-Zettler et al. 2009</td>
+</tr>
+</tbody>
+</table>
 </div>
-<div id="obis-data-format-validation" class="section level4 hasAnchor" number="4.1.2.2">
-<h4><span class="header-section-number">4.1.2.2</span> OBIS data format validation<a href="lifewatch_qc.html#obis-data-format-validation" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>This is the most extensive check currently available and is available for data that are structured according to the OBIS Schema. This validation service checks the following items:</p>
-<ul>
-<li>Are all mandatory fields completed, what are the missing fields?</li>
-<li>Are the coordinates in the correct format (decimal degrees, taking into account the minimum and maximum possible values)?</li>
-<li>Are the sampling points on land or in water?</li>
-<li>Is the information in the date-fields valid (e.g. month between 1-12)?</li>
-<li>Can the taxon name be matched with WoRMS?</li>
-</ul>
-<p>This tool undertakes several actions simultaneously. In a first step, this data service allows you to map your own column headers to the field names used in the OBIS Schema. When you then run the format validation service, the following actions are performed:</p>
-<ul>
-<li>A check of the mandatory fields of the OBIS Scheme. If mandatory fields would be missing, these will be listed separately, so you can complete them. Without these fields, the dataset cannot be accepted by the OBIS node.</li>
-<li>A listing of all the optional fields of the OBIS Scheme that are available in your file.</li>
-<li>Validation of the content of a number of fields:</li>
-<li>Latitude &amp; longitude:
-<ul>
-<li>Are the values inside the world limit? (yes/no);</li>
-<li>Are the values different from zero? (yes/no);</li>
-<li>Are the values situated in the marine environment (sea/ocean) (=prerequisite of a marine dataset)? (yes/no)</li>
-</ul></li>
-<li>Date-related fields:
-<ul>
-<li>Do the year-month-day fields form a valid date? (yes/no)</li>
-<li>Do the start- and end-date fields form a valid date? (yes/no)</li>
-</ul></li>
-<li>Scientific name:
-<ul>
-<li>Is the scientific name available in WoRMS? (yes/no)</li>
-<li>When yes:
-<ul>
-<li>Indication whether taxon is marine or not</li>
-<li>Indication whether taxon name is valid or not</li>
-<li>Indication of the taxonomic rank</li>
-</ul></li>
-</ul></li>
-</ul>
-<p>After matching with WoRMS, the report gives a brief overview containing:</p>
-<ul>
-<li>the number of exact matches</li>
-<li>the number of fuzzy (=non-exact) matches</li>
-<li>the number of non-matches</li>
-<li>the number of errors that might have occurred during matching</li>
-</ul>
-<p>For each of the above steps, the result report lists the number of records that passes the check. The tool also makes a ‘grand total’ of these results, indicating if the quality of record is sufficient to be imported into OBIS, taking into account the results of the above mentioned checks.</p>
-<p>If the file contains fields that do not match the OBIS schema, these are also listed. Fields that cannot be mapped to the OBIS schema will not be uploaded in OBIS.</p>
-<p>After this data format check, a number of columns are added to the originally uploaded file, where the results of each step are listed. Each check is basically a yes/no question, which is translated to a 1 (yes) or 0 (no) value in the results file and is thus easy to interpret.</p>
+<div id="s-rrna-gene-metabarcoding-data-of-pico--to-mesoplankton" class="section level5 hasAnchor" number="3.10.1.1.2">
+<h5><span class="header-section-number">3.10.1.1.2</span> 16S rRNA gene metabarcoding data of Pico- to Mesoplankton<a href="dna_data.html#s-rrna-gene-metabarcoding-data-of-pico--to-mesoplankton" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>DNA derived datasets can also include an extendedMeasurementsOrFact (eMoF) extension file, in addition to the Occurrence and DNA derived extensions. In this example, environmental measurements were provided in an eMoF file, in addition to the DNA derived data and occurrence data. Here we show how to incorporate such measurements in the extensions.</p>
+<p>In the publication <a href="https://www.frontiersin.org/articles/10.3389/fmicb.2016.00679/full">“Diversity of Pico- to Mesoplankton along the 2000 km Salinity Gradient of the Baltic Sea”</a>, a dataset with 16S rRNA gene metabarcoding data of surface water microbial communities was created from 21 off-shore stations, following a transect from Kattegat to the Gulf of Bothnia in the Baltic Sea. The full dataset entitled <a href="https://www.gbif.org/dataset/9e29a2fe-d780-48a8-a93f-9ce041f9202f">“Diversity of Pico- to Mesoplankton along the 2000 km Salinity Gradient of the Baltic Sea (Hu et al. 2016)</a> is available from GBIF.</p>
+<p><strong>Occurrence core:</strong></p>
+<p>The Occurrence core contain information about the organisms in the sample including the taxonomy and quantity of organisms detected, the collection location, references for the identification procedure, and links to the sequences generated.</p>
+<p><strong>Important note: even though this dataset uses OTU identifiers for taxonomy (therefore not including <code>scientificNameID</code>) OBIS still recommends using <code>scientificNameID</code>.</strong></p>
+<table>
+<colgroup>
+<col width="15%" />
+<col width="48%" />
+<col width="16%" />
+<col width="19%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>basisOfRecord</th>
+<th>occurrenceID</th>
+<th>eventID</th>
+<th>eventDate</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>MaterialSample</td>
+<td>SBDI-ASV-3:16S_1:919a2aa9d306e4cf3fa9ca02a2aa5730</td>
+<td>SBDI-ASV-3:16S_1</td>
+<td>2013-07-13 07:08:00</td>
+</tr>
+<tr class="even">
+<td>MaterialSample</td>
+<td>SBDI-ASV-3:16S_1:43e088977eba5732bfa45e20b1d8cdd2</td>
+<td>SBDI-ASV-3:16S_1</td>
+<td>2013-07-13 07:08:00</td>
+</tr>
+<tr class="odd">
+<td>MaterialSample</td>
+<td>SBDI-ASV-3:16S_1:887bc7033b46d960e893caceb711700b</td>
+<td>SBDI-ASV-3:16S_1</td>
+<td>2013-07-13 07:08:00</td>
+</tr>
+</tbody>
+</table>
+<table style="width:100%;">
+<colgroup>
+<col width="23%" />
+<col width="28%" />
+<col width="22%" />
+<col width="25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>organismQuantity</th>
+<th>organismQuantityType</th>
+<th>sampleSizeValue</th>
+<th>sampleSizeUnit</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2235</td>
+<td>DNA sequence reads</td>
+<td>12393</td>
+<td>DNA sequence reads</td>
+</tr>
+<tr class="even">
+<td>795</td>
+<td>DNA sequence reads</td>
+<td>12393</td>
+<td>DNA sequence reads</td>
+</tr>
+<tr class="odd">
+<td>40</td>
+<td>DNA sequence reads</td>
+<td>12393</td>
+<td>DNA sequence reads</td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col width="34%" />
+<col width="12%" />
+<col width="20%" />
+<col width="31%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>samplingProtocol</th>
+<th>associatedSequences</th>
+<th>identificationReferences</th>
+<th>identificationRemarks</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>200–500 mL seawater were filtered onto 0.22 μm pore-size mixed cellulose ester membrane filters; [<a href="https://doi.org/10.3389/fmicb.2016.00679" class="uri">https://doi.org/10.3389/fmicb.2016.00679</a>]</td>
+<td>[<a href="https://www.ebi.ac.uk/ena/browser/view/ERR1202034" class="uri">https://www.ebi.ac.uk/ena/browser/view/ERR1202034</a>]</td>
+<td>[<a href="https://docs.biodiversitydata.se/analyse-data/molecular-tools/#taxonomy-annotation" class="uri">https://docs.biodiversitydata.se/analyse-data/molecular-tools/#taxonomy-annotation</a>]</td>
+<td>DADA2:assignTaxonomy:addSpecies annotation against sbdi-gtdb=R06-RS202-1; confidence at lowest specified (ASV portal) taxon: 0.5</td>
+</tr>
+<tr class="even">
+<td>200–500 mL seawater were filtered onto 0.22 μm pore-size mixed cellulose ester membrane filters; [<a href="https://doi.org/10.3389/fmicb.2016.00679" class="uri">https://doi.org/10.3389/fmicb.2016.00679</a>]</td>
+<td>[<a href="https://www.ebi.ac.uk/ena/browser/view/ERR1202034" class="uri">https://www.ebi.ac.uk/ena/browser/view/ERR1202034</a>]</td>
+<td>[<a href="https://docs.biodiversitydata.se/analyse-data/molecular-tools/#taxonomy-annotation" class="uri">https://docs.biodiversitydata.se/analyse-data/molecular-tools/#taxonomy-annotation</a>]</td>
+<td>DADA2:assignTaxonomy:addSpecies annotation against sbdi-gtdb=R06-RS202-1; confidence at lowest specified (ASV portal) taxon: 0.56</td>
+</tr>
+<tr class="odd">
+<td>200–500 mL seawater were filtered onto 0.22 μm pore-size mixed cellulose ester membrane filters; [<a href="https://doi.org/10.3389/fmicb.2016.00679" class="uri">https://doi.org/10.3389/fmicb.2016.00679</a>]</td>
+<td>[<a href="https://www.ebi.ac.uk/ena/browser/view/ERR1202034" class="uri">https://www.ebi.ac.uk/ena/browser/view/ERR1202034</a>]</td>
+<td>[<a href="https://docs.biodiversitydata.se/analyse-data/molecular-tools/#taxonomy-annotation" class="uri">https://docs.biodiversitydata.se/analyse-data/molecular-tools/#taxonomy-annotation</a>]</td>
+<td>DADA2:assignTaxonomy:addSpecies annotation against sbdi-gtdb=R06-RS202-1; confidence at lowest specified (ASV portal) taxon: 0.99</td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col width="18%" />
+<col width="19%" />
+<col width="40%" />
+<col width="21%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>decimalLatitude</th>
+<th>decimalLongitude</th>
+<th>taxonID</th>
+<th>scientificName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>55.185</td>
+<td>13.791</td>
+<td>ASV:919a2aa9d306e4cf3fa9ca02a2aa5730</td>
+<td>UBA6821</td>
+</tr>
+<tr class="even">
+<td>55.185</td>
+<td>13.791</td>
+<td>ASV:43e088977eba5732bfa45e20b1d8cdd2</td>
+<td>Chthoniobacterales</td>
+</tr>
+<tr class="odd">
+<td>55.185</td>
+<td>13.791</td>
+<td>ASV:887bc7033b46d960e893caceb711700b</td>
+<td>BACL27 sp014190055</td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col width="10%" />
+<col width="19%" />
+<col width="18%" />
+<col width="20%" />
+<col width="20%" />
+<col width="9%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>kingdom</th>
+<th>phylum</th>
+<th>class</th>
+<th>order</th>
+<th>family</th>
+<th>genus</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Bacteria</td>
+<td>Verrucomicrobiota</td>
+<td>Verrucomicrobiae</td>
+<td>Chthoniobacterales</td>
+<td>UBA6821</td>
+<td>UBA6821</td>
+</tr>
+<tr class="even">
+<td>Bacteria</td>
+<td>Verrucomicrobiota</td>
+<td>Verrucomicrobiae</td>
+<td>Chthoniobacterales</td>
+<td>NA</td>
+<td>NA</td>
+</tr>
+<tr class="odd">
+<td>Bacteria</td>
+<td>Actinobacteriota</td>
+<td>Acidimicrobiia</td>
+<td>Acidimicrobiales</td>
+<td>Ilumatobacteraceae</td>
+<td>BACL27</td>
+</tr>
+</tbody>
+</table>
+<p><strong>DNA Derived Data extension:</strong></p>
+<p>The DNA Derived Data extension for metabarcoding data contains the DNA sequences and relevant DNA metadata, primers and procedures. This example table contains the highly recommended and recommended fields as populated with the example dataset data. For this dataset, authors additionally provided measurements of of water sample temperature and salinity, which are provided in an <strong>extendedMeasurementOrFact</strong> extension file:</p>
+<table>
+<colgroup>
+<col width="35%" />
+<col width="21%" />
+<col width="20%" />
+<col width="22%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>id</th>
+<th>env_broad_scale</th>
+<th>env_local_scale</th>
+<th>env_medium</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>SBDI-ASV-3:16S_1:919a2aa9d306e4cf3fa9ca02a2aa5730</td>
+<td>aquatic biome [ENVO_00002030]</td>
+<td>marine biome [ENVO_00000447]</td>
+<td>brackish water [ENVO_00002019]</td>
+</tr>
+<tr class="even">
+<td>SBDI-ASV-3:16S_1:43e088977eba5732bfa45e20b1d8cdd2</td>
+<td>aquatic biome [ENVO_00002030]</td>
+<td>marine biome [ENVO_00000447]</td>
+<td>brackish water [ENVO_00002019]</td>
+</tr>
+<tr class="odd">
+<td>SBDI-ASV-3:16S_1:887bc7033b46d960e893caceb711700b</td>
+<td>aquatic biome [ENVO_00002030]</td>
+<td>marine biome [ENVO_00000447]</td>
+<td>brackish water [ENVO_00002019]</td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col width="13%" />
+<col width="14%" />
+<col width="22%" />
+<col width="18%" />
+<col width="30%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>lib_layout</th>
+<th>target_gene</th>
+<th>target_subfragment</th>
+<th>seq_meth</th>
+<th>sop</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>paired</td>
+<td>16S rRNA</td>
+<td>V3-V4</td>
+<td>Illumina MiSeq</td>
+<td><a href="https://nf-co.re/ampliseq" class="uri">https://nf-co.re/ampliseq</a></td>
+</tr>
+<tr class="even">
+<td>paired</td>
+<td>16S rRNA</td>
+<td>V3-V4</td>
+<td>Illumina MiSeq</td>
+<td><a href="https://nf-co.re/ampliseq" class="uri">https://nf-co.re/ampliseq</a></td>
+</tr>
+<tr class="odd">
+<td>paired</td>
+<td>16S rRNA</td>
+<td>V3-V4</td>
+<td>Illumina MiSeq</td>
+<td><a href="https://nf-co.re/ampliseq" class="uri">https://nf-co.re/ampliseq</a></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col width="17%" />
+<col width="19%" />
+<col width="21%" />
+<col width="21%" />
+<col width="20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>pcr_primer_forward</th>
+<th>pcr_primer_reverse</th>
+<th>pcr_primer_name_forward</th>
+<th>pcr_primer_name_reverse</th>
+<th>DNA_sequence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>CCTACGGGNGGCWGCAG</td>
+<td>GACTACHVGGGTATCTAATCC</td>
+<td>341</td>
+<td>805R</td>
+<td>TCGAGAATTTTTCACAATG…</td>
+</tr>
+<tr class="even">
+<td>CCTACGGGNGGCWGCAG</td>
+<td>GACTACHVGGGTATCTAATCC</td>
+<td>341</td>
+<td>805R</td>
+<td>TCGAGAATTTTTCACAATG…</td>
+</tr>
+<tr class="odd">
+<td>CCTACGGGNGGCWGCAG</td>
+<td>GACTACHVGGGTATCTAATCC</td>
+<td>341</td>
+<td>805R</td>
+<td>TGGGGAATCTTGCGCAATG…</td>
+</tr>
+</tbody>
+</table>
+<p><strong>extendedMeasurementOrFact (eMoF) extension:</strong></p>
+<table>
+<colgroup>
+<col width="22%" />
+<col width="38%" />
+<col width="12%" />
+<col width="13%" />
+<col width="12%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>measurementID</th>
+<th>occurrenceID</th>
+<th>measurementType</th>
+<th>measurementValue</th>
+<th>measurementUnit</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>SBDI-ASV-3:16S_1:temperature</td>
+<td>SBDI-ASV-3:16S_1:919a2aa9d306e4cf3fa9ca02a2aa5730</td>
+<td>temperature</td>
+<td>16.9</td>
+<td>°C</td>
+</tr>
+<tr class="even">
+<td>SBDI-ASV-3:16S_1:salinity</td>
+<td>SBDI-ASV-3:16S_1:919a2aa9d306e4cf3fa9ca02a2aa5730</td>
+<td>salinity</td>
+<td>7.25</td>
+<td>psu</td>
+</tr>
+<tr class="odd">
+<td>SBDI-ASV-3:16S_1:temperature</td>
+<td>SBDI-ASV-3:16S_1:1ead98754d34073a4606f7ff1e94126e</td>
+<td>temperature</td>
+<td>16.9</td>
+<td>°C</td>
+</tr>
+</tbody>
+</table>
 
 </div>
 </div>
@@ -405,8 +996,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="name_matching.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="common_qc.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="examples.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="other_data_types.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

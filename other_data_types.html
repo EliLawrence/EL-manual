@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>4.1.2 Geographic and data format quality control | The OBIS manual</title>
-  <meta name="description" content="4.1.2 Geographic and data format quality control | The OBIS manual" />
+  <title>3.10.2 Multimedia data (Acoustic, Imaging) | The OBIS manual</title>
+  <meta name="description" content="3.10.2 Multimedia data (Acoustic, Imaging) | The OBIS manual" />
   <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="4.1.2 Geographic and data format quality control | The OBIS manual" />
+  <meta property="og:title" content="3.10.2 Multimedia data (Acoustic, Imaging) | The OBIS manual" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="4.1.2 Geographic and data format quality control | The OBIS manual" />
+  <meta name="twitter:title" content="3.10.2 Multimedia data (Acoustic, Imaging) | The OBIS manual" />
   
   
   
@@ -28,8 +28,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="name_matching.html"/>
-<link rel="next" href="common_qc.html"/>
+<link rel="prev" href="dna_data.html"/>
+<link rel="next" href="data_qc.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -342,60 +342,104 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="geographic-and-data-format-quality-control" class="section level3 hasAnchor" number="4.1.2">
-<h3><span class="header-section-number">4.1.2</span> Geographic and data format quality control<a href="lifewatch_qc.html#geographic-and-data-format-quality-control" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>These Data validation and QC services are available on the LifeWatch portal at <a href="http://www.lifewatch.be/data-services">http://www.lifewatch.be/data-services</a>.</p>
-<div id="geographical-service" class="section level4 hasAnchor" number="4.1.2.1">
-<h4><span class="header-section-number">4.1.2.1</span> Geographical service<a href="lifewatch_qc.html#geographical-service" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>This service allows to upload a file and to plot the listed coordinates on a map. Using this web service does not require knowledge of GIS. This service allows a visual check of the available locations and makes it possible to easily identify points on land or outside the scope or study area. Geographic data are essential for OBIS and the experience is that a lot of these data is incomplete or contains errors. A visual check of the position of the sampling locations is thus a simple way of filtering out obvious errors and improving the data quality. Latitude and longitude need to be in WGS84, decimal degrees. This format is also necessary for the OBIS Schema and for uploading the dataset to IPT (Darwin Core).</p>
+<div id="multimedia-data-acoustic-imaging" class="section level3 hasAnchor" number="3.10.2">
+<h3><span class="header-section-number">3.10.2</span> Multimedia data (Acoustic, Imaging)<a href="other_data_types.html#multimedia-data-acoustic-imaging" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>If you have multimedia data (e.g. images, acoustic, video) that you want to publish alongside your dataset, you can do so by documenting information in the <code>associatedMedia</code> field in your Occurrence table. The usage of this field requires the media in question to be hosted somewhere, e.g., a publication, museum database, etc. Then you simply copy this link to the <code>associatedMedia</code> field for a given occurrence. You may also include a concatenated list if you need to list multiple sources.</p>
+<p>While there are Core types and extensions (e.g., <a href="https://rs.gbif.org/extension/ac/audubon_2020_10_06.xml">Audubon Core</a> and <a href="https://rs.gbif.org/extension/gbif/1.0/multimedia.xml">Simple Multimedia extension</a>) designed for image, video, and audio files, these data file types are not currently processed by OBIS. Thus for now we recommended to include links in the <code>associatedMedia</code> field. Stay tuned however, as OBIS is looking to incorporate the Simple Multimedia extension.</p>
+<p>For datasets with imaging or acoustic data, we strongly recommend including the following terms in your Occurrence table:</p>
+<ul>
+<li><a href="https://dwc.tdwg.org/list/#dwc_identifiedBy"><code>identifiedBy</code></a> - name(s) of persons involved in verifying taxon identification, particularly if automatic identification was made by a software and then validated by a human</li>
+<li><a href="https://dwc.tdwg.org/list/#dwc_identificationVerificationStatus"><code>identificationVerificationStatus</code></a> - categorical indicator for the extent of taxonomic identification verification. Recommended to use PredictedByMachine or ValidatedByHuman</li>
+<li><a href="http://rs.tdwg.org/dwc/terms/identificationReferences"><code>identificationReferences</code></a> - references used in identification (e.g. citation and version of software that identified taxa)</li>
+</ul>
+<p><strong>Example Resources:</strong>
+Martin-Cabrera et al. (2022) have created a best practices document for <a href="https://repository.oceanbestpractices.org/handle/11329/1917">plankton imaging data</a> that you can also reference. To see an example imaging dataset implementing these best practices, see the supplementary material of <a href="https://biss.pensoft.net/article/94196/instance/7973477/">Establishing Plankton Imagery Dataflows Towards International Biodiversity Data Aggregators</a>.</p>
+<p>Data originating from ROV (Remote Operating Vehicle) observations may require additional processing. Ocean Networks Canada (ONC) is developing a <a href="https://doi.org/10.1109/OCEANS47191.2022.9977379">pipeline for publishing ROV data to OBIS</a>. ROV datasets should have an Event core that documents the hierarchical nature of ROV dives (e.g., ROV dives nested within a cruise), with Occurrence and eMoF extensions to record taxonomic and other measurement data e.g., from sensors. ONC’s pipeline outlines the importance of including <code>identifiedBy</code> in order to vet taxon identifications by experts.</p>
 </div>
-<div id="obis-data-format-validation" class="section level4 hasAnchor" number="4.1.2.2">
-<h4><span class="header-section-number">4.1.2.2</span> OBIS data format validation<a href="lifewatch_qc.html#obis-data-format-validation" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>This is the most extensive check currently available and is available for data that are structured according to the OBIS Schema. This validation service checks the following items:</p>
+<div id="habitat-data" class="section level3 hasAnchor" number="3.10.3">
+<h3><span class="header-section-number">3.10.3</span> Habitat data<a href="other_data_types.html#habitat-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Event Core is perfect for enriching OBIS with interpreted information such as biological community, biotope or habitat type (collectively referred to as ‘habitats’). However, the unconstrained nature of the terms <code>measurementTypeID</code>, <code>measurementValueID</code>, and <code>measurementUnitID</code> leads to a risk that habitats measurements are structured inconsistently within the Darwin Core Archive standard and as a result, are not easily discoverable, understood or usable.</p>
+<p>As a result, members of the European Marine Observation and Data Network (EMODnet) Seabed Habitats and Biology thematic groups have produced a technical report <a href="https://www.emodnet-seabedhabitats.eu/resources/documents-and-outreach/#h3298bcd0a15741a8a0ac1c8b4576f7c5">Duncan et al. (2021)</a> that provides guidance on using the Darwin Core eMoF extension to submit habitat data to OBIS, following the ENV-DATA approach and using Seabed Habitats as a use case. Note that the guidelines and structuring approach outlined in this document has not yet been approved or accepted at the global level and is only a recommended approach as agreed upon by EMODnet Seabed Habitats, EMODnet Biology, and OBIS. The implementation at the EurOBIS level may be considered a pilot.</p>
+<p>The overarching principles are summarised here. Note that because of the numerous classification systems and priority habitat lists in existence, it is not possible to point to a single vocabulary for populating each of <code>measurementTypeID</code>, <code>measurementValueID</code> and <code>measurementUnitID</code>, as for other measurement types, so below are the <em>types</em> of information to include, with an example, as recommended by <a href="https://www.emodnet-seabedhabitats.eu/resources/documents-and-outreach/#h3298bcd0a15741a8a0ac1c8b4576f7c5">Duncan et al. (2021)</a>:</p>
 <ul>
-<li>Are all mandatory fields completed, what are the missing fields?</li>
-<li>Are the coordinates in the correct format (decimal degrees, taking into account the minimum and maximum possible values)?</li>
-<li>Are the sampling points on land or in water?</li>
-<li>Is the information in the date-fields valid (e.g. month between 1-12)?</li>
-<li>Can the taxon name be matched with WoRMS?</li>
+<li><code>measurementTypeID</code>: A machine-readable URI or DOI reference describing the (version of the) classification system itself. For example: <a href="https://dd.eionet.europa.eu/vocabulary/biodiversity/eunishabitats/">https://dd.eionet.europa.eu/vocabulary/biodiversity/eunishabitats/</a></li>
+<li><code>measurementValueID</code>: If available, a machine-readable URI describing the habitat class in “measurementValue”. For example: <a href="https://dd.eionet.europa.eu/vocabulary/biodiversity/eunishabitats/A5.36">https://dd.eionet.europa.eu/vocabulary/biodiversity/eunishabitats/A5.36</a></li>
+<li><code>measurementUnitID</code>: null because habitat types are unitless.</li>
 </ul>
-<p>This tool undertakes several actions simultaneously. In a first step, this data service allows you to map your own column headers to the field names used in the OBIS Schema. When you then run the format validation service, the following actions are performed:</p>
+<p>Please consult the <a href="https://www.emodnet-seabedhabitats.eu/resources/documents-and-outreach/#h3298bcd0a15741a8a0ac1c8b4576f7c5">Duncan et al. (2021) technical report</a> (title: A standard approach to structuring classified habitat data using the Darwin Core Extended Measurement or Fact Extension) for more details, including:</p>
 <ul>
-<li>A check of the mandatory fields of the OBIS Scheme. If mandatory fields would be missing, these will be listed separately, so you can complete them. Without these fields, the dataset cannot be accepted by the OBIS node.</li>
-<li>A listing of all the optional fields of the OBIS Scheme that are available in your file.</li>
-<li>Validation of the content of a number of fields:</li>
-<li>Latitude &amp; longitude:
-<ul>
-<li>Are the values inside the world limit? (yes/no);</li>
-<li>Are the values different from zero? (yes/no);</li>
-<li>Are the values situated in the marine environment (sea/ocean) (=prerequisite of a marine dataset)? (yes/no)</li>
-</ul></li>
-<li>Date-related fields:
-<ul>
-<li>Do the year-month-day fields form a valid date? (yes/no)</li>
-<li>Do the start- and end-date fields form a valid date? (yes/no)</li>
-</ul></li>
-<li>Scientific name:
-<ul>
-<li>Is the scientific name available in WoRMS? (yes/no)</li>
-<li>When yes:
-<ul>
-<li>Indication whether taxon is marine or not</li>
-<li>Indication whether taxon name is valid or not</li>
-<li>Indication of the taxonomic rank</li>
-</ul></li>
-</ul></li>
+<li>how to handle a single event with multiple habitat measurements</li>
+<li>recommended vocabularies and terms for common habitat classification systems</li>
+<li>example eMoF table</li>
 </ul>
-<p>After matching with WoRMS, the report gives a brief overview containing:</p>
+<p>For filling measurementType with habitat-related data and/or the dwc:habitat column, you should reference the <a href="http://vocab.nerc.ac.uk/search_nvs/sxv/?searchstr=habitat&amp;options=identifier,preflabel,altlabel,definition">NERC vocabulary search</a>. While the <a href="https://repository.library.noaa.gov/view/noaa/27552">Coastal and Marine Ecological Classification Standard (CMECS)</a> and the <a href="https://sites.google.com/site/environmentontology/?pli=1">Environment Ontology (ENVO)</a> also contain habitat vocabularies, OBIS recommends the use of NERC vocabulary. If other vocabularies are used, please provide the NERC vocabulary equivalent as additional records in the eMoF table.</p>
+</div>
+<div id="tracking-data" class="section level3 hasAnchor" number="3.10.4">
+<h3><span class="header-section-number">3.10.4</span> Tracking data<a href="other_data_types.html#tracking-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Encoding Tracking data into Darwin Core follows the same standards as that of survey/sighting data. Tracking data should additionally indicate the accuracy in latitudinal and longitudinal measurements received from the positioning system, grouped by location accuracy classes, recorded in the <code>coordinateUncertaintyInMeters</code> field. The Ocean Tracking Network (OTN) has developed some guidelines](<a href="https://github.com/tdwg/dwc-for-biologging" class="uri">https://github.com/tdwg/dwc-for-biologging</a>) for formatting this type of data in Darwin Core. We summarize the main points below.</p>
+<p>Using Event core for tracking data is recommended as there can be multiple events involved in tracking an organism. There are capture/tag and release events, receiver deployment events, and detection occurrences. Note that the capture and release of an organism are not considered to be distinct Occurrence records because they are not natural occurrences. Thus, in the Event core table you may record unique events for:</p>
 <ul>
-<li>the number of exact matches</li>
-<li>the number of fuzzy (=non-exact) matches</li>
-<li>the number of non-matches</li>
-<li>the number of errors that might have occurred during matching</li>
+<li>The capture of an animal</li>
+<li>The release of an animal</li>
+<li>The deployment of a listening (or receiver) station</li>
 </ul>
-<p>For each of the above steps, the result report lists the number of records that passes the check. The tool also makes a ‘grand total’ of these results, indicating if the quality of record is sufficient to be imported into OBIS, taking into account the results of the above mentioned checks.</p>
-<p>If the file contains fields that do not match the OBIS schema, these are also listed. Fields that cannot be mapped to the OBIS schema will not be uploaded in OBIS.</p>
-<p>After this data format check, a number of columns are added to the originally uploaded file, where the results of each step are listed. Each check is basically a yes/no question, which is translated to a 1 (yes) or 0 (no) value in the results file and is thus easy to interpret.</p>
+<p>Information pertaining to a specific individual is linked by a unique <code>organismID</code>. You can use <code>eventID</code>s associated with a receiver to record detection occurrences in the Occurrence table. One organism may then have multiple occurrences (and thus multiple occurrenceIDs), but the same <code>organismID</code>. Any measurements for an organism taken during capture can be recorded in the extendedMeasurementsOrFact extension, linked to the core by the capture event’s <code>eventID</code> as well as the unique <code>organismID</code>. For more details, see the <a href="https://github.com/tdwg/dwc-for-biologging">DwC guidelines for biologging</a>.</p>
+<p>Extracts from the extendedMeasurementOrFact Extension (eMoF) of the actual dataset <a href="https://www.marine.csiro.au/ipt/resource?r=ningaloo_outlook_turtle_tracking">Ningaloo Outlook turtle tracking of Green turtles (Chelonia mydas), Western Australia (2018-present)</a>, are shown as an example tracking dataset, following <a href="http://vocab.nerc.ac.uk/collection/R05/current/">ARGOS Location class codes</a>.</p>
+<p><strong>extendedMeasurementOrFact (eMoF) extension:</strong></p>
+<table style="width:100%;">
+<colgroup>
+<col width="6%" />
+<col width="15%" />
+<col width="10%" />
+<col width="16%" />
+<col width="13%" />
+<col width="37%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>id</th>
+<th>measurementID</th>
+<th>occurrenceID</th>
+<th>measurementType</th>
+<th>measurementValue</th>
+<th>measurementValueID</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2347540</td>
+<td>2347540-argosclass</td>
+<td>2347540</td>
+<td>ARGOS Location Class</td>
+<td>A</td>
+<td><a href="http://vocab.nerc.ac.uk/collection/R05/current/A" class="uri">http://vocab.nerc.ac.uk/collection/R05/current/A</a></td>
+</tr>
+<tr class="even">
+<td>2347541</td>
+<td>2347541-argosclass</td>
+<td>2347541</td>
+<td>ARGOS Location Class</td>
+<td>B</td>
+<td><a href="http://vocab.nerc.ac.uk/collection/R05/current/B" class="uri">http://vocab.nerc.ac.uk/collection/R05/current/B</a></td>
+</tr>
+<tr class="odd">
+<td>2347542</td>
+<td>2347542-argosclass</td>
+<td>2347542</td>
+<td>ARGOS Location Class</td>
+<td>2</td>
+<td><a href="http://vocab.nerc.ac.uk/collection/R05/current/2" class="uri">http://vocab.nerc.ac.uk/collection/R05/current/2</a></td>
+</tr>
+<tr class="even">
+<td>2347543</td>
+<td>2347543-argosclass</td>
+<td>2347543</td>
+<td>ARGOS Location Class</td>
+<td>3</td>
+<td><a href="http://vocab.nerc.ac.uk/collection/R05/current/3" class="uri">http://vocab.nerc.ac.uk/collection/R05/current/3</a></td>
+</tr>
+</tbody>
+</table>
 
 </div>
 </div>
@@ -405,8 +449,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="name_matching.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="common_qc.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="dna_data.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="data_qc.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

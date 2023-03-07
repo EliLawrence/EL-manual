@@ -60,7 +60,7 @@ data-formatting
 dataset-structure
 when-to-use-event-core
 when-to-use-occurrence-core
-extensions-accepted-by-obis
+extensions-in-obis
 constructing-and-using-indentifier-codes
 eventid
 occurrenceid
@@ -83,9 +83,6 @@ spatial
 converting-coordinates
 geographical-formats
 examples-env-data-and-dna-derived-data
-edna-dna-derived-data
-edna-data-from-monterey-bay-california
-s-rrna-gene-metabarcoding-data-of-pico--to-mesoplankton
 fish-abundance-distribution
 hard-coral-cover-composition
 invertebrates-abundance-distribution
@@ -95,11 +92,17 @@ marine-birds-abundance-distribution
 marine-mammals-abundance-distribution
 marine-turtles-abundance-distribution
 survey-sighting-data
-tracking-data
 microbes-biomass-diversity
 phytoplankton-biomass-diversity
 seagrass-cover-composition
 zooplankton-biomass-diversity
+dna-dervived-data
+edna-dna-derived-data
+edna-data-from-monterey-bay-california
+s-rrna-gene-metabarcoding-data-of-pico--to-mesoplankton
+multimedia-data-acoustic-imaging
+habitat-data
+tracking-data
 data-quality-control
 how-to-use-mof-report-and-tool
 data-quality-flags
