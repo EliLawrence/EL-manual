@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>2.4.3 Ecological Metadata Language | The OBIS manual</title>
-  <meta name="description" content="2.4.3 Ecological Metadata Language | The OBIS manual" />
+  <title>5.4 IPT | The OBIS manual</title>
+  <meta name="description" content="5.4 IPT | The OBIS manual" />
   <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="2.4.3 Ecological Metadata Language | The OBIS manual" />
+  <meta property="og:title" content="5.4 IPT | The OBIS manual" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="2.4.3 Ecological Metadata Language | The OBIS manual" />
+  <meta name="twitter:title" content="5.4 IPT | The OBIS manual" />
   
   
   
@@ -28,8 +28,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="relational_db.html"/>
-<link rel="next" href="nodes.html"/>
+<link rel="prev" href="data_publication.html"/>
+<link rel="next" href="data_sharing.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -342,316 +342,97 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="ecological-metadata-language" class="section level3 hasAnchor" number="2.4.3">
-<h3><span class="header-section-number">2.4.3</span> Ecological Metadata Language<a href="eml.html#ecological-metadata-language" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>OBIS (and GBIF) uses the Ecological Metadata Language (EML) as its metadata standard, which is specifically developed for the earth, environmental and ecological sciences. It is based on prior work done by the Ecological Society of America and associated efforts. EML is implemented as XML. See more information on <a href="https://knb.ecoinformatics.org/#external//emlparser/docs/index.html">EML</a>.</p>
-<p>OBIS uses the <a href="http://rs.gbif.org/schema/eml-gbif-profile/1.1/eml-gbif-profile.xsd">GBIF EML profile (version 1.1)</a>. In case data providers use ISO19115/ISO19139, there is a mapping available <a href="http://rs.gbif.org/schema/eml-gbif-profile/1.1/eml2iso19139.xsl">here</a>.</p>
-<p>For OBIS, the following 4 terms are the bare minimum: <code>Title</code>, <code>Citation</code>, <code>Contact</code> and <code>Abstract</code>. Below is an overview of all the EML terms used to describe datasets:</p>
+<div id="ipt" class="section level2 hasAnchor" number="5.4">
+<h2><span class="header-section-number">5.4</span> IPT<a href="ipt.html#ipt" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Contents</strong></p>
 <ul>
-<li><p><code>title [xml:lang="..."]</code>: A good descriptive <code>title</code> is indispensable and can provide the user with valuable information, making the discovery of data easier. Multiple titles may be provided, particularly when trying to express the title in more than one language (use the “xml:lang” attribute to indicate the language if not English/en).</p></li>
-<li><p><code>creator</code> ; <code>metadataProvider</code> ; <code>associatedParty</code> ; <code>contact</code> : These are the people and organizations responsible for the dataset resource, either as the creator, the metadata provider, contact person or any other association. The following details can be provided:</p>
-<ul>
-<li><code>individualName</code>
-<ul>
-<li><code>givenName</code></li>
-<li><code>surName</code></li>
-</ul></li>
-<li><code>organizationName</code>: Name of the institution.</li>
-<li><code>positionName</code>: to be used as alternative to persons names (leave <code>individualName</code> blank and use <code>positionName</code> instead e.g. data manager).</li>
-<li><code>address</code>
-<ul>
-<li><code>deliveryPoint</code></li>
-<li><code>city</code></li>
-<li><code>administrativeArea</code></li>
-<li><code>postalCode</code></li>
-<li><code>country</code></li>
-</ul></li>
-<li><code>phone</code><br />
+<li><a href="#intro">Introduction</a></li>
+<li><a href="ipt.html#installation">Installation</a><br />
 </li>
-<li><code>electronicMailAddress</code></li>
-<li><code>onlineUrl</code> : personal website</li>
-<li><code>role</code>: used with <code>associatedParty</code> to indicate the role of the associated person or organization.</li>
-<li><code>userID</code>: e.g. ORCID.
-<ul>
-<li><code>directory</code></li>
-</ul></li>
-</ul></li>
-<li><p><code>pubDate</code>: The date that the resource was published. Use ISO 8601.</p></li>
-<li><p><code>language</code>: The language in which the resource (not the metadata document) is written. Use ISO language code.</p></li>
-<li><p><code>abstract</code> : Brief description of the data resource.</p>
-<ul>
-<li><code>para</code></li>
-</ul></li>
-<li><p><code>keywordSet</code></p>
-<ul>
-<li><code>keyword</code> : Note only one keyword per keyword field is allowed.</li>
-<li><code>keywordThesaurus</code> : e.g. ASFA</li>
-</ul></li>
-<li><p><code>additionalInfo</code> : OBIS checks this EML field for harvesting. It should contain <em>marine, harvested by iOBIS</em>.</p>
-<ul>
-<li><code>para</code></li>
-</ul></li>
-<li><p><code>coverage</code></p>
-<ul>
-<li><code>geographicCoverage</code>
-<ul>
-<li><code>geographicDescription</code>: a short text description of the area. E.g. the river mounth of the Scheldt Estuary.<br />
+<li><a href="ipt.html#registration">Registration</a></li>
+<li><a href="ipt.html#publish-your-data">Publish your data</a><br />
 </li>
-<li><code>boundingCoordinates</code>
-<ul>
-<li><code>westBoundingCoordinate</code></li>
-<li><code>eastBoundingCoordinate</code></li>
-<li><code>northBoundingCoordinate</code></li>
-<li><code>southBoundingCoordinate</code></li>
-</ul></li>
-</ul></li>
-<li><code>temporalCoverage</code> : Use ISO 8601
-<ul>
-<li><code>singleDateTime</code></li>
-<li><code>rangeOfDates</code>
-<ul>
-<li><code>beginDate</code>
-<ul>
-<li><code>calendarDate</code></li>
-</ul></li>
-<li><code>endDate</code>
-<ul>
-<li><code>calendarDate</code></li>
-</ul></li>
-</ul></li>
-</ul></li>
-<li><code>taxonomicCoverage</code>: taxonomic information about the dataset. It can include a species list.
-<ul>
-<li><code>generalTaxonomicCoverage</code></li>
-<li><code>taxonomicClassification</code>
-<ul>
-<li><code>taxonRankName</code></li>
-<li><code>taxonRankValue</code></li>
-<li><code>commonName</code></li>
-</ul></li>
-</ul></li>
-</ul></li>
-<li><p><code>intellectualRights</code>: Statement about IPR, Copyright or various Property Rights. Also read the <a href="http://iobis.org/data/policy/">guidelines on the sharing and use of data in OBIS</a>.</p>
-<ul>
-<li><code>para</code></li>
-</ul></li>
-<li><p><code>purpose</code>: A description of the purpose of this dataset.</p>
-<ul>
-<li><code>para</code></li>
-</ul></li>
-<li><p><code>methods</code></p>
-<ul>
-<li><code>methodStep</code>: Descriptions of procedures, relevant literature, software, instrumentation, source data and any quality control measures taken.</li>
-<li><code>sampling</code>: Description of sampling procedures including the geographic, temporal and taxonomic coverage of the study.</li>
-<li><code>studyExtent</code>: Description of the specific sampling area, the sampling frequency (temporal boundaries, frequency of occurrence), and groups of living organisms sampled (taxonomic coverage).</li>
-<li><code>samplingDescription</code>: Description of sampling procedures, similar to the one found in the methods section of a journal article.
-<ul>
-<li><code>para</code></li>
-</ul></li>
-<li><code>qualityControl</code>: Description of actions taken to either control or assess the quality of data resulting from the associated method step.</li>
-</ul></li>
-<li><p><code>project</code></p>
-<ul>
-<li><code>title</code></li>
-<li><code>identifier</code></li>
-<li><code>personnel</code>: The personnel field is used to document people involved in a research project by providing contact information and their role in the project.</li>
-<li><code>description</code></li>
-<li><code>funding</code>: The funding field is used to provide information about funding sources for the project such as: grant and contract numbers; names and addresses of funding sources.
-<ul>
-<li><code>para</code></li>
-</ul></li>
-<li><code>studyAreaDescription</code></li>
-<li><code>designDescription</code>: The description of research design.</li>
-</ul></li>
-<li><p><code>maintenance</code></p>
-<ul>
-<li><code>description</code>
-<ul>
-<li><code>para</code></li>
-</ul></li>
-<li><code>maintenanceUpdateFrequency</code></li>
-</ul></li>
-<li><p><code>additionalMetadata</code></p>
-<ul>
-<li><code>metadata</code>
-<ul>
-<li><code>dateStamp</code>: The dateTime the metadata document was created or modified (ISO 8601).</li>
-<li><code>metadataLanguage</code>: The language in which the metadata document (as opposed to the resource being described by the metadata) is written</li>
-<li><code>hierarchyLevel</code>
-<ul>
-<li><code>citation</code> : A single citation for use when citing the dataset. The IPT can also auto-generate a citation based on the metadata (people, title, organization, onlineURL, DOI etc).</li>
-<li><code>bibliography</code>: A list of citations that form a bibliography on literature related / used in the dataset</li>
-<li><code>resourceLogoUrl</code>: URL of the logo associated with a dataset.</li>
-<li><code>parentCollectionIdentifier</code></li>
-<li><code>collectionIdentifier</code></li>
-<li><code>formationPeriod</code>: Text description of the time period during which the collection was assembled. E.g., “Victorian”, or “1922 - 1932”, or “c. 1750”.</li>
-<li><code>livingTimePeriod</code>: Time period during which biological material was alive (for palaeontological collections).</li>
-<li><code>specimenPreservationMethod</code></li>
-<li><code>physical</code>
-<ul>
-<li><code>objectName</code></li>
-<li><code>characterEncoding</code></li>
-<li><code>dataFormat</code>
-<ul>
-<li><code>externallyDefinedFormat</code></li>
-<li><code>formatName</code></li>
-</ul></li>
-<li><code>distribution</code>: URL links
-<ul>
-<li><code>online</code>
-<ul>
-<li><code>url function="download"</code></li>
-<li><code>url function="information"</code></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul></li>
-<li><p><code>alternateIdentifier</code>: It is a Universally Unique Identifier (UUID) for the EML document and not for the dataset. This term is optional.</p></li>
+<li><a href="ipt.html#upload-data">Upload data</a><br />
+</li>
+<li><a href="ipt.html#map-your-data-to-darwin-core">Map to Darwin Core</a><br />
+</li>
+<li><a href="data_publication.html#add-metadata">Add metadata</a><br />
+</li>
+<li><a href="ipt.html#publish-your-data-1">Publish your data</a><br />
+</li>
+<li><a href="ipt.html#publish-your-metadata-as-a-data-paper">Publish your data as a dataset paper</a></li>
 </ul>
-<div id="scenarios" class="section level4 hasAnchor" number="2.4.3.1">
-<h4><span class="header-section-number">2.4.3.1</span> Scenarios<a href="eml.html#scenarios" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div id="title" class="section level5 hasAnchor" number="2.4.3.1.1">
-<h5><span class="header-section-number">2.4.3.1.1</span> Title<a href="eml.html#title" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<p>The IPT requires you to provide a <em>Shortname</em>. Shortnames serve as an identifier for the resource within the IPT installation (so should be unique within your IPT), and will be used as a parameter in the URL to access the resource via the Internet. Please use only alphanumeric characters, hyphens, or underscores. E.g. <em>largenet_im</em> in <a href="http://ipt.vliz.be/eurobis/resource?r=largenet_im">http://ipt.vliz.be/eurobis/resource?r=largenet_im</a>. After creating a new dataset resource, the field titel will be filled out with the short name you provided earlier. Please make sure you provide a dataset title following the guidelines below.</p>
-<p>Dataset titles provided to OBIS node managers are often very cryptic, such as an acronym, and often only understandable by the data provider. However, to increae the discoverability and be useful for a larger audience, the dataset title should be as descriptive and complete as possible. OBIS recommends titles to contain information about the taxonomic, geographic and temporal coverage. If the dataset title does not meet these criteria and you believe the title should be changed, then contact the data provider with a suggestion or ask for a more descriptive title. If the dataset has already been published (made publicly available) - and therefore known by that title elsewere, then the same title should be kept (even if it would not meet the proposed guidelines)! Changing the title of an already published dataset cannot be done, as this will generate confusion and possible duplicates in systems like OBIS or GBIF in a later stage.</p>
-<p>The acronym or working title could still be documented in the metadata, so there is no confusion about how the full title is linked to the originally provided acronym or working title.</p>
-<p>:exclamation: Always consult the data provider when changing a dataset title to a more workable and descriptive version.</p>
-<pre><code>Originally received title     Title Recommended by Node Manager
--------------------------     ---------------------------------
-BIOCEAN                       BIOCEAN database on deep sea benthic fauna
-Biomôr                        Benthic data from the Southern Irish Sea from 1989-1991
-Kyklades                      Zoobenthos of the Kyklades (Aegean Sea)
-REPHY                         Réseau de Surveillance phytoplanctonique</code></pre>
+<div id="introduction-1" class="section level4 hasAnchor" number="5.4.0.1">
+<h4><span class="header-section-number">5.4.0.1</span> Introduction<a href="ipt.html#introduction-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The biodiversity datasets and its metadata are published in OBIS using the Integrated Publishing Toolkit (IPT), developed by GBIF. The IPT software assists the user in mapping data to valid Darwin Core terms and archiving and compressing the Darwin Core content with: (i) a descriptor file: <code>meta.xml</code> that maps the core and extensions files to Darwin Core terms, and describes how the core and extensions files are linked, and (ii) the <code>eml.xml</code> file, which contains the dataset metadata in <a href="https://en.wikipedia.org/wiki/Ecological_Metadata_Language">Ecological Metadata Language</a> (EML) format. For instructions on how to enter the metadata go to <a href="../eml">EML</a>. Al these components (i.e. core file, extension files, descriptor file and metadata file), compressed together (as a .zip file), comprise the Darwin Core Archive.</p>
+<p><img src="images/dwca_1.png" class="img-responsive"/></p>
 </div>
-<div id="abstract" class="section level5 hasAnchor" number="2.4.3.1.2">
-<h5><span class="header-section-number">2.4.3.1.2</span> Abstract<a href="eml.html#abstract" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<p>The abstract or description of a dataset provides basic information on the content of the dataset. The information in the abstract should improve understanding and interpretation of the data. It is recommended that the description indicates whether the dataset is a subset of a larger dataset and – if so – provide a link to the parent metadata and/or dataset.</p>
-<p>If the data provider or OBIS node require bi- or multilingual entries for the description (e.g. due to national obligations) then the following procedure can be followed:</p>
-<ul>
-<li>Indicate English as metadata language</li>
-<li>Enter the English description first</li>
-<li>Type a slash (/)</li>
-<li>Enter the description in the second language</li>
-</ul>
-<p><em>Example</em></p>
-<p>The Louis-Marie herbarium grants a priority to the Arctic-alpine, subarctic and boreal species from the province of Quebec and the northern hemisphere. This dataset is mainly populated with specimens from the province of Quebec. / L’Herbier Louis-Marie accorde une priorité aux espèces arctiques-alpines, subarctiques et boréales du Québec, du Canada et de l’hémisphère nord. Ce jeu présente principalement des spécimens provenant du Québec.</p>
+<div id="installation" class="section level4 hasAnchor" number="5.4.0.2">
+<h4><span class="header-section-number">5.4.0.2</span> Installation<a href="ipt.html#installation" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>OBIS nodes can decide to install and manage their IPT on their own institutional servers or use (at no charge!) the OBIS servers in Oostende, Belgium, provided as in-kind by the Flanders Marine Institute (VLIZ), which also runs the European OBIS node (EurOBIS). VLIZ also ensures the IPT instances run on the latest version (important for security updates). Here is an overview of the IPT instances hosted in Oostende: <a href="http://ipt.iobis.org/">http://ipt.iobis.org/</a>. Please contact the secretariat at <a href="mailto:info@iobis.org" class="email">info@iobis.org</a> if you would like OBIS to host your IPT.</p>
+<p>To install your own IPT, please follow the instructions in the <a href="https://github.com/gbif/ipt/wiki/IPT2ManualNotes.wiki#getting-started-guide">GBIF IPT manual</a>.</p>
 </div>
-<div id="people-and-organizations" class="section level5 hasAnchor" number="2.4.3.1.3">
-<h5><span class="header-section-number">2.4.3.1.3</span> People and Organizations<a href="eml.html#people-and-organizations" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<p>The EML has several possible roles/functions to describe a contact, creator, metadata provider and associated party.</p>
-<p>The <code>contact</code> is the person or organization that curates the resource and who should be contacted to get more information or to whom questions with the resource or data should be addressed. Although a number of fields are not required, we strongly recommend providing as much information as possible, and in particular the email address. This will also be the contact information that appears on the OBIS metadata pages.</p>
-<p>The <code>creator</code> is the person or organization responsible for the original creation of the resource content. When there are multiple creators, the one that bears the greatest responsibility is the resource creator, and other people can be added as associated parties with a role such as ‘originator’, ‘content provider’, ‘principle investigator’, etc.</p>
-<p>Possible functions/roles:</p>
-<ul>
-<li>Originator (person/organization that originally gathered/prepared the dataset)</li>
-<li>Content provider (principal person/organization that contributed content to the dataset)</li>
-</ul>
-<p>If the resource contact and the resource creator are identical, the IPT allows you to easily copy the information.</p>
-<p>The <code>metadata provider</code> is the person or organization responsible for producing the resource metadata. If the metadata are provided by the original data provider, then his/her contact details should be filled in. If no metadata are available (e.g. for historical datasets, with no contact person), then the metadata can be completed by e.g. the OBIS node manager and the OBIS node manager becomes the metadata provider.</p>
-<p>The <code>Associated Parties</code> contains information about one or more people or organizations associated with the resource in addition to those already covered on the IPT Basic Metadata page. For example, if there would be multiple contact persons or metadata creators, they can be added in this IPT section. The principle contact/creator should, however, be added in the IPT Basic Metadata section. It is recommended to complete this section together with the IPT Basic Metadata page, to avoid confusion or overlap in added information.</p>
-<p>Possible functions/roles for associated parties are:</p>
-<ul>
-<li>Custodian steward (person/organization responsible for/takes care of the dataset paper)</li>
-<li>Owner (person/organization that owns the data – may or may not be the custodian)</li>
-<li>Point of contact (person/organization to contact for further information on the dataset)</li>
-<li>Principle investigator (primary scientific contact associated with the dataset)</li>
-</ul>
-<p><em>Notes</em></p>
-<p>The owner of a dataset will, in most cases, be an institute, and not an individual person. Although the fields ‘last name’, and ‘position’ are indicated as mandatory fields, it is possible to just add the institute name in the ‘last name’ field for the role ‘owner’.</p>
-<p>The contact persons in the metadata (contact, creator, metadata creator) are used in the dataset citation (auto-generation) and those added as ‘associated parties’ are not included as “co-authors”.</p>
+<div id="registration" class="section level4 hasAnchor" number="5.4.0.3">
+<h4><span class="header-section-number">5.4.0.3</span> Registration<a href="ipt.html#registration" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>When you have installed your IPT, please provide the IPT instance URL to the OBIS secretariat, so your IPT is included in the data harvesting process.</p>
+<p>OBIS recommends to share the data as widely as possible including with other networks such as GBIF. On 13 October 2014, a cooperation agreement was signed between the secretariats of IOC-UNESCO/OBIS and GBIF in which the two parties recognized the two initiatives (OBIS and GBIF) as complementary with common goals (and in particular OBIS’s role in Marine Biodiversity Data). Together they agreed to work towards maximizing the quantity, quality, completeness and fitness for use of marine biodiversity data, accessible through OBIS and GBIF and in particular in the development of data standards (DwC), technology (IPT), maximizing fitness for use, development of biodiversity indicators for assessments, enhance capacity through training and coordinate approaches to the global science/policy interface. At the 4th session of the OBIS Steering Group (SG-OBIS-IV, Feb 2015), it was recommended that GBIF should harvest OBIS tier 2 nodes if OBIS tier 2 nodes could also harvest marine datasets from their GBIF nodes. In this way OBIS could work directly with the entire marine community and promote its standards and best practices. It was not recommended that iOBIS set up a separate IPT for GBIF to harvest, since this would mean a duplication of effort.</p>
+<p>In order to publish data with GBIF, the OBIS node also need to become a <a href="https://www.gbif.org/become-a-publisher">data publisher in GBIF</a>, and link the IPT installation with this publishing organization. OBIS nodes are encouraged to use the OBIS node name as the publishers’s name, unless the host institution requires its institutional name to be used. In the latter case, reference to the OBIS node can be added in the description, as well as between brackets in the title. The name of the IPT instance can also refer to the OBIS node. OBIS nodes are also encouraged to select OBIS as the endorsing organization. In this way, the OBIS node is also listed on the <a href="https://www.gbif.org/participant/304">OBIS page</a> at GBIF.</p>
 </div>
-<div id="license-and-ip-rights" class="section level5 hasAnchor" number="2.4.3.1.4">
-<h5><span class="header-section-number">2.4.3.1.4</span> License and IP Rights<a href="eml.html#license-and-ip-rights" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<p>OBIS has published its guidelines on the sharing and use of data <a href="http://iobis.org/data/policy/">here</a>. The recommended licenses for datasets published in OBIS are the Creative Commons Licenses (CC-0, CC-BY, CC-BY-NC), of which CC-0 is the most preferred at CC-BY-NC is least preferred. A Creative Commons license means:</p>
-<ul>
-<li><p>You are free:</p>
-<ul>
-<li>to share =&gt; to copy, distribute and use the database</li>
-<li>to create =&gt; to produce works from the database</li>
-<li>to adapt =&gt; to modify, transform and build upon the database</li>
-</ul></li>
-<li><p>In case of CC-0:
-<code>public domain</code>: CC-0 is the preferred option identified by the OBIS steering group. You waive any copyright you might have over the data(set) and dedicate it to the public domain. You cannot be held liable for any (mis)use of the data either. Although CC-0 doesn’t legally require users of the data to cite the source, it does not take away the moral responsibility to give attribution, as is common in scientific research. A good blog on why using CC-0 can be found <a href="http://www.canadensys.net/2012/why-we-should-publish-our-data-under-cc0">here</a>.</p></li>
-<li><p>In case of CC-BY:
-<code>Attribution</code>: You must attribute any public use of the database, or works produced from the database, in the manner specified in the license. For any use or redistribution of the database, or works produced from it, you must make clear to others the license of the database and keep intact any notices on the original database.</p></li>
-<li><p>In case of CC-BY-NC:
-<code>non-commercial</code>: like CC-BY but commericial use is not allowed. This licence can be problematic when the data is re-used in scientific journals.</p></li>
-</ul>
-</div>
-<div id="coverage" class="section level5 hasAnchor" number="2.4.3.1.5">
-<h5><span class="header-section-number">2.4.3.1.5</span> Coverage<a href="eml.html#coverage" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<div id="geographic-coverage" class="section level6 hasAnchor" number="2.4.3.1.5.1">
-<h6><span class="header-section-number">2.4.3.1.5.1</span> Geographic Coverage<a href="eml.html#geographic-coverage" class="anchor-section" aria-label="Anchor link to header"></a></h6>
-<p>The IPT allows you to enter the geographic coverage by dragging the markers on the given map or by filling in the coordinates of the bounding box. In the description field, a more elaborate text can be provided to describe the spatial coverage indicating the larger geographical area where the samples were collected. For the latter, the sampling locations can be plotted on a map and – by making use of a Gazetteer – the wider geographical area can be derived: e.g. the relevant Exclusive Economic Zone (EEZ), IHO, FAO fishing area, Large Marine Ecosystem (LME), Marine Ecoregions of the World (MEOW), etc. The <a href="http://www.marineregions.org/">Marine Regions’ Gazetteer</a> might prove to be a useful online tool to define the most relevant sea area(s). There are also <a href="http://www.lifewatch.be/data-services/">LifeWatch Geographical Services</a> that translate geographical positions to these wider geographical areas.</p>
-<p>The information given in this section can also help the OBIS node manager in geographic quality control. If the geographic coverage in the EML e.g. is “North Sea”, but a number of data points are outside of this scope, then this may indicate errors, and should be checked with the data provider.</p>
-<p>If the dataset covers multiple areas (e.g. samples from the North Sea and the Mediterranean Sea), then this should clearly be mentioned in the <code>geographicDescription</code> field. Note that the IPT only allows one bounding box.</p>
-</div>
-<div id="taxonomic-coverage" class="section level6 hasAnchor" number="2.4.3.1.5.2">
-<h6><span class="header-section-number">2.4.3.1.5.2</span> Taxonomic Coverage<a href="eml.html#taxonomic-coverage" class="anchor-section" aria-label="Anchor link to header"></a></h6>
-<p>This section can capture two things:</p>
+<div id="publish-your-data" class="section level4 hasAnchor" number="5.4.0.4">
+<h4><span class="header-section-number">5.4.0.4</span> Publish your data<a href="ipt.html#publish-your-data" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>With regard to populating the IPT with marine data for OBIS, there are two possible approaches:</p>
 <ol style="list-style-type: decimal">
-<li>A description of the range of taxa that are addressed in the data set. OBIS recommends to only add the higher classification (Kingdom, Class or Order) of the involved groups (e.g. Bivalvia, Cetacea, Aves, Ophiuroidea…). You can easily draw a list of higher taxonomic ranks from the WoRMS taxon match service (or ask the data provider). The taxonomic coverage is not a mandatory field, but the information stored here can be very useful as background information. The description can also contain common names, such as e.g. benthic foraminifera or mussels.</li>
-<li>An overview of all the involved taxa (not recommended, as all the taxa are already listed in the dataset).</li>
+<li><p>Manager driven: You as node manager take the responsibility of describing, checking and uploading the data and metadata to the IPT. The data provider can send you the data ‘as such’ or you can make agreements with your providers on the accepted OBIS data format and standards. This approach will give you a very good knowledge of what data is available. It can be time-consuming, as (extended) communication with the data provider will be necessary to document the metadata and to re-format the data to the OBIS standards.</p></li>
+<li><p>User driven: You as node manager can guide (some of your) data providers to publish the data and metadata to the IPT themselves. Your main task will be to make sure that all relevant information and data for OBIS is available and that you perform the necessary quality checks before the data are released to OBIS. Once the Darwin Core Archive is created, the data provider should inform the node manager of this action, so he or she can do the necessary quality control checks. In order for the node manager to be able to look at the dataset, the data provider should add him or her as a “resource manager” to this specific dataset.</p></li>
 </ol>
-<p><em>Note</em></p>
-<p>OBIS also recommends to add information on the (higher) taxonomic groups in the (descriptive) dataset title and abstract.</p>
-</div>
-<div id="temporal-coverage" class="section level6 hasAnchor" number="2.4.3.1.5.3">
-<h6><span class="header-section-number">2.4.3.1.5.3</span> Temporal Coverage<a href="eml.html#temporal-coverage" class="anchor-section" aria-label="Anchor link to header"></a></h6>
-<p>The temporal coverage will be a date range, which can easily be documented. If it is a single date, the start and end date will be the same. The information added here can be used as a quality check for the actual dates in the datasets.</p>
-</div>
-</div>
-<div id="keywords" class="section level5 hasAnchor" number="2.4.3.1.6">
-<h5><span class="header-section-number">2.4.3.1.6</span> Keywords<a href="eml.html#keywords" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<p>Relevant keywords facilitate the discovery of a dataset. An indication of the represented functional groups can help in a general search (e.g. plankton, benthos, zooplankton, phytoplankton, macrobenthos, meiobenthos …). Assigned keywords can be related to taxonomy, habitat, geography or relevant keywords extracted from thesauri such as the <a href="http://www4.fao.org/asfa/asfa.htm">ASFA thesaurus</a>, the <a href="http://www.cabi.org/cabthesaurus/">CAB thesaurus</a> or <a href="http://gcmd.nasa.gov/learn/keyword_list.html">GCMD keywords</a>.</p>
-<p>As taxonomy and geography are already covered in previous sections, there is no need to repeat related keywords here. Please consult your data provider which (relevant) keywords can be assigned.</p>
-</div>
-<div id="project" class="section level5 hasAnchor" number="2.4.3.1.7">
-<h5><span class="header-section-number">2.4.3.1.7</span> Project<a href="eml.html#project" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<p>If the dataset in this resource is produced under a certain project, the metadata on this project can be documented here.
-Part of the information entered here, can partly overlap with information given in other sections of the metadata (e.g. study area description can have lot of parallel with the geographic coverage section). This is not a problem.</p>
-</div>
-<div id="sampling-methods" class="section level5 hasAnchor" number="2.4.3.1.8">
-<h5><span class="header-section-number">2.4.3.1.8</span> Sampling Methods<a href="eml.html#sampling-methods" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<p>The EML can contains descriptions of the sampling and data processing methods. Note that OBIS best practice is to add sampling facts to the extended MeasurementorFact extension, linked to the sampling events in the EventCore.</p>
-</div>
-<div id="citations" class="section level5 hasAnchor" number="2.4.3.1.9">
-<h5><span class="header-section-number">2.4.3.1.9</span> Citations<a href="eml.html#citations" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<p>The dataset citation allows users to properly cite the datasets in further publications or other uses of the data. The OBIS download function provides a list of the dataset citations packaged with the data in a zipped file. A dataset citation is different from the data source citation (in case the data is digitized from a publication), and these references can be added to the additional metadata (see bibliography below). A dataset citation can have the same format of a journal article citaiton, and should include the authors (contact, creator, principle investigator, data managers, custodians, collectors…), the title of the dataset, the name of the data publisher (or custodian institute), and the access point URL to the resource.</p>
-<p>GBIF’s IPT has an auto-generation - Turn On/Off - tool to let the IPT auto-generate the resource citation for you. The citation includes a version number, which is especially important for datasets that are continuously updated. The dataset citation can also include a Citation Identifier - a DOI, URI, or other persistent identifier that resolves to an online dataset web page.</p>
-<p>The OBIS node data managers should try to implement a certain degree of format standardization for the dataset citations. The IPT provides an option to auto-generate a citation based on the EML and is formatted as follows: {dataset.authors} ({dataset.pubDate}) {dataset.title}. [Version {dataset.version}]. {organization.title}.
-{dataset.type} Dataset {dataset.doi}, {dataset.url}</p>
-</div>
-<div id="bibliography" class="section level5 hasAnchor" number="2.4.3.1.10">
-<h5><span class="header-section-number">2.4.3.1.10</span> Bibliography<a href="eml.html#bibliography" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<p>The EML can include the citation of the publications that are related to the described dataset. They can describe the dataset, be based on the dataset or be used in this dataset. Publications can be scientific papers, reports, PhD or master theses. If available, the citation should include the DOI at the end.</p>
-<p>This overview will contribute to a better understanding of the data as these publications can hold important additional information on the data and how they were acquired.</p>
-</div>
-<div id="collection-data" class="section level5 hasAnchor" number="2.4.3.1.11">
-<h5><span class="header-section-number">2.4.3.1.11</span> Collection Data<a href="eml.html#collection-data" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<p>This IPT section should only be filled out if there are specimens held in a museum.
-If relevant, it is strongly recommended that this information is supplied by the data provider or left blank.</p>
-</div>
-<div id="external-links" class="section level5 hasAnchor" number="2.4.3.1.12">
-<h5><span class="header-section-number">2.4.3.1.12</span> External Links<a href="eml.html#external-links" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<p>This section can include URLs to the resource homepage, to download or find additional information.</p>
-<p>Links to the online dataset on the OBIS website can be added once the data is available there.
-For these OBIS links, the required fields should be completed as follows:</p>
+<p>In most cases, there will be a combination of these two approaches. The chosen approach will largely depend on the capacity, availability and willingness of your data provider to invest extra time in formatting and thoroughly describing their data. If you – as node manager – would prefer a partly user driven approach, the following steps to publishing marine data to OBIS briefly explains how you or a data provider can upload, standardize and publish a dataset on the OBIS node IPT, without the hassle of installing and maintaining an IPT instance. The data are published in your organization’s name. This guide is based on the Canadensys 7-step guide to publishing marine data:</p>
+<p>Desmet, P. &amp; C. Sinou. 2012. 7-step guide to data publication. Canadensys. <a href="http://community.canadensys.net/publication/data-publication-guide">http://community.canadensys.net/publication/data-publication-guide</a>.</p>
+<p>:exclamation: Make sure you have obtained the rights from the data owners to publish their data!</p>
+<div id="create-your-resource-on-the-ipt" class="section level5 hasAnchor" number="5.4.0.4.1">
+<h5><span class="header-section-number">5.4.0.4.1</span> Create your resource on the IPT<a href="ipt.html#create-your-resource-on-the-ipt" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>The Integrated Publishing Toolkit (IPT), developed by GBIF, is an open source web application that can be customized by the OBIS node manager. The IPT-instance is used to publish and register all the datasets. To be able to create and manage your own dataset (called a “resource” by GBIF), you will need a user account. Contact your node manager to create one for you.</p>
+<p>Once you have your account, login at the top of the IPT page. Click on the tab Manage resources: it will display all the datasets you are managing and will be empty at first. You can create a new resource at the bottom of the page. Follow the <a href="https://github.com/gbif/ipt/wiki/IPT2ManualNotes.wiki#create-a-new-resource">GBIF IPT manual</a> for more detailed instructions. The first thing that needs to be completed is the shortname of your resource. This shortname uniquely identifies your resource (=dataset) and will eventually show up in the URL of this resource on IPT. These shortname identifiers are also used to create folders on the IPT and they cannot be changed.</p>
+<p>We therefore advise that the shortname:</p>
 <ul>
-<li>Name: online dataset</li>
-<li>Character set: UTF-8</li>
-<li>Data format: html</li>
+<li>is unique, descriptive and short (max. 100 characters)</li>
+<li>does not contain a space, comma, accents or special characters</li>
 </ul>
-<p>If other links are added, then the data format for web-based data is ‘html’. If the link refers to a file, the data format of the file will need to be added (e.g. .xlsx, .pdf …). The character set for all Darwin Core files is UTF-8, whereas for other web pages this can vary.</p>
+<p>Shortname good examples:</p>
+<ul>
+<li>VLIZ_benthos_NorthSea_2000</li>
+<li>UBC_algae_specimens</li>
+<li>…</li>
+</ul>
+<p>:exclamation: When you would delete a resource, please inform your node manager of this action! If you create a test-file, please include <code>_test</code> at the end of your shortname.</p>
+<p>You can also create an entirely new resource by uploading an existing archived resource. See the IPT manual section <a href="https://github.com/gbif/ipt/wiki/IPT2ManualNotes.wiki#upload-a-darwin-core-archive">Upload a DwC-A</a> for instructions.</p>
+<p>Please note the IPT has a 100MB file upload limit, however, there is no limit to the size of a Darwin Core Archive that the IPT can export/publish. Refer to the <a href="https://github.com/gbif/ipt/wiki/IPT2ManualNotes.wiki#file-upload">File upload</a> section in the IPT manual, to find out how to work around the file upload limit.</p>
+<p>Once you have created your resource, you will see an empty resource overview page.</p>
 </div>
-<div id="additional-metadata" class="section level5 hasAnchor" number="2.4.3.1.13">
-<h5><span class="header-section-number">2.4.3.1.13</span> Additional Metadata<a href="eml.html#additional-metadata" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<p>Any remaining information that could not be catalogued under any of the other metadata, can be mentioned here.</p>
+</div>
+<div id="upload-data" class="section level4 hasAnchor" number="5.4.0.5">
+<h4><span class="header-section-number">5.4.0.5</span> Upload data<a href="ipt.html#upload-data" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Uploading your source file to the IPT is easy: go to &gt; your resource overview page &gt; Source Data and click on Choose File. You might want to compress/zip your source file first to improve the upload speed of large files. The IPT will unzip them automatically once received. Follow the <a href="https://github.com/gbif/ipt/wiki/IPT2ManualNotes.wiki#create-a-new-resource">IPT manual</a> for more detailed instructions (including the option to use multiple source files or to upload via a direct database connection). Accepted formats are delimited text files (csv, tab and files using any other delimiter), either directly or compressed as zip or gzip.<br />
+Once your source file has been uploaded correctly, a source file detail page will be shown, displaying how the IPT has interpreted your file (number of columns, rows, header rows, character encoding, delimiters, etc.). Click the preview button to verify everything is correct, click anywhere on the screen to exit the preview, then click save.</p>
+</div>
+<div id="map-your-data-to-darwin-core" class="section level4 hasAnchor" number="5.4.0.6">
+<h4><span class="header-section-number">5.4.0.6</span> Map your data to Darwin Core<a href="ipt.html#map-your-data-to-darwin-core" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Biodiversity data are published in the <a href="../darwincore">Darwin Core</a> standard. It includes a list of defined terms and allows your data to be understood and used by others. It also allows an aggregator like OBIS or GBIF to integrate your data with other datasets.</p>
+<p>Darwin Core mapping is the process of linking the fields in your resource file with the appropriate Darwin Core terms. It is the most challenging step in publishing your data for two reasons: 1) the list of Darwin Core terms can be overwhelming, so it might be difficult to select the ones that are appropriate for your dataset, and 2) the IPT currently only allows one-to-one mapping of fields, so the ease of mapping will depend on your database structure and on the feasibility of exporting as close to Darwin Core as possible. Contact your node manager or the OBIS secretariat at <a href="mailto:info@iobis.org" class="email">info@iobis.org</a> to guide you through the steps, review your mapping, suggest terms etc.</p>
+<p>You can find more information regarding Darwin Core mapping in the <a href="https://github.com/gbif/ipt/wiki/IPT2ManualNotes.wiki#darwin-core-mappings">IPT manual</a> (including core types, extensions, auto-mapping, default values, value translation, etc.).</p>
+</div>
+<div id="publish-your-data-1" class="section level4 hasAnchor" number="5.4.0.7">
+<h4><span class="header-section-number">5.4.0.7</span> Publish your data<a href="ipt.html#publish-your-data-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Go to your resource overview page &gt; Published Release and click Publish. The IPT will now generate your data as Darwin Core, and combine the data with the metadata and package it as a standardized zip-file called a “Darwin Core Archive”. See the IPT manual for more details.</p>
+<p>:exclamation: Hitting the “publish” button does not mean that your dataset is available to everyone, it is still private, with access limited to the resource managers. It will only be publicly available when you have changed Visibility &gt; Public, and it will only be harvested by GBIF when you can Visibility &gt; Registered. The last step is not needed for OBIS to harvest your datasets. Please do not register your dataset with GBIF if your dataset is already published in GBIF by another publisher.</p>
+<p>Back on the resource overview page &gt; Published Release, you can see the details of your first published dataset, including the publication date and the version number. Since your dataset is published privately, the only thing left to do is to click Visibility &gt; Public (see the IPT manual) to make it available to everyone. Warning: please do not do this with your test dataset.</p>
+<p>It is now listed on the IPT homepage and you can share and link to it, e.g.: <code>http://ipt.vliz.be/resource.do?r=kielbay70</code>. This would be a good time to notify any regional or thematic network you are involved in, which can also have an interest in your dataset.</p>
+<p>Your published dataset is a static snapshot of your data and will not change until you upload an updated source file and click publish again or publish a new version (do not create a new resource). This procedure has the advantage that your dataset is always available, does not require a live internet connection to your database and can be easily shared. It also allows you to control the publication process more precisely: version 1, version 2, etc. and users are informed of how recent the data are (via the last publication date).</p>
+<p>To view an older version of the metadata about the resource, just add the trailing parameter <code>&amp;v=n</code> to the URL where <code>v</code> stands for “version”, and <code>n</code> gets replaced by the version number, e.g., <code>http://ipt.vliz.be/ilvo/resource.do?r=zoopl_bpns&amp;v=1</code>. In this way, specific versions of a resource’s EML, RTF, and DwC-A files can be retrieved. Please note, the IPT’s Archival Mode must be turned on in order for old versions of DwC-A to be stored (see <a href="https://github.com/gbif/ipt/wiki/IPT2ManualNotes.wiki#configure-ipt-settings">Configure IPT settings</a> section of the IPT manual).</p>
+</div>
+<div id="publish-your-metadata-as-a-data-paper" class="section level4 hasAnchor" number="5.4.0.8">
+<h4><span class="header-section-number">5.4.0.8</span> Publish your metadata as a data paper<a href="ipt.html#publish-your-metadata-as-a-data-paper" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The Metadata expressed in the EML Profile standard can also be downloaded as a Rich Text Format (RTF) file. The latter can serve as a draft manuscript for a data paper (<a href="http://www.eurekalert.org/pub_releases/2011-11/gbif-fd112711.php">First database-derived ‘data paper’ published in journal</a>, which can be submitted for peer-review to e.g. a <a href="http://journals.pensoft.net/">Pensoft journal</a>.</p>
 
-</div>
-</div>
 </div>
 </div>
             </section>
@@ -659,8 +440,8 @@ For these OBIS links, the required fields should be completed as follows:</p>
           </div>
         </div>
       </div>
-<a href="relational_db.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="nodes.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="data_publication.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="data_sharing.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
