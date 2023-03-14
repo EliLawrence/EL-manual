@@ -8,6 +8,7 @@ data-use-agreement
 disclaimer
 getting-help-in-obis
 part-contributing-data-to-obis
+what-can-you-contribute-and-how
 why-publish-data-to-obis
 how-to-handle-sensitive-data
 obis-data-life-cycle
@@ -103,6 +104,7 @@ s-rrna-gene-metabarcoding-data-of-pico--to-mesoplankton
 multimedia-data-acoustic-imaging
 habitat-data
 tracking-data
+part-ensuring-data-quality
 data-quality-control
 how-to-use-mof-report-and-tool
 data-quality-flags
@@ -120,6 +122,7 @@ uncertain-geolocation
 uncertain-taxaonomic-information
 uncertain-measurements
 non-marine-species
+part-publishing-data
 data-publication-and-sharing
 add-metadata
 licenses
@@ -140,6 +143,7 @@ user-tracking
 simultaneous-publishing-to-gbif
 differences-between-obis-and-gbif-publication-processes
 update-your-data-in-obis
+part-access-data-from-obis
 data-access
 mapper
 r-package
@@ -147,9 +151,10 @@ api
 full-exports
 finding-your-own-data
 citing-data-from-obis
-data-visualization-and-analysis
+part-data-visualization-and-analysis
 example-notebooks-using-data-from-obis
 obisindicators-calculating-visualizing-spatial-biodiversity-using-data-from-obis
+part-additional-resources
 other-resources
 mbon-pole-to-pole-tutorial
 ioos-darwin-core-guide
