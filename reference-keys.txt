@@ -7,7 +7,6 @@ data-sharing-agreement
 data-use-agreement
 disclaimer
 getting-help-in-obis
-part-contributing-data-to-obis
 what-can-you-contribute-and-how
 why-publish-data-to-obis
 how-to-handle-sensitive-data
@@ -64,7 +63,16 @@ extensions-in-obis
 constructing-and-using-indentifier-codes
 eventid
 occurrenceid
+formatting-data-tables
 darwin-core-term-checklist-for-obis
+name-matching-strategy-for-taxonomic-quality-control
+taxon-matching-workflow
+step-1-match-with-worms
+step-2-match-with-other-registers
+step-3-is-taxon-marine
+taxon-match-tools-overview
+how-to-fetch-a-full-classification-for-a-list-of-species-from-worms
+what-to-do-with-non-matching-names
 how-to-format-occurrence-tables
 how-to-format-event-tables
 how-to-format-extendedmeasurementorfact-tables
@@ -104,14 +112,9 @@ s-rrna-gene-metabarcoding-data-of-pico--to-mesoplankton
 multimedia-data-acoustic-imaging
 habitat-data
 tracking-data
-part-ensuring-data-quality
 data-quality-control
 how-to-use-mof-report-and-tool
 data-quality-flags
-name-matching-strategy-for-taxonomic-quality-control
-step-1-match-with-worms
-step-2-match-with-other-registers
-step-3-is-taxon-marine
 geographic-and-data-format-quality-control
 geographical-service
 obis-data-format-validation
@@ -122,7 +125,6 @@ uncertain-geolocation
 uncertain-taxaonomic-information
 uncertain-measurements
 non-marine-species
-part-publishing-data
 data-publication-and-sharing
 add-metadata
 licenses
@@ -143,7 +145,6 @@ user-tracking
 simultaneous-publishing-to-gbif
 differences-between-obis-and-gbif-publication-processes
 update-your-data-in-obis
-part-access-data-from-obis
 data-access
 mapper
 r-package
@@ -151,10 +152,7 @@ api
 full-exports
 finding-your-own-data
 citing-data-from-obis
-part-data-visualization-and-analysis
-example-notebooks-using-data-from-obis
 obisindicators-calculating-visualizing-spatial-biodiversity-using-data-from-obis
-part-additional-resources
 other-resources
 mbon-pole-to-pole-tutorial
 ioos-darwin-core-guide
