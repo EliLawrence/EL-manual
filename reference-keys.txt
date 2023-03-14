@@ -7,7 +7,7 @@ data-sharing-agreement
 data-use-agreement
 disclaimer
 getting-help-in-obis
-how-to-contribute-data-to-obis
+part-contributing-data-to-obis
 why-publish-data-to-obis
 how-to-handle-sensitive-data
 obis-data-life-cycle
@@ -56,7 +56,6 @@ obis-nodes
 terms-of-reference-of-obis-nodes
 how-to-become-an-obis-node
 obis-node-health-status-check-and-transition-strategy
-data-formatting
 dataset-structure
 when-to-use-event-core
 when-to-use-occurrence-core
