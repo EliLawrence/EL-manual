@@ -158,8 +158,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="part"><span><b>Contributing data to OBIS</b></span></li>
 <li class="chapter" data-level="2" data-path="contribute.html"><a href="contribute.html"><i class="fa fa-check"></i><b>2</b> What can you contribute and how?</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="contribute.html"><a href="contribute.html#why-publish-data-to-obis"><i class="fa fa-check"></i><b>2.1</b> Why publish data to OBIS?</a></li>
-<li class="chapter" data-level="2.2" data-path="contribute.html"><a href="contribute.html#how-to-handle-sensitive-data"><i class="fa fa-check"></i><b>2.2</b> How to handle sensitive data?</a></li>
+<li class="chapter" data-level="2.1" data-path="contribute.html"><a href="contribute.html#why-publish-data-to-obis"><i class="fa fa-check"></i><b>2.1</b> Why publish data to OBIS</a></li>
+<li class="chapter" data-level="2.2" data-path="contribute.html"><a href="contribute.html#how-to-handle-sensitive-data"><i class="fa fa-check"></i><b>2.2</b> How to handle sensitive data</a></li>
 <li class="chapter" data-level="2.3" data-path="data_standards.html"><a href="data_standards.html"><i class="fa fa-check"></i><b>2.3</b> OBIS Data Life Cycle</a></li>
 <li class="chapter" data-level="2.4" data-path="data_standards.html"><a href="data_standards.html#biodiversity-data-standards"><i class="fa fa-check"></i><b>2.4</b> Biodiversity data standards</a>
 <ul>
@@ -192,10 +192,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.2" data-path="name_matching.html"><a href="name_matching.html"><i class="fa fa-check"></i><b>4.2</b> Name Matching Strategy for taxonomic quality control</a>
 <ul>
 <li class="chapter" data-level="4.2.1" data-path="name_matching.html"><a href="name_matching.html#taxon-matching-workflow"><i class="fa fa-check"></i><b>4.2.1</b> Taxon Matching Workflow</a></li>
-<li class="chapter" data-level="4.2.2" data-path="name_matching.html"><a href="name_matching.html#taxon-match-tools-overview"><i class="fa fa-check"></i><b>4.2.2</b> Taxon Match Tools Overview</a></li>
+<li class="chapter" data-level="4.2.2" data-path="name_matching.html"><a href="name_matching.html#r-packages-for-taxon-matching"><i class="fa fa-check"></i><b>4.2.2</b> R packages for taxon matching</a></li>
+<li class="chapter" data-level="4.2.3" data-path="name_matching.html"><a href="name_matching.html#taxon-match-tools-overview"><i class="fa fa-check"></i><b>4.2.3</b> Taxon Match Tools Overview</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="format_occurrence.html"><a href="format_occurrence.html"><i class="fa fa-check"></i><b>4.3</b> How to format Occurrence tables</a></li>
-<li class="chapter" data-level="4.4" data-path="format_event.html"><a href="format_event.html"><i class="fa fa-check"></i><b>4.4</b> How to format Event tables</a></li>
+<li class="chapter" data-level="4.3" data-path="format_occurrence.html"><a href="format_occurrence.html"><i class="fa fa-check"></i><b>4.3</b> How to format Occurrence tables</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="format_occurrence.html"><a href="format_occurrence.html#stepwise-guidance-to-format-an-occurrence-table-in-excel"><i class="fa fa-check"></i><b>4.3.1</b> Stepwise Guidance to Format an Occurrence Table (in Excel)</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="format_event.html"><a href="format_event.html"><i class="fa fa-check"></i><b>4.4</b> How to format Event tables</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="format_event.html"><a href="format_event.html#stepwise-guidance-to-format-event-table-in-excel"><i class="fa fa-check"></i><b>4.4.1</b> Stepwise Guidance to Format Event Table (in Excel)</a></li>
+</ul></li>
 <li class="chapter" data-level="4.5" data-path="format_emof.html"><a href="format_emof.html"><i class="fa fa-check"></i><b>4.5</b> How to format extendedMeasurementOrFact tables</a></li>
 <li class="chapter" data-level="4.6" data-path="vocabulary.html"><a href="vocabulary.html"><i class="fa fa-check"></i><b>4.6</b> Choosing Vocabularies for your dataset</a>
 <ul>
@@ -304,72 +311,72 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>At the top of the page there’s a button to open the occurrence records in the mapper where they can be downloaded as CSV. The occurrence table also has the <code>flags</code> column, so when inspecting non matching names for example it’s easy to check if the names at hand have any WoRMS annotations:</p>
 <p><img src="images/qc_flag_flags.png" class="img-responsive-50"/></p>
 <p>Inspecting flags using R is also very easy. The example below fetches the data from a single dataset, and lists the flags and the number of records affected. Notice that the <code>occurrence()</code> call has <code>dropped = TRUE</code> to make sure that any dropped records are included in the results:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="dataquality.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(robis)</span>
-<span id="cb13-2"><a href="dataquality.html#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
-<span id="cb13-3"><a href="dataquality.html#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb13-4"><a href="dataquality.html#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-5"><a href="dataquality.html#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="co"># fetch all records for a dataset</span></span>
-<span id="cb13-6"><a href="dataquality.html#cb13-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-7"><a href="dataquality.html#cb13-7" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">occurrence</span>(<span class="at">datasetid =</span> <span class="st">&quot;f3d7798e-7bf2-4b85-8ed4-18f2c1849d7d&quot;</span>, <span class="at">dropped =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb13-8"><a href="dataquality.html#cb13-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-9"><a href="dataquality.html#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="co"># unnest flags</span></span>
-<span id="cb13-10"><a href="dataquality.html#cb13-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-11"><a href="dataquality.html#cb13-11" aria-hidden="true" tabindex="-1"></a>df_long <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> </span>
-<span id="cb13-12"><a href="dataquality.html#cb13-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">flags =</span> <span class="fu">strsplit</span>(flags, <span class="st">&quot;,&quot;</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb13-13"><a href="dataquality.html#cb13-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest</span>(flags)</span>
-<span id="cb13-14"><a href="dataquality.html#cb13-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-15"><a href="dataquality.html#cb13-15" aria-hidden="true" tabindex="-1"></a><span class="co"># get frequency per flag</span></span>
-<span id="cb13-16"><a href="dataquality.html#cb13-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-17"><a href="dataquality.html#cb13-17" aria-hidden="true" tabindex="-1"></a><span class="fu">data.frame</span>(<span class="fu">table</span>(df_long<span class="sc">$</span>flags))</span></code></pre></div>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="dataquality.html#cb14-1" aria-hidden="true" tabindex="-1"></a>                                Var1 Freq</span>
-<span id="cb14-2"><a href="dataquality.html#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span>                 depth_exceeds_bath   <span class="dv">78</span></span>
-<span id="cb14-3"><a href="dataquality.html#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span>                   no_accepted_name   <span class="dv">17</span></span>
-<span id="cb14-4"><a href="dataquality.html#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span>                           no_depth    <span class="dv">5</span></span>
-<span id="cb14-5"><a href="dataquality.html#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span>                           no_match  <span class="dv">138</span></span>
-<span id="cb14-6"><a href="dataquality.html#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span>                         not_marine    <span class="dv">2</span></span>
-<span id="cb14-7"><a href="dataquality.html#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="dv">6</span>                            on_land    <span class="dv">1</span></span>
-<span id="cb14-8"><a href="dataquality.html#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="dv">7</span>      worms_annotation_await_editor    <span class="dv">5</span></span>
-<span id="cb14-9"><a href="dataquality.html#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="dv">8</span>  worms_annotation_reject_ambiguous    <span class="dv">2</span></span>
-<span id="cb14-10"><a href="dataquality.html#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="dv">9</span>    worms_annotation_reject_habitat    <span class="dv">2</span></span>
-<span id="cb14-11"><a href="dataquality.html#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span>             worms_annotation_todo    <span class="dv">9</span></span>
-<span id="cb14-12"><a href="dataquality.html#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="dv">11</span>     worms_annotation_unresolvable    <span class="dv">7</span></span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="dataquality.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(robis)</span>
+<span id="cb10-2"><a href="dataquality.html#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb10-3"><a href="dataquality.html#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb10-4"><a href="dataquality.html#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="dataquality.html#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co"># fetch all records for a dataset</span></span>
+<span id="cb10-6"><a href="dataquality.html#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="dataquality.html#cb10-7" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">occurrence</span>(<span class="at">datasetid =</span> <span class="st">&quot;f3d7798e-7bf2-4b85-8ed4-18f2c1849d7d&quot;</span>, <span class="at">dropped =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb10-8"><a href="dataquality.html#cb10-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-9"><a href="dataquality.html#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="co"># unnest flags</span></span>
+<span id="cb10-10"><a href="dataquality.html#cb10-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-11"><a href="dataquality.html#cb10-11" aria-hidden="true" tabindex="-1"></a>df_long <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> </span>
+<span id="cb10-12"><a href="dataquality.html#cb10-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">flags =</span> <span class="fu">strsplit</span>(flags, <span class="st">&quot;,&quot;</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb10-13"><a href="dataquality.html#cb10-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest</span>(flags)</span>
+<span id="cb10-14"><a href="dataquality.html#cb10-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-15"><a href="dataquality.html#cb10-15" aria-hidden="true" tabindex="-1"></a><span class="co"># get frequency per flag</span></span>
+<span id="cb10-16"><a href="dataquality.html#cb10-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-17"><a href="dataquality.html#cb10-17" aria-hidden="true" tabindex="-1"></a><span class="fu">data.frame</span>(<span class="fu">table</span>(df_long<span class="sc">$</span>flags))</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="dataquality.html#cb11-1" aria-hidden="true" tabindex="-1"></a>                                Var1 Freq</span>
+<span id="cb11-2"><a href="dataquality.html#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span>                 depth_exceeds_bath   <span class="dv">78</span></span>
+<span id="cb11-3"><a href="dataquality.html#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span>                   no_accepted_name   <span class="dv">17</span></span>
+<span id="cb11-4"><a href="dataquality.html#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span>                           no_depth    <span class="dv">5</span></span>
+<span id="cb11-5"><a href="dataquality.html#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span>                           no_match  <span class="dv">138</span></span>
+<span id="cb11-6"><a href="dataquality.html#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span>                         not_marine    <span class="dv">2</span></span>
+<span id="cb11-7"><a href="dataquality.html#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="dv">6</span>                            on_land    <span class="dv">1</span></span>
+<span id="cb11-8"><a href="dataquality.html#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="dv">7</span>      worms_annotation_await_editor    <span class="dv">5</span></span>
+<span id="cb11-9"><a href="dataquality.html#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="dv">8</span>  worms_annotation_reject_ambiguous    <span class="dv">2</span></span>
+<span id="cb11-10"><a href="dataquality.html#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="dv">9</span>    worms_annotation_reject_habitat    <span class="dv">2</span></span>
+<span id="cb11-11"><a href="dataquality.html#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span>             worms_annotation_todo    <span class="dv">9</span></span>
+<span id="cb11-12"><a href="dataquality.html#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="dv">11</span>     worms_annotation_unresolvable    <span class="dv">7</span></span></code></pre></div>
 <p>This second example creates a list of annotated names for a dataset:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="dataquality.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(robis)</span>
-<span id="cb15-2"><a href="dataquality.html#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb15-3"><a href="dataquality.html#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
-<span id="cb15-4"><a href="dataquality.html#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-5"><a href="dataquality.html#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="co"># fetch all records for a dataset</span></span>
-<span id="cb15-6"><a href="dataquality.html#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-7"><a href="dataquality.html#cb15-7" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">occurrence</span>(<span class="at">datasetid =</span> <span class="st">&quot;f3d7798e-7bf2-4b85-8ed4-18f2c1849d7d&quot;</span>, <span class="at">dropped =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb15-8"><a href="dataquality.html#cb15-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-9"><a href="dataquality.html#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="co"># only keep WoRMS annotations and summarize</span></span>
-<span id="cb15-10"><a href="dataquality.html#cb15-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-11"><a href="dataquality.html#cb15-11" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
-<span id="cb15-12"><a href="dataquality.html#cb15-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(originalScientificName, flags) <span class="sc">%&gt;%</span></span>
-<span id="cb15-13"><a href="dataquality.html#cb15-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">flags =</span> <span class="fu">strsplit</span>(flags, <span class="st">&quot;,&quot;</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb15-14"><a href="dataquality.html#cb15-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest</span>(flags) <span class="sc">%&gt;%</span></span>
-<span id="cb15-15"><a href="dataquality.html#cb15-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(flags, <span class="st">&quot;worms&quot;</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb15-16"><a href="dataquality.html#cb15-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(originalScientificName, flags) <span class="sc">%&gt;%</span></span>
-<span id="cb15-17"><a href="dataquality.html#cb15-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">records =</span> <span class="fu">n</span>())</span></code></pre></div>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="dataquality.html#cb16-1" aria-hidden="true" tabindex="-1"></a>   originalScientificName            flags                             records</span>
-<span id="cb16-2"><a href="dataquality.html#cb16-2" aria-hidden="true" tabindex="-1"></a>   <span class="sc">&lt;</span>chr<span class="sc">&gt;</span>                             <span class="er">&lt;</span>chr<span class="sc">&gt;</span>                               <span class="er">&lt;</span>int<span class="sc">&gt;</span></span>
-<span id="cb16-3"><a href="dataquality.html#cb16-3" aria-hidden="true" tabindex="-1"></a> <span class="dv">1</span> Alcyonidium fruticosa             worms_annotation_reject_habitat         <span class="dv">1</span></span>
-<span id="cb16-4"><a href="dataquality.html#cb16-4" aria-hidden="true" tabindex="-1"></a> <span class="dv">2</span> <span class="fu">Apicularia</span> (Thapsiella) rudis sp. worms_annotation_unresolvable           <span class="dv">1</span></span>
-<span id="cb16-5"><a href="dataquality.html#cb16-5" aria-hidden="true" tabindex="-1"></a> <span class="dv">3</span> Arcoscalpellum vegae              worms_annotation_unresolvable           <span class="dv">1</span></span>
-<span id="cb16-6"><a href="dataquality.html#cb16-6" aria-hidden="true" tabindex="-1"></a> <span class="dv">4</span> Balanus evermanni                 worms_annotation_await_editor           <span class="dv">1</span></span>
-<span id="cb16-7"><a href="dataquality.html#cb16-7" aria-hidden="true" tabindex="-1"></a> <span class="dv">5</span> Chloramidae                       worms_annotation_reject_ambiguous       <span class="dv">2</span></span>
-<span id="cb16-8"><a href="dataquality.html#cb16-8" aria-hidden="true" tabindex="-1"></a> <span class="dv">6</span> Cleippides quadridentatus         worms_annotation_todo                   <span class="dv">1</span></span>
-<span id="cb16-9"><a href="dataquality.html#cb16-9" aria-hidden="true" tabindex="-1"></a> <span class="dv">7</span> Enhydrosoma hoplacantha           worms_annotation_reject_habitat         <span class="dv">1</span></span>
-<span id="cb16-10"><a href="dataquality.html#cb16-10" aria-hidden="true" tabindex="-1"></a> <span class="dv">8</span> Hippomedon setosa                 worms_annotation_unresolvable           <span class="dv">1</span></span>
-<span id="cb16-11"><a href="dataquality.html#cb16-11" aria-hidden="true" tabindex="-1"></a> <span class="dv">9</span> Leionucula tenuis                 worms_annotation_await_editor           <span class="dv">1</span></span>
-<span id="cb16-12"><a href="dataquality.html#cb16-12" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span> Ophiocten borealis                worms_annotation_todo                   <span class="dv">1</span></span>
-<span id="cb16-13"><a href="dataquality.html#cb16-13" aria-hidden="true" tabindex="-1"></a><span class="dv">11</span> Ophiopholis gracilis              worms_annotation_todo                   <span class="dv">1</span></span>
-<span id="cb16-14"><a href="dataquality.html#cb16-14" aria-hidden="true" tabindex="-1"></a><span class="dv">12</span> Priapulus australis               worms_annotation_await_editor           <span class="dv">1</span></span>
-<span id="cb16-15"><a href="dataquality.html#cb16-15" aria-hidden="true" tabindex="-1"></a><span class="dv">13</span> Primnoella residaeformis          worms_annotation_unresolvable           <span class="dv">1</span></span>
-<span id="cb16-16"><a href="dataquality.html#cb16-16" aria-hidden="true" tabindex="-1"></a><span class="dv">14</span> Robulus orbigny                   worms_annotation_unresolvable           <span class="dv">1</span></span>
-<span id="cb16-17"><a href="dataquality.html#cb16-17" aria-hidden="true" tabindex="-1"></a><span class="dv">15</span> Tetraxonia                        worms_annotation_unresolvable           <span class="dv">2</span></span>
-<span id="cb16-18"><a href="dataquality.html#cb16-18" aria-hidden="true" tabindex="-1"></a><span class="dv">16</span> Tmetonyx barentsi                 worms_annotation_await_editor           <span class="dv">2</span></span>
-<span id="cb16-19"><a href="dataquality.html#cb16-19" aria-hidden="true" tabindex="-1"></a><span class="dv">17</span> Triaxonida                        worms_annotation_todo                   <span class="dv">6</span></span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="dataquality.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(robis)</span>
+<span id="cb12-2"><a href="dataquality.html#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb12-3"><a href="dataquality.html#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
+<span id="cb12-4"><a href="dataquality.html#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="dataquality.html#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co"># fetch all records for a dataset</span></span>
+<span id="cb12-6"><a href="dataquality.html#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="dataquality.html#cb12-7" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">occurrence</span>(<span class="at">datasetid =</span> <span class="st">&quot;f3d7798e-7bf2-4b85-8ed4-18f2c1849d7d&quot;</span>, <span class="at">dropped =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb12-8"><a href="dataquality.html#cb12-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-9"><a href="dataquality.html#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="co"># only keep WoRMS annotations and summarize</span></span>
+<span id="cb12-10"><a href="dataquality.html#cb12-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-11"><a href="dataquality.html#cb12-11" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
+<span id="cb12-12"><a href="dataquality.html#cb12-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(originalScientificName, flags) <span class="sc">%&gt;%</span></span>
+<span id="cb12-13"><a href="dataquality.html#cb12-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">flags =</span> <span class="fu">strsplit</span>(flags, <span class="st">&quot;,&quot;</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb12-14"><a href="dataquality.html#cb12-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest</span>(flags) <span class="sc">%&gt;%</span></span>
+<span id="cb12-15"><a href="dataquality.html#cb12-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(flags, <span class="st">&quot;worms&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb12-16"><a href="dataquality.html#cb12-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(originalScientificName, flags) <span class="sc">%&gt;%</span></span>
+<span id="cb12-17"><a href="dataquality.html#cb12-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">records =</span> <span class="fu">n</span>())</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="dataquality.html#cb13-1" aria-hidden="true" tabindex="-1"></a>   originalScientificName            flags                             records</span>
+<span id="cb13-2"><a href="dataquality.html#cb13-2" aria-hidden="true" tabindex="-1"></a>   <span class="sc">&lt;</span>chr<span class="sc">&gt;</span>                             <span class="er">&lt;</span>chr<span class="sc">&gt;</span>                               <span class="er">&lt;</span>int<span class="sc">&gt;</span></span>
+<span id="cb13-3"><a href="dataquality.html#cb13-3" aria-hidden="true" tabindex="-1"></a> <span class="dv">1</span> Alcyonidium fruticosa             worms_annotation_reject_habitat         <span class="dv">1</span></span>
+<span id="cb13-4"><a href="dataquality.html#cb13-4" aria-hidden="true" tabindex="-1"></a> <span class="dv">2</span> <span class="fu">Apicularia</span> (Thapsiella) rudis sp. worms_annotation_unresolvable           <span class="dv">1</span></span>
+<span id="cb13-5"><a href="dataquality.html#cb13-5" aria-hidden="true" tabindex="-1"></a> <span class="dv">3</span> Arcoscalpellum vegae              worms_annotation_unresolvable           <span class="dv">1</span></span>
+<span id="cb13-6"><a href="dataquality.html#cb13-6" aria-hidden="true" tabindex="-1"></a> <span class="dv">4</span> Balanus evermanni                 worms_annotation_await_editor           <span class="dv">1</span></span>
+<span id="cb13-7"><a href="dataquality.html#cb13-7" aria-hidden="true" tabindex="-1"></a> <span class="dv">5</span> Chloramidae                       worms_annotation_reject_ambiguous       <span class="dv">2</span></span>
+<span id="cb13-8"><a href="dataquality.html#cb13-8" aria-hidden="true" tabindex="-1"></a> <span class="dv">6</span> Cleippides quadridentatus         worms_annotation_todo                   <span class="dv">1</span></span>
+<span id="cb13-9"><a href="dataquality.html#cb13-9" aria-hidden="true" tabindex="-1"></a> <span class="dv">7</span> Enhydrosoma hoplacantha           worms_annotation_reject_habitat         <span class="dv">1</span></span>
+<span id="cb13-10"><a href="dataquality.html#cb13-10" aria-hidden="true" tabindex="-1"></a> <span class="dv">8</span> Hippomedon setosa                 worms_annotation_unresolvable           <span class="dv">1</span></span>
+<span id="cb13-11"><a href="dataquality.html#cb13-11" aria-hidden="true" tabindex="-1"></a> <span class="dv">9</span> Leionucula tenuis                 worms_annotation_await_editor           <span class="dv">1</span></span>
+<span id="cb13-12"><a href="dataquality.html#cb13-12" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span> Ophiocten borealis                worms_annotation_todo                   <span class="dv">1</span></span>
+<span id="cb13-13"><a href="dataquality.html#cb13-13" aria-hidden="true" tabindex="-1"></a><span class="dv">11</span> Ophiopholis gracilis              worms_annotation_todo                   <span class="dv">1</span></span>
+<span id="cb13-14"><a href="dataquality.html#cb13-14" aria-hidden="true" tabindex="-1"></a><span class="dv">12</span> Priapulus australis               worms_annotation_await_editor           <span class="dv">1</span></span>
+<span id="cb13-15"><a href="dataquality.html#cb13-15" aria-hidden="true" tabindex="-1"></a><span class="dv">13</span> Primnoella residaeformis          worms_annotation_unresolvable           <span class="dv">1</span></span>
+<span id="cb13-16"><a href="dataquality.html#cb13-16" aria-hidden="true" tabindex="-1"></a><span class="dv">14</span> Robulus orbigny                   worms_annotation_unresolvable           <span class="dv">1</span></span>
+<span id="cb13-17"><a href="dataquality.html#cb13-17" aria-hidden="true" tabindex="-1"></a><span class="dv">15</span> Tetraxonia                        worms_annotation_unresolvable           <span class="dv">2</span></span>
+<span id="cb13-18"><a href="dataquality.html#cb13-18" aria-hidden="true" tabindex="-1"></a><span class="dv">16</span> Tmetonyx barentsi                 worms_annotation_await_editor           <span class="dv">2</span></span>
+<span id="cb13-19"><a href="dataquality.html#cb13-19" aria-hidden="true" tabindex="-1"></a><span class="dv">17</span> Triaxonida                        worms_annotation_todo                   <span class="dv">6</span></span></code></pre></div>
 
             </section>
 

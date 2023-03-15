@@ -70,11 +70,14 @@ taxon-matching-workflow
 step-1-match-with-worms
 step-2-match-with-other-registers
 step-3-is-taxon-marine
+r-packages-for-taxon-matching
 taxon-match-tools-overview
 how-to-fetch-a-full-classification-for-a-list-of-species-from-worms
 what-to-do-with-non-matching-names
 how-to-format-occurrence-tables
+stepwise-guidance-to-format-an-occurrence-table-in-excel
 how-to-format-event-tables
+stepwise-guidance-to-format-event-table-in-excel
 how-to-format-extendedmeasurementorfact-tables
 choosing-vocabularies-for-your-dataset
 match-your-data-with-dwc-vocabulary

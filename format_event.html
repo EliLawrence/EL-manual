@@ -158,8 +158,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="part"><span><b>Contributing data to OBIS</b></span></li>
 <li class="chapter" data-level="2" data-path="contribute.html"><a href="contribute.html"><i class="fa fa-check"></i><b>2</b> What can you contribute and how?</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="contribute.html"><a href="contribute.html#why-publish-data-to-obis"><i class="fa fa-check"></i><b>2.1</b> Why publish data to OBIS?</a></li>
-<li class="chapter" data-level="2.2" data-path="contribute.html"><a href="contribute.html#how-to-handle-sensitive-data"><i class="fa fa-check"></i><b>2.2</b> How to handle sensitive data?</a></li>
+<li class="chapter" data-level="2.1" data-path="contribute.html"><a href="contribute.html#why-publish-data-to-obis"><i class="fa fa-check"></i><b>2.1</b> Why publish data to OBIS</a></li>
+<li class="chapter" data-level="2.2" data-path="contribute.html"><a href="contribute.html#how-to-handle-sensitive-data"><i class="fa fa-check"></i><b>2.2</b> How to handle sensitive data</a></li>
 <li class="chapter" data-level="2.3" data-path="data_standards.html"><a href="data_standards.html"><i class="fa fa-check"></i><b>2.3</b> OBIS Data Life Cycle</a></li>
 <li class="chapter" data-level="2.4" data-path="data_standards.html"><a href="data_standards.html#biodiversity-data-standards"><i class="fa fa-check"></i><b>2.4</b> Biodiversity data standards</a>
 <ul>
@@ -192,10 +192,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.2" data-path="name_matching.html"><a href="name_matching.html"><i class="fa fa-check"></i><b>4.2</b> Name Matching Strategy for taxonomic quality control</a>
 <ul>
 <li class="chapter" data-level="4.2.1" data-path="name_matching.html"><a href="name_matching.html#taxon-matching-workflow"><i class="fa fa-check"></i><b>4.2.1</b> Taxon Matching Workflow</a></li>
-<li class="chapter" data-level="4.2.2" data-path="name_matching.html"><a href="name_matching.html#taxon-match-tools-overview"><i class="fa fa-check"></i><b>4.2.2</b> Taxon Match Tools Overview</a></li>
+<li class="chapter" data-level="4.2.2" data-path="name_matching.html"><a href="name_matching.html#r-packages-for-taxon-matching"><i class="fa fa-check"></i><b>4.2.2</b> R packages for taxon matching</a></li>
+<li class="chapter" data-level="4.2.3" data-path="name_matching.html"><a href="name_matching.html#taxon-match-tools-overview"><i class="fa fa-check"></i><b>4.2.3</b> Taxon Match Tools Overview</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="format_occurrence.html"><a href="format_occurrence.html"><i class="fa fa-check"></i><b>4.3</b> How to format Occurrence tables</a></li>
-<li class="chapter" data-level="4.4" data-path="format_event.html"><a href="format_event.html"><i class="fa fa-check"></i><b>4.4</b> How to format Event tables</a></li>
+<li class="chapter" data-level="4.3" data-path="format_occurrence.html"><a href="format_occurrence.html"><i class="fa fa-check"></i><b>4.3</b> How to format Occurrence tables</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="format_occurrence.html"><a href="format_occurrence.html#stepwise-guidance-to-format-an-occurrence-table-in-excel"><i class="fa fa-check"></i><b>4.3.1</b> Stepwise Guidance to Format an Occurrence Table (in Excel)</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="format_event.html"><a href="format_event.html"><i class="fa fa-check"></i><b>4.4</b> How to format Event tables</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="format_event.html"><a href="format_event.html#stepwise-guidance-to-format-event-table-in-excel"><i class="fa fa-check"></i><b>4.4.1</b> Stepwise Guidance to Format Event Table (in Excel)</a></li>
+</ul></li>
 <li class="chapter" data-level="4.5" data-path="format_emof.html"><a href="format_emof.html"><i class="fa fa-check"></i><b>4.5</b> How to format extendedMeasurementOrFact tables</a></li>
 <li class="chapter" data-level="4.6" data-path="vocabulary.html"><a href="vocabulary.html"><i class="fa fa-check"></i><b>4.6</b> Choosing Vocabularies for your dataset</a>
 <ul>
@@ -294,7 +301,60 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="how-to-format-event-tables" class="section level2 hasAnchor" number="4.4">
 <h2><span class="header-section-number">4.4</span> How to format Event tables<a href="format_event.html#how-to-format-event-tables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>If your dataset uses an Event Core structure, data fields included in your dataset should include the following required terms:</p>
+<ul>
+<li><code>eventDate</code></li>
+<li><code>eventID</code></li>
+<li><code>parentEventID</code> (if applicable)</li>
+<li><code>decimalLatitude</code></li>
+<li><code>decimalLongitude</code></li>
+</ul>
+<p>Other terms you should consider adding are grouped by their associated Darwin Core class in the table below. See the <a href="checklist.html">term checklist</a> for a more complete list of DwC terms for the Event table.</p>
+<p>Class Event | DwC:parentEventID
+Class Event | DwC:eventRemarks
+Class Event | DwC:eventType
+Class Event | DwC:year
+Class Event | DwC:month
+Class Event | DwC:day
+Class Event | DwC:type
+Class Location | DwC:country
+Class Location | DwC:island
+Class Location | DwC:coordinateUncertaintyInMeters
+Class Location | DwC:countryCode
+Class Location | DwC:footprintWKT
+Class Location | DwC:geodeticDatum
+Class Location | DwC:islandGroup
+Class Location | DwC:locality
+Class Location | DwC:locationAccordingTo
+Class Location | DwC:locationID
+Class Location | DwC:locationRemarks
+Class Location | DwC:maximumDepthInMeters
+Class Location | DwC:minimumDepthInMeters
+Class Location | DwC:stateProvince
+Class Location | DwC:verbatimCoordinates
+Class Location | DwC:verbatimDepth
+Class Location | DwC:waterBody</p>
+<p>Terms related to measurements, either biotic (e.g., sex, lifestage) or abiotic will be included in extendedMeasurementOrFact table <em>not</em> the Event Core or Occurrence extension table.</p>
+<div id="stepwise-guidance-to-format-event-table-in-excel" class="section level3 hasAnchor" number="4.4.1">
+<h3><span class="header-section-number">4.4.1</span> Stepwise Guidance to Format Event Table (in Excel)<a href="format_event.html#stepwise-guidance-to-format-event-table-in-excel" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Before proceeding with the below, make sure each record already has an <a href="identifiers.html">eventID</a>.</p>
+<ol style="list-style-type: decimal">
+<li>Identify columns in your data that will match with Darwin Core event fields
+<ul>
+<li>Include any relevant abiotic measurements (ENV-DATA) related to sampling events (e.g. sampling protocols). We will add these to the eMoF table later.</li>
+</ul></li>
+<li>Copy these columns to a new sheet and name it Event</li>
+<li>Delete duplicate data so only unique events are left.</li>
+<li>Identify the hierarchical event structure in your data, if present</li>
+<li>Add and fill the <code>parentEventID</code> and <code>type</code> fields as applicable</li>
+<li>Create new records for parent Events</li>
+<li>Ensure dates and time are <a href="link%20#30">formatted according to ISO 8601 standards</a> in the eventDate field</li>
+<li>Add any other relevant fields as indicated above</li>
+</ol>
+<p>Watch the video tutorial of this process.</p>
+<p>After completing the formatting of your Event Core table, you can next format your extendedMeasurementOrFact table. To format the Occurrence extension table, see the <a href="format_occurrence.html">Occurrence table</a> section of this manual.</p>
 
+</div>
 </div>
             </section>
 

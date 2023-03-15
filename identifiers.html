@@ -158,8 +158,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="part"><span><b>Contributing data to OBIS</b></span></li>
 <li class="chapter" data-level="2" data-path="contribute.html"><a href="contribute.html"><i class="fa fa-check"></i><b>2</b> What can you contribute and how?</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="contribute.html"><a href="contribute.html#why-publish-data-to-obis"><i class="fa fa-check"></i><b>2.1</b> Why publish data to OBIS?</a></li>
-<li class="chapter" data-level="2.2" data-path="contribute.html"><a href="contribute.html#how-to-handle-sensitive-data"><i class="fa fa-check"></i><b>2.2</b> How to handle sensitive data?</a></li>
+<li class="chapter" data-level="2.1" data-path="contribute.html"><a href="contribute.html#why-publish-data-to-obis"><i class="fa fa-check"></i><b>2.1</b> Why publish data to OBIS</a></li>
+<li class="chapter" data-level="2.2" data-path="contribute.html"><a href="contribute.html#how-to-handle-sensitive-data"><i class="fa fa-check"></i><b>2.2</b> How to handle sensitive data</a></li>
 <li class="chapter" data-level="2.3" data-path="data_standards.html"><a href="data_standards.html"><i class="fa fa-check"></i><b>2.3</b> OBIS Data Life Cycle</a></li>
 <li class="chapter" data-level="2.4" data-path="data_standards.html"><a href="data_standards.html#biodiversity-data-standards"><i class="fa fa-check"></i><b>2.4</b> Biodiversity data standards</a>
 <ul>
@@ -192,10 +192,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.2" data-path="name_matching.html"><a href="name_matching.html"><i class="fa fa-check"></i><b>4.2</b> Name Matching Strategy for taxonomic quality control</a>
 <ul>
 <li class="chapter" data-level="4.2.1" data-path="name_matching.html"><a href="name_matching.html#taxon-matching-workflow"><i class="fa fa-check"></i><b>4.2.1</b> Taxon Matching Workflow</a></li>
-<li class="chapter" data-level="4.2.2" data-path="name_matching.html"><a href="name_matching.html#taxon-match-tools-overview"><i class="fa fa-check"></i><b>4.2.2</b> Taxon Match Tools Overview</a></li>
+<li class="chapter" data-level="4.2.2" data-path="name_matching.html"><a href="name_matching.html#r-packages-for-taxon-matching"><i class="fa fa-check"></i><b>4.2.2</b> R packages for taxon matching</a></li>
+<li class="chapter" data-level="4.2.3" data-path="name_matching.html"><a href="name_matching.html#taxon-match-tools-overview"><i class="fa fa-check"></i><b>4.2.3</b> Taxon Match Tools Overview</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="format_occurrence.html"><a href="format_occurrence.html"><i class="fa fa-check"></i><b>4.3</b> How to format Occurrence tables</a></li>
-<li class="chapter" data-level="4.4" data-path="format_event.html"><a href="format_event.html"><i class="fa fa-check"></i><b>4.4</b> How to format Event tables</a></li>
+<li class="chapter" data-level="4.3" data-path="format_occurrence.html"><a href="format_occurrence.html"><i class="fa fa-check"></i><b>4.3</b> How to format Occurrence tables</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="format_occurrence.html"><a href="format_occurrence.html#stepwise-guidance-to-format-an-occurrence-table-in-excel"><i class="fa fa-check"></i><b>4.3.1</b> Stepwise Guidance to Format an Occurrence Table (in Excel)</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="format_event.html"><a href="format_event.html"><i class="fa fa-check"></i><b>4.4</b> How to format Event tables</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="format_event.html"><a href="format_event.html#stepwise-guidance-to-format-event-table-in-excel"><i class="fa fa-check"></i><b>4.4.1</b> Stepwise Guidance to Format Event Table (in Excel)</a></li>
+</ul></li>
 <li class="chapter" data-level="4.5" data-path="format_emof.html"><a href="format_emof.html"><i class="fa fa-check"></i><b>4.5</b> How to format extendedMeasurementOrFact tables</a></li>
 <li class="chapter" data-level="4.6" data-path="vocabulary.html"><a href="vocabulary.html"><i class="fa fa-check"></i><b>4.6</b> Choosing Vocabularies for your dataset</a>
 <ul>
@@ -299,7 +306,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Using a unique identifier for each physical sample or subsample in your dataset taken at each location and time is highly recommended to ensure sample traceability and data provenance. <code>eventID</code> is an identifier for an individual sampling or observation event, whereas <code>parentEventID</code> is an identifier for a parent event, which is composed of one or more sub-sampling (child) events (eventIDs).</p>
 <p><code>eventID</code> can be used for replicated samples or sub-samples. It is important to make sure each replicate sample receives a unique <code>eventID</code>, which could be based on the unique sample ID in your dataset. Sample ID can also be recorded in <code>materialSampleID</code>, as OBIS does not need to have separate eventIDs and <code>materialSampleIDs</code>. Rather OBIS can treat these two terms as equivalent. Be sure to still fill in the eventID field if you want to use materialSampleID, as OBIS only uses eventID and parentID for structuring datasets, not sample ID. This does not prevent you from using the field if you would like to.</p>
 <p>If you do not already have a <code>materialSampleID</code>, creating a unique eventID for your data records can be as straightforward as combining different fields from your data.</p>
-<p>:warning: You should consider carefully what combination of fields will generate a <strong>unique</strong> event. Combinations including date, time, location, and depth are common elements to help generate such unique codes.</p>
+<blockquote>
+<p><strong>Note</strong>
+You should consider carefully what combination of fields will generate a <strong>unique</strong> event. Combinations including date, time, location, and depth are common elements to help generate such unique codes.</p>
+</blockquote>
 <p>Including the event type can also be useful for datasets with hierarchical sampling methods (e.g., samples taken from a station within a cruise). Repeating the parentEventID in the child event (use <code>:</code> as delimiter) can make the structure of the dataset easier to understand. Nesting event information in this way also allows you to reduce redundancy and still provide information relevant to each level of sampling.</p>
 <p>Broadly, an eventID can take the form of [parentEventID]:[sample type]_[sample ID]</p>
 <p>Thus to construct a unique eventID for parent and child events, you join relevant sampling information. Possible configurations (with examples) could include:</p>
@@ -322,6 +332,63 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Information related to your sampling events can be assigned to the highest relevant event level in order to avoid repetition of information. For example, if all samples taken from a station occurred at the same depth, this information can be listed once. Variation between samples (e.g., exact time or coordinates) can also be easily reflected for each event. See the table below for a demonstration.</p>
 <table>
 <colgroup>
+<col width="32%" />
+<col width="25%" />
+<col width="13%" />
+<col width="15%" />
+<col width="14%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>eventID</th>
+<th>parentEventID</th>
+<th>type</th>
+<th>eventDate</th>
+<th>maximumDepthInMeters</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>cruise_1</td>
+<td></td>
+<td>cruise</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>cruise_1:station_1</td>
+<td>cruise_1</td>
+<td>station</td>
+<td></td>
+<td>15</td>
+</tr>
+<tr class="odd">
+<td>cruise_1:station_1:core_1</td>
+<td>cruise_1:station_1</td>
+<td>sample</td>
+<td>2011-03-06T08:35</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>cruise_1:station_1:core_2</td>
+<td>cruise_1:station_1</td>
+<td>cruise_1:station_1</td>
+<td>sample</td>
+<td>2011-03-06T08:52</td>
+</tr>
+<tr class="odd">
+<td>cruise_1:station_1:core_1:subsample_1</td>
+<td>cruise_1:station_1:core_1</td>
+<td>subsample</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>We recommend using controlled vocabulary for the “type” column. Although no standards have been agreed upon yet, commonly used terms for event <code>type</code> included are <code>cruise</code>, <code>stationVisit</code>, <code>transect</code>, <code>quadrat</code>, <code>sample</code>, <code>subSample</code>.</p>
+<p>Consider another example from a real dataset below:</p>
+<table>
+<colgroup>
 <col width="38%" />
 <col width="38%" />
 <col width="10%" />
@@ -337,46 +404,37 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </thead>
 <tbody>
 <tr class="odd">
-<td>cruise_1</td>
+<td>IOF_benthos_Plominski_zaljev_2000_crs</td>
+<td></td>
 <td></td>
 <td>cruise</td>
-<td></td>
 </tr>
 <tr class="even">
-<td>cruise_1:station_1</td>
-<td>cruise_1</td>
-<td>station</td>
-<td></td>
+<td>IOF_benthos_Plominski_zaljev_2000_stat1</td>
+<td>IOF_benthos_Plominski_zaljev_2000_crs</td>
+<td>2000-08</td>
+<td>stationVisit</td>
 </tr>
 <tr class="odd">
-<td>cruise_1:station_1:core_1</td>
-<td>cruise_1:station_1</td>
-<td>sample</td>
-<td>2011-03-06T08:35</td>
+<td>IOF_benthos_Plominski_zaljev_2000_stat2</td>
+<td>IOF_benthos_Plominski_zaljev_2000_crs</td>
+<td>2000-08</td>
+<td>stationVisit</td>
 </tr>
 <tr class="even">
-<td>cruise_1:station_1:core_2</td>
-<td>cruise_1:station_1</td>
-<td>cruise_1:station_1</td>
+<td>IOF_benthos_Plominski_zaljev_2000_s01</td>
+<td>IOF_benthos_Plominski_zaljev_2000_stat1</td>
+<td></td>
 <td>sample</td>
 </tr>
 <tr class="odd">
-<td>cruise_1:station_1:core_1:subsample_1</td>
-<td>cruise_1:station_1:core_1</td>
-<td>subsample</td>
+<td>IOF_benthos_Plominski_zaljev_2000_s02</td>
+<td>IOF_benthos_Plominski_zaljev_2000_stat2</td>
 <td></td>
+<td>sample</td>
 </tr>
 </tbody>
 </table>
-<p>We recommend using controlled vocabulary for the “type” column. Although no standards have been agreed upon yet, commonly used terms for event <code>type</code> included are <code>cruise</code>, <code>stationVisit</code>, <code>transect</code>, <code>quadrat</code>, <code>sample</code>, <code>subSample</code>.</p>
-<p>Consider another example from a real dataset below:</p>
-<pre><code>| eventID                                 | parentEventID                           | eventDate | eventRemarks |
-|-----------------------------------------|-----------------------------------------|-----------|--------------|
-| IOF_benthos_Plominski_zaljev_2000_crs   |                                         |           | cruise       |
-| IOF_benthos_Plominski_zaljev_2000_stat1 | IOF_benthos_Plominski_zaljev_2000_crs   | 2000-08   | stationVisit |
-| IOF_benthos_Plominski_zaljev_2000_stat2 | IOF_benthos_Plominski_zaljev_2000_crs   | 2000-08   | stationVisit |
-| IOF_benthos_Plominski_zaljev_2000_s01   | IOF_benthos_Plominski_zaljev_2000_stat1 |           | sample       |
-| IOF_benthos_Plominski_zaljev_2000_s02   | IOF_benthos_Plominski_zaljev_2000_stat2 |           | sample       |</code></pre>
 <p><em>Data from <a href="http://ipt.vliz.be/eurobis/resource?r=iof_bent_eia_2000_10">Environmental impact assessments in the eastern part of Adriatic sea - species list of benthic invertebrates and phytobenthos (2000-2010)</a>.</em></p>
 <p>We can see that each record has a similar eventID structure, except for the last part which indicates the event type - documented in the <code>eventRemarks</code> column. In this dataset, records with the eventID <code>IOF_benthos_Plominski_zaljev_2000_crs</code> has information applicable for records with eventIDs ending with <code>_stat1</code>, <code>_stat2</code>, <code>_s01</code>, and <code>_s02</code> because <code>_crs</code> is their parent event. Similarly, information (e.g., date of station visit, coordinates) documented in records with eventID <code>IOF_benthos_Plominski_zaljev_2000_stat1</code> is applicable for the two sample records (eventID <code>_s01</code> and <code>_s02</code>), because these samples were taken at Station 1 (indicated by the parentEventID). These eventIDs could have been nested in another way, such as <code>IOF_benthos_Plominsku_zaljev_2000_crs:stat1:s01</code> which would embed the parentEventID into the identifier.</p>
 <p>See also <a href="https://bdj.pensoft.net/articles.php?id=10989&amp;instance_id=3385375">De Pooter et al. 2017</a> for an example of an event hierarchy in a complex benthos dataset.</p>
@@ -387,16 +445,68 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>There are no standardized guidelines yet on designing the persistence of this ID, the level of uniqueness (from within a dataset to globally in OBIS), and the precise algorithm and format for generating the ID. But in the absence of a persistent globally unique identifier, one can be constructed by combining the <code>institutionCode</code>, the <code>collectionCode</code> and the <code>catalogNumber</code> (or autonumber in the absence of a catalogNumber). This is similar to how <a href="identifiers#eventid.html">eventID</a> is constructed. Note that the inclusion of <code>occurrenceID</code> is also necessary for datasets in the OBIS-ENV-DATA format.</p>
 <p>An important consideration for museum specimens: there is the possibility that the institution a specimen is housed at may change. Therefore you may consider omitting institution identifiers within an occurrenceID, because occurrenceID should <strong>not</strong> change over time.</p>
 <p>See the example below:</p>
-<pre><code>| modified            | institutionCode | collectionCode                 |
-|---------------------|-----------------|--------------------------------|
-| 2017-02-27 15:47:31 | Ugent           | Vegetation_Gazi_Bay(Kenya)1987 |
-| 2017-02-27 15:47:31 | Ugent           | Vegetation_Gazi_Bay(Kenya)1987 |
-| 2017-02-27 15:47:31 | Ugent           | Vegetation_Gazi_Bay(Kenya)1987 |</code></pre>
-<pre><code>| basisOfRecord    | occurrenceID                              | catalogNumber                             |
-|------------------|-------------------------------------------|-------------------------------------------|
-| HumanObservation | Ugent_Vegetation_Gazi_Bay(Kenya)1987_7553 | Ugent_Vegetation_Gazi_Bay(Kenya)1987_7553 |
-| HumanObservation | Ugent_Vegetation_Gazi_Bay(Kenya)1987_7554 | Ugent_Vegetation_Gazi_Bay(Kenya)1987_7554 |
-| HumanObservation | Ugent_Vegetation_Gazi_Bay(Kenya)1987_7555 | Ugent_Vegetation_Gazi_Bay(Kenya)1987_7555 |</code></pre>
+<table>
+<colgroup>
+<col width="30%" />
+<col width="24%" />
+<col width="45%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>modified</th>
+<th>institutionCode</th>
+<th>collectionCode</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2017-02-27 15:47:31</td>
+<td>Ugent</td>
+<td>Vegetation_Gazi_Bay(Kenya)1987</td>
+</tr>
+<tr class="even">
+<td>2017-02-27 15:47:31</td>
+<td>Ugent</td>
+<td>Vegetation_Gazi_Bay(Kenya)1987</td>
+</tr>
+<tr class="odd">
+<td>2017-02-27 15:47:31</td>
+<td>Ugent</td>
+<td>Vegetation_Gazi_Bay(Kenya)1987</td>
+</tr>
+</tbody>
+</table>
+<table style="width:100%;">
+<colgroup>
+<col width="17%" />
+<col width="41%" />
+<col width="41%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>basisOfRecord</th>
+<th>occurrenceID</th>
+<th>catalogNumber</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>HumanObservation</td>
+<td>Ugent_Vegetation_Gazi_Bay(Kenya)1987_7553</td>
+<td>Ugent_Vegetation_Gazi_Bay(Kenya)1987_7553</td>
+</tr>
+<tr class="even">
+<td>HumanObservation</td>
+<td>Ugent_Vegetation_Gazi_Bay(Kenya)1987_7554</td>
+<td>Ugent_Vegetation_Gazi_Bay(Kenya)1987_7554</td>
+</tr>
+<tr class="odd">
+<td>HumanObservation</td>
+<td>Ugent_Vegetation_Gazi_Bay(Kenya)1987_7555</td>
+<td>Ugent_Vegetation_Gazi_Bay(Kenya)1987_7555</td>
+</tr>
+</tbody>
+</table>
 <p><em>Data from <a href="http://ipt.vliz.be/eurobis/resource?r=vegetation_gazi_bay_kenya_1987">Algal community on the pneumatophores of mangrove trees of Gazi Bay in July and August 1987</a>.</em></p>
 
 </div>

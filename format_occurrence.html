@@ -158,8 +158,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="part"><span><b>Contributing data to OBIS</b></span></li>
 <li class="chapter" data-level="2" data-path="contribute.html"><a href="contribute.html"><i class="fa fa-check"></i><b>2</b> What can you contribute and how?</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="contribute.html"><a href="contribute.html#why-publish-data-to-obis"><i class="fa fa-check"></i><b>2.1</b> Why publish data to OBIS?</a></li>
-<li class="chapter" data-level="2.2" data-path="contribute.html"><a href="contribute.html#how-to-handle-sensitive-data"><i class="fa fa-check"></i><b>2.2</b> How to handle sensitive data?</a></li>
+<li class="chapter" data-level="2.1" data-path="contribute.html"><a href="contribute.html#why-publish-data-to-obis"><i class="fa fa-check"></i><b>2.1</b> Why publish data to OBIS</a></li>
+<li class="chapter" data-level="2.2" data-path="contribute.html"><a href="contribute.html#how-to-handle-sensitive-data"><i class="fa fa-check"></i><b>2.2</b> How to handle sensitive data</a></li>
 <li class="chapter" data-level="2.3" data-path="data_standards.html"><a href="data_standards.html"><i class="fa fa-check"></i><b>2.3</b> OBIS Data Life Cycle</a></li>
 <li class="chapter" data-level="2.4" data-path="data_standards.html"><a href="data_standards.html#biodiversity-data-standards"><i class="fa fa-check"></i><b>2.4</b> Biodiversity data standards</a>
 <ul>
@@ -192,10 +192,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.2" data-path="name_matching.html"><a href="name_matching.html"><i class="fa fa-check"></i><b>4.2</b> Name Matching Strategy for taxonomic quality control</a>
 <ul>
 <li class="chapter" data-level="4.2.1" data-path="name_matching.html"><a href="name_matching.html#taxon-matching-workflow"><i class="fa fa-check"></i><b>4.2.1</b> Taxon Matching Workflow</a></li>
-<li class="chapter" data-level="4.2.2" data-path="name_matching.html"><a href="name_matching.html#taxon-match-tools-overview"><i class="fa fa-check"></i><b>4.2.2</b> Taxon Match Tools Overview</a></li>
+<li class="chapter" data-level="4.2.2" data-path="name_matching.html"><a href="name_matching.html#r-packages-for-taxon-matching"><i class="fa fa-check"></i><b>4.2.2</b> R packages for taxon matching</a></li>
+<li class="chapter" data-level="4.2.3" data-path="name_matching.html"><a href="name_matching.html#taxon-match-tools-overview"><i class="fa fa-check"></i><b>4.2.3</b> Taxon Match Tools Overview</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="format_occurrence.html"><a href="format_occurrence.html"><i class="fa fa-check"></i><b>4.3</b> How to format Occurrence tables</a></li>
-<li class="chapter" data-level="4.4" data-path="format_event.html"><a href="format_event.html"><i class="fa fa-check"></i><b>4.4</b> How to format Event tables</a></li>
+<li class="chapter" data-level="4.3" data-path="format_occurrence.html"><a href="format_occurrence.html"><i class="fa fa-check"></i><b>4.3</b> How to format Occurrence tables</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="format_occurrence.html"><a href="format_occurrence.html#stepwise-guidance-to-format-an-occurrence-table-in-excel"><i class="fa fa-check"></i><b>4.3.1</b> Stepwise Guidance to Format an Occurrence Table (in Excel)</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="format_event.html"><a href="format_event.html"><i class="fa fa-check"></i><b>4.4</b> How to format Event tables</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="format_event.html"><a href="format_event.html#stepwise-guidance-to-format-event-table-in-excel"><i class="fa fa-check"></i><b>4.4.1</b> Stepwise Guidance to Format Event Table (in Excel)</a></li>
+</ul></li>
 <li class="chapter" data-level="4.5" data-path="format_emof.html"><a href="format_emof.html"><i class="fa fa-check"></i><b>4.5</b> How to format extendedMeasurementOrFact tables</a></li>
 <li class="chapter" data-level="4.6" data-path="vocabulary.html"><a href="vocabulary.html"><i class="fa fa-check"></i><b>4.6</b> Choosing Vocabularies for your dataset</a>
 <ul>
@@ -294,7 +301,60 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="how-to-format-occurrence-tables" class="section level2 hasAnchor" number="4.3">
 <h2><span class="header-section-number">4.3</span> How to format Occurrence tables<a href="format_occurrence.html#how-to-format-occurrence-tables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>If your dataset structure is <a href="formatting.html">based on Occurrence core</a>, or has an Occurrence extension, there are several terms that are <a href="checklist.html">required</a> in your dataset by OBIS. These required data fields include the following eight terms:</p>
+<ul>
+<li><code>occurrenceID</code></li>
+<li><code>occurrenceStatus</code></li>
+<li><code>basisOfRecord</code></li>
+<li><code>scientificName</code></li>
+<li><code>scientificNameID</code></li>
+<li><code>eventDate</code> (not required for Occurrence extension, required for Occurrence Core)</li>
+<li><code>decimalLatitude</code> (not required for Occurrence extension)</li>
+<li><code>decimalLongitude</code> (not required for Occurrence extension)</li>
+</ul>
+<p>Other terms you should consider adding are identified by their associated Darwin Core class below. See the <a href="checklist.html">term checklist</a> for a more complete list of potential terms for Occurrence table.</p>
+<p>Class Occurrence| DwC: associatedMedia
+Class Occurrence| DwC: associatedReferences
+Class Occurrence| DwC: associatedSequences
+Class Occurrence| DwC: associatedTaxa
+Class Occurrence| DwC: preparations
+Class Occurrence| DwC: recordedBy
+Class Occurrence| DwC: materialSample
+Class Occurrence| DwC: materialSampleID
+Class Record | DwC: bibliographicCitation
+Class Record | DwC: catalogNumber
+Class Record | DwC: collectionCode
+Class Record | DwC: collectionID
+Class Record | DwC: dataGeneralizations
+Class Record | DwC: datasetName
+Class Record | DwC: institutionCode
+Class Record | DwC: modified
+Class Taxon | DwC: kingdom
+Class Taxon | DwC: scientificNameAuthorship
+Class Taxon | DwC: scientificNameID
+Class Taxon | DwC: taxonRank
+Class Taxon | DwC: taxonRemarks</p>
+<p>Note that any terms related to measurements, either biotic (e.g., sex, lifestage, biomass) or abiotic will be included in extendedMeasurementOrFact table not the Occurrence table.</p>
+<div id="stepwise-guidance-to-format-an-occurrence-table-in-excel" class="section level3 hasAnchor" number="4.3.1">
+<h3><span class="header-section-number">4.3.1</span> Stepwise Guidance to Format an Occurrence Table (in Excel)<a href="format_occurrence.html#stepwise-guidance-to-format-an-occurrence-table-in-excel" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Before proceeding with formatting the Occurrence table, be sure you have <a href="name_matching.html">completed taxon matching</a> to obtain WoRMS LSIDs for the scientificNameID field.</p>
+<ol style="list-style-type: decimal">
+<li>Identify columns in your raw data that match with Occurrence fields
+<ul>
+<li>Include columns with measurements for now, but they will be added to the <a href="format_emof.html">eMoF table</a></li>
+</ul></li>
+<li>Copy these columns to a new sheet named Occurrence (note it is good practice to never make changes to your original datasheet)</li>
+<li>Create and add <a href="format_occurrence.html">occurrenceIDs</a> for each unique occurrence record</li>
+<li>Add and fill <code>basisOfRecord</code> and <code>occurrenceStatus</code> fields</li>
+<li>Ensure your column names <a href="vocabulary.html">map to Darwin Core terms</a>
+<ul>
+<li>scientificName + scientificNameID</li>
+</ul></li>
+</ol>
+<p>Watch our video tutorial for a demonstration of this procedure.</p>
+<p>After formatting your Occurrence Core or Extension table, you can format your extendedMeasurementOrFact table.</p>
 
+</div>
 </div>
             </section>
 

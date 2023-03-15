@@ -158,8 +158,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="part"><span><b>Contributing data to OBIS</b></span></li>
 <li class="chapter" data-level="2" data-path="contribute.html"><a href="contribute.html"><i class="fa fa-check"></i><b>2</b> What can you contribute and how?</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="contribute.html"><a href="contribute.html#why-publish-data-to-obis"><i class="fa fa-check"></i><b>2.1</b> Why publish data to OBIS?</a></li>
-<li class="chapter" data-level="2.2" data-path="contribute.html"><a href="contribute.html#how-to-handle-sensitive-data"><i class="fa fa-check"></i><b>2.2</b> How to handle sensitive data?</a></li>
+<li class="chapter" data-level="2.1" data-path="contribute.html"><a href="contribute.html#why-publish-data-to-obis"><i class="fa fa-check"></i><b>2.1</b> Why publish data to OBIS</a></li>
+<li class="chapter" data-level="2.2" data-path="contribute.html"><a href="contribute.html#how-to-handle-sensitive-data"><i class="fa fa-check"></i><b>2.2</b> How to handle sensitive data</a></li>
 <li class="chapter" data-level="2.3" data-path="data_standards.html"><a href="data_standards.html"><i class="fa fa-check"></i><b>2.3</b> OBIS Data Life Cycle</a></li>
 <li class="chapter" data-level="2.4" data-path="data_standards.html"><a href="data_standards.html#biodiversity-data-standards"><i class="fa fa-check"></i><b>2.4</b> Biodiversity data standards</a>
 <ul>
@@ -192,10 +192,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.2" data-path="name_matching.html"><a href="name_matching.html"><i class="fa fa-check"></i><b>4.2</b> Name Matching Strategy for taxonomic quality control</a>
 <ul>
 <li class="chapter" data-level="4.2.1" data-path="name_matching.html"><a href="name_matching.html#taxon-matching-workflow"><i class="fa fa-check"></i><b>4.2.1</b> Taxon Matching Workflow</a></li>
-<li class="chapter" data-level="4.2.2" data-path="name_matching.html"><a href="name_matching.html#taxon-match-tools-overview"><i class="fa fa-check"></i><b>4.2.2</b> Taxon Match Tools Overview</a></li>
+<li class="chapter" data-level="4.2.2" data-path="name_matching.html"><a href="name_matching.html#r-packages-for-taxon-matching"><i class="fa fa-check"></i><b>4.2.2</b> R packages for taxon matching</a></li>
+<li class="chapter" data-level="4.2.3" data-path="name_matching.html"><a href="name_matching.html#taxon-match-tools-overview"><i class="fa fa-check"></i><b>4.2.3</b> Taxon Match Tools Overview</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="format_occurrence.html"><a href="format_occurrence.html"><i class="fa fa-check"></i><b>4.3</b> How to format Occurrence tables</a></li>
-<li class="chapter" data-level="4.4" data-path="format_event.html"><a href="format_event.html"><i class="fa fa-check"></i><b>4.4</b> How to format Event tables</a></li>
+<li class="chapter" data-level="4.3" data-path="format_occurrence.html"><a href="format_occurrence.html"><i class="fa fa-check"></i><b>4.3</b> How to format Occurrence tables</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="format_occurrence.html"><a href="format_occurrence.html#stepwise-guidance-to-format-an-occurrence-table-in-excel"><i class="fa fa-check"></i><b>4.3.1</b> Stepwise Guidance to Format an Occurrence Table (in Excel)</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="format_event.html"><a href="format_event.html"><i class="fa fa-check"></i><b>4.4</b> How to format Event tables</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="format_event.html"><a href="format_event.html#stepwise-guidance-to-format-event-table-in-excel"><i class="fa fa-check"></i><b>4.4.1</b> Stepwise Guidance to Format Event Table (in Excel)</a></li>
+</ul></li>
 <li class="chapter" data-level="4.5" data-path="format_emof.html"><a href="format_emof.html"><i class="fa fa-check"></i><b>4.5</b> How to format extendedMeasurementOrFact tables</a></li>
 <li class="chapter" data-level="4.6" data-path="vocabulary.html"><a href="vocabulary.html"><i class="fa fa-check"></i><b>4.6</b> Choosing Vocabularies for your dataset</a>
 <ul>
@@ -323,22 +330,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ol>
 <p>Each of these steps are covered in detail in the relevant sections of the manual. For an overview of this process see <a href="data_standards.html">data management flow in OBIS</a>.</p>
 <div id="why-publish-data-to-obis" class="section level2 hasAnchor" number="2.1">
-<h2><span class="header-section-number">2.1</span> Why publish data to OBIS?<a href="contribute.html#why-publish-data-to-obis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<h2><span class="header-section-number">2.1</span> Why publish data to OBIS<a href="contribute.html#why-publish-data-to-obis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>It is important to publish and ensure your dataset follows a universal standard for several reasons. The <a href="https://www.nature.com/articles/sdata201618">FAIR guiding principles</a> for scientific data management and stewardship provide a good framework to understand the reasoning behind publishing data. FAIR stands for Findable, Accessible, Interoperable, and Reusable. Let’s understand each aspect within the FAIR framework and how it is linked to publishing data in OBIS.</p>
 <ul>
-<li>F - Findable</li>
+<li><strong>F - Findable</strong></li>
 </ul>
 <p>Even if you publish your dataset on its own, publishing your data with OBIS will make your data more Findable (and Accessible) to a wider audience you might not have otherwise reached. By publishing your dataset to OBIS you are adding to a global database where your data can be found and analyzed alongside thousands of other datasets. For example, a dataset on <a href="https://obis.org/dataset/98ea98e8-356b-4dd5-87c6-4eeb7e3cf588">marine invasive species in Venezuela</a> was published July 20, 2022 and as of October 5, 2022 records of this dataset were included in 1,873 data download requests. This can save you time rather than handling individual data requests.</p>
 <ul>
-<li>A - Accessible</li>
+<li><strong>A - Accessible</strong></li>
 </ul>
 <p>Similar to being Findable, OBIS makes your datasets more Accessible. Each dataset is given an identifier when you upload it on an IPT. Thus when users obtain data from OBIS, the original dataset can easily be identified and accessed. Data from OBIS is accessible in numerous ways[LINK to access section], giving data users multiple avenues to potentially access your data.</p>
 <ul>
-<li>I - Interoperable</li>
+<li><strong>I - Interoperable</strong></li>
 </ul>
 <p>Using a standardized data format with controlled vocabularies will ensure your data are more Interoperable - more easily interpreted and processed by computers and humans alike. Increasingly, scientists use computer programs to conduct e-Science and collect data with algorithms. Formatting your data for OBIS will ensure it can be read and accessed by such programs as well as understood by users.</p>
 <ul>
-<li>R - Reusable</li>
+<li><strong>R - Reusable</strong></li>
 </ul>
 <p>Publishing your data allows it to be Reused according to your chosen <a href="policy.html">data usage license</a>. Very likely you expended resources to collect your data and it would be a waste of those resources to leave your unique data unpublished and inaccessible for current and future generations. Likewise, it is better to preserve any data processing done to ensure your dataset is reproducible and/or verifiable. Finally, data in OBIS is often used in several assessment processes and used as information to support policy makers around the globe making informed decisions.</p>
 <p>There are many other benefits of publishing in OBIS, even if you haven’t published any work on it yet. This includes:</p>
@@ -350,7 +357,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 </div>
 <div id="how-to-handle-sensitive-data" class="section level2 hasAnchor" number="2.2">
-<h2><span class="header-section-number">2.2</span> How to handle sensitive data?<a href="contribute.html#how-to-handle-sensitive-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<h2><span class="header-section-number">2.2</span> How to handle sensitive data<a href="contribute.html#how-to-handle-sensitive-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>We recognize that sometimes your dataset may contain sensitive information (e.g., location data on endangered or poached species), or perhaps your organization does not want certain details publicly accessible. Types of sensitive data include:</p>
 <ul>
 <li>Location data on endangered or protected species</li>
