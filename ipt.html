@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>2.3 OBIS Data Life Cycle | The OBIS manual</title>
-  <meta name="description" content="2.3 OBIS Data Life Cycle | The OBIS manual" />
+  <title>6.4 IPT | The OBIS manual</title>
+  <meta name="description" content="6.4 IPT | The OBIS manual" />
   <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="2.3 OBIS Data Life Cycle | The OBIS manual" />
+  <meta property="og:title" content="6.4 IPT | The OBIS manual" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="2.3 OBIS Data Life Cycle | The OBIS manual" />
+  <meta name="twitter:title" content="6.4 IPT | The OBIS manual" />
   
   
   
@@ -28,8 +28,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="contribute.html"/>
-<link rel="next" href="darwin_core.html"/>
+<link rel="prev" href="data_publication.html"/>
+<link rel="next" href="data_sharing.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -294,7 +294,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="" data-path=""><a href="#part-data-visualization-and-analysis"><i class="fa fa-check"></i>(PART*) Data Visualization and Analysis</a>
 <ul>
-<li class="chapter" data-level="7.7" data-path="data_standards.html"><a href="#example-notebooks-using-data-from-obis"><i class="fa fa-check"></i><b>7.7</b> Example notebooks using data from OBIS</a></li>
+<li class="chapter" data-level="7.7" data-path="ipt.html"><a href="#example-notebooks-using-data-from-obis"><i class="fa fa-check"></i><b>7.7</b> Example notebooks using data from OBIS</a></li>
 <li class="chapter" data-level="7.8" data-path="dataviz.html"><a href="dataviz.html"><i class="fa fa-check"></i><b>7.8</b> obisindicators: calculating &amp; visualizing spatial biodiversity using data from OBIS</a></li>
 </ul></li>
 <li class="part"><span><b>Additional Resources</b></span></li>
@@ -321,48 +321,111 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="obis-data-life-cycle" class="section level2 hasAnchor" number="2.3">
-<h2><span class="header-section-number">2.3</span> OBIS Data Life Cycle<a href="data_standards.html#obis-data-life-cycle" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><img align="right" src="images/OBISdataLifeCycle.png" class="img-responsive" display: inline-block/></p>
-<p>The basic data life cycle for contributions to OBIS can be broken down into six step-by-step phases:</p>
-<ol style="list-style-type: decimal">
-<li>Data structure</li>
-<li>Data formatting</li>
-<li>Quality control</li>
-<li>Publishing</li>
-<li>Data access (downloading)</li>
-<li>Data visualization</li>
-</ol>
-<p>Each of these phases are outlined in this manual and are composed of a number of steps which are covered in the relevant sections.</p>
-<p>After you have decided on your <a href="formatting.html">data structure</a> and have moved to the Data Formatting stage, you must first <a href="name_matching.html">match</a> the taxa in your dataset to a registered list. In formatting your dataset you will ensure the <a href="checklist.html">required OBIS terms</a> and <a href="identifiers.html">identifiers</a> are mapped correctly to your data fields and records.</p>
-<p>Depending on your data structure, you will then format data into a <a href="data_format.html">DwC-A</a> format with the appropriate Core table (<a href="format_event">Event</a> or <a href="format_occurrence.html">Occurrence</a>)) with any applicable extension tables. Any biotic or abiotic measurements will be moved into the <a href="link%20#22+">extendedMeasurementOrFact table</a>. Before proceeding to the <a href="data_publication.html">publishing</a> stage, there are a number of <a href="dataquality.html">quality control</a> steps to complete.</p>
-<p>Once your data has been published, you and others can <a href="access.html">access</a> datasets through various avenues and it becomes part of OBIS’ global database!</p>
-<p>This may seem like a daunting process at first glance, but this manual will walk you through each step, and the OBIS community is full of <a href="gethelp.html">helpful resources</a>. Throughout the manual you will find tutorials and tools to guide you from start to finish through the OBIS data life cycle.</p>
-<p><br clear="left"/></p>
-<div id="who-is-responsible-for-each-phase" class="section level4 hasAnchor" number="2.3.0.1">
-<h4><span class="header-section-number">2.3.0.1</span> Who is responsible for each phase?<a href="data_standards.html#who-is-responsible-for-each-phase" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Phases 1 through 3 are the responsibilities of the data provider, while Phases 3 and 4 are shared between the data provider and the node manager. Data users are involved in Phases 5 and 6.</p>
-<p>The OBIS Secretariat is responsible for data processing and harvesting published resources.</p>
-</div>
-</div>
-<div id="biodiversity-data-standards" class="section level2 hasAnchor" number="2.4">
-<h2><span class="header-section-number">2.4</span> Biodiversity data standards<a href="data_standards.html#biodiversity-data-standards" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>From the very beginning, OBIS has championed the use of international standards for biogeographic data. Without agreement on the application of standards and protocols, OBIS would not have been able to build a large central database. OBIS uses the following standards:</p>
+<div id="ipt" class="section level2 hasAnchor" number="6.4">
+<h2><span class="header-section-number">6.4</span> IPT<a href="ipt.html#ipt" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Contents:</strong></p>
 <ul>
-<li><a href="darwin_core.html">Darwin Core</a></li>
-<li><a href="eml.html">Ecological Metadata Language</a></li>
-<li><a href="data_format.html">Darwin Core Archive and dataset structure</a></li>
+<li><a href="ipt#intro.html">Introduction</a></li>
+<li><a href="ipt#installation.html">Installation</a><br />
+</li>
+<li><a href="ipt#registration.html">Registration</a></li>
+<li><a href="ipt#introduction-to-publishing-your-data.html">Intro to publishing</a><br />
+</li>
+<li><a href="ipt#upload-data.html">Upload data</a><br />
+</li>
+<li><a href="ipt#map-your-data-to-darwin-core.html">Map to Darwin Core</a><br />
+</li>
+<li><a href="ipt#add-metadata.html">Add metadata</a><br />
+</li>
+<li><a href="ipt#publish-on-the-ipt.html">Publish on te IPT</a><br />
+</li>
+<li><a href="ipt#publish-your-metadata-as-a-data-paper.html">Publish your data as a dataset paper</a></li>
 </ul>
-<p>The following pages of this manual review each of these in turn. We show you how to apply these standards to format your data in the <a href="formatting.html">Data Formatting</a> section.</p>
-<p>We also provide some <a href="examples.html">dataset examples</a> for your reference.</p>
+<div id="introduction-2" class="section level3 hasAnchor" number="6.4.1">
+<h3><span class="header-section-number">6.4.1</span> Introduction<a href="ipt.html#introduction-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The biodiversity datasets and its metadata are published in OBIS using the Integrated Publishing Toolkit (IPT), developed by GBIF. The IPT software assists the user in mapping data to valid Darwin Core terms and archiving and compressing the Darwin Core content with: (i) a descriptor file: <code>meta.xml</code> that maps the core and extensions files to Darwin Core terms, and describes how the core and extensions files are linked, and (ii) the <code>eml.xml</code> file, which contains the dataset metadata in <a href="https://en.wikipedia.org/wiki/Ecological_Metadata_Language">Ecological Metadata Language</a> (EML) format. For instructions on how to enter the metadata go to <a href="eml.html">EML</a>. Al these components (i.e. core file, extension files, descriptor file and metadata file), compressed together (as a .zip file), comprise the Darwin Core Archive.</p>
+<div class="figure">
+<img src="images/dwca_1.png" width="60" alt="" />
+<p class="caption">Example showing how Occurrence core, EML, and meta.xml files make up a Darwin Core-Archive file</p>
+</div>
+</div>
+<div id="installation" class="section level3 hasAnchor" number="6.4.2">
+<h3><span class="header-section-number">6.4.2</span> Installation<a href="ipt.html#installation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>OBIS nodes can decide to install and manage their IPT on their own institutional servers or use (at no charge!) the OBIS servers in Oostende, Belgium, provided as in-kind by the Flanders Marine Institute (VLIZ), which also runs the European OBIS node (EurOBIS). VLIZ also ensures the IPT instances run on the latest version (important for security updates). Here is an overview of the IPT instances hosted in Oostende: <a href="http://ipt.iobis.org/">http://ipt.iobis.org/</a>. Please contact the secretariat at <a href="mailto:info@iobis.org" class="email">info@iobis.org</a> if you would like OBIS to host your IPT.</p>
+<p>To install your own IPT, please follow the instructions in the <a href="https://github.com/gbif/ipt/wiki/IPT2ManualNotes.wiki#getting-started-guide">GBIF IPT manual</a>.</p>
+</div>
+<div id="registration" class="section level3 hasAnchor" number="6.4.3">
+<h3><span class="header-section-number">6.4.3</span> Registration<a href="ipt.html#registration" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>When you have installed your IPT, please provide the IPT instance URL to the OBIS secretariat, so your IPT is included in the data harvesting process.</p>
+<p>OBIS recommends to share the data as widely as possible including with other networks such as GBIF. On 13 October 2014, a cooperation agreement was signed between the secretariats of IOC-UNESCO/OBIS and GBIF in which the two parties recognized the two initiatives (OBIS and GBIF) as complementary with common goals (and in particular OBIS’s role in Marine Biodiversity Data). Together they agreed to work towards maximizing the quantity, quality, completeness and fitness for use of marine biodiversity data, accessible through OBIS and GBIF and in particular in the development of data standards (DwC), technology (IPT), maximizing fitness for use, development of biodiversity indicators for assessments, enhance capacity through training and coordinate approaches to the global science/policy interface. At the 4th session of the OBIS Steering Group (SG-OBIS-IV, Feb 2015), it was recommended that GBIF should harvest OBIS tier 2 nodes if OBIS tier 2 nodes could also harvest marine datasets from their GBIF nodes. In this way OBIS could work directly with the entire marine community and promote its standards and best practices. It was not recommended that iOBIS set up a separate IPT for GBIF to harvest, since this would mean a duplication of effort.</p>
+<p>In order to publish data with GBIF, the OBIS node also need to become a <a href="https://www.gbif.org/become-a-publisher">data publisher in GBIF</a>, and link the IPT installation with this publishing organization. OBIS nodes are encouraged to use the OBIS node name as the publishers’s name, unless the host institution requires its institutional name to be used. In the latter case, reference to the OBIS node can be added in the description, as well as between brackets in the title. The name of the IPT instance can also refer to the OBIS node. OBIS nodes are also encouraged to select OBIS as the endorsing organization. In this way, the OBIS node is also listed on the <a href="https://www.gbif.org/participant/304">OBIS page</a> at GBIF.</p>
+</div>
+<div id="introduction-to-publishing-your-data" class="section level3 hasAnchor" number="6.4.4">
+<h3><span class="header-section-number">6.4.4</span> Introduction to publishing your data<a href="ipt.html#introduction-to-publishing-your-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>With regard to populating the IPT with marine data for OBIS, there are two possible approaches:</p>
+<ol style="list-style-type: decimal">
+<li><p>Manager driven: You as node manager take the responsibility of describing, checking and uploading the data and metadata to the IPT. The data provider can send you the data ‘as such’ or you can make agreements with your providers on the accepted OBIS data format and standards. This approach will give you a very good knowledge of what data is available. It can be time-consuming, as (extended) communication with the data provider will be necessary to document the metadata and to re-format the data to the OBIS standards.</p></li>
+<li><p>User driven: You as node manager can guide (some of your) data providers to publish the data and metadata to the IPT themselves. Your main task will be to make sure that all relevant information and data for OBIS is available and that you perform the necessary quality checks before the data are released to OBIS. Once the Darwin Core Archive is created, the data provider should inform the node manager of this action, so he or she can do the necessary quality control checks. In order for the node manager to be able to look at the dataset, the data provider should add him or her as a “resource manager” to this specific dataset.</p></li>
+</ol>
+<p>In most cases, there will be a combination of these two approaches. The chosen approach will largely depend on the capacity, availability and willingness of your data provider to invest extra time in formatting and thoroughly describing their data. If you – as node manager – would prefer a partly user driven approach, the following steps to publishing marine data to OBIS briefly explains how you or a data provider can upload, standardize and publish a dataset on the OBIS node IPT, without the hassle of installing and maintaining an IPT instance. The data are published in your organization’s name. This guide is based on the Canadensys 7-step guide to publishing marine data:</p>
+<p>Desmet, P. &amp; C. Sinou. 2012. 7-step guide to data publication. Canadensys. <a href="http://community.canadensys.net/publication/data-publication-guide" class="uri">http://community.canadensys.net/publication/data-publication-guide</a>.</p>
+<blockquote>
+<p>Caution: Make sure you have obtained the rights from the data owners to publish their data!</p>
+</blockquote>
+<div id="create-your-resource-on-the-ipt" class="section level4 hasAnchor" number="6.4.4.1">
+<h4><span class="header-section-number">6.4.4.1</span> Create your resource on the IPT<a href="ipt.html#create-your-resource-on-the-ipt" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The Integrated Publishing Toolkit (IPT), developed by GBIF, is an open source web application that can be customized by the OBIS node manager. The IPT-instance is used to publish and register all the datasets. To be able to create and manage your own dataset (called a “resource” by GBIF), you will need a user account. Contact your node manager to create one for you.</p>
+<p>Once you have your account, login at the top of the IPT page. Click on the tab Manage resources: it will display all the datasets you are managing and will be empty at first. You can create a new resource at the bottom of the page. Follow the <a href="https://github.com/gbif/ipt/wiki/IPT2ManualNotes.wiki#create-a-new-resource">GBIF IPT manual</a> for more detailed instructions. The first thing that needs to be completed is the shortname of your resource. This shortname uniquely identifies your resource (=dataset) and will eventually show up in the URL of this resource on IPT. These shortname identifiers are also used to create folders on the IPT and they cannot be changed.</p>
+<p>We therefore advise that the shortname:</p>
+<ul>
+<li>is unique, descriptive and short (max. 100 characters)</li>
+<li>does not contain a space, comma, accents or special characters</li>
+</ul>
+<p>Shortname good examples:</p>
+<ul>
+<li>VLIZ_benthos_NorthSea_2000</li>
+<li>UBC_algae_specimens</li>
+<li>…</li>
+</ul>
+<p>:exclamation: When you would delete a resource, please inform your node manager of this action! If you create a test-file, please include <code>_test</code> at the end of your shortname.</p>
+<p>You can also create an entirely new resource by uploading an existing archived resource. See the IPT manual section <a href="https://github.com/gbif/ipt/wiki/IPT2ManualNotes.wiki#upload-a-darwin-core-archive">Upload a DwC-A</a> for instructions.</p>
+<p>Please note the IPT has a 100MB file upload limit, however, there is no limit to the size of a Darwin Core Archive that the IPT can export/publish. Refer to the <a href="https://github.com/gbif/ipt/wiki/IPT2ManualNotes.wiki#file-upload">File upload</a> section in the IPT manual, to find out how to work around the file upload limit.</p>
+<p>Once you have created your resource, you will see an empty resource overview page.</p>
+</div>
+<div id="upload-data" class="section level4 hasAnchor" number="6.4.4.2">
+<h4><span class="header-section-number">6.4.4.2</span> Upload data<a href="ipt.html#upload-data" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Uploading your source file to the IPT is easy: go to &gt; your resource overview page &gt; Source Data and click on Choose File. You might want to compress/zip your source file first to improve the upload speed of large files. The IPT will unzip them automatically once received. Follow the <a href="https://github.com/gbif/ipt/wiki/IPT2ManualNotes.wiki#create-a-new-resource">IPT manual</a> for more detailed instructions (including the option to use multiple source files or to upload via a direct database connection). Accepted formats are delimited text files (csv, tab and files using any other delimiter), either directly or compressed as zip or gzip.<br />
+Once your source file has been uploaded correctly, a source file detail page will be shown, displaying how the IPT has interpreted your file (number of columns, rows, header rows, character encoding, delimiters, etc.). Click the preview button to verify everything is correct, click anywhere on the screen to exit the preview, then click save.</p>
+</div>
+<div id="map-your-data-to-darwin-core" class="section level4 hasAnchor" number="6.4.4.3">
+<h4><span class="header-section-number">6.4.4.3</span> Map your data to Darwin Core<a href="ipt.html#map-your-data-to-darwin-core" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Biodiversity data are published in the <a href="darwincore.html">Darwin Core</a> standard. It includes a list of defined terms and allows your data to be understood and used by others. It also allows an aggregator like OBIS or GBIF to integrate your data with other datasets.</p>
+<p>Darwin Core mapping is the process of linking the fields in your resource file with the appropriate Darwin Core terms. It is the most challenging step in publishing your data for two reasons: (1) the list of Darwin Core terms can be overwhelming, so it might be difficult to select the ones that are appropriate for your dataset, and (2) the IPT currently only allows one-to-one mapping of fields, so the ease of mapping will depend on your database structure and on the feasibility of exporting as close to Darwin Core as possible. Contact your node manager or the OBIS secretariat at <a href="mailto:info@iobis.org" class="email">info@iobis.org</a> to guide you through the steps, review your mapping, suggest terms etc.</p>
+<p>You can find more information regarding Darwin Core mapping in the <a href="https://github.com/gbif/ipt/wiki/IPT2ManualNotes.wiki#darwin-core-mappings">IPT manual</a> (including core types, extensions, auto-mapping, default values, value translation, etc.).</p>
+</div>
+<div id="publish-on-the-ipt" class="section level4 hasAnchor" number="6.4.4.4">
+<h4><span class="header-section-number">6.4.4.4</span> Publish on the IPT<a href="ipt.html#publish-on-the-ipt" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Go to your resource overview page &gt; Published Release and click Publish. The IPT will now generate your data as Darwin Core, and combine the data with the metadata and package it as a standardized zip-file called a “Darwin Core Archive”. See the IPT manual for more details.</p>
+<p>:exclamation: Hitting the “publish” button does not mean that your dataset is available to everyone, it is still private, with access limited to the resource managers. It will only be publicly available when you have changed Visibility &gt; Public, and it will only be harvested by GBIF when you can Visibility &gt; Registered. The last step is not needed for OBIS to harvest your datasets. Please do not register your dataset with GBIF if your dataset is already published in GBIF by another publisher.</p>
+<p>Back on the resource overview page &gt; Published Release, you can see the details of your first published dataset, including the publication date and the version number. Since your dataset is published privately, the only thing left to do is to click Visibility &gt; Public (see the IPT manual) to make it available to everyone. Warning: please do not do this with your test dataset.</p>
+<p>It is now listed on the IPT homepage and you can share and link to it, e.g.: <code>http://ipt.vliz.be/resource.do?r=kielbay70</code>. This would be a good time to notify any regional or thematic network you are involved in, which can also have an interest in your dataset.</p>
+<p>Your published dataset is a static snapshot of your data and will not change until you upload an updated source file and click publish again or publish a new version (do not create a new resource). This procedure has the advantage that your dataset is always available, does not require a live internet connection to your database and can be easily shared. It also allows you to control the publication process more precisely: version 1, version 2, etc. and users are informed of how recent the data are (via the last publication date).</p>
+<p>To view an older version of the metadata about the resource, just add the trailing parameter <code>&amp;v=n</code> to the URL where <code>v</code> stands for “version”, and <code>n</code> gets replaced by the version number, e.g., <code>http://ipt.vliz.be/ilvo/resource.do?r=zoopl_bpns&amp;v=1</code>. In this way, specific versions of a resource’s EML, RTF, and DwC-A files can be retrieved. Please note, the IPT’s Archival Mode must be turned on in order for old versions of DwC-A to be stored (see <a href="https://github.com/gbif/ipt/wiki/IPT2ManualNotes.wiki#configure-ipt-settings">Configure IPT settings</a> section of the IPT manual).</p>
+</div>
+</div>
+<div id="publish-your-metadata-as-a-data-paper" class="section level3 hasAnchor" number="6.4.5">
+<h3><span class="header-section-number">6.4.5</span> Publish your metadata as a data paper<a href="ipt.html#publish-your-metadata-as-a-data-paper" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The Metadata expressed in the EML Profile standard can also be downloaded as a Rich Text Format (RTF) file. The latter can serve as a draft manuscript for a data paper (<a href="http://www.eurekalert.org/pub_releases/2011-11/gbif-fd112711.php">First database-derived ‘data paper’ published in journal</a>), which can be submitted for peer-review to e.g. a <a href="http://journals.pensoft.net/">Pensoft journal</a>.</p>
 
+</div>
+</div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="contribute.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="darwin_core.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="data_publication.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="data_sharing.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

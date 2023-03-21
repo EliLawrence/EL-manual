@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>2.3 OBIS Data Life Cycle | The OBIS manual</title>
-  <meta name="description" content="2.3 OBIS Data Life Cycle | The OBIS manual" />
+  <title>4.7 Choosing Vocabularies for your dataset | The OBIS manual</title>
+  <meta name="description" content="4.7 Choosing Vocabularies for your dataset | The OBIS manual" />
   <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="2.3 OBIS Data Life Cycle | The OBIS manual" />
+  <meta property="og:title" content="4.7 Choosing Vocabularies for your dataset | The OBIS manual" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="2.3 OBIS Data Life Cycle | The OBIS manual" />
+  <meta name="twitter:title" content="4.7 Choosing Vocabularies for your dataset | The OBIS manual" />
   
   
   
@@ -28,8 +28,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="contribute.html"/>
-<link rel="next" href="darwin_core.html"/>
+<link rel="prev" href="format_emof.html"/>
+<link rel="next" href="common_formatissues.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -294,7 +294,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="" data-path=""><a href="#part-data-visualization-and-analysis"><i class="fa fa-check"></i>(PART*) Data Visualization and Analysis</a>
 <ul>
-<li class="chapter" data-level="7.7" data-path="data_standards.html"><a href="#example-notebooks-using-data-from-obis"><i class="fa fa-check"></i><b>7.7</b> Example notebooks using data from OBIS</a></li>
+<li class="chapter" data-level="7.7" data-path="vocabulary.html"><a href="#example-notebooks-using-data-from-obis"><i class="fa fa-check"></i><b>7.7</b> Example notebooks using data from OBIS</a></li>
 <li class="chapter" data-level="7.8" data-path="dataviz.html"><a href="dataviz.html"><i class="fa fa-check"></i><b>7.8</b> obisindicators: calculating &amp; visualizing spatial biodiversity using data from OBIS</a></li>
 </ul></li>
 <li class="part"><span><b>Additional Resources</b></span></li>
@@ -321,48 +321,314 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="obis-data-life-cycle" class="section level2 hasAnchor" number="2.3">
-<h2><span class="header-section-number">2.3</span> OBIS Data Life Cycle<a href="data_standards.html#obis-data-life-cycle" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><img align="right" src="images/OBISdataLifeCycle.png" class="img-responsive" display: inline-block/></p>
-<p>The basic data life cycle for contributions to OBIS can be broken down into six step-by-step phases:</p>
+<div id="choosing-vocabularies-for-your-dataset" class="section level2 hasAnchor" number="4.7">
+<h2><span class="header-section-number">4.7</span> Choosing Vocabularies for your dataset<a href="vocabulary.html#choosing-vocabularies-for-your-dataset" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="map-your-data-with-dwc-vocabulary" class="section level3 hasAnchor" number="4.7.1">
+<h3><span class="header-section-number">4.7.1</span> Map your data with DwC vocabulary<a href="vocabulary.html#map-your-data-with-dwc-vocabulary" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>There are many possible ways of setting up your datasheets, and if you are new to OBIS you likely did not use controlled Darwin Core (DwC) or BODC vocabulary before samples were collected. In mapping your data fields to DwC we recommend documenting your choices so you have a reference to go back to should the need arise. In such a document you should take notes on the choices you made, as well as any actions you had to take (e.g. separate one column into many, convert dates or coordinates, etc.).</p>
+<p>For example, a DwC mapping reference table could look like the following:
+| Verbatim field name | Mapped DwC term | Actions taken | Notes |
+|——-|——-|————|————–|
+| date | eventDate | convert dates to ISO | |
+| coordinates| decimalLongitude, decimalLatitude | convert ddmmss to decimal degrees, separated one column into 2 for longitude and latitude | put original coordinates into verbatimCoordinates |</p>
+<p>In order to help you map your data to DwC terms, we have provided the table below which outlines some common data fields, their associated Darwin Core vocabulary, and which data table the field is likely to go in:</p>
+<table>
+<colgroup>
+<col width="30%" />
+<col width="52%" />
+<col width="16%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Common Raw Terms</th>
+<th>DwC Field</th>
+<th>Data table</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Date, Time</td>
+<td>eventDate</td>
+<td>Event, Occurrence</td>
+</tr>
+<tr class="even">
+<td>Species, g_s, taxa</td>
+<td>scientificName</td>
+<td>Occurrence</td>
+</tr>
+<tr class="odd">
+<td>Any biotic/abiotic measurements*</td>
+<td>measurementType, measurementValue, measurementUnit*</td>
+<td>eMoF</td>
+</tr>
+<tr class="even">
+<td>Depth</td>
+<td>maximumDepthInMeters or minimumDepthInMeters</td>
+<td>Event, Occurrence</td>
+</tr>
+<tr class="odd">
+<td>Lat/Latitude, Lon/Long/Longitude, dd</td>
+<td>decimalLatitude, decimalLongitude</td>
+<td>Event, Occurrence</td>
+</tr>
+<tr class="even">
+<td>Sampling method</td>
+<td>samplingProtocol</td>
+<td>eMoF</td>
+</tr>
+<tr class="odd">
+<td>Sample size, N, #, No.</td>
+<td>sampleSizeValue</td>
+<td>eMoF</td>
+</tr>
+<tr class="even">
+<td>Location</td>
+<td>locality</td>
+<td>Event</td>
+</tr>
+<tr class="odd">
+<td>Presence, absence</td>
+<td>occurrenceStatus</td>
+<td>Occurrence</td>
+</tr>
+<tr class="even">
+<td>Type of record/ specimen</td>
+<td>basisofRecord</td>
+<td>Occurrence</td>
+</tr>
+<tr class="odd">
+<td>Person/ people that recorded the original Occurrence</td>
+<td>recordedBy</td>
+<td>Occurrence</td>
+</tr>
+<tr class="even">
+<td>OrcID of person/ people that recorded the original Occurrence</td>
+<td>recordedByID</td>
+<td>Occurrence</td>
+</tr>
+<tr class="odd">
+<td>Person/ people that identified the organism</td>
+<td>identifiedBy</td>
+<td>Occurrence</td>
+</tr>
+<tr class="even">
+<td>OrcID of person/ people that identified the organism</td>
+<td>identifiedByID</td>
+<td>Occurrence</td>
+</tr>
+<tr class="odd">
+<td>Data collector, data creator</td>
+<td>recordedBy</td>
+<td>Event, Occurrence</td>
+</tr>
+<tr class="even">
+<td>Taxonomist, identifier</td>
+<td>identifiedBy</td>
+<td>Occurrence</td>
+</tr>
+<tr class="odd">
+<td>Record number, sample number, observation number</td>
+<td>occurrenceID (either ID or incorporated into ID)</td>
+<td>Occurrence</td>
+</tr>
+</tbody>
+</table>
+<p><em>Note that mapping abiotic/biotic measurement fields (sex, temperature, abundance, lengths, etc.) will occur within the <a href="vocabulary.html">extendedMeasurementOrFact extension</a>. Here this data will go from being a separate column to being condensed into the <code>measurementType</code> and <code>measurementValue</code> fields.</em></p>
+<p>The obistools R package also has the <a href="https://github.com/iobis/obistools#map-column-names-to-darwin-core-terms">map_fields function</a> that you can use to map your dataset fields to a DwC term.</p>
+</div>
+</div>
+<div id="how-to-correctly-map-emof-terms-to-preferred-bodc-vocabulary" class="section level2 hasAnchor" number="4.8">
+<h2><span class="header-section-number">4.8</span> How to correctly map eMoF terms to preferred BODC vocabulary<a href="vocabulary.html#how-to-correctly-map-emof-terms-to-preferred-bodc-vocabulary" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="measurementorfact-vocabularies" class="section level3 hasAnchor" number="4.8.1">
+<h3><span class="header-section-number">4.8.1</span> MeasurementOrFact vocabularies<a href="vocabulary.html#measurementorfact-vocabularies" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The MeasurementOrFact terms <code>measurementType</code>, <code>measurementValue</code>, and <code>measurementUnit</code> are completely unconstrained and can be populated with free text. While free text offers the advantage of capturing complex and as yet unclassified information, the inevitable semantic heterogeneity (e.g., of spelling or wording) becomes a major challenge for effective data integration and analysis. For example, if you were interested in finding all records related to length measurements, you would have to try to account for all the different ways “length” was recorded by data providers (length, Length, len, fork length, etc.).</p>
+<p>Hence, OBIS added 3 new terms: <code>measurementTypeID</code>, <code>measurementValueID</code> and <code>measurementUnitID</code> to standardize the measurement types, values and units. Note however <code>measurementValueID</code> is <strong>not</strong> used for standardizing numeric measurements.</p>
+<p>These three new terms should be populated using controlled vocabularies referenced using Unique Resource Identifiers (URIs). OBIS recommends using the internationally recognized <a href="http://www.bodc.ac.uk/resources/products/web_services/vocab/">NERC Vocabulary Server</a>, developed by the British Oceanographic Data Centre (BODC), which can be searched through <a href="https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search">https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/</a>. Such controlled vocabulary is incredibly important to ensure datasets in OBIS will be interoperable - readable by both humans and machines. In this way, you could search for a single measurementTypeID and obtain all related records, regardless of differences in wording.</p>
+<p>We provide some specific guidance for these URI fields below.</p>
+<div id="measurementtypeid" class="section level4 hasAnchor" number="4.8.1.1">
+<h4><span class="header-section-number">4.8.1.1</span> measurementTypeID<a href="vocabulary.html#measurementtypeid" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<blockquote>
+<p>Important note!
+<strong>P01 codes are required for the <code>measurementTypeID</code> field</strong>.</p>
+</blockquote>
+<p>You can use codes from other collections (e.g. P06, Q01) for <code>measurementValueID</code> and <code>measurementUnitID</code> fields, but for <code>measurementTypeID</code> you must always use a code from the P01 collection. The BODC has a <a href="https://www.bodc.ac.uk/resources/vocabularies/vocabulary_builder/">Vocabulary Builder</a> that we recommend using to assist you in selecting a P01 code.</p>
+<div id="selecting-p01-codes-for-measurementtypeid" class="section level5 hasAnchor" number="4.8.1.1.1">
+<h5><span class="header-section-number">4.8.1.1.1</span> Selecting P01 codes for measurementTypeID<a href="vocabulary.html#selecting-p01-codes-for-measurementtypeid" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>P01 codes are concepts that are constructed from several associated elements (see <a href="https://github.com/nvs-vocabs/P01/blob/master/P01_wheel.pdf">P01 wheel</a>) in order to describe a measurement type. It is important to understand that each element within a P01 code is meant to describe an aspect of the measurement: what is the measurement, what is the object being measured, where was the measurement taken, in what environment, by what kind of methods? By taking together all these elements, we are able to have a unique and specific description to differentiate one measurement from another. To further understand the P01 code and the semantic model it is based on, you can read documentation <a href="https://github.com/nvs-vocabs/P01">here</a>.</p>
+<p>The P01 collection is found <a href="http://vocab.nerc.ac.uk/collection/P01/current/">here</a> and can be <a href="https://vocab.nerc.ac.uk/search_nvs/P01/">searched through the NERC vocabulary server</a>.</p>
+<p>You may notice when searching for measurement types related to an occurrence that specific taxonomic codes are available to you, e.g., abundance of Notommata. For OBIS, <strong>all P01 codes should be generalized</strong> - i.e. do not select species-specific codes. Instead only choose codes for “biological entities specified elsewhere”.</p>
+<p>To assist you in selecting the correct P01 code, we worked with BODC to develop decision trees. These decision trees will help you identify each element that makes up a P01 code, and will help you understand the uniqueness of your data measurement (e.g. to differentiate abundance per unit area of the bed vs per unit volume of the water body). Any individual element may be found within different vocabulary collections, but taking them all together will point you to a P01 code that most accurately represents your measurement type.</p>
+<p>General guidelines for understanding the different elements that make up a measurementType are found below. Note that although we point to different vocabulary collections, you do not necessarily need to search these collections. We recommend using the following guides along with the <a href="https://www.bodc.ac.uk/resources/vocabularies/vocabulary_builder/">NERC vocabulary builder</a> to find P01 codes.</p>
 <ol style="list-style-type: decimal">
-<li>Data structure</li>
-<li>Data formatting</li>
-<li>Quality control</li>
-<li>Publishing</li>
-<li>Data access (downloading)</li>
-<li>Data visualization</li>
+<li>First identify what property is being measured. Is it an abundance, temperature measurement, length, concentration? You can identify this element in the <a href="https://vocab.nerc.ac.uk/search_nvs/S06/?searchstr=&amp;options=identifier,preflabel,altlabel,status_accepted&amp;rbaddfilter=inc&amp;searchstr2=">S06 collection</a>.</li>
+<li>Determine if the measurement is statistically derived - is it a mean, a minimum, maximum, variation? These can be found in the <a href="https://vocab.nerc.ac.uk/search_nvs/S07/?searchstr=&amp;options=identifier,preflabel,altlabel,status_accepted&amp;rbaddfilter=inc&amp;searchstr2=">S07 collection</a></li>
+<li>What are the units of the measurement? <a href="https://vocab.nerc.ac.uk/search_nvs/P06/?searchstr=&amp;options=identifier,preflabel,altlabel,status_accepted&amp;rbaddfilter=inc&amp;searchstr2=">P06</a></li>
+<li>What is the object of interest?</li>
 </ol>
-<p>Each of these phases are outlined in this manual and are composed of a number of steps which are covered in the relevant sections.</p>
-<p>After you have decided on your <a href="formatting.html">data structure</a> and have moved to the Data Formatting stage, you must first <a href="name_matching.html">match</a> the taxa in your dataset to a registered list. In formatting your dataset you will ensure the <a href="checklist.html">required OBIS terms</a> and <a href="identifiers.html">identifiers</a> are mapped correctly to your data fields and records.</p>
-<p>Depending on your data structure, you will then format data into a <a href="data_format.html">DwC-A</a> format with the appropriate Core table (<a href="format_event">Event</a> or <a href="format_occurrence.html">Occurrence</a>)) with any applicable extension tables. Any biotic or abiotic measurements will be moved into the <a href="link%20#22+">extendedMeasurementOrFact table</a>. Before proceeding to the <a href="data_publication.html">publishing</a> stage, there are a number of <a href="dataquality.html">quality control</a> steps to complete.</p>
-<p>Once your data has been published, you and others can <a href="access.html">access</a> datasets through various avenues and it becomes part of OBIS’ global database!</p>
-<p>This may seem like a daunting process at first glance, but this manual will walk you through each step, and the OBIS community is full of <a href="gethelp.html">helpful resources</a>. Throughout the manual you will find tutorials and tools to guide you from start to finish through the OBIS data life cycle.</p>
-<p><br clear="left"/></p>
-<div id="who-is-responsible-for-each-phase" class="section level4 hasAnchor" number="2.3.0.1">
-<h4><span class="header-section-number">2.3.0.1</span> Who is responsible for each phase?<a href="data_standards.html#who-is-responsible-for-each-phase" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Phases 1 through 3 are the responsibilities of the data provider, while Phases 3 and 4 are shared between the data provider and the node manager. Data users are involved in Phases 5 and 6.</p>
-<p>The OBIS Secretariat is responsible for data processing and harvesting published resources.</p>
+<ol style="list-style-type: lower-alpha">
+<li>For most measurements documented in OBIS, this will be “biological entity specified elsewhere” (<em>not</em> a specific species), a sub-group (<a href="https://vocab.nerc.ac.uk/search_nvs/S13/">S13</a>) or a sub-component (<a href="https://vocab.nerc.ac.uk/search_nvs/S12/">S12</a>). However it could be a chemical (<a href="https://vocab.nerc.ac.uk/search_nvs/S27/">S27</a>) or physical object or a physical phenomenon (S18-S20). Sometimes the environmental matrix itself is the object of interest (e.g. pH of water body, atmospheric temperature).</li>
+</ol>
+<ol start="5" style="list-style-type: decimal">
+<li>What is the relationship of the object to the environmental matrix? (<a href="https://vocab.nerc.ac.uk/search_nvs/S02/">S02</a>) Is it per unit weight, unit volume, in, etc.?</li>
+<li>What is the environmental matrix? (<a href="https://vocab.nerc.ac.uk/search_nvs/S21/">S21</a> or <a href="https://vocab.nerc.ac.uk/search_nvs/S23/">S23</a>) Is there a sub-component of the matrix? (<a href="https://vocab.nerc.ac.uk/search_nvs/S22/">S22</a> or <a href="https://vocab.nerc.ac.uk/search_nvs/S24/">S24</a>) This is a vitally important element in order to resolve ambiguity.</li>
+</ol>
+<ol style="list-style-type: lower-alpha">
+<li>Was the measurement taken from the sediment, from the water? Was a filter used? If the sample was filtered, the type and size is additional information that should be captured in the matrix definition. <a href="https://vocab.nerc.ac.uk/search_nvs/S22/">S22</a> or <a href="https://vocab.nerc.ac.uk/search_nvs/S24/">S24</a> contain the concepts for filtered samples.</li>
+</ol>
+<ol start="7" style="list-style-type: decimal">
+<li>What method was used to obtain the measurement? This is different from the sampling methods as mentioned in Step 5. This element refers to any methods applied after the measurement was taken such as sample preparation (<a href="https://vocab.nerc.ac.uk/search_nvs/S03/">S03</a>), analysis (<a href="https://vocab.nerc.ac.uk/search_nvs/S04/">S04</a>), or data processing (<a href="https://vocab.nerc.ac.uk/search_nvs/S05/">S05</a>). A good example would be the validation and standardization of chlorophyll-a concentration measurements.</li>
+</ol>
 </div>
-</div>
-<div id="biodiversity-data-standards" class="section level2 hasAnchor" number="2.4">
-<h2><span class="header-section-number">2.4</span> Biodiversity data standards<a href="data_standards.html#biodiversity-data-standards" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>From the very beginning, OBIS has championed the use of international standards for biogeographic data. Without agreement on the application of standards and protocols, OBIS would not have been able to build a large central database. OBIS uses the following standards:</p>
+<div id="common-p01-vocabularies" class="section level5 hasAnchor" number="4.8.1.1.2">
+<h5><span class="header-section-number">4.8.1.1.2</span> Common P01 Vocabularies<a href="vocabulary.html#common-p01-vocabularies" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>We have provided a list of commonly used measurementTypes and associated P01 codes. However, it is extremely important to note the following before selecting a code:</p>
+<blockquote>
+<p><strong>WARNING:</strong>
+<strong>DO NOT USE A VOCABULARY CODE UNLESS YOU ARE CERTAIN IT MATCHES YOUR DATA</strong></p>
+</blockquote>
+<p>In some cases there are multiple potential P01 codes associated with a measurementType. Be sure to choose carefully. It is better to leave the field blank and return to it later than to use an incorrect vocabulary.</p>
+<table>
+<colgroup>
+<col width="30%" />
+<col width="39%" />
+<col width="30%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>measurementType</th>
+<th>Object of interest</th>
+<th>suggested measurementTypeID P01 code(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>sex</td>
+<td>Biological entity specified elsewhere</td>
+<td><a href="http://vocab.nerc.ac.uk/collection/P01/current/ENTSEX01/" class="uri">http://vocab.nerc.ac.uk/collection/P01/current/ENTSEX01/</a></td>
+</tr>
+<tr class="even">
+<td>Life stage</td>
+<td>Biological entity specified elsewhere</td>
+<td><a href="http://vocab.nerc.ac.uk/collection/P01/current/LSTAGE01/" class="uri">http://vocab.nerc.ac.uk/collection/P01/current/LSTAGE01/</a></td>
+</tr>
+<tr class="odd">
+<td>Length</td>
+<td>Biological entity specified elsewhere</td>
+<td><a href="https://vocab.nerc.ac.uk/search_nvs/P01/?searchstr=length%20%25entity%20specified%25&amp;options=identifier" class="uri">https://vocab.nerc.ac.uk/search_nvs/P01/?searchstr=length%20%25entity%20specified%25&amp;options=identifier</a>,preflabel,altlabel,status_accepted&amp;rbaddfilter=inc&amp;searchstr2=</td>
+</tr>
+<tr class="even">
+<td>Water temperature</td>
+<td></td>
+<td><a href="http://vocab.nerc.ac.uk/collection/P01/current/TEMPPR01/" class="uri">http://vocab.nerc.ac.uk/collection/P01/current/TEMPPR01/</a> OR see <a href="http://vocab.nerc.ac.uk/search_nvs/P01/?searchstr=%25temperature%25water%25&amp;options=identifier,preflabel,altlabel,status_accepted&amp;rbaddfilter=inc&amp;searchstr2=">list</a></td>
+</tr>
+<tr class="odd">
+<td>Salinity</td>
+<td></td>
+<td><a href="http://vocab.nerc.ac.uk/collection/P01/current/TEMPPR01/" class="uri">http://vocab.nerc.ac.uk/collection/P01/current/TEMPPR01/</a> OR see <a href="http://vocab.nerc.ac.uk/search_nvs/P01/?searchstr=%25salinity%25water%25&amp;options=identifier,preflabel,altlabel,status_accepted&amp;rbaddfilter=inc&amp;searchstr2=">list</a> for specific methods</td>
+</tr>
+<tr class="even">
+<td>Length of sample track</td>
+<td>Sampling track</td>
+<td><a href="http://vocab.nerc.ac.uk/collection/P01/current/LENTRACK/" class="uri">http://vocab.nerc.ac.uk/collection/P01/current/LENTRACK/</a></td>
+</tr>
+</tbody>
+</table>
+<p>For OBIS sampling instruments and methods attributes, see the Q01 collection:</p>
 <ul>
-<li><a href="darwin_core.html">Darwin Core</a></li>
-<li><a href="eml.html">Ecological Metadata Language</a></li>
-<li><a href="data_format.html">Darwin Core Archive and dataset structure</a></li>
+<li>Vocabulary: <a href="http://vocab.nerc.ac.uk/collection/Q01/current/">http://vocab.nerc.ac.uk/collection/Q01/current/</a></li>
+<li>Search: <a href="https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/Q01/">https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/Q01/</a></li>
 </ul>
-<p>The following pages of this manual review each of these in turn. We show you how to apply these standards to format your data in the <a href="formatting.html">Data Formatting</a> section.</p>
-<p>We also provide some <a href="examples.html">dataset examples</a> for your reference.</p>
+</div>
+</div>
+<div id="measurementvalueid" class="section level4 hasAnchor" number="4.8.1.2">
+<h4><span class="header-section-number">4.8.1.2</span> measurementValueID<a href="vocabulary.html#measurementvalueid" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The <code>measurementValueID</code> field provides an identifying code for measurementValues that are non-numerical (e.g., sampling related, sex or life stage designation, etc.). It is not used for standardizing numeric measurements.</p>
+<p>See examples:</p>
+<ul>
+<li>Sampling instruments and sensors (SeaVoX Device Catalogue)
+<ul>
+<li>documentation: <a href="https://github.com/nvs-vocabs/L22">https://github.com/nvs-vocabs/L22</a></li>
+<li>vocabulary: <a href="http://vocab.nerc.ac.uk/collection/L22/current">http://vocab.nerc.ac.uk/collection/L22/current</a></li>
+<li>search: <a href="https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/L22/">https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/L22/</a></li>
+</ul></li>
+<li>Sampling instrument categories (SeaDataNet device categories)
+<ul>
+<li>documentation: <a href="https://github.com/nvs-vocabs/L05">https://github.com/nvs-vocabs/L05</a></li>
+<li>vocabulary: <a href="http://vocab.nerc.ac.uk/collection/L05/current">http://vocab.nerc.ac.uk/collection/L05/current</a></li>
+<li>search: <a href="https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/L05/">https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/L05/</a></li>
+</ul></li>
+<li>Vessels (ICES Platform Codes)
+<ul>
+<li>vocabulary: <a href="http://vocab.nerc.ac.uk/collection/C17/current">http://vocab.nerc.ac.uk/collection/C17/current</a></li>
+<li>search: <a href="https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/C17/">https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/C17/</a></li>
+</ul></li>
+<li>Sex (Gender)
+<ul>
+<li>documentation: <a href="https://github.com/nvs-vocabs/S10">https://github.com/nvs-vocabs/S10</a></li>
+<li>vocabulary: <a href="http://vocab.nerc.ac.uk/collection/S10/current/">http://vocab.nerc.ac.uk/collection/S10/current/</a></li>
+<li>search: <a href="https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/S10/">https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/S10/</a><br />
+</li>
+</ul></li>
+<li>Lifestage
+<ul>
+<li>documentation: <a href="https://github.com/nvs-vocabs/S11">https://github.com/nvs-vocabs/S11</a></li>
+<li>vocabulary: <a href="http://vocab.nerc.ac.uk/collection/S11/current/">http://vocab.nerc.ac.uk/collection/S11/current/</a></li>
+<li>search: <a href="https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/S11/">https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/S11/</a></li>
+</ul></li>
+<li>Papers or manuals on the sampling protocol used
+<ul>
+<li>DOI</li>
+<li>Handle for publications on IOC’s <a href="http://www.oceanbestpractices.net/">Ocean Best Practices repository</a>, for example: <a href="http://hdl.handle.net/11329/304">http://hdl.handle.net/11329/304</a></li>
+</ul></li>
+</ul>
+</div>
+<div id="measurementunitid" class="section level4 hasAnchor" number="4.8.1.3">
+<h4><span class="header-section-number">4.8.1.3</span> MeasurementUnitID<a href="vocabulary.html#measurementunitid" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The <code>measurementUnitID</code> field is used to provide a URI for specific units. You should populate this field with codes from the <a href="https://vocab.nerc.ac.uk/search_nvs/P06/?searchstr=&amp;options=identifier,preflabel,altlabel,status_accepted&amp;rbaddfilter=inc&amp;searchstr2=">P06</a> collection.</p>
+<p>Some relevant links for this field include:</p>
+<ul>
+<li>Documentation: <a href="https://github.com/nvs-vocabs/P06">https://github.com/nvs-vocabs/P06</a></li>
+<li>Vocabulary list: <a href="http://vocab.nerc.ac.uk/collection/P06/current">http://vocab.nerc.ac.uk/collection/P06/current</a></li>
+<li>Search list: <a href="https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/P06/">https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/P06/</a></li>
+</ul>
+</div>
+</div>
+<div id="requesting-new-vocabulary-terms" class="section level3 hasAnchor" number="4.8.2">
+<h3><span class="header-section-number">4.8.2</span> Requesting new vocabulary terms<a href="vocabulary.html#requesting-new-vocabulary-terms" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>If you have already tried looking for a P01 code and were unable to identify a suitable code for your <code>measurementType</code> you must then request a code to be created. To do this, your request must be submitted via:</p>
+<ul>
+<li>Submit request through the OBIS Vocabulary GitHub repository (<a href="https://github.com/nvs-vocabs/OBISVocabs/issues" class="uri">https://github.com/nvs-vocabs/OBISVocabs/issues</a>)
+<ul>
+<li>Requests can also be emailed to <a href="mailto:vocab.services@bodc.ac.uk" class="email">vocab.services@bodc.ac.uk</a> if you cannot access GitHub</li>
+</ul></li>
+<li>Registration with the <a href="http://vocab.nerc.ac.uk/collection/P01/current/ENTSEX01/">BODC Vocabulary Builder</a>
+<ul>
+<li>Note: these requests should be based on combinations of existing concepts</li>
+</ul></li>
+</ul>
+<div id="how-to-submit-a-github-vocabulary-request" class="section level4 hasAnchor" number="4.8.2.1">
+<h4><span class="header-section-number">4.8.2.1</span> How to Submit a GitHub Vocabulary Request<a href="vocabulary.html#how-to-submit-a-github-vocabulary-request" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ol style="list-style-type: decimal">
+<li><p>Navigate to <a href="https://github.com/nvs-vocabs/OBISVocabs/issues" class="uri">https://github.com/nvs-vocabs/OBISVocabs/issues</a> and click on the New Issue button.
+<img src="images/Vocab_GithubRequest_1-NewIssue.png" style="width:50.0%" alt="Screenshot of how to request a new vocabulary on Github" /></p></li>
+<li><p>Click Get started
+<img src="images/Vocab_GithubRequest_2-GetStarted.png" style="width:50.0%" alt="Screenshot of submitting an issue to Github" /></p></li>
+<li><p>Fill in the title with short details of your request or issue. Then fill in the description. It is recommended to list any existing terms that are similar to your request, or concepts that are sub-components of the request.
+<img src="images/Vocab_GithubRequest_3-IssueSubmission.png" style="width:50.0%" alt="Screenshot for how to request a new measurementType on Github" /></p></li>
+<li><p><em>Example</em>: An issue was created to address difficulties in identifying P01 codes for sex rather than gender. Gender is a concept generally applied to humans, whereas “sex” is more applicable for animals. Thus the request was to either modify the current gender P01 code, or create a P01 code that specifies sex, not gender. At the time the request was issued, when users searched for a P01 term for “sex”, only species-specific terms were available.
+<img src="images/Vocab_GithubRequest_4-example.png" style="width:50.0%" alt="Example of previously requested new term on Github" /></p></li>
+</ol>
 
+</div>
+</div>
+</div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="contribute.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="darwin_core.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="format_emof.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="common_formatissues.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

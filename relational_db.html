@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>2.3 OBIS Data Life Cycle | The OBIS manual</title>
-  <meta name="description" content="2.3 OBIS Data Life Cycle | The OBIS manual" />
+  <title>2.4.2.3 Relational databases: the underlying framework of OBIS | The OBIS manual</title>
+  <meta name="description" content="2.4.2.3 Relational databases: the underlying framework of OBIS | The OBIS manual" />
   <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="2.3 OBIS Data Life Cycle | The OBIS manual" />
+  <meta property="og:title" content="2.4.2.3 Relational databases: the underlying framework of OBIS | The OBIS manual" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="2.3 OBIS Data Life Cycle | The OBIS manual" />
+  <meta name="twitter:title" content="2.4.2.3 Relational databases: the underlying framework of OBIS | The OBIS manual" />
   
   
   
@@ -28,8 +28,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="contribute.html"/>
-<link rel="next" href="darwin_core.html"/>
+<link rel="prev" href="data_format.html"/>
+<link rel="next" href="eml.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -294,7 +294,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="" data-path=""><a href="#part-data-visualization-and-analysis"><i class="fa fa-check"></i>(PART*) Data Visualization and Analysis</a>
 <ul>
-<li class="chapter" data-level="7.7" data-path="data_standards.html"><a href="#example-notebooks-using-data-from-obis"><i class="fa fa-check"></i><b>7.7</b> Example notebooks using data from OBIS</a></li>
+<li class="chapter" data-level="7.7" data-path="relational_db.html"><a href="#example-notebooks-using-data-from-obis"><i class="fa fa-check"></i><b>7.7</b> Example notebooks using data from OBIS</a></li>
 <li class="chapter" data-level="7.8" data-path="dataviz.html"><a href="dataviz.html"><i class="fa fa-check"></i><b>7.8</b> obisindicators: calculating &amp; visualizing spatial biodiversity using data from OBIS</a></li>
 </ul></li>
 <li class="part"><span><b>Additional Resources</b></span></li>
@@ -321,48 +321,43 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="obis-data-life-cycle" class="section level2 hasAnchor" number="2.3">
-<h2><span class="header-section-number">2.3</span> OBIS Data Life Cycle<a href="data_standards.html#obis-data-life-cycle" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><img align="right" src="images/OBISdataLifeCycle.png" class="img-responsive" display: inline-block/></p>
-<p>The basic data life cycle for contributions to OBIS can be broken down into six step-by-step phases:</p>
-<ol style="list-style-type: decimal">
-<li>Data structure</li>
-<li>Data formatting</li>
-<li>Quality control</li>
-<li>Publishing</li>
-<li>Data access (downloading)</li>
-<li>Data visualization</li>
-</ol>
-<p>Each of these phases are outlined in this manual and are composed of a number of steps which are covered in the relevant sections.</p>
-<p>After you have decided on your <a href="formatting.html">data structure</a> and have moved to the Data Formatting stage, you must first <a href="name_matching.html">match</a> the taxa in your dataset to a registered list. In formatting your dataset you will ensure the <a href="checklist.html">required OBIS terms</a> and <a href="identifiers.html">identifiers</a> are mapped correctly to your data fields and records.</p>
-<p>Depending on your data structure, you will then format data into a <a href="data_format.html">DwC-A</a> format with the appropriate Core table (<a href="format_event">Event</a> or <a href="format_occurrence.html">Occurrence</a>)) with any applicable extension tables. Any biotic or abiotic measurements will be moved into the <a href="link%20#22+">extendedMeasurementOrFact table</a>. Before proceeding to the <a href="data_publication.html">publishing</a> stage, there are a number of <a href="dataquality.html">quality control</a> steps to complete.</p>
-<p>Once your data has been published, you and others can <a href="access.html">access</a> datasets through various avenues and it becomes part of OBIS’ global database!</p>
-<p>This may seem like a daunting process at first glance, but this manual will walk you through each step, and the OBIS community is full of <a href="gethelp.html">helpful resources</a>. Throughout the manual you will find tutorials and tools to guide you from start to finish through the OBIS data life cycle.</p>
-<p><br clear="left"/></p>
-<div id="who-is-responsible-for-each-phase" class="section level4 hasAnchor" number="2.3.0.1">
-<h4><span class="header-section-number">2.3.0.1</span> Who is responsible for each phase?<a href="data_standards.html#who-is-responsible-for-each-phase" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Phases 1 through 3 are the responsibilities of the data provider, while Phases 3 and 4 are shared between the data provider and the node manager. Data users are involved in Phases 5 and 6.</p>
-<p>The OBIS Secretariat is responsible for data processing and harvesting published resources.</p>
+<div id="relational-databases-the-underlying-framework-of-obis" class="section level4 hasAnchor" number="2.4.2.3">
+<h4><span class="header-section-number">2.4.2.3</span> Relational databases: the underlying framework of OBIS<a href="relational_db.html#relational-databases-the-underlying-framework-of-obis" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>If you are not familiar with relational databases, it can be difficult to understand the underlying framework OBIS relies on. This section will help you understand relational databases, how they relate to OBIS, the data you will format for OBIS, and the data you may download from OBIS.</p>
+<p>Why do we use relational databases in the first place? You are probably familiar with flat databases which contain all data in one table - this is likely how your own data are formatted. Relational databases instead consist of multiple data tables that each contain <em>related</em> information. When all this information is presented in one table, the table becomes larger, very complicated, and the likelihood of data duplication increases. Relational databases seek to simplify complexities and <a href="relational_db.html#how-to-avoid-redundancy">reduce redundancy</a> by allowing information to be self-contained, but linked to each other.</p>
+<p>You can think of a relational database as separate Excel sheets or data tables that are related to each other. One data table could be a “core” table, whereas others are “extensions”. Sometimes the relationships between core and extension tables are hierarchical, but this is not always the case. There is, however, always a <em>relationship</em> linking core and extension tables.</p>
+<p>Let’s review core and extension tables and how we use them for OBIS.</p>
+<p>Core tables contain information that is applicable to <strong>all</strong> extension tables, and extension tables contain more information about the records within the Core table. Each table, whether core or extension, contains records and attributes. Each row is a record (e.g., a sampling event, a species’ occurrence), whereas each column is an attribute (e.g., a date, a measurement).</p>
+<p>Records between tables are linked to each other by the use of <em>identifiers</em>. A description of measurements pertaining to a record in an Extension table will have the same identifier as the record it is describing in the Core table. By using identifiers to link records, we reduce data repetition, see <a href="relational_db.html#how-to-avoid-redundancy">below</a> for examples. In the Darwin Core format that OBIS uses, the core table is either <a href="https://manual.obis.org/data_format.html#when-to-use-event-core">Event</a> or <a href="https://manual.obis.org/data_format.html#when-to-use-occurrence-core">Occurrence</a>, and datasets can have <a href="formatting.html#extensions-accepted-by-OBIS">one, none, or more</a> extension tables. Further explanation of data formatting in OBIS is covered in the <a href="formatting.html">Data Formatting section</a> of the OBIS manual.</p>
+<p>Let’s review an example to fully understand how relational databases work. We will look at a simple relational database used by a fictional country that tracks student performance in three different courses between three schools. Rather than trying to contain information about each school, course, and student performance in one place, this information is split into three separate tables. We see that the pink table gives us information about each school - its name, and the district it belongs to. Each school also has a schoolID, an identifier linking to the blue table where we can see student performance (course mean) in each course, the class size, and year. You will notice that the course mean and class size are bundled under columns called measurementType and measurementValue. These are part of the DwC standardized vocabularies and are integral to reducing repeated data, especially when one dataset has multiple years. Finally we see that the courseID in the blue table links to the yellow one with the courseID identifier, giving us information about each course.</p>
+<p>A fourth table could easily be created to track total school population size through time. In contrast, if this information was presented in the pink Schools in Country table, the school information would be duplicated as you add rows for each year. In this way, you can easily see how useful relational databases are. Of course, this is a simplified example but it demonstrates how related tables can be linked by identifiers to reduce table complexity and data replication.</p>
+<p>We elaborate on how this structure is applied within OBIS <a href="formatting.html#dataset-structure">here</a>.</p>
+<p><img src="images/RelationalDB.drawio.png" alt="Diagram of relational databases showing how three tables are linked by unique indentifiers" class="img-responsive"/>
+Figure. An example of how a relational database works. Three tables show the (1) student performance (blue table) in (2) different schools (pink table) in a fictional country, and (3) the names of the courses (yellow table). Information between each table is linked by the use of identifiers, indicated by the arrows.</p>
+<p>Note that when OBIS harvests data, datasets are flattened - i.e., all separate data tables are combined into one. This is the kind of file you will receive when you <a href="access.html">download data from OBIS</a>. The reason for this is that querying relational databases significantly reduces computational time, as opposed to querying a flat database. Relational databases also facilitate requests for subsets that meet particular criteria - e.g., all data from Norway for one species above a certain depth.</p>
 </div>
-</div>
-<div id="biodiversity-data-standards" class="section level2 hasAnchor" number="2.4">
-<h2><span class="header-section-number">2.4</span> Biodiversity data standards<a href="data_standards.html#biodiversity-data-standards" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>From the very beginning, OBIS has championed the use of international standards for biogeographic data. Without agreement on the application of standards and protocols, OBIS would not have been able to build a large central database. OBIS uses the following standards:</p>
+<div id="how-to-avoid-redundancy" class="section level4 hasAnchor" number="2.4.2.4">
+<h4><span class="header-section-number">2.4.2.4</span> How to avoid redundancy<a href="relational_db.html#how-to-avoid-redundancy" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Avoiding redundancy and data duplication within your dataset is built into the OBIS data structure. Utilizing the star schema which delineates relationships between the core table and extension tables, we can limit the repetition of data.</p>
+<p>For example, let us consider the dates of a ship cruise where a series of bottom trawls were taken. The sampling information (e.g., date range, equipment used, etc.) for each species collected in these trawls is the same. Because of this, we know we are dealing with unique sampling events and thus we will use <a href="format_event.html">Event core</a>. So, our Event core table will contain all information related to the sampling events (e.g., date, location). Then, information pertaining to each collected species (e.g., abundance, biomass, sampling methods, etc.) will be placed in an extension, the (Extended)MeasurementOrFact table. Here, each measurement for each species and sample will occur on a separate record. These records will be linked to the correct sampling event in the Event core by an identifier - the eventID. If we were to put this data in one file, the fields related to date and location (e.g., eventDate, decimalLongitude, decimalLatitude, etc.) would be repeated for each species.</p>
+<p>Let’s consider another example. If you took one temperature measurement from the water column where you took your sample, each species found in that sample would have the <strong>same</strong> temperature measurement. By linking such measurements to the <em>event</em> instead of each <em>occurrence</em>, we are able to reduce the amount of data being repeated.</p>
+<p><img src="images/OBISsampling-example.png" class="img-responsive"/></p>
+<p>An advantage of structuring data this way is that if any mistakes are made, you only need to correct it once! So you can see that using relational event structures (when applicable) in combination with extension files can really simplify and reduce the number of times data are repeated.</p>
+<p><strong>Caveat:</strong> However we would like to note that in some cases, data duplication may occur due to the star schema structure. For example, when publishing DNA-derived data, <a href="https://docs.gbif.org/publishing-dna-derived-data/1.0/en/#data-packaging-and-mapping">Occurrence core will have to be used</a>, which necessitates the repetition of event data for each occurrence record. A possible solution to avoid duplicating Event data in these cases is to publish Event data as <a href="https://discourse.gbif.org/t/sibling-datasets-to-overcome-dwcarchive-star-schema-limitation-2/3401/2">sibling datasets</a>. Thus you would have two datasets, linked by the eventID:</p>
 <ul>
-<li><a href="darwin_core.html">Darwin Core</a></li>
-<li><a href="eml.html">Ecological Metadata Language</a></li>
-<li><a href="data_format.html">Darwin Core Archive and dataset structure</a></li>
+<li>1 Event core + eMoF</li>
+<li>1 Occurrence core + DNA-derived data extensions + eMoF</li>
 </ul>
-<p>The following pages of this manual review each of these in turn. We show you how to apply these standards to format your data in the <a href="formatting.html">Data Formatting</a> section.</p>
-<p>We also provide some <a href="examples.html">dataset examples</a> for your reference.</p>
 
+</div>
+</div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="contribute.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="darwin_core.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="data_format.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="eml.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

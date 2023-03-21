@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>2.3 OBIS Data Life Cycle | The OBIS manual</title>
-  <meta name="description" content="2.3 OBIS Data Life Cycle | The OBIS manual" />
+  <title>4.4 How to format Event tables | The OBIS manual</title>
+  <meta name="description" content="4.4 How to format Event tables | The OBIS manual" />
   <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="2.3 OBIS Data Life Cycle | The OBIS manual" />
+  <meta property="og:title" content="4.4 How to format Event tables | The OBIS manual" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="2.3 OBIS Data Life Cycle | The OBIS manual" />
+  <meta name="twitter:title" content="4.4 How to format Event tables | The OBIS manual" />
   
   
   
@@ -28,8 +28,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="contribute.html"/>
-<link rel="next" href="darwin_core.html"/>
+<link rel="prev" href="format_occurrence.html"/>
+<link rel="next" href="format_emof.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -294,7 +294,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="" data-path=""><a href="#part-data-visualization-and-analysis"><i class="fa fa-check"></i>(PART*) Data Visualization and Analysis</a>
 <ul>
-<li class="chapter" data-level="7.7" data-path="data_standards.html"><a href="#example-notebooks-using-data-from-obis"><i class="fa fa-check"></i><b>7.7</b> Example notebooks using data from OBIS</a></li>
+<li class="chapter" data-level="7.7" data-path="format_event.html"><a href="#example-notebooks-using-data-from-obis"><i class="fa fa-check"></i><b>7.7</b> Example notebooks using data from OBIS</a></li>
 <li class="chapter" data-level="7.8" data-path="dataviz.html"><a href="dataviz.html"><i class="fa fa-check"></i><b>7.8</b> obisindicators: calculating &amp; visualizing spatial biodiversity using data from OBIS</a></li>
 </ul></li>
 <li class="part"><span><b>Additional Resources</b></span></li>
@@ -321,48 +321,70 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="obis-data-life-cycle" class="section level2 hasAnchor" number="2.3">
-<h2><span class="header-section-number">2.3</span> OBIS Data Life Cycle<a href="data_standards.html#obis-data-life-cycle" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><img align="right" src="images/OBISdataLifeCycle.png" class="img-responsive" display: inline-block/></p>
-<p>The basic data life cycle for contributions to OBIS can be broken down into six step-by-step phases:</p>
-<ol style="list-style-type: decimal">
-<li>Data structure</li>
-<li>Data formatting</li>
-<li>Quality control</li>
-<li>Publishing</li>
-<li>Data access (downloading)</li>
-<li>Data visualization</li>
-</ol>
-<p>Each of these phases are outlined in this manual and are composed of a number of steps which are covered in the relevant sections.</p>
-<p>After you have decided on your <a href="formatting.html">data structure</a> and have moved to the Data Formatting stage, you must first <a href="name_matching.html">match</a> the taxa in your dataset to a registered list. In formatting your dataset you will ensure the <a href="checklist.html">required OBIS terms</a> and <a href="identifiers.html">identifiers</a> are mapped correctly to your data fields and records.</p>
-<p>Depending on your data structure, you will then format data into a <a href="data_format.html">DwC-A</a> format with the appropriate Core table (<a href="format_event">Event</a> or <a href="format_occurrence.html">Occurrence</a>)) with any applicable extension tables. Any biotic or abiotic measurements will be moved into the <a href="link%20#22+">extendedMeasurementOrFact table</a>. Before proceeding to the <a href="data_publication.html">publishing</a> stage, there are a number of <a href="dataquality.html">quality control</a> steps to complete.</p>
-<p>Once your data has been published, you and others can <a href="access.html">access</a> datasets through various avenues and it becomes part of OBIS’ global database!</p>
-<p>This may seem like a daunting process at first glance, but this manual will walk you through each step, and the OBIS community is full of <a href="gethelp.html">helpful resources</a>. Throughout the manual you will find tutorials and tools to guide you from start to finish through the OBIS data life cycle.</p>
-<p><br clear="left"/></p>
-<div id="who-is-responsible-for-each-phase" class="section level4 hasAnchor" number="2.3.0.1">
-<h4><span class="header-section-number">2.3.0.1</span> Who is responsible for each phase?<a href="data_standards.html#who-is-responsible-for-each-phase" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Phases 1 through 3 are the responsibilities of the data provider, while Phases 3 and 4 are shared between the data provider and the node manager. Data users are involved in Phases 5 and 6.</p>
-<p>The OBIS Secretariat is responsible for data processing and harvesting published resources.</p>
-</div>
-</div>
-<div id="biodiversity-data-standards" class="section level2 hasAnchor" number="2.4">
-<h2><span class="header-section-number">2.4</span> Biodiversity data standards<a href="data_standards.html#biodiversity-data-standards" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>From the very beginning, OBIS has championed the use of international standards for biogeographic data. Without agreement on the application of standards and protocols, OBIS would not have been able to build a large central database. OBIS uses the following standards:</p>
+<div id="how-to-format-event-tables" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">4.4</span> How to format Event tables<a href="format_event.html#how-to-format-event-tables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>If your dataset uses an Event Core structure, data fields included in your dataset should include the following required terms:</p>
 <ul>
-<li><a href="darwin_core.html">Darwin Core</a></li>
-<li><a href="eml.html">Ecological Metadata Language</a></li>
-<li><a href="data_format.html">Darwin Core Archive and dataset structure</a></li>
+<li><code>eventDate</code></li>
+<li><code>eventID</code></li>
+<li><code>parentEventID</code> (if applicable)</li>
+<li><code>decimalLatitude</code></li>
+<li><code>decimalLongitude</code></li>
 </ul>
-<p>The following pages of this manual review each of these in turn. We show you how to apply these standards to format your data in the <a href="formatting.html">Data Formatting</a> section.</p>
-<p>We also provide some <a href="examples.html">dataset examples</a> for your reference.</p>
+<p>Other terms you should consider adding are grouped by their associated Darwin Core class in the table below. See the <a href="checklist.html">term checklist</a> for a more complete list of DwC terms for the Event table.</p>
+<p>Class Event | DwC:parentEventID
+Class Event | DwC:eventRemarks
+Class Event | DwC:eventType
+Class Event | DwC:year
+Class Event | DwC:month
+Class Event | DwC:day
+Class Event | DwC:type
+Class Location | DwC:country
+Class Location | DwC:island
+Class Location | DwC:coordinateUncertaintyInMeters
+Class Location | DwC:countryCode
+Class Location | DwC:footprintWKT
+Class Location | DwC:geodeticDatum
+Class Location | DwC:islandGroup
+Class Location | DwC:locality
+Class Location | DwC:locationAccordingTo
+Class Location | DwC:locationID
+Class Location | DwC:locationRemarks
+Class Location | DwC:maximumDepthInMeters
+Class Location | DwC:minimumDepthInMeters
+Class Location | DwC:stateProvince
+Class Location | DwC:verbatimCoordinates
+Class Location | DwC:verbatimDepth
+Class Location | DwC:waterBody</p>
+<p>Terms related to measurements, either biotic (e.g., sex, lifestage) or abiotic will be included in extendedMeasurementOrFact table <em>not</em> the Event Core or Occurrence extension table.</p>
+<div id="stepwise-guidance-to-format-event-table-in-excel" class="section level3 hasAnchor" number="4.4.1">
+<h3><span class="header-section-number">4.4.1</span> Stepwise Guidance to Format Event Table (in Excel)<a href="format_event.html#stepwise-guidance-to-format-event-table-in-excel" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Before proceeding with the below, make sure each record already has an <a href="identifiers.html">eventID</a>.</p>
+<ol style="list-style-type: decimal">
+<li>Identify columns in your data that will match with Darwin Core event fields
+<ul>
+<li>Include any relevant abiotic measurements (ENV-DATA) related to sampling events (e.g. sampling protocols). We will add these to the eMoF table later.</li>
+</ul></li>
+<li>Copy these columns to a new sheet and name it Event</li>
+<li>Delete duplicate data so only unique events are left.</li>
+<li>Identify the hierarchical event structure in your data, if present</li>
+<li>Add and fill the <code>parentEventID</code> and <code>type</code> fields as applicable</li>
+<li>Create new records for parent Events</li>
+<li>Ensure dates and time are <a href="link%20#30">formatted according to ISO 8601 standards</a> in the eventDate field</li>
+<li>Add any other relevant fields as indicated above</li>
+</ol>
+<p>Watch the video tutorial of this process.</p>
+<p>After completing the formatting of your Event Core table, you can next format your extendedMeasurementOrFact table. To format the Occurrence extension table, see the <a href="format_occurrence.html">Occurrence table</a> section of this manual.</p>
 
+</div>
+</div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="contribute.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="darwin_core.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="format_occurrence.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="format_emof.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

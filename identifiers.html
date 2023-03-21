@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>2.3 OBIS Data Life Cycle | The OBIS manual</title>
-  <meta name="description" content="2.3 OBIS Data Life Cycle | The OBIS manual" />
+  <title>3.5 Constructing and using indentifier codes | The OBIS manual</title>
+  <meta name="description" content="3.5 Constructing and using indentifier codes | The OBIS manual" />
   <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="2.3 OBIS Data Life Cycle | The OBIS manual" />
+  <meta property="og:title" content="3.5 Constructing and using indentifier codes | The OBIS manual" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="2.3 OBIS Data Life Cycle | The OBIS manual" />
+  <meta name="twitter:title" content="3.5 Constructing and using indentifier codes | The OBIS manual" />
   
   
   
@@ -28,8 +28,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="contribute.html"/>
-<link rel="next" href="darwin_core.html"/>
+<link rel="prev" href="formatting.html"/>
+<link rel="next" href="checklist.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -294,7 +294,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="" data-path=""><a href="#part-data-visualization-and-analysis"><i class="fa fa-check"></i>(PART*) Data Visualization and Analysis</a>
 <ul>
-<li class="chapter" data-level="7.7" data-path="data_standards.html"><a href="#example-notebooks-using-data-from-obis"><i class="fa fa-check"></i><b>7.7</b> Example notebooks using data from OBIS</a></li>
+<li class="chapter" data-level="7.7" data-path="identifiers.html"><a href="#example-notebooks-using-data-from-obis"><i class="fa fa-check"></i><b>7.7</b> Example notebooks using data from OBIS</a></li>
 <li class="chapter" data-level="7.8" data-path="dataviz.html"><a href="dataviz.html"><i class="fa fa-check"></i><b>7.8</b> obisindicators: calculating &amp; visualizing spatial biodiversity using data from OBIS</a></li>
 </ul></li>
 <li class="part"><span><b>Additional Resources</b></span></li>
@@ -321,48 +321,226 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="obis-data-life-cycle" class="section level2 hasAnchor" number="2.3">
-<h2><span class="header-section-number">2.3</span> OBIS Data Life Cycle<a href="data_standards.html#obis-data-life-cycle" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><img align="right" src="images/OBISdataLifeCycle.png" class="img-responsive" display: inline-block/></p>
-<p>The basic data life cycle for contributions to OBIS can be broken down into six step-by-step phases:</p>
-<ol style="list-style-type: decimal">
-<li>Data structure</li>
-<li>Data formatting</li>
-<li>Quality control</li>
-<li>Publishing</li>
-<li>Data access (downloading)</li>
-<li>Data visualization</li>
-</ol>
-<p>Each of these phases are outlined in this manual and are composed of a number of steps which are covered in the relevant sections.</p>
-<p>After you have decided on your <a href="formatting.html">data structure</a> and have moved to the Data Formatting stage, you must first <a href="name_matching.html">match</a> the taxa in your dataset to a registered list. In formatting your dataset you will ensure the <a href="checklist.html">required OBIS terms</a> and <a href="identifiers.html">identifiers</a> are mapped correctly to your data fields and records.</p>
-<p>Depending on your data structure, you will then format data into a <a href="data_format.html">DwC-A</a> format with the appropriate Core table (<a href="format_event">Event</a> or <a href="format_occurrence.html">Occurrence</a>)) with any applicable extension tables. Any biotic or abiotic measurements will be moved into the <a href="link%20#22+">extendedMeasurementOrFact table</a>. Before proceeding to the <a href="data_publication.html">publishing</a> stage, there are a number of <a href="dataquality.html">quality control</a> steps to complete.</p>
-<p>Once your data has been published, you and others can <a href="access.html">access</a> datasets through various avenues and it becomes part of OBIS’ global database!</p>
-<p>This may seem like a daunting process at first glance, but this manual will walk you through each step, and the OBIS community is full of <a href="gethelp.html">helpful resources</a>. Throughout the manual you will find tutorials and tools to guide you from start to finish through the OBIS data life cycle.</p>
-<p><br clear="left"/></p>
-<div id="who-is-responsible-for-each-phase" class="section level4 hasAnchor" number="2.3.0.1">
-<h4><span class="header-section-number">2.3.0.1</span> Who is responsible for each phase?<a href="data_standards.html#who-is-responsible-for-each-phase" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Phases 1 through 3 are the responsibilities of the data provider, while Phases 3 and 4 are shared between the data provider and the node manager. Data users are involved in Phases 5 and 6.</p>
-<p>The OBIS Secretariat is responsible for data processing and harvesting published resources.</p>
-</div>
-</div>
-<div id="biodiversity-data-standards" class="section level2 hasAnchor" number="2.4">
-<h2><span class="header-section-number">2.4</span> Biodiversity data standards<a href="data_standards.html#biodiversity-data-standards" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>From the very beginning, OBIS has championed the use of international standards for biogeographic data. Without agreement on the application of standards and protocols, OBIS would not have been able to build a large central database. OBIS uses the following standards:</p>
+<div id="constructing-and-using-indentifier-codes" class="section level2 hasAnchor" number="3.5">
+<h2><span class="header-section-number">3.5</span> Constructing and using indentifier codes<a href="identifiers.html#constructing-and-using-indentifier-codes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="eventid" class="section level3 hasAnchor" number="3.5.1">
+<h3><span class="header-section-number">3.5.1</span> eventID<a href="identifiers.html#eventid" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Using a unique identifier for each physical sample or subsample in your dataset taken at each location and time is highly recommended to ensure sample traceability and data provenance. <code>eventID</code> is an identifier for an individual sampling or observation event, whereas <code>parentEventID</code> is an identifier for a parent event, which is composed of one or more sub-sampling (child) events (eventIDs).</p>
+<p><code>eventID</code> can be used for replicated samples or sub-samples. It is important to make sure each replicate sample receives a unique <code>eventID</code>, which could be based on the unique sample ID in your dataset. Sample ID can also be recorded in <code>materialSampleID</code>, as OBIS does not need to have separate eventIDs and <code>materialSampleIDs</code>. Rather OBIS can treat these two terms as equivalent. Be sure to still fill in the eventID field if you want to use materialSampleID, as OBIS only uses eventID and parentID for structuring datasets, not sample ID. This does not prevent you from using the field if you would like to.</p>
+<p>If you do not already have a <code>materialSampleID</code>, creating a unique eventID for your data records can be as straightforward as combining different fields from your data.</p>
+<blockquote>
+<p><strong>Note</strong>
+You should consider carefully what combination of fields will generate a <strong>unique</strong> event. Combinations including date, time, location, and depth are common elements to help generate such unique codes.</p>
+</blockquote>
+<p>Including the event type can also be useful for datasets with hierarchical sampling methods (e.g., samples taken from a station within a cruise). Repeating the parentEventID in the child event (use <code>:</code> as delimiter) can make the structure of the dataset easier to understand. Nesting event information in this way also allows you to reduce redundancy and still provide information relevant to each level of sampling.</p>
+<p>Broadly, an eventID can take the form of <code>[parentEventID]:[sample type]_[sample ID]</code></p>
+<p>Thus to construct a unique eventID for parent and child events, you join relevant sampling information. Possible configurations (with examples) could include:</p>
 <ul>
-<li><a href="darwin_core.html">Darwin Core</a></li>
-<li><a href="eml.html">Ecological Metadata Language</a></li>
-<li><a href="data_format.html">Darwin Core Archive and dataset structure</a></li>
+<li>Project_cruise_station_date_sample
+<ul>
+<li>STAR_arcticsea_st3520_1989-04-04_s01</li>
+</ul></li>
+<li>Project_habitat_Genus_species_year_sampletype_samplenumber
+<ul>
+<li>BEE_seamount_Genus_species_2013_cruise_s123</li>
+</ul></li>
+<li>Institution_year_location_samplemethod_sample
+<ul>
+<li>Concordia_2003_Coast_Station1_seine_s01</li>
+<li>Concordia_2003_Coast_Station1_trap_s01</li>
+</ul></li>
 </ul>
-<p>The following pages of this manual review each of these in turn. We show you how to apply these standards to format your data in the <a href="formatting.html">Data Formatting</a> section.</p>
-<p>We also provide some <a href="examples.html">dataset examples</a> for your reference.</p>
+<p>These examples are not exhaustive and other similarly structured variations that fit your data are acceptable. Consider also including year within your eventIDs to ensure codes remain globally unique in subsequent years, which is particularly useful if your sampling protocol is repeated temporally.</p>
+<p>Information related to your sampling events can be assigned to the highest relevant event level in order to avoid repetition of information. For example, if all samples taken from a station occurred at the same depth, this information can be listed once. Variation between samples (e.g., exact time or coordinates) can also be easily reflected for each event. See the table below for a demonstration.</p>
+<table>
+<colgroup>
+<col width="27%" />
+<col width="22%" />
+<col width="14%" />
+<col width="18%" />
+<col width="16%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>eventID</th>
+<th>parentEventID</th>
+<th>type</th>
+<th>eventDate</th>
+<th>maximumDepthInMeters</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>cruise_1</td>
+<td></td>
+<td>cruise</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>cruise_1:station_1</td>
+<td>cruise_1</td>
+<td>station</td>
+<td></td>
+<td>15</td>
+</tr>
+<tr class="odd">
+<td>cruise_1:station_1:core_1</td>
+<td>cruise_1:station_1</td>
+<td>sample</td>
+<td>2011-03-06T08:35</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>cruise_1:station_1:core_2</td>
+<td>cruise_1:station_1</td>
+<td>cruise_1:station_1</td>
+<td>sample</td>
+<td>2011-03-06T08:52</td>
+</tr>
+<tr class="odd">
+<td>cruise_1:station_1:core_1:subsample_1</td>
+<td>cruise_1:station_1:core_1</td>
+<td>subsample</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>We recommend using controlled vocabulary for the “type” column. Although no standards have been agreed upon yet, commonly used terms for event <code>type</code> included are <code>cruise</code>, <code>stationVisit</code>, <code>transect</code>, <code>quadrat</code>, <code>sample</code>, <code>subSample</code>.</p>
+<p>Consider another example from a real dataset below:</p>
+<table>
+<colgroup>
+<col width="36%" />
+<col width="34%" />
+<col width="12%" />
+<col width="16%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>eventID</th>
+<th>parentEventID</th>
+<th>eventDate</th>
+<th>eventRemarks</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>IOF_benthos_Plominski_zaljev_2000_crs</td>
+<td></td>
+<td></td>
+<td>cruise</td>
+</tr>
+<tr class="even">
+<td>IOF_benthos_Plominski_zaljev_2000_stat1</td>
+<td>IOF_benthos_Plominski_zaljev_2000_crs</td>
+<td>2000-08</td>
+<td>stationVisit</td>
+</tr>
+<tr class="odd">
+<td>IOF_benthos_Plominski_zaljev_2000_stat2</td>
+<td>IOF_benthos_Plominski_zaljev_2000_crs</td>
+<td>2000-08</td>
+<td>stationVisit</td>
+</tr>
+<tr class="even">
+<td>IOF_benthos_Plominski_zaljev_2000_s01</td>
+<td>IOF_benthos_Plominski_zaljev_2000_stat1</td>
+<td></td>
+<td>sample</td>
+</tr>
+<tr class="odd">
+<td>IOF_benthos_Plominski_zaljev_2000_s02</td>
+<td>IOF_benthos_Plominski_zaljev_2000_stat2</td>
+<td></td>
+<td>sample</td>
+</tr>
+</tbody>
+</table>
+<p><em>Data from <a href="http://ipt.vliz.be/eurobis/resource?r=iof_bent_eia_2000_10">Environmental impact assessments in the eastern part of Adriatic sea - species list of benthic invertebrates and phytobenthos (2000-2010)</a>.</em></p>
+<p>We can see that each record has a similar eventID structure, except for the last part which indicates the event type - documented in the <code>eventRemarks</code> column. In this dataset, records with the eventID <code>IOF_benthos_Plominski_zaljev_2000_crs</code> has information applicable for records with eventIDs ending with <code>_stat1</code>, <code>_stat2</code>, <code>_s01</code>, and <code>_s02</code> because <code>_crs</code> is their parent event. Similarly, information (e.g., date of station visit, coordinates) documented in records with eventID <code>IOF_benthos_Plominski_zaljev_2000_stat1</code> is applicable for the two sample records (eventID <code>_s01</code> and <code>_s02</code>), because these samples were taken at Station 1 (indicated by the parentEventID). These eventIDs could have been nested in another way, such as <code>IOF_benthos_Plominsku_zaljev_2000_crs:stat1:s01</code> which would embed the parentEventID into the identifier.</p>
+<p>See also <a href="https://bdj.pensoft.net/articles.php?id=10989&amp;instance_id=3385375">De Pooter et al. 2017</a> for an example of an event hierarchy in a complex benthos dataset.</p>
+</div>
+<div id="occurrenceid" class="section level3 hasAnchor" number="3.5.2">
+<h3><span class="header-section-number">3.5.2</span> occurrenceID<a href="identifiers.html#occurrenceid" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><code>occurrenceID</code> is an identifier for occurrence records. Each occurrence record must have a unique identifier. Because <code>occurrenceID</code> is a required term, you may have to construct a persistent and globally unique identifier for each of your data records if none already exist.</p>
+<p>There are no standardized guidelines yet on designing the persistence of this ID, the level of uniqueness (from within a dataset to globally in OBIS), and the precise algorithm and format for generating the ID. But in the absence of a persistent globally unique identifier, one can be constructed by combining the <code>institutionCode</code>, the <code>collectionCode</code> and the <code>catalogNumber</code> (or autonumber in the absence of a catalogNumber). This is similar to how <a href="identifiers#eventid.html">eventID</a> is constructed. Note that the inclusion of <code>occurrenceID</code> is also necessary for datasets in the OBIS-ENV-DATA format.</p>
+<p>An important consideration for museum specimens: there is the possibility that the institution a specimen is housed at may change. Therefore you may consider omitting institution identifiers within an occurrenceID, because occurrenceID should <strong>not</strong> change over time.</p>
+<p>See the example below:</p>
+<table>
+<colgroup>
+<col width="30%" />
+<col width="24%" />
+<col width="45%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>modified</th>
+<th>institutionCode</th>
+<th>collectionCode</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2017-02-27 15:47:31</td>
+<td>Ugent</td>
+<td>Vegetation_Gazi_Bay(Kenya)1987</td>
+</tr>
+<tr class="even">
+<td>2017-02-27 15:47:31</td>
+<td>Ugent</td>
+<td>Vegetation_Gazi_Bay(Kenya)1987</td>
+</tr>
+<tr class="odd">
+<td>2017-02-27 15:47:31</td>
+<td>Ugent</td>
+<td>Vegetation_Gazi_Bay(Kenya)1987</td>
+</tr>
+</tbody>
+</table>
+<table style="width:100%;">
+<colgroup>
+<col width="17%" />
+<col width="41%" />
+<col width="41%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>basisOfRecord</th>
+<th>occurrenceID</th>
+<th>catalogNumber</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>HumanObservation</td>
+<td>Ugent_Vegetation_Gazi_Bay(Kenya)1987_7553</td>
+<td>Ugent_Vegetation_Gazi_Bay(Kenya)1987_7553</td>
+</tr>
+<tr class="even">
+<td>HumanObservation</td>
+<td>Ugent_Vegetation_Gazi_Bay(Kenya)1987_7554</td>
+<td>Ugent_Vegetation_Gazi_Bay(Kenya)1987_7554</td>
+</tr>
+<tr class="odd">
+<td>HumanObservation</td>
+<td>Ugent_Vegetation_Gazi_Bay(Kenya)1987_7555</td>
+<td>Ugent_Vegetation_Gazi_Bay(Kenya)1987_7555</td>
+</tr>
+</tbody>
+</table>
+<p><em>Data from <a href="http://ipt.vliz.be/eurobis/resource?r=vegetation_gazi_bay_kenya_1987">Algal community on the pneumatophores of mangrove trees of Gazi Bay in July and August 1987</a>.</em></p>
 
+</div>
+</div>
+</div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="contribute.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="darwin_core.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="formatting.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="checklist.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>2.3 OBIS Data Life Cycle | The OBIS manual</title>
-  <meta name="description" content="2.3 OBIS Data Life Cycle | The OBIS manual" />
+  <title>3 Dataset structure | The OBIS manual</title>
+  <meta name="description" content="3 Dataset structure | The OBIS manual" />
   <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="2.3 OBIS Data Life Cycle | The OBIS manual" />
+  <meta property="og:title" content="3 Dataset structure | The OBIS manual" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="2.3 OBIS Data Life Cycle | The OBIS manual" />
+  <meta name="twitter:title" content="3 Dataset structure | The OBIS manual" />
   
   
   
@@ -28,8 +28,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="contribute.html"/>
-<link rel="next" href="darwin_core.html"/>
+<link rel="prev" href="nodes.html"/>
+<link rel="next" href="identifiers.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -294,7 +294,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="" data-path=""><a href="#part-data-visualization-and-analysis"><i class="fa fa-check"></i>(PART*) Data Visualization and Analysis</a>
 <ul>
-<li class="chapter" data-level="7.7" data-path="data_standards.html"><a href="#example-notebooks-using-data-from-obis"><i class="fa fa-check"></i><b>7.7</b> Example notebooks using data from OBIS</a></li>
+<li class="chapter" data-level="7.7" data-path="formatting.html"><a href="#example-notebooks-using-data-from-obis"><i class="fa fa-check"></i><b>7.7</b> Example notebooks using data from OBIS</a></li>
 <li class="chapter" data-level="7.8" data-path="dataviz.html"><a href="dataviz.html"><i class="fa fa-check"></i><b>7.8</b> obisindicators: calculating &amp; visualizing spatial biodiversity using data from OBIS</a></li>
 </ul></li>
 <li class="part"><span><b>Additional Resources</b></span></li>
@@ -321,48 +321,76 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="obis-data-life-cycle" class="section level2 hasAnchor" number="2.3">
-<h2><span class="header-section-number">2.3</span> OBIS Data Life Cycle<a href="data_standards.html#obis-data-life-cycle" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><img align="right" src="images/OBISdataLifeCycle.png" class="img-responsive" display: inline-block/></p>
-<p>The basic data life cycle for contributions to OBIS can be broken down into six step-by-step phases:</p>
-<ol style="list-style-type: decimal">
-<li>Data structure</li>
-<li>Data formatting</li>
-<li>Quality control</li>
-<li>Publishing</li>
-<li>Data access (downloading)</li>
-<li>Data visualization</li>
-</ol>
-<p>Each of these phases are outlined in this manual and are composed of a number of steps which are covered in the relevant sections.</p>
-<p>After you have decided on your <a href="formatting.html">data structure</a> and have moved to the Data Formatting stage, you must first <a href="name_matching.html">match</a> the taxa in your dataset to a registered list. In formatting your dataset you will ensure the <a href="checklist.html">required OBIS terms</a> and <a href="identifiers.html">identifiers</a> are mapped correctly to your data fields and records.</p>
-<p>Depending on your data structure, you will then format data into a <a href="data_format.html">DwC-A</a> format with the appropriate Core table (<a href="format_event">Event</a> or <a href="format_occurrence.html">Occurrence</a>)) with any applicable extension tables. Any biotic or abiotic measurements will be moved into the <a href="link%20#22+">extendedMeasurementOrFact table</a>. Before proceeding to the <a href="data_publication.html">publishing</a> stage, there are a number of <a href="dataquality.html">quality control</a> steps to complete.</p>
-<p>Once your data has been published, you and others can <a href="access.html">access</a> datasets through various avenues and it becomes part of OBIS’ global database!</p>
-<p>This may seem like a daunting process at first glance, but this manual will walk you through each step, and the OBIS community is full of <a href="gethelp.html">helpful resources</a>. Throughout the manual you will find tutorials and tools to guide you from start to finish through the OBIS data life cycle.</p>
-<p><br clear="left"/></p>
-<div id="who-is-responsible-for-each-phase" class="section level4 hasAnchor" number="2.3.0.1">
-<h4><span class="header-section-number">2.3.0.1</span> Who is responsible for each phase?<a href="data_standards.html#who-is-responsible-for-each-phase" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Phases 1 through 3 are the responsibilities of the data provider, while Phases 3 and 4 are shared between the data provider and the node manager. Data users are involved in Phases 5 and 6.</p>
-<p>The OBIS Secretariat is responsible for data processing and harvesting published resources.</p>
-</div>
-</div>
-<div id="biodiversity-data-standards" class="section level2 hasAnchor" number="2.4">
-<h2><span class="header-section-number">2.4</span> Biodiversity data standards<a href="data_standards.html#biodiversity-data-standards" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>From the very beginning, OBIS has championed the use of international standards for biogeographic data. Without agreement on the application of standards and protocols, OBIS would not have been able to build a large central database. OBIS uses the following standards:</p>
+<div id="dataset-structure" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">3</span> Dataset structure<a href="formatting.html#dataset-structure" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Formatting data can be challenging. This section of the manual deals with how to format data for OBIS, beginning with an overview of dataset structure.</p>
+<p>Deciding on your dataset structure is one of the first steps towards getting your data ready for publishing. At this step, there are no specific actions you need to do with your data, but it is important to determine which structure best suits your dataset before proceeding. Then, once you have decided on the dataset structure, you can continue formatting your data.</p>
+<div id="when-to-use-event-core" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> When to use Event Core<a href="formatting.html#when-to-use-event-core" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Event Core describes <strong>when</strong> and <strong>where</strong> a specific sampling event happened and contains information such as location and date. It covers:</p>
 <ul>
-<li><a href="darwin_core.html">Darwin Core</a></li>
-<li><a href="eml.html">Ecological Metadata Language</a></li>
-<li><a href="data_format.html">Darwin Core Archive and dataset structure</a></li>
+<li>When specific details are known about <strong>how</strong> a biological sample was taken and processed. These details can then be defined in the eMoF Extension with the newly developed <a href="https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/Q01/">Q01 vocabulary</a></li>
+<li>When the dataset contains abiotic measurements, or other biological measurements which are <strong>related to an entire sample</strong> (not a single specimen). For example a biomass measurement for an entire sample, not each species within the sample</li>
 </ul>
-<p>The following pages of this manual review each of these in turn. We show you how to apply these standards to format your data in the <a href="formatting.html">Data Formatting</a> section.</p>
-<p>We also provide some <a href="examples.html">dataset examples</a> for your reference.</p>
+<p>Event Core can be used in combination with the Occurrence and eMoF extensions. The identifier that links Event Core to the extension is the <code>eventID</code>. <a href="identifiers.html"><code>parentID</code></a> can also be used to give information on hierarchical sampling.
+<code>occurrenceID</code> can also be used in datasets with Event Core in order to link information between the Occurrence extension and the eMoF extension.</p>
+</div>
+<div id="when-to-use-occurrence-core" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> When to use Occurrence Core<a href="formatting.html#when-to-use-occurrence-core" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Occurrence Core datasets describe <strong>observations</strong> and <strong>specimen records</strong> and cover instances when:
+<strong>No information</strong> on how the data was sampled or samples were processed is available</p>
+<ul>
+<li>No abiotic measurements are taken or provided</li>
+<li>You have <a href="examples.html#edna-dna-derived-data.html">eDNA and DNA derived data</a></li>
+<li>Biological measurements are made on <strong>individual specimens</strong> (each specimen is a single occurrence record)</li>
+</ul>
+<p>Occurrence Core is also often the preferred structure for museum collections, citations of occurrences from literature, and sampling activities.</p>
+<p>Datasets formatted in Occurrence Core can use the eMoF Extension for when you have biotic measurements or facts of your specimen. The DNA derived data extension can also be used to link to DNA sequences. The identifier that links Occurrence Core to the extension(s) is the <code>occurrenceID</code>.</p>
+</div>
+<div id="extensions-in-obis" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> Extensions in OBIS<a href="formatting.html#extensions-in-obis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Currently OBIS accepts the following extensions:</p>
+<ul>
+<li>Occurrence</li>
+<li>Event</li>
+<li>MeasurementOrFact</li>
+<li>extendedMeasurementOrFact</li>
+<li>DNADerivedData</li>
+</ul>
+<div id="how-are-extensions-linked-to-core-tables-in-obis" class="section level3 hasAnchor" number="3.3.1">
+<h3><span class="header-section-number">3.3.1</span> How are extensions linked to core tables in OBIS?<a href="formatting.html#how-are-extensions-linked-to-core-tables-in-obis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>As established in the <a href="relational_db.html">relational database section</a>, OBIS relies on datasets being formatted according to a relational database structure. The <a href="data_format.html#obis-holds-more-than-just-species-occurrences-the-env-data-approach">ENV-DATA approach</a> that OBIS implements means your dataset will have a Core table and (optionally) Extension tables. As a review, a core file contains information relevant and applicable to each record in the extension(s). An extension file then contains records that link back to a record in the core file with more specific information (e.g., methods, measurements, facts, DNA sequences, etc.).</p>
+<p>The extension file(s) accepted by OBIS (eMoF, Occurrence, DNA) are linked to your core tables by the use of identifying ID codes. These codes could be either <code>eventID</code> or <code>occurrenceID</code>. For details on how to construct these IDs, click <a href="identifiers.html">here</a>.</p>
+</div>
+<div id="differences-between-identifiers" class="section level3 hasAnchor" number="3.3.2">
+<h3><span class="header-section-number">3.3.2</span> Differences between identifiers<a href="formatting.html#differences-between-identifiers" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>If your core file is based on occurrences (e.g., an observation), then any extensions are linked with <code>occurrenceID</code>. If your core file is based on events (e.g., a sampling event), then the linking identifier is <code>eventID</code>. Thus, multiple records in an extension file can have the same identifier which will link them to the same event or occurrence record (depending on which is the Core). The different linking identifiers are shown in the figure below.</p>
+<div class="figure">
+<img src="images/coretable-identifiers.jpg" style="width:50.0%" alt="" />
+<p class="caption">Diagram of how the different core tables are linked to their extensions by different identifiers.</p>
+</div>
+<p>Let us consider a fictional plankton trawl sampling event to demonstrate how identifiers link Core and Extension tables in OBIS. This trawl used two types of nets, occurred in March 2013, and has an eventID <code>plankton-northsea-2013-03</code>. Suppose we have information about the types of trawl used and the species abundance from this trawling event. The information (e.g., date) of the sampling event itself would be found in the Event Core, whereas the abundance data and sampling methods would be in the eMoF table. How do we ensure the abundance and sampling method data is properly linked to the correct event? By using the same eventID for each record in the eMoF table, <code>plankton-northsea-2013-03</code>, the information is properly linked between the Event Core and the eMoF extension.</p>
+</div>
+</div>
+<div id="data-formatting-tools" class="section level2 hasAnchor" number="3.4">
+<h2><span class="header-section-number">3.4</span> Data formatting tools<a href="formatting.html#data-formatting-tools" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The GBIF Norwegian Node created the <a href="https://gbif-norway.github.io/dwc-excel-template-generator-js/">DwC Excel Template Generator</a>. This tool will generate four different types of blank Excel spreadsheets: Occurrence Core, MeasurementOrFact, Metadata, and a README. This tool works best if you already know which Darwin Core fields you need, although a default template can be generated.</p>
+<p>Another tool from Norway is the <a href="https://zenodo.org/record/6453921#.Y9KsQkHMKmU">Excel to Darwin Core Standard (DwC) Tool</a>. This is a macro Excel spreadsheet that helps create templates for Event (aka Sampling-Event) and Occurrence core tables, as well as MeasurementsOrFacts, Extended MeasurementsOrFacts, and Simple Multimedia extensions.
+GBIF provides an <a href="https://ipt.gbif.org/manual/en/ipt/latest/occurrence-data#templates">Occurrence core template</a> and an <a href="https://ipt.gbif.org/manual/en/ipt/latest/sampling-event-data#templates">Event core template</a>. If you use these templates from GBIF, be aware that <a href="data_sharing#differences-between-obis-and-gbif-publication-processes.html">GBIF’s required terms are different from OBIS</a>.</p>
+<p>There are also some tools that can help you unpivot (or flatten) data tables. These can be used to flatten many columns into one, particularly useful for the <a href="format_emof.html">eMoF</a> table.</p>
+<ul>
+<li><a href="https://gbif-norway.github.io/crosstab2list/">GBIF Norway’s crosstab to list converter</a>. Note that this tool is not completely automated</li>
+<li><a href="https://www.excel-university.com/unpivot-excel-data/">Excel’s built-in unpivot function</a></li>
+</ul>
 
+</div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="contribute.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="darwin_core.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="nodes.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="identifiers.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
