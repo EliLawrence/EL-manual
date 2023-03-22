@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>5.1 Data quality flags | The OBIS manual</title>
-  <meta name="description" content="5.1 Data quality flags | The OBIS manual" />
+  <title>5.3 Data quality flags | The OBIS manual</title>
+  <meta name="description" content="5.3 Data quality flags | The OBIS manual" />
   <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="5.1 Data quality flags | The OBIS manual" />
+  <meta property="og:title" content="5.3 Data quality flags | The OBIS manual" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="5.1 Data quality flags | The OBIS manual" />
+  <meta name="twitter:title" content="5.3 Data quality flags | The OBIS manual" />
   
   
   
@@ -242,19 +242,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="part"><span><b>Ensuring Data Quality</b></span></li>
 <li class="chapter" data-level="5" data-path="data_qc.html"><a href="data_qc.html"><i class="fa fa-check"></i><b>5</b> Data quality control</a>
 <ul>
-<li class="chapter" data-level="5.0.1" data-path="mofreports.html"><a href="mofreports.html"><i class="fa fa-check"></i><b>5.0.1</b> How To Use MoF Report and Tool</a></li>
-<li class="chapter" data-level="5.1" data-path="dataquality.html"><a href="dataquality.html"><i class="fa fa-check"></i><b>5.1</b> Data quality flags</a>
+<li class="chapter" data-level="5.1" data-path="data_qc.html"><a href="data_qc.html#why-are-records-dropped"><i class="fa fa-check"></i><b>5.1</b> Why are records dropped?</a></li>
+<li class="chapter" data-level="5.2" data-path="data_qc.html"><a href="data_qc.html#how-to-conduct-quality-control"><i class="fa fa-check"></i><b>5.2</b> How to conduct Quality Control</a>
 <ul>
-<li class="chapter" data-level="5.1.1" data-path="lifewatch_qc.html"><a href="lifewatch_qc.html"><i class="fa fa-check"></i><b>5.1.1</b> Geographic and data format quality control</a></li>
+<li class="chapter" data-level="5.2.1" data-path="data_qc.html"><a href="data_qc.html#conducting-qc-with-obistools"><i class="fa fa-check"></i><b>5.2.1</b> Conducting QC with obistools</a></li>
+<li class="chapter" data-level="5.2.2" data-path="data_qc.html"><a href="data_qc.html#qc-with-r-package-hmisc"><i class="fa fa-check"></i><b>5.2.2</b> QC with R package Hmisc</a></li>
+<li class="chapter" data-level="5.2.3" data-path="mofreports.html"><a href="mofreports.html"><i class="fa fa-check"></i><b>5.2.3</b> How To Use MoF Report and Tool</a></li>
 </ul></li>
-<li class="chapter" data-level="5.2" data-path="common_qc.html"><a href="common_qc.html"><i class="fa fa-check"></i><b>5.2</b> Common Quality Control issues</a>
+<li class="chapter" data-level="5.3" data-path="dataquality.html"><a href="dataquality.html"><i class="fa fa-check"></i><b>5.3</b> Data quality flags</a>
 <ul>
-<li class="chapter" data-level="5.2.1" data-path="common_qc.html"><a href="common_qc.html#missing-required-fields-1"><i class="fa fa-check"></i><b>5.2.1</b> Missing required fields</a></li>
-<li class="chapter" data-level="5.2.2" data-path="common_qc.html"><a href="common_qc.html#uncertain-temporal-range"><i class="fa fa-check"></i><b>5.2.2</b> Uncertain temporal range</a></li>
-<li class="chapter" data-level="5.2.3" data-path="common_qc.html"><a href="common_qc.html#uncertain-geolocation"><i class="fa fa-check"></i><b>5.2.3</b> Uncertain geolocation</a></li>
-<li class="chapter" data-level="5.2.4" data-path="common_qc.html"><a href="common_qc.html#uncertain-taxaonomic-information"><i class="fa fa-check"></i><b>5.2.4</b> Uncertain taxaonomic information</a></li>
-<li class="chapter" data-level="5.2.5" data-path="common_qc.html"><a href="common_qc.html#uncertain-measurements"><i class="fa fa-check"></i><b>5.2.5</b> Uncertain measurements</a></li>
-<li class="chapter" data-level="5.2.6" data-path="common_qc.html"><a href="common_qc.html#non-marine-species"><i class="fa fa-check"></i><b>5.2.6</b> Non-marine species</a></li>
+<li class="chapter" data-level="5.3.1" data-path="dataquality.html"><a href="dataquality.html#qc-flags-in-downloaded-data"><i class="fa fa-check"></i><b>5.3.1</b> QC Flags in downloaded data</a></li>
+<li class="chapter" data-level="5.3.2" data-path="dataquality.html"><a href="dataquality.html#inspecting-qc-flags-with-r"><i class="fa fa-check"></i><b>5.3.2</b> Inspecting QC flags with R</a></li>
+<li class="chapter" data-level="5.3.3" data-path="dataquality.html"><a href="dataquality.html#other-qc-tools"><i class="fa fa-check"></i><b>5.3.3</b> Other QC tools</a></li>
+<li class="chapter" data-level="5.3.4" data-path="lifewatch_qc.html"><a href="lifewatch_qc.html"><i class="fa fa-check"></i><b>5.3.4</b> Geographic and data format quality control</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="common_qc.html"><a href="common_qc.html"><i class="fa fa-check"></i><b>5.4</b> Common Quality Control issues</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="common_qc.html"><a href="common_qc.html#missing-required-fields-1"><i class="fa fa-check"></i><b>5.4.1</b> Missing required fields</a></li>
+<li class="chapter" data-level="5.4.2" data-path="common_qc.html"><a href="common_qc.html#uncertain-temporal-range"><i class="fa fa-check"></i><b>5.4.2</b> Uncertain temporal range</a></li>
+<li class="chapter" data-level="5.4.3" data-path="common_qc.html"><a href="common_qc.html#uncertain-geolocation"><i class="fa fa-check"></i><b>5.4.3</b> Uncertain geolocation</a></li>
+<li class="chapter" data-level="5.4.4" data-path="common_qc.html"><a href="common_qc.html#uncertain-taxaonomic-information"><i class="fa fa-check"></i><b>5.4.4</b> Uncertain taxaonomic information</a></li>
+<li class="chapter" data-level="5.4.5" data-path="common_qc.html"><a href="common_qc.html#uncertain-measurements"><i class="fa fa-check"></i><b>5.4.5</b> Uncertain measurements</a></li>
+<li class="chapter" data-level="5.4.6" data-path="common_qc.html"><a href="common_qc.html#non-marine-species"><i class="fa fa-check"></i><b>5.4.6</b> Non-marine species</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>Publishing Data</b></span></li>
@@ -321,9 +330,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="data-quality-flags" class="section level2 hasAnchor" number="5.1">
-<h2><span class="header-section-number">5.1</span> Data quality flags<a href="dataquality.html#data-quality-flags" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>OBIS performs a number of quality checks on the data it receives. Records may be rejected if the quality does not meet certain expectations. In other cases quality flags are attached to the occurrence records. The checks we perform as well as the associated flags are documented <a href="https://github.com/iobis/obis-qc">here</a>.</p>
+<div id="data-quality-flags" class="section level2 hasAnchor" number="5.3">
+<h2><span class="header-section-number">5.3</span> Data quality flags<a href="dataquality.html#data-quality-flags" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>As you are following the guidelines in this manual to <a href="data_formatting.html">format data</a>, it is important to consider the potential quality flags that could be produced when your dataset is published to OBIS. OBIS performs a number of automatic quality checks on the data it receives. This informs data users of any potential issues with a dataset they may be interested in. A complete list of flags can be found <a href="https://github.com/iobis/obis-qc/blob/master/obisqc/util/flags.py">here</a> but broadly speaking potential flags relate to issues with:</p>
+<ul>
+<li>Location - coordinates</li>
+<li>Event time - start, end dates</li>
+<li>Depth values out of range</li>
+<li>Taxonomic</li>
+<li>WoRMS name matching</li>
+<li>Non-marine or terrestrial</li>
+</ul>
+<p>When you are filling these fields it is important to double check that correct coordinates are entered, eventDates are accurate and in the correct format, and depth values are in meters. Records may be <a href="data_qc.html#why-are-records-dropped">rejected</a> and not published with your dataset if the quality does not meet certain expectations. In other cases quality flags are attached to individual occurrence records.</p>
+<p>We acknowledge that sometimes you may encounter a QC flag for data that is accurate. For example, you may document a depth value that gets flagged as <code>DEPTH_OUT_OF_RANGE</code>. Sometimes this occurs because your measured depth value is more accurate than the GEBCO bathymetry data which OBIS bases its depth data on. In these cases, you can ignore the flag, but we recommend adding a note in <code>eventRemarks</code>, <code>measurementRemarks</code>,or <code>occurrenceRemarks</code>.</p>
+<p>The checks we perform as well as the associated flags are documented <a href="https://github.com/iobis/obis-qc">here</a>.</p>
+<div id="qc-flags-in-downloaded-data" class="section level3 hasAnchor" number="5.3.1">
+<h3><span class="header-section-number">5.3.1</span> QC Flags in downloaded data<a href="dataquality.html#qc-flags-in-downloaded-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>There are several ways to inspect the quality flags associated with a specific dataset or any other subset of data. Data downloaded through the mapper and the R package will include a column named <code>flags</code> which contains a comma separated list of flags for each record. In addition, the data quality panel on the dataset and node pages has a flag icon which can be clicked to get an overview of all flags and the number of records affected.</p>
 <p><img src="images/qc_flag_icon.png" class="img-responsive-50"/></p>
 <p>This table includes quality flags, but also annotations from the WoRMS annotated names list. When OBIS receives a scientific name which cannot be matched with WoRMS automatically, it is sent to the WoRMS team. The WoRMS team will then annotate the name to indicate if and how the name can be fixed. Documentations about these annotations will be added here soon.</p>
@@ -332,74 +354,100 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><img src="images/qc_flag_records.png" class="img-responsive"/></p>
 <p>At the top of the page there’s a button to open the occurrence records in the mapper where they can be downloaded as CSV. The occurrence table also has the <code>flags</code> column, so when inspecting non matching names for example it’s easy to check if the names at hand have any WoRMS annotations:</p>
 <p><img src="images/qc_flag_flags.png" class="img-responsive-50"/></p>
+</div>
+<div id="inspecting-qc-flags-with-r" class="section level3 hasAnchor" number="5.3.2">
+<h3><span class="header-section-number">5.3.2</span> Inspecting QC flags with R<a href="dataquality.html#inspecting-qc-flags-with-r" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Inspecting flags using R is also very easy. The example below fetches the data from a single dataset, and lists the flags and the number of records affected. Notice that the <code>occurrence()</code> call has <code>dropped = TRUE</code> to make sure that any dropped records are included in the results:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="dataquality.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(robis)</span>
-<span id="cb12-2"><a href="dataquality.html#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
-<span id="cb12-3"><a href="dataquality.html#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb12-4"><a href="dataquality.html#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-5"><a href="dataquality.html#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co"># fetch all records for a dataset</span></span>
-<span id="cb12-6"><a href="dataquality.html#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-7"><a href="dataquality.html#cb12-7" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">occurrence</span>(<span class="at">datasetid =</span> <span class="st">&quot;f3d7798e-7bf2-4b85-8ed4-18f2c1849d7d&quot;</span>, <span class="at">dropped =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb12-8"><a href="dataquality.html#cb12-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-9"><a href="dataquality.html#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="co"># unnest flags</span></span>
-<span id="cb12-10"><a href="dataquality.html#cb12-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-11"><a href="dataquality.html#cb12-11" aria-hidden="true" tabindex="-1"></a>df_long <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> </span>
-<span id="cb12-12"><a href="dataquality.html#cb12-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">flags =</span> <span class="fu">strsplit</span>(flags, <span class="st">&quot;,&quot;</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb12-13"><a href="dataquality.html#cb12-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest</span>(flags)</span>
-<span id="cb12-14"><a href="dataquality.html#cb12-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-15"><a href="dataquality.html#cb12-15" aria-hidden="true" tabindex="-1"></a><span class="co"># get frequency per flag</span></span>
-<span id="cb12-16"><a href="dataquality.html#cb12-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-17"><a href="dataquality.html#cb12-17" aria-hidden="true" tabindex="-1"></a><span class="fu">data.frame</span>(<span class="fu">table</span>(df_long<span class="sc">$</span>flags))</span></code></pre></div>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="dataquality.html#cb13-1" aria-hidden="true" tabindex="-1"></a>                                Var1 Freq</span>
-<span id="cb13-2"><a href="dataquality.html#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span>                 depth_exceeds_bath   <span class="dv">78</span></span>
-<span id="cb13-3"><a href="dataquality.html#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span>                   no_accepted_name   <span class="dv">17</span></span>
-<span id="cb13-4"><a href="dataquality.html#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span>                           no_depth    <span class="dv">5</span></span>
-<span id="cb13-5"><a href="dataquality.html#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span>                           no_match  <span class="dv">138</span></span>
-<span id="cb13-6"><a href="dataquality.html#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span>                         not_marine    <span class="dv">2</span></span>
-<span id="cb13-7"><a href="dataquality.html#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="dv">6</span>                            on_land    <span class="dv">1</span></span>
-<span id="cb13-8"><a href="dataquality.html#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="dv">7</span>      worms_annotation_await_editor    <span class="dv">5</span></span>
-<span id="cb13-9"><a href="dataquality.html#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="dv">8</span>  worms_annotation_reject_ambiguous    <span class="dv">2</span></span>
-<span id="cb13-10"><a href="dataquality.html#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="dv">9</span>    worms_annotation_reject_habitat    <span class="dv">2</span></span>
-<span id="cb13-11"><a href="dataquality.html#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span>             worms_annotation_todo    <span class="dv">9</span></span>
-<span id="cb13-12"><a href="dataquality.html#cb13-12" aria-hidden="true" tabindex="-1"></a><span class="dv">11</span>     worms_annotation_unresolvable    <span class="dv">7</span></span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="dataquality.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(robis)</span>
+<span id="cb13-2"><a href="dataquality.html#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb13-3"><a href="dataquality.html#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb13-4"><a href="dataquality.html#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="dataquality.html#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="co"># fetch all records for a dataset</span></span>
+<span id="cb13-6"><a href="dataquality.html#cb13-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-7"><a href="dataquality.html#cb13-7" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">occurrence</span>(<span class="at">datasetid =</span> <span class="st">&quot;f3d7798e-7bf2-4b85-8ed4-18f2c1849d7d&quot;</span>, <span class="at">dropped =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb13-8"><a href="dataquality.html#cb13-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-9"><a href="dataquality.html#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="co"># unnest flags</span></span>
+<span id="cb13-10"><a href="dataquality.html#cb13-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-11"><a href="dataquality.html#cb13-11" aria-hidden="true" tabindex="-1"></a>df_long <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> </span>
+<span id="cb13-12"><a href="dataquality.html#cb13-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">flags =</span> <span class="fu">strsplit</span>(flags, <span class="st">&quot;,&quot;</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-13"><a href="dataquality.html#cb13-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest</span>(flags)</span>
+<span id="cb13-14"><a href="dataquality.html#cb13-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-15"><a href="dataquality.html#cb13-15" aria-hidden="true" tabindex="-1"></a><span class="co"># get frequency per flag</span></span>
+<span id="cb13-16"><a href="dataquality.html#cb13-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-17"><a href="dataquality.html#cb13-17" aria-hidden="true" tabindex="-1"></a><span class="fu">data.frame</span>(<span class="fu">table</span>(df_long<span class="sc">$</span>flags))</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="dataquality.html#cb14-1" aria-hidden="true" tabindex="-1"></a>                                Var1 Freq</span>
+<span id="cb14-2"><a href="dataquality.html#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span>                 depth_exceeds_bath   <span class="dv">78</span></span>
+<span id="cb14-3"><a href="dataquality.html#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span>                   no_accepted_name   <span class="dv">17</span></span>
+<span id="cb14-4"><a href="dataquality.html#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span>                           no_depth    <span class="dv">5</span></span>
+<span id="cb14-5"><a href="dataquality.html#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span>                           no_match  <span class="dv">138</span></span>
+<span id="cb14-6"><a href="dataquality.html#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span>                         not_marine    <span class="dv">2</span></span>
+<span id="cb14-7"><a href="dataquality.html#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="dv">6</span>                            on_land    <span class="dv">1</span></span>
+<span id="cb14-8"><a href="dataquality.html#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="dv">7</span>      worms_annotation_await_editor    <span class="dv">5</span></span>
+<span id="cb14-9"><a href="dataquality.html#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="dv">8</span>  worms_annotation_reject_ambiguous    <span class="dv">2</span></span>
+<span id="cb14-10"><a href="dataquality.html#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="dv">9</span>    worms_annotation_reject_habitat    <span class="dv">2</span></span>
+<span id="cb14-11"><a href="dataquality.html#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span>             worms_annotation_todo    <span class="dv">9</span></span>
+<span id="cb14-12"><a href="dataquality.html#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="dv">11</span>     worms_annotation_unresolvable    <span class="dv">7</span></span></code></pre></div>
 <p>This second example creates a list of annotated names for a dataset:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="dataquality.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(robis)</span>
-<span id="cb14-2"><a href="dataquality.html#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb14-3"><a href="dataquality.html#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
-<span id="cb14-4"><a href="dataquality.html#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-5"><a href="dataquality.html#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="co"># fetch all records for a dataset</span></span>
-<span id="cb14-6"><a href="dataquality.html#cb14-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-7"><a href="dataquality.html#cb14-7" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">occurrence</span>(<span class="at">datasetid =</span> <span class="st">&quot;f3d7798e-7bf2-4b85-8ed4-18f2c1849d7d&quot;</span>, <span class="at">dropped =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb14-8"><a href="dataquality.html#cb14-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-9"><a href="dataquality.html#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="co"># only keep WoRMS annotations and summarize</span></span>
-<span id="cb14-10"><a href="dataquality.html#cb14-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-11"><a href="dataquality.html#cb14-11" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
-<span id="cb14-12"><a href="dataquality.html#cb14-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(originalScientificName, flags) <span class="sc">%&gt;%</span></span>
-<span id="cb14-13"><a href="dataquality.html#cb14-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">flags =</span> <span class="fu">strsplit</span>(flags, <span class="st">&quot;,&quot;</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb14-14"><a href="dataquality.html#cb14-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest</span>(flags) <span class="sc">%&gt;%</span></span>
-<span id="cb14-15"><a href="dataquality.html#cb14-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(flags, <span class="st">&quot;worms&quot;</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb14-16"><a href="dataquality.html#cb14-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(originalScientificName, flags) <span class="sc">%&gt;%</span></span>
-<span id="cb14-17"><a href="dataquality.html#cb14-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">records =</span> <span class="fu">n</span>())</span></code></pre></div>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="dataquality.html#cb15-1" aria-hidden="true" tabindex="-1"></a>   originalScientificName            flags                             records</span>
-<span id="cb15-2"><a href="dataquality.html#cb15-2" aria-hidden="true" tabindex="-1"></a>   <span class="sc">&lt;</span>chr<span class="sc">&gt;</span>                             <span class="er">&lt;</span>chr<span class="sc">&gt;</span>                               <span class="er">&lt;</span>int<span class="sc">&gt;</span></span>
-<span id="cb15-3"><a href="dataquality.html#cb15-3" aria-hidden="true" tabindex="-1"></a> <span class="dv">1</span> Alcyonidium fruticosa             worms_annotation_reject_habitat         <span class="dv">1</span></span>
-<span id="cb15-4"><a href="dataquality.html#cb15-4" aria-hidden="true" tabindex="-1"></a> <span class="dv">2</span> <span class="fu">Apicularia</span> (Thapsiella) rudis sp. worms_annotation_unresolvable           <span class="dv">1</span></span>
-<span id="cb15-5"><a href="dataquality.html#cb15-5" aria-hidden="true" tabindex="-1"></a> <span class="dv">3</span> Arcoscalpellum vegae              worms_annotation_unresolvable           <span class="dv">1</span></span>
-<span id="cb15-6"><a href="dataquality.html#cb15-6" aria-hidden="true" tabindex="-1"></a> <span class="dv">4</span> Balanus evermanni                 worms_annotation_await_editor           <span class="dv">1</span></span>
-<span id="cb15-7"><a href="dataquality.html#cb15-7" aria-hidden="true" tabindex="-1"></a> <span class="dv">5</span> Chloramidae                       worms_annotation_reject_ambiguous       <span class="dv">2</span></span>
-<span id="cb15-8"><a href="dataquality.html#cb15-8" aria-hidden="true" tabindex="-1"></a> <span class="dv">6</span> Cleippides quadridentatus         worms_annotation_todo                   <span class="dv">1</span></span>
-<span id="cb15-9"><a href="dataquality.html#cb15-9" aria-hidden="true" tabindex="-1"></a> <span class="dv">7</span> Enhydrosoma hoplacantha           worms_annotation_reject_habitat         <span class="dv">1</span></span>
-<span id="cb15-10"><a href="dataquality.html#cb15-10" aria-hidden="true" tabindex="-1"></a> <span class="dv">8</span> Hippomedon setosa                 worms_annotation_unresolvable           <span class="dv">1</span></span>
-<span id="cb15-11"><a href="dataquality.html#cb15-11" aria-hidden="true" tabindex="-1"></a> <span class="dv">9</span> Leionucula tenuis                 worms_annotation_await_editor           <span class="dv">1</span></span>
-<span id="cb15-12"><a href="dataquality.html#cb15-12" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span> Ophiocten borealis                worms_annotation_todo                   <span class="dv">1</span></span>
-<span id="cb15-13"><a href="dataquality.html#cb15-13" aria-hidden="true" tabindex="-1"></a><span class="dv">11</span> Ophiopholis gracilis              worms_annotation_todo                   <span class="dv">1</span></span>
-<span id="cb15-14"><a href="dataquality.html#cb15-14" aria-hidden="true" tabindex="-1"></a><span class="dv">12</span> Priapulus australis               worms_annotation_await_editor           <span class="dv">1</span></span>
-<span id="cb15-15"><a href="dataquality.html#cb15-15" aria-hidden="true" tabindex="-1"></a><span class="dv">13</span> Primnoella residaeformis          worms_annotation_unresolvable           <span class="dv">1</span></span>
-<span id="cb15-16"><a href="dataquality.html#cb15-16" aria-hidden="true" tabindex="-1"></a><span class="dv">14</span> Robulus orbigny                   worms_annotation_unresolvable           <span class="dv">1</span></span>
-<span id="cb15-17"><a href="dataquality.html#cb15-17" aria-hidden="true" tabindex="-1"></a><span class="dv">15</span> Tetraxonia                        worms_annotation_unresolvable           <span class="dv">2</span></span>
-<span id="cb15-18"><a href="dataquality.html#cb15-18" aria-hidden="true" tabindex="-1"></a><span class="dv">16</span> Tmetonyx barentsi                 worms_annotation_await_editor           <span class="dv">2</span></span>
-<span id="cb15-19"><a href="dataquality.html#cb15-19" aria-hidden="true" tabindex="-1"></a><span class="dv">17</span> Triaxonida                        worms_annotation_todo                   <span class="dv">6</span></span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="dataquality.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(robis)</span>
+<span id="cb15-2"><a href="dataquality.html#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb15-3"><a href="dataquality.html#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
+<span id="cb15-4"><a href="dataquality.html#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="dataquality.html#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="co"># fetch all records for a dataset</span></span>
+<span id="cb15-6"><a href="dataquality.html#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-7"><a href="dataquality.html#cb15-7" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">occurrence</span>(<span class="at">datasetid =</span> <span class="st">&quot;f3d7798e-7bf2-4b85-8ed4-18f2c1849d7d&quot;</span>, <span class="at">dropped =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb15-8"><a href="dataquality.html#cb15-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-9"><a href="dataquality.html#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="co"># only keep WoRMS annotations and summarize</span></span>
+<span id="cb15-10"><a href="dataquality.html#cb15-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-11"><a href="dataquality.html#cb15-11" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
+<span id="cb15-12"><a href="dataquality.html#cb15-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(originalScientificName, flags) <span class="sc">%&gt;%</span></span>
+<span id="cb15-13"><a href="dataquality.html#cb15-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">flags =</span> <span class="fu">strsplit</span>(flags, <span class="st">&quot;,&quot;</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb15-14"><a href="dataquality.html#cb15-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest</span>(flags) <span class="sc">%&gt;%</span></span>
+<span id="cb15-15"><a href="dataquality.html#cb15-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(flags, <span class="st">&quot;worms&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb15-16"><a href="dataquality.html#cb15-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(originalScientificName, flags) <span class="sc">%&gt;%</span></span>
+<span id="cb15-17"><a href="dataquality.html#cb15-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">records =</span> <span class="fu">n</span>())</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="dataquality.html#cb16-1" aria-hidden="true" tabindex="-1"></a>   originalScientificName            flags                             records</span>
+<span id="cb16-2"><a href="dataquality.html#cb16-2" aria-hidden="true" tabindex="-1"></a>   <span class="sc">&lt;</span>chr<span class="sc">&gt;</span>                             <span class="er">&lt;</span>chr<span class="sc">&gt;</span>                               <span class="er">&lt;</span>int<span class="sc">&gt;</span></span>
+<span id="cb16-3"><a href="dataquality.html#cb16-3" aria-hidden="true" tabindex="-1"></a> <span class="dv">1</span> Alcyonidium fruticosa             worms_annotation_reject_habitat         <span class="dv">1</span></span>
+<span id="cb16-4"><a href="dataquality.html#cb16-4" aria-hidden="true" tabindex="-1"></a> <span class="dv">2</span> <span class="fu">Apicularia</span> (Thapsiella) rudis sp. worms_annotation_unresolvable           <span class="dv">1</span></span>
+<span id="cb16-5"><a href="dataquality.html#cb16-5" aria-hidden="true" tabindex="-1"></a> <span class="dv">3</span> Arcoscalpellum vegae              worms_annotation_unresolvable           <span class="dv">1</span></span>
+<span id="cb16-6"><a href="dataquality.html#cb16-6" aria-hidden="true" tabindex="-1"></a> <span class="dv">4</span> Balanus evermanni                 worms_annotation_await_editor           <span class="dv">1</span></span>
+<span id="cb16-7"><a href="dataquality.html#cb16-7" aria-hidden="true" tabindex="-1"></a> <span class="dv">5</span> Chloramidae                       worms_annotation_reject_ambiguous       <span class="dv">2</span></span>
+<span id="cb16-8"><a href="dataquality.html#cb16-8" aria-hidden="true" tabindex="-1"></a> <span class="dv">6</span> Cleippides quadridentatus         worms_annotation_todo                   <span class="dv">1</span></span>
+<span id="cb16-9"><a href="dataquality.html#cb16-9" aria-hidden="true" tabindex="-1"></a> <span class="dv">7</span> Enhydrosoma hoplacantha           worms_annotation_reject_habitat         <span class="dv">1</span></span>
+<span id="cb16-10"><a href="dataquality.html#cb16-10" aria-hidden="true" tabindex="-1"></a> <span class="dv">8</span> Hippomedon setosa                 worms_annotation_unresolvable           <span class="dv">1</span></span>
+<span id="cb16-11"><a href="dataquality.html#cb16-11" aria-hidden="true" tabindex="-1"></a> <span class="dv">9</span> Leionucula tenuis                 worms_annotation_await_editor           <span class="dv">1</span></span>
+<span id="cb16-12"><a href="dataquality.html#cb16-12" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span> Ophiocten borealis                worms_annotation_todo                   <span class="dv">1</span></span>
+<span id="cb16-13"><a href="dataquality.html#cb16-13" aria-hidden="true" tabindex="-1"></a><span class="dv">11</span> Ophiopholis gracilis              worms_annotation_todo                   <span class="dv">1</span></span>
+<span id="cb16-14"><a href="dataquality.html#cb16-14" aria-hidden="true" tabindex="-1"></a><span class="dv">12</span> Priapulus australis               worms_annotation_await_editor           <span class="dv">1</span></span>
+<span id="cb16-15"><a href="dataquality.html#cb16-15" aria-hidden="true" tabindex="-1"></a><span class="dv">13</span> Primnoella residaeformis          worms_annotation_unresolvable           <span class="dv">1</span></span>
+<span id="cb16-16"><a href="dataquality.html#cb16-16" aria-hidden="true" tabindex="-1"></a><span class="dv">14</span> Robulus orbigny                   worms_annotation_unresolvable           <span class="dv">1</span></span>
+<span id="cb16-17"><a href="dataquality.html#cb16-17" aria-hidden="true" tabindex="-1"></a><span class="dv">15</span> Tetraxonia                        worms_annotation_unresolvable           <span class="dv">2</span></span>
+<span id="cb16-18"><a href="dataquality.html#cb16-18" aria-hidden="true" tabindex="-1"></a><span class="dv">16</span> Tmetonyx barentsi                 worms_annotation_await_editor           <span class="dv">2</span></span>
+<span id="cb16-19"><a href="dataquality.html#cb16-19" aria-hidden="true" tabindex="-1"></a><span class="dv">17</span> Triaxonida                        worms_annotation_todo                   <span class="dv">6</span></span></code></pre></div>
+</div>
+<div id="other-qc-tools" class="section level3 hasAnchor" number="5.3.3">
+<h3><span class="header-section-number">5.3.3</span> Other QC tools<a href="dataquality.html#other-qc-tools" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The following is a list of other tools you can use to help you perform quality checks on your data:</p>
+<ul>
+<li>EMODnet Biocheck
+<ul>
+<li><a href="https://rshiny.lifewatch.be/BioCheck/">Web UI</a></li>
+<li><a href="https://github.com/EMODnet/EMODnetBiocheck">R package</a></li>
+</ul></li>
+<li><a href="https://www.lifewatch.be/data-services/">Lifewatch data services</a></li>
+<li><a href="https://github.com/iobis/obistools">obistools</a></li>
+<li><a href="https://github.com/ioos/bio_data_guide/blob/main/datasets/TPWD_HARC_BagSeine/TPWD_HARC_BagSeine_OBISENV.md">Bio data guide</a></li>
+<li><a href="https://www.marinespecies.org/aphia.php?p=match">WoRMS taxon match tool</a></li>
+<li><a href="https://www.marinespecies.org/aphia.php?p=webservice">Other WoRMS web services, incl. taxon match</a></li>
+<li>Excel Conditional Formating tool
+<ul>
+<li>Excel &gt; Home &gt; Conditional Formating &gt; Highlight cells Rules &gt; Duplicate values…</li>
+</ul></li>
+<li><a href="https://www.gbif.org/tools/data-validator">GBIF data validator</a></li>
+<li><a href="https://github.com/cioos-siooc/pyobistools">Python library for OBIS QC</a> developed by Canadian Integrated Ocean Observing System</li>
+</ul>
 
+</div>
             </section>
 
           </div>

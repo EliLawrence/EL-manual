@@ -136,8 +136,15 @@ multimedia-data-acoustic-imaging
 habitat-data
 tracking-data
 data-quality-control
+why-are-records-dropped
+how-to-conduct-quality-control
+conducting-qc-with-obistools
+qc-with-r-package-hmisc
 how-to-use-mof-report-and-tool
 data-quality-flags
+qc-flags-in-downloaded-data
+inspecting-qc-flags-with-r
+other-qc-tools
 geographic-and-data-format-quality-control
 geographical-service
 obis-data-format-validation
