@@ -140,11 +140,10 @@ why-are-records-dropped
 how-to-conduct-quality-control
 conducting-qc-with-obistools
 qc-with-r-package-hmisc
-how-to-use-mof-report-and-tool
 data-quality-flags
 qc-flags-in-downloaded-data
 inspecting-qc-flags-with-r
-other-qc-tools
+how-to-use-mof-report-and-tool
 geographic-and-data-format-quality-control
 geographical-service
 obis-data-format-validation
@@ -152,8 +151,13 @@ common-quality-control-issues
 missing-required-fields-1
 uncertain-temporal-range
 uncertain-geolocation
-uncertain-taxaonomic-information
+how-to-use-obis-map-tool
+using-getty-thesaurus-google-maps-to-obtain-locality-coordinates
+how-to-use-marine-regions-gazetteer-tool
+uncertain-taxonomic-information
+changes-in-taxonomic-classification
 uncertain-measurements
+individualcount
 non-marine-species
 data-publication-and-sharing
 add-metadata

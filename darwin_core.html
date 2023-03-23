@@ -247,13 +247,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="5.2.1" data-path="data_qc.html"><a href="data_qc.html#conducting-qc-with-obistools"><i class="fa fa-check"></i><b>5.2.1</b> Conducting QC with obistools</a></li>
 <li class="chapter" data-level="5.2.2" data-path="data_qc.html"><a href="data_qc.html#qc-with-r-package-hmisc"><i class="fa fa-check"></i><b>5.2.2</b> QC with R package Hmisc</a></li>
-<li class="chapter" data-level="5.2.3" data-path="mofreports.html"><a href="mofreports.html"><i class="fa fa-check"></i><b>5.2.3</b> How To Use MoF Report and Tool</a></li>
 </ul></li>
 <li class="chapter" data-level="5.3" data-path="dataquality.html"><a href="dataquality.html"><i class="fa fa-check"></i><b>5.3</b> Data quality flags</a>
 <ul>
 <li class="chapter" data-level="5.3.1" data-path="dataquality.html"><a href="dataquality.html#qc-flags-in-downloaded-data"><i class="fa fa-check"></i><b>5.3.1</b> QC Flags in downloaded data</a></li>
 <li class="chapter" data-level="5.3.2" data-path="dataquality.html"><a href="dataquality.html#inspecting-qc-flags-with-r"><i class="fa fa-check"></i><b>5.3.2</b> Inspecting QC flags with R</a></li>
-<li class="chapter" data-level="5.3.3" data-path="dataquality.html"><a href="dataquality.html#other-qc-tools"><i class="fa fa-check"></i><b>5.3.3</b> Other QC tools</a></li>
+<li class="chapter" data-level="5.3.3" data-path="mofreports.html"><a href="mofreports.html"><i class="fa fa-check"></i><b>5.3.3</b> How To Use MoF Report and Tool</a></li>
 <li class="chapter" data-level="5.3.4" data-path="lifewatch_qc.html"><a href="lifewatch_qc.html"><i class="fa fa-check"></i><b>5.3.4</b> Geographic and data format quality control</a></li>
 </ul></li>
 <li class="chapter" data-level="5.4" data-path="common_qc.html"><a href="common_qc.html"><i class="fa fa-check"></i><b>5.4</b> Common Quality Control issues</a>
@@ -261,9 +260,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.4.1" data-path="common_qc.html"><a href="common_qc.html#missing-required-fields-1"><i class="fa fa-check"></i><b>5.4.1</b> Missing required fields</a></li>
 <li class="chapter" data-level="5.4.2" data-path="common_qc.html"><a href="common_qc.html#uncertain-temporal-range"><i class="fa fa-check"></i><b>5.4.2</b> Uncertain temporal range</a></li>
 <li class="chapter" data-level="5.4.3" data-path="common_qc.html"><a href="common_qc.html#uncertain-geolocation"><i class="fa fa-check"></i><b>5.4.3</b> Uncertain geolocation</a></li>
-<li class="chapter" data-level="5.4.4" data-path="common_qc.html"><a href="common_qc.html#uncertain-taxaonomic-information"><i class="fa fa-check"></i><b>5.4.4</b> Uncertain taxaonomic information</a></li>
-<li class="chapter" data-level="5.4.5" data-path="common_qc.html"><a href="common_qc.html#uncertain-measurements"><i class="fa fa-check"></i><b>5.4.5</b> Uncertain measurements</a></li>
-<li class="chapter" data-level="5.4.6" data-path="common_qc.html"><a href="common_qc.html#non-marine-species"><i class="fa fa-check"></i><b>5.4.6</b> Non-marine species</a></li>
+<li class="chapter" data-level="5.4.4" data-path="common_qc.html"><a href="common_qc.html#how-to-use-obis-map-tool"><i class="fa fa-check"></i><b>5.4.4</b> How to use OBIS Map Tool</a></li>
+<li class="chapter" data-level="5.4.5" data-path="common_qc.html"><a href="common_qc.html#using-getty-thesaurus-google-maps-to-obtain-locality-coordinates"><i class="fa fa-check"></i><b>5.4.5</b> Using Getty Thesaurus &amp; Google Maps to obtain locality coordinates</a></li>
+<li class="chapter" data-level="5.4.6" data-path="common_qc.html"><a href="common_qc.html#how-to-use-marine-regions-gazetteer-tool"><i class="fa fa-check"></i><b>5.4.6</b> How to use Marine Regions Gazetteer tool</a></li>
+<li class="chapter" data-level="5.4.7" data-path="common_qc.html"><a href="common_qc.html#uncertain-taxonomic-information"><i class="fa fa-check"></i><b>5.4.7</b> Uncertain taxonomic information</a></li>
+<li class="chapter" data-level="5.4.8" data-path="common_qc.html"><a href="common_qc.html#uncertain-measurements"><i class="fa fa-check"></i><b>5.4.8</b> Uncertain measurements</a></li>
+<li class="chapter" data-level="5.4.9" data-path="common_qc.html"><a href="common_qc.html#non-marine-species"><i class="fa fa-check"></i><b>5.4.9</b> Non-marine species</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>Publishing Data</b></span></li>
@@ -455,7 +457,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="taxonomy-and-identification" class="section level5 hasAnchor" number="2.4.1.3.1">
 <h5><span class="header-section-number">2.4.1.3.1</span> Taxonomy and identification<a href="darwin_core.html#taxonomy-and-identification" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p><code>scientificName</code> (required term) should always contain the originally recorded scientific name, even if the name is currently a synomym. This is necessary to be able to track back records to the original dataset. The name should be at the lowest possible taxonomic rank, preferably at species level or lower, but higher ranks, such as genus, family, order, class etc are also acceptable. We recommend to not include authorship in <code>scientificName</code>, and only use <code>scientificNameAuthorship</code> for that purpose. The <code>scientificName</code> term should only contain the name and not identification qualifications (such as ?, confer or affinity), which should instead be supplied in the <code>IdentificationQualifier</code> term, see examples below. <code>taxonRemarks</code> can capture comments or notes about the taxon or name.</p>
-<p>A <a href="http://www.marinespecies.org/">WoRMS</a> LSID should be added in <code>scientificNameID</code> (required term), OBIS will use this identifier to pull the taxonomic information from the World Register of Marine Species (WoRMS) into OBIS, such as the taxonomic classification and the accepted name in case of invalid names or synonyms. LSIDs are persistent, location-independent, resource identifiers for uniquely naming biologically significant resources. More information on LSIDs can be found at <a href="http://www.lsid.info/">www.lsid.info</a>. For example, the WoRMS LSID for <em>Solea solea</em> is: <a href="urn:lsid:marinespecies.org:taxname:127160" class="uri">urn:lsid:marinespecies.org:taxname:127160</a>, and can be found at the bottom of each WoRMS taxon page, e.g. <a href="http://marinespecies.org/aphia.php?p=taxdetails&amp;id=127160"><em>Solea solea</em></a>.</p>
+<p>A <a href="http://www.marinespecies.org/">WoRMS</a> LSID should be added in <code>scientificNameID</code> (required term), OBIS will use this identifier to pull the taxonomic information from the World Register of Marine Species (WoRMS) into OBIS and attach it to your dataset. This information includes:</p>
+<ul>
+<li>Taxonomic classification (kingdom through species)</li>
+<li>The accepted name in case of invalid names or synonyms</li>
+<li>AlphiaID</li>
+<li>IUCN red list category</li>
+</ul>
+<p>LSIDs are persistent, location-independent, resource identifiers for uniquely naming biologically significant resources. More information on LSIDs can be found at <a href="http://www.lsid.info/">www.lsid.info</a>. For example, the WoRMS LSID for <em>Solea solea</em> is: <a href="urn:lsid:marinespecies.org:taxname:127160" class="uri">urn:lsid:marinespecies.org:taxname:127160</a>, and can be found at the bottom of each WoRMS taxon page, e.g. <a href="http://marinespecies.org/aphia.php?p=taxdetails&amp;id=127160"><em>Solea solea</em></a>.</p>
 <p><code>kingdom</code> and <code>taxonRank</code> can help us in identifying the provided <code>scientificName</code> in case the name is not available in WoRMS. <code>kingdom</code> in particular can help us find alternative genus-species combinations and avoids linking the name to homonyms. Please contact the WoRMS data management team (<a href="mailto:info@marinespecies.org" class="email">info@marinespecies.org</a>) in case the scientificName is missing in WoRMS. <code>kingdom</code> and <code>taxonRank</code> are not necessary when a correct <code>scientificNameID</code> is provided.</p>
 <p>OBIS recommends providing information about how an identification was made, for example by which ID key, species guide or expert; and by which method (e.g morphology vs. genomics), etc. The person’s name who made the taxonomic identification can go in <code>identifiedBy</code> and <em>when</em> in <code>dateIdentified</code>. Use the ISO 8601:2004(E) standard for date and time, for instructions see <a href="darwin_core.html#time">Time</a>. A list of references, such as field guides used for the identification can be listed in <code>identificationReferences</code>. Any other information, such as identification methods, can be added to <code>identificationRemarks</code>.</p>
 <p>Examples:</p>
