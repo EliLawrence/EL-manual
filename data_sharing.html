@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>6.5 Maintaining published data | The OBIS manual</title>
-  <meta name="description" content="6.5 Maintaining published data | The OBIS manual" />
+  <title>6.3 Maintaining and sharing published data | The OBIS manual</title>
+  <meta name="description" content="6.3 Maintaining and sharing published data | The OBIS manual" />
   <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="6.5 Maintaining published data | The OBIS manual" />
+  <meta property="og:title" content="6.3 Maintaining and sharing published data | The OBIS manual" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="6.5 Maintaining published data | The OBIS manual" />
+  <meta name="twitter:title" content="6.3 Maintaining and sharing published data | The OBIS manual" />
   
   
   
@@ -165,7 +165,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="2.4.1" data-path="darwin_core.html"><a href="darwin_core.html"><i class="fa fa-check"></i><b>2.4.1</b> Darwin Core</a></li>
 <li class="chapter" data-level="2.4.2" data-path="data_format.html"><a href="data_format.html"><i class="fa fa-check"></i><b>2.4.2</b> Darwin Core Archive</a></li>
-<li class="chapter" data-level="2.4.3" data-path="eml.html"><a href="eml.html"><i class="fa fa-check"></i><b>2.4.3</b> Ecological Metadata Language</a></li>
+<li class="chapter" data-level="2.4.3" data-path="relational_db.html"><a href="relational_db.html"><i class="fa fa-check"></i><b>2.4.3</b> Relational databases: the underlying framework of OBIS</a></li>
+<li class="chapter" data-level="2.4.4" data-path="eml.html"><a href="eml.html"><i class="fa fa-check"></i><b>2.4.4</b> Ecological Metadata Language</a></li>
 </ul></li>
 <li class="chapter" data-level="2.5" data-path="nodes.html"><a href="nodes.html"><i class="fa fa-check"></i><b>2.5</b> OBIS nodes</a>
 <ul>
@@ -252,46 +253,45 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="5.3.1" data-path="dataquality.html"><a href="dataquality.html#qc-flags-in-downloaded-data"><i class="fa fa-check"></i><b>5.3.1</b> QC Flags in downloaded data</a></li>
 <li class="chapter" data-level="5.3.2" data-path="dataquality.html"><a href="dataquality.html#inspecting-qc-flags-with-r"><i class="fa fa-check"></i><b>5.3.2</b> Inspecting QC flags with R</a></li>
-<li class="chapter" data-level="5.3.3" data-path="mofreports.html"><a href="mofreports.html"><i class="fa fa-check"></i><b>5.3.3</b> How To Use MoF Report and Tool</a></li>
-<li class="chapter" data-level="5.3.4" data-path="lifewatch_qc.html"><a href="lifewatch_qc.html"><i class="fa fa-check"></i><b>5.3.4</b> Geographic and data format quality control</a></li>
 </ul></li>
-<li class="chapter" data-level="5.4" data-path="common_qc.html"><a href="common_qc.html"><i class="fa fa-check"></i><b>5.4</b> Common Quality Control issues</a>
+<li class="chapter" data-level="5.4" data-path="mofreports.html"><a href="mofreports.html"><i class="fa fa-check"></i><b>5.4</b> How To Use MoF Report and Tool</a>
 <ul>
-<li class="chapter" data-level="5.4.1" data-path="common_qc.html"><a href="common_qc.html#missing-required-fields-1"><i class="fa fa-check"></i><b>5.4.1</b> Missing required fields</a></li>
-<li class="chapter" data-level="5.4.2" data-path="common_qc.html"><a href="common_qc.html#uncertain-temporal-range"><i class="fa fa-check"></i><b>5.4.2</b> Uncertain temporal range</a></li>
-<li class="chapter" data-level="5.4.3" data-path="common_qc.html"><a href="common_qc.html#uncertain-geolocation"><i class="fa fa-check"></i><b>5.4.3</b> Uncertain geolocation</a></li>
-<li class="chapter" data-level="5.4.4" data-path="common_qc.html"><a href="common_qc.html#how-to-use-obis-map-tool"><i class="fa fa-check"></i><b>5.4.4</b> How to use OBIS Map Tool</a></li>
-<li class="chapter" data-level="5.4.5" data-path="common_qc.html"><a href="common_qc.html#using-getty-thesaurus-google-maps-to-obtain-locality-coordinates"><i class="fa fa-check"></i><b>5.4.5</b> Using Getty Thesaurus &amp; Google Maps to obtain locality coordinates</a></li>
-<li class="chapter" data-level="5.4.6" data-path="common_qc.html"><a href="common_qc.html#how-to-use-marine-regions-gazetteer-tool"><i class="fa fa-check"></i><b>5.4.6</b> How to use Marine Regions Gazetteer tool</a></li>
-<li class="chapter" data-level="5.4.7" data-path="common_qc.html"><a href="common_qc.html#uncertain-taxonomic-information"><i class="fa fa-check"></i><b>5.4.7</b> Uncertain taxonomic information</a></li>
-<li class="chapter" data-level="5.4.8" data-path="common_qc.html"><a href="common_qc.html#uncertain-measurements"><i class="fa fa-check"></i><b>5.4.8</b> Uncertain measurements</a></li>
-<li class="chapter" data-level="5.4.9" data-path="common_qc.html"><a href="common_qc.html#non-marine-species"><i class="fa fa-check"></i><b>5.4.9</b> Non-marine species</a></li>
+<li class="chapter" data-level="5.4.1" data-path="lifewatch_qc.html"><a href="lifewatch_qc.html"><i class="fa fa-check"></i><b>5.4.1</b> Geographic and data format quality control</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="common_qc.html"><a href="common_qc.html"><i class="fa fa-check"></i><b>5.5</b> Common Quality Control issues</a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="common_qc.html"><a href="common_qc.html#missing-required-fields-1"><i class="fa fa-check"></i><b>5.5.1</b> Missing required fields</a></li>
+<li class="chapter" data-level="5.5.2" data-path="common_qc.html"><a href="common_qc.html#uncertain-temporal-range"><i class="fa fa-check"></i><b>5.5.2</b> Uncertain temporal range</a></li>
+<li class="chapter" data-level="5.5.3" data-path="common_qc.html"><a href="common_qc.html#uncertain-geolocation"><i class="fa fa-check"></i><b>5.5.3</b> Uncertain geolocation</a></li>
+<li class="chapter" data-level="5.5.4" data-path="common_qc.html"><a href="common_qc.html#how-to-use-obis-map-tool"><i class="fa fa-check"></i><b>5.5.4</b> How to use OBIS Map Tool</a></li>
+<li class="chapter" data-level="5.5.5" data-path="common_qc.html"><a href="common_qc.html#using-getty-thesaurus-google-maps-to-obtain-locality-coordinates"><i class="fa fa-check"></i><b>5.5.5</b> Using Getty Thesaurus &amp; Google Maps to obtain locality coordinates</a></li>
+<li class="chapter" data-level="5.5.6" data-path="common_qc.html"><a href="common_qc.html#how-to-use-marine-regions-gazetteer-tool"><i class="fa fa-check"></i><b>5.5.6</b> How to use Marine Regions Gazetteer tool</a></li>
+<li class="chapter" data-level="5.5.7" data-path="common_qc.html"><a href="common_qc.html#uncertain-taxonomic-information"><i class="fa fa-check"></i><b>5.5.7</b> Uncertain taxonomic information</a></li>
+<li class="chapter" data-level="5.5.8" data-path="common_qc.html"><a href="common_qc.html#uncertain-measurements"><i class="fa fa-check"></i><b>5.5.8</b> Uncertain measurements</a></li>
+<li class="chapter" data-level="5.5.9" data-path="common_qc.html"><a href="common_qc.html#non-marine-species"><i class="fa fa-check"></i><b>5.5.9</b> Non-marine species</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>Publishing Data</b></span></li>
 <li class="chapter" data-level="6" data-path="data_publication.html"><a href="data_publication.html"><i class="fa fa-check"></i><b>6</b> Data publication and sharing</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="data_publication.html"><a href="data_publication.html#add-metadata"><i class="fa fa-check"></i><b>6.1</b> Add metadata</a></li>
-<li class="chapter" data-level="6.2" data-path="data_publication.html"><a href="data_publication.html#licenses"><i class="fa fa-check"></i><b>6.2</b> Licenses</a></li>
-<li class="chapter" data-level="6.3" data-path="data_publication.html"><a href="data_publication.html#ipt-administration"><i class="fa fa-check"></i><b>6.3</b> IPT Administration</a></li>
-<li class="chapter" data-level="6.4" data-path="ipt.html"><a href="ipt.html"><i class="fa fa-check"></i><b>6.4</b> IPT</a>
+<li class="chapter" data-level="6.1" data-path="data_publication.html"><a href="data_publication.html#licenses"><i class="fa fa-check"></i><b>6.1</b> Licenses</a></li>
+<li class="chapter" data-level="6.2" data-path="ipt.html"><a href="ipt.html"><i class="fa fa-check"></i><b>6.2</b> Integrated Publishing Toolkit (IPT)</a>
 <ul>
-<li class="chapter" data-level="6.4.1" data-path="ipt.html"><a href="ipt.html#introduction-2"><i class="fa fa-check"></i><b>6.4.1</b> Introduction</a></li>
-<li class="chapter" data-level="6.4.2" data-path="ipt.html"><a href="ipt.html#installation"><i class="fa fa-check"></i><b>6.4.2</b> Installation</a></li>
-<li class="chapter" data-level="6.4.3" data-path="ipt.html"><a href="ipt.html#registration"><i class="fa fa-check"></i><b>6.4.3</b> Registration</a></li>
-<li class="chapter" data-level="6.4.4" data-path="ipt.html"><a href="ipt.html#introduction-to-publishing-your-data"><i class="fa fa-check"></i><b>6.4.4</b> Introduction to publishing your data</a></li>
-<li class="chapter" data-level="6.4.5" data-path="ipt.html"><a href="ipt.html#publish-your-metadata-as-a-data-paper"><i class="fa fa-check"></i><b>6.4.5</b> Publish your metadata as a data paper</a></li>
+<li class="chapter" data-level="6.2.1" data-path="ipt.html"><a href="ipt.html#introduction-to-the-ipt"><i class="fa fa-check"></i><b>6.2.1</b> Introduction to the IPT</a></li>
+<li class="chapter" data-level="6.2.2" data-path="ipt.html"><a href="ipt.html#how-to-access-the-ipt"><i class="fa fa-check"></i><b>6.2.2</b> How to access the IPT</a></li>
+<li class="chapter" data-level="6.2.3" data-path="ipt.html"><a href="ipt.html#create-your-resource-on-the-ipt"><i class="fa fa-check"></i><b>6.2.3</b> Create your resource on the IPT</a></li>
+<li class="chapter" data-level="6.2.4" data-path="ipt.html"><a href="ipt.html#map-your-data-to-darwin-core"><i class="fa fa-check"></i><b>6.2.4</b> Map your data to Darwin Core</a></li>
+<li class="chapter" data-level="6.2.5" data-path="ipt.html"><a href="ipt.html#add-metadata"><i class="fa fa-check"></i><b>6.2.5</b> Add metadata</a></li>
+<li class="chapter" data-level="6.2.6" data-path="ipt.html"><a href="ipt.html#publish-on-the-ipt"><i class="fa fa-check"></i><b>6.2.6</b> Publish on the IPT</a></li>
+<li class="chapter" data-level="6.2.7" data-path="ipt.html"><a href="ipt.html#downloading-datasets-from-an-ipt"><i class="fa fa-check"></i><b>6.2.7</b> Downloading datasets from an IPT</a></li>
 </ul></li>
-<li class="chapter" data-level="6.5" data-path="data_sharing.html"><a href="data_sharing.html"><i class="fa fa-check"></i><b>6.5</b> Maintaining published data</a>
+<li class="chapter" data-level="6.3" data-path="data_sharing.html"><a href="data_sharing.html"><i class="fa fa-check"></i><b>6.3</b> Maintaining and sharing published data</a>
 <ul>
-<li class="chapter" data-level="6.5.1" data-path="data_sharing.html"><a href="data_sharing.html#adding-a-doi-to-datasets"><i class="fa fa-check"></i><b>6.5.1</b> Adding a DOI to datasets</a></li>
-<li class="chapter" data-level="6.5.2" data-path="data_sharing.html"><a href="data_sharing.html#user-tracking"><i class="fa fa-check"></i><b>6.5.2</b> User tracking?</a></li>
+<li class="chapter" data-level="6.3.1" data-path="data_sharing.html"><a href="data_sharing.html#adding-a-doi-to-datasets"><i class="fa fa-check"></i><b>6.3.1</b> Adding a DOI to datasets</a></li>
+<li class="chapter" data-level="6.3.2" data-path="data_sharing.html"><a href="data_sharing.html#user-tracking"><i class="fa fa-check"></i><b>6.3.2</b> User tracking</a></li>
 </ul></li>
-<li class="chapter" data-level="6.6" data-path="data_sharing.html"><a href="data_sharing.html#simultaneous-publishing-to-gbif"><i class="fa fa-check"></i><b>6.6</b> Simultaneous publishing to GBIF</a>
-<ul>
-<li class="chapter" data-level="6.6.1" data-path="data_sharing.html"><a href="data_sharing.html#differences-between-obis-and-gbif-publication-processes"><i class="fa fa-check"></i><b>6.6.1</b> Differences between OBIS and GBIF publication processes</a></li>
-</ul></li>
-<li class="chapter" data-level="6.7" data-path="data_sharing.html"><a href="data_sharing.html#update-your-data-in-obis"><i class="fa fa-check"></i><b>6.7</b> Update your data in OBIS</a></li>
+<li class="chapter" data-level="6.4" data-path="data_sharing.html"><a href="data_sharing.html#update-your-data-in-obis"><i class="fa fa-check"></i><b>6.4</b> Update your data in OBIS</a></li>
+<li class="chapter" data-level="6.5" data-path="data_sharing.html"><a href="data_sharing.html#simultaneous-publishing-to-gbif"><i class="fa fa-check"></i><b>6.5</b> Simultaneous publishing to GBIF</a></li>
 </ul></li>
 <li class="part"><span><b>Access Data from OBIS</b></span></li>
 <li class="chapter" data-level="7" data-path="access.html"><a href="access.html"><i class="fa fa-check"></i><b>7</b> Data access</a>
@@ -299,14 +299,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.1" data-path="access.html"><a href="access.html#mapper"><i class="fa fa-check"></i><b>7.1</b> Mapper</a></li>
 <li class="chapter" data-level="7.2" data-path="access.html"><a href="access.html#r-package"><i class="fa fa-check"></i><b>7.2</b> R package</a></li>
 <li class="chapter" data-level="7.3" data-path="access.html"><a href="access.html#api"><i class="fa fa-check"></i><b>7.3</b> API</a></li>
-<li class="chapter" data-level="7.4" data-path="access.html"><a href="access.html#full-exports"><i class="fa fa-check"></i><b>7.4</b> Full exports</a></li>
-<li class="chapter" data-level="7.5" data-path="access.html"><a href="access.html#finding-your-own-data"><i class="fa fa-check"></i><b>7.5</b> Finding your own data</a></li>
-<li class="chapter" data-level="7.6" data-path="citing.html"><a href="citing.html"><i class="fa fa-check"></i><b>7.6</b> Citing Data from OBIS</a></li>
+<li class="chapter" data-level="7.4" data-path="access.html"><a href="access.html#obis-homepage-and-dataset-pages"><i class="fa fa-check"></i><b>7.4</b> OBIS Homepage and dataset pages</a></li>
+<li class="chapter" data-level="7.5" data-path="access.html"><a href="access.html#full-exports"><i class="fa fa-check"></i><b>7.5</b> Full exports</a></li>
+<li class="chapter" data-level="7.6" data-path="access.html"><a href="access.html#finding-your-own-data-in-obis"><i class="fa fa-check"></i><b>7.6</b> Finding your own data in OBIS</a></li>
+<li class="chapter" data-level="7.7" data-path="access.html"><a href="access.html#how-to-contact-data-provider"><i class="fa fa-check"></i><b>7.7</b> How to contact data provider</a></li>
+<li class="chapter" data-level="7.8" data-path="access.html"><a href="access.html#interpreting-downloaded-files-from-obis"><i class="fa fa-check"></i><b>7.8</b> Interpreting downloaded files from OBIS</a></li>
+<li class="chapter" data-level="7.9" data-path="citing.html"><a href="citing.html"><i class="fa fa-check"></i><b>7.9</b> Citing Data from OBIS</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path=""><a href="#part-data-visualization-and-analysis"><i class="fa fa-check"></i>(PART*) Data Visualization and Analysis</a>
 <ul>
-<li class="chapter" data-level="7.7" data-path="data_sharing.html"><a href="#example-notebooks-using-data-from-obis"><i class="fa fa-check"></i><b>7.7</b> Example notebooks using data from OBIS</a></li>
-<li class="chapter" data-level="7.8" data-path="dataviz.html"><a href="dataviz.html"><i class="fa fa-check"></i><b>7.8</b> obisindicators: calculating &amp; visualizing spatial biodiversity using data from OBIS</a></li>
+<li class="chapter" data-level="7.10" data-path="data_sharing.html"><a href="#example-notebooks-using-data-from-obis"><i class="fa fa-check"></i><b>7.10</b> Example notebooks using data from OBIS</a></li>
+<li class="chapter" data-level="7.11" data-path="dataviz.html"><a href="dataviz.html"><i class="fa fa-check"></i><b>7.11</b> obisindicators: calculating &amp; visualizing spatial biodiversity using data from OBIS</a></li>
 </ul></li>
 <li class="part"><span><b>Additional Resources</b></span></li>
 <li class="chapter" data-level="8" data-path="other_resources.html"><a href="other_resources.html"><i class="fa fa-check"></i><b>8</b> Other Resources</a>
@@ -332,23 +335,93 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="maintaining-published-data" class="section level2 hasAnchor" number="6.5">
-<h2><span class="header-section-number">6.5</span> Maintaining published data<a href="data_sharing.html#maintaining-published-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="adding-a-doi-to-datasets" class="section level3 hasAnchor" number="6.5.1">
-<h3><span class="header-section-number">6.5.1</span> Adding a DOI to datasets<a href="data_sharing.html#adding-a-doi-to-datasets" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-</div>
-<div id="user-tracking" class="section level3 hasAnchor" number="6.5.2">
-<h3><span class="header-section-number">6.5.2</span> User tracking?<a href="data_sharing.html#user-tracking" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-</div>
-</div>
-<div id="simultaneous-publishing-to-gbif" class="section level2 hasAnchor" number="6.6">
-<h2><span class="header-section-number">6.6</span> Simultaneous publishing to GBIF<a href="data_sharing.html#simultaneous-publishing-to-gbif" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="differences-between-obis-and-gbif-publication-processes" class="section level3 hasAnchor" number="6.6.1">
-<h3><span class="header-section-number">6.6.1</span> Differences between OBIS and GBIF publication processes<a href="data_sharing.html#differences-between-obis-and-gbif-publication-processes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="maintaining-and-sharing-published-data" class="section level2 hasAnchor" number="6.3">
+<h2><span class="header-section-number">6.3</span> Maintaining and sharing published data<a href="data_sharing.html#maintaining-and-sharing-published-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="adding-a-doi-to-datasets" class="section level3 hasAnchor" number="6.3.1">
+<h3><span class="header-section-number">6.3.1</span> Adding a DOI to datasets<a href="data_sharing.html#adding-a-doi-to-datasets" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>DOIs are important for tracking your dataset. Fortunately you can easily reserve a DOI for your dataset if the IPT administrator has configured the IPT accordingly.</p>
+<p>As the IPT administrator, you must enable the capacity for users to reserve DOIs. To do this you first need a <a href="https://datacite.org/">DataCite account</a> associated with an Organization. Only one DataCite account can be used to register DOIs in this manner (i.e. IPT users do not need an account). The IPT’s archival mode, configurable on the IPT settings page, must also be turned on (note that enabling this mode will use more disk space) to enable this feature. For more information see the <a href="https://github.com/gbif/ipt/wiki/IPT2ManualAdministration.wiki#configure-organisations">IPT administration manual</a>.</p>
+<p>Once this has been configured, a data provider or admin can easily reserve a DOI for a dataset. First log in to the IPT, navigate to the Manage Resources tab, then select the dataset for which you wish to reserve a DOI. On the overview page for the dataset, scroll to the Publication section, click the three vertical dots and select “Reserve DOI”.</p>
+<div class="figure">
+<img src="images/ipt-doi.png" style="width:50.0%" alt="" />
+<p class="caption">Screenshot indicating how to reserve a DOI for your dataset</p>
 </div>
 </div>
-<div id="update-your-data-in-obis" class="section level2 hasAnchor" number="6.7">
-<h2><span class="header-section-number">6.7</span> Update your data in OBIS<a href="data_sharing.html#update-your-data-in-obis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="user-tracking" class="section level3 hasAnchor" number="6.3.2">
+<h3><span class="header-section-number">6.3.2</span> User tracking<a href="data_sharing.html#user-tracking" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>OBIS tracks the number of times your dataset is downloaded. This information is available on your dataset’s page under the Statistics box.</p>
+<div class="figure">
+<img src="images/data-tracking.png" style="width:50.0%" alt="" />
+<p class="caption">Example screenshot of how dataset downloads can be tracked</p>
+</div>
+</div>
+</div>
+<div id="update-your-data-in-obis" class="section level2 hasAnchor" number="6.4">
+<h2><span class="header-section-number">6.4</span> Update your data in OBIS<a href="data_sharing.html#update-your-data-in-obis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>To update your own data in OBIS, the process is largely the same as <a href="ipt.html#publish-on-the-ipt">publishing your first version</a>. Follow the steps below:</p>
+<p>Log in to the IPT where your data are hosted
+Under the Manage Resources tab, locate your dataset
+Upload new files, complete the DwC mapping, and/or update any metadata that may have changed
+In the Publication section, click just as you did before Publish</p>
+<p>The new version will be automatically updated. A new DOI will be generated only if you generate it yourself on the new version. Deciding when to generate a new DOI is up to you, but generally you should generate a new DOI when there have been major changes to your dataset, such as significant changes in your metadata or a move to a 2.0 resource version within the IPT.</p>
+<div class="figure">
+<img src="images/ipt-pubVersion.png" style="width:50.0%" alt="" />
+<p class="caption">Example of IPT version control</p>
+</div>
+</div>
+<div id="simultaneous-publishing-to-gbif" class="section level2 hasAnchor" number="6.5">
+<h2><span class="header-section-number">6.5</span> Simultaneous publishing to GBIF<a href="data_sharing.html#simultaneous-publishing-to-gbif" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>There are a few differences between OBIS and GBIF. Perhaps the most obvious difference is that OBIS focuses on marine data, whereas GBIF includes broader biodiversity data. However, OBIS implements more strict quality control requirements for published datasets. A complete list of GBIF’s quality control checks can be found <a href="https://data-blog.gbif.org/post/issues-and-flags/">here</a>, and a guide on GBIF’s publishing process is <a href="https://www.gbif.org/publishing-data">here</a>.</p>
+<p>OBIS currently accepts two core data table types: Occurrence core and Event core. GBIF includes both <a href="https://www.gbif.org/data-quality-requirements-occurrences">Occurrence</a> and <a href="https://www.gbif.org/data-quality-requirements-sampling-events">Event</a> core, with one additional core type, <a href="https://www.gbif.org/data-quality-requirements-checklists">Checklists</a>. GBIF is also developing a <a href="https://www.gbif.org/composition/HjlTr705BctcnaZkcjRJq/data-model-principal-composition">new data model</a> to expand data publishing capabilities.</p>
+<p>Some of the other main differences in how OBIS and GBIF structure and publish datasets that you should be aware of include:</p>
+<ul>
+<li>OBIS uses <a href="https://www.marinespecies.org/index.php">WoRMS</a> as the exclusive taxonomic backbone, whereas GBIF uses <a href="https://www.catalogueoflife.org/">Catalog of Life</a></li>
+<li>The OBIS-ENV-DATA structure, the eMoF extension, and the DNA Derived data extensions are not included in GBIF downloads (e.g., <a href="https://www.gbif.org/dataset/be77e203-486c-4651-91b9-8347968b728c#description">this dataset description</a>). This data can still be published alongside your dataset, and is available when it is downloaded from the Source archive, but it will not be included in a GBIF Annotated Archive download.</li>
+<li>OBIS conducts some QC procedures that GBIF does not, including:
+<ul>
+<li>Checking validity of depth measurements</li>
+<li>Checking validity of of WoRMS LSID</li>
+<li>Identifying if taxa are exclusively freshwater or terrestrial</li>
+</ul></li>
+<li>GBIF includes most of the same <a href="https://www.gbif.org/standards">data standards</a> as OBIS (Darwin Core, EML), however GBIF also follows the <a href="https://www.tdwg.org/standards/abcd/#parts%20of%20the%20standard">Biological Collection Access Service (BioCASE/ABCD)</a></li>
+</ul>
+<p>See below for a quick reference on which terms are required or recommended in OBIS and GBIF for Occurrence and Event tables.</p>
+<p><strong>Event Table:</strong>
+| Term | Status in OBIS | Status in GBIF |
+|—|—|—|
+| eventID | <strong>required</strong> | <strong>required</strong> |
+| eventDate | <strong>required</strong> | <strong>required</strong> |
+| decimalLatitude &amp; decimalLongitude | <strong>required</strong> | strongly recommended |
+| samplingProtocol | strongly recommended | <strong>required</strong> |
+| samplingSizeValue &amp; samplingSizeUnit | strongly recommended | <strong>required</strong> |
+| countryCode | strongly recommended | strongly recommended |
+| parentEventID | strongly recommended | strongly recommended |
+| samplingEffort | strongly recommended | strongly recommended |
+| locationID | strongly recommended | strongly recommended |
+| coordinateUncertaintyInMeters | strongly recommended | strongly recommended |
+| geodeticDatum | recommended | strongly recommended |
+| footprintWKT | recommended | strongly recommended |
+| occurrenceStatus | required in occurrence extension | strongly recommended |</p>
+<p><strong>Occurrence Table:</strong>
+| Term | Status in OBIS | Status in GBIF |
+|—|—|—|
+| occurrenceID | <strong>required</strong> | <strong>required</strong> |
+| eventDate | <strong>required</strong> | <strong>required</strong> |
+| scientificName | <strong>required</strong> | <strong>required</strong> |
+| basisOfRecord | <strong>required</strong> | <strong>required</strong> |
+| kingdom | recommended | <strong>required</strong> |
+| decimalLatitude &amp; decimalLongitude | <strong>required</strong> | strongly recommended |
+| scientificNameID | <strong>required</strong> | not required, accepted |
+| occurrenceStatus | <strong>required</strong> | not required, accepted |
+| taxonRank | strongly recommended | strongly recommended |
+| coordinateUncertaintyInMeters | strongly recommended | strongly recommended |
+| individualCount, organismQuantity &amp; organismQuantityType | strongly recommended | strongly recommended |
+| geodeticDatum | recommended | strongly recommended |
+| eventTime | recommended | not required, accepted |
+| countryCode | not required, accepted | strongly recommended |
+| informationWithheld | not required, accepted | not required, accepted |
+| dataGeneralizations | not required, accepted | not required, accepted |
+| country | not required, accepted | not required, accepted |</p>
 
 </div>
 </div>
