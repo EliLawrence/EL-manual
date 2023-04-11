@@ -187,6 +187,8 @@ finding-your-own-data-in-obis
 how-to-contact-data-provider
 interpreting-downloaded-files-from-obis
 citing-data-from-obis
+data-visualization
+example-notebooks-using-data-from-obis
 obisindicators-calculating-visualizing-spatial-biodiversity-using-data-from-obis
 other-resources
 mbon-pole-to-pole-tutorial

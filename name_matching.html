@@ -306,17 +306,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.8" data-path="access.html"><a href="access.html#interpreting-downloaded-files-from-obis"><i class="fa fa-check"></i><b>7.8</b> Interpreting downloaded files from OBIS</a></li>
 <li class="chapter" data-level="7.9" data-path="citing.html"><a href="citing.html"><i class="fa fa-check"></i><b>7.9</b> Citing Data from OBIS</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path=""><a href="#part-data-visualization-and-analysis"><i class="fa fa-check"></i>(PART*) Data Visualization and Analysis</a>
+<li class="part"><span><b>Data Visualization and Analysis</b></span></li>
+<li class="chapter" data-level="8" data-path="dataviz.html"><a href="dataviz.html"><i class="fa fa-check"></i><b>8</b> Data Visualization</a>
 <ul>
-<li class="chapter" data-level="7.10" data-path="name_matching.html"><a href="#example-notebooks-using-data-from-obis"><i class="fa fa-check"></i><b>7.10</b> Example notebooks using data from OBIS</a></li>
-<li class="chapter" data-level="7.11" data-path="dataviz.html"><a href="dataviz.html"><i class="fa fa-check"></i><b>7.11</b> obisindicators: calculating &amp; visualizing spatial biodiversity using data from OBIS</a></li>
+<li class="chapter" data-level="8.1" data-path="dataviz.html"><a href="dataviz.html#example-notebooks-using-data-from-obis"><i class="fa fa-check"></i><b>8.1</b> Example notebooks using data from OBIS</a></li>
+<li class="chapter" data-level="8.2" data-path="dataviz.html"><a href="dataviz.html#obisindicators-calculating-visualizing-spatial-biodiversity-using-data-from-obis"><i class="fa fa-check"></i><b>8.2</b> obisindicators: calculating &amp; visualizing spatial biodiversity using data from OBIS</a></li>
 </ul></li>
 <li class="part"><span><b>Additional Resources</b></span></li>
-<li class="chapter" data-level="8" data-path="other_resources.html"><a href="other_resources.html"><i class="fa fa-check"></i><b>8</b> Other Resources</a>
+<li class="chapter" data-level="9" data-path="other_resources.html"><a href="other_resources.html"><i class="fa fa-check"></i><b>9</b> Other Resources</a>
 <ul>
-<li class="chapter" data-level="8.1" data-path="other_resources.html"><a href="other_resources.html#mbon-pole-to-pole-tutorial"><i class="fa fa-check"></i><b>8.1</b> MBON Pole to Pole Tutorial</a></li>
-<li class="chapter" data-level="8.2" data-path="other_resources.html"><a href="other_resources.html#ioos-darwin-core-guide"><i class="fa fa-check"></i><b>8.2</b> IOOS Darwin Core Guide</a></li>
-<li class="chapter" data-level="8.3" data-path="other_resources.html"><a href="other_resources.html#emodnet-biology"><i class="fa fa-check"></i><b>8.3</b> EMODnet Biology</a></li>
+<li class="chapter" data-level="9.1" data-path="other_resources.html"><a href="other_resources.html#mbon-pole-to-pole-tutorial"><i class="fa fa-check"></i><b>9.1</b> MBON Pole to Pole Tutorial</a></li>
+<li class="chapter" data-level="9.2" data-path="other_resources.html"><a href="other_resources.html#ioos-darwin-core-guide"><i class="fa fa-check"></i><b>9.2</b> IOOS Darwin Core Guide</a></li>
+<li class="chapter" data-level="9.3" data-path="other_resources.html"><a href="other_resources.html#emodnet-biology"><i class="fa fa-check"></i><b>9.3</b> EMODnet Biology</a></li>
 </ul></li>
 </ul>
 
@@ -388,16 +389,16 @@ The WoRMS LSID is used for <code>DwC:scientificNameID</code>.</p>
 <p>A complete online manual is available at <a href="http://www.marinespecies.org/tutorial/taxonmatch.php">http://www.marinespecies.org/tutorial/taxonmatch.php</a>. We have also created a [video tutorial] for using the taxon match tool, including how to attach the IDs back to your own data using Excel’s vlookup function. R script to do this is shown below.</p>
 <p><strong>R script for attaching Taxon Lists to ID Lists:</strong></p>
 <p>If you are familiar enough with R, you can use the <a href="https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/merge"><code>merge</code></a> function to attach the two lists to your data. We provide a short example of how to use this function below.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="name_matching.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Generate example data table with species occurences, for this example we will only have one column with the scientificName</span></span>
-<span id="cb5-2"><a href="name_matching.html#cb5-2" aria-hidden="true" tabindex="-1"></a>data<span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">scientificName=</span><span class="fu">c</span>(<span class="st">&quot;Thunnus thynnus&quot;</span>, <span class="st">&quot;Rhincodon typus&quot;</span>, <span class="st">&quot;Luidia maculata&quot;</span>,<span class="st">&quot;Ginglymostoma cirratum&quot;</span>))</span>
-<span id="cb5-3"><a href="name_matching.html#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="name_matching.html#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># this would be your matched file from WoRMS, but for example we are generating a simple list with the species names and LSIDs</span></span>
-<span id="cb5-5"><a href="name_matching.html#cb5-5" aria-hidden="true" tabindex="-1"></a>lsids<span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">scientificName=</span><span class="fu">c</span>(<span class="st">&quot;Ginglymostoma cirratum&quot;</span>,<span class="st">&quot;Luidia maculata&quot;</span>,<span class="st">&quot;Thunnus thynnus&quot;</span>, <span class="st">&quot;Rhincodon typus&quot;</span>),</span>
-<span id="cb5-6"><a href="name_matching.html#cb5-6" aria-hidden="true" tabindex="-1"></a> <span class="at">LSID =</span> <span class="fu">c</span>(<span class="st">&quot;urn:lsid:marinespecies.org:taxname:105846&quot;</span>, <span class="st">&quot;urn:lsid:marinespecies.org:taxname:213112&quot;</span>,<span class="st">&quot;urn:lsid:marinespecies.org:taxname:127029&quot;</span>,<span class="st">&quot;urn:lsid:marinespecies.org:taxname:105847&quot;</span>))</span>
-<span id="cb5-7"><a href="name_matching.html#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-8"><a href="name_matching.html#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co">#merge data frames together</span></span>
-<span id="cb5-9"><a href="name_matching.html#cb5-9" aria-hidden="true" tabindex="-1"></a>matched_data<span class="ot">&lt;-</span><span class="fu">merge</span>(data, lsids, <span class="at">by =</span> <span class="st">&quot;scientificName&quot;</span>)</span>
-<span id="cb5-10"><a href="name_matching.html#cb5-10" aria-hidden="true" tabindex="-1"></a>matched_data</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="name_matching.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Generate example data table with species occurences, for this example we will only have one column with the scientificName</span></span>
+<span id="cb4-2"><a href="name_matching.html#cb4-2" aria-hidden="true" tabindex="-1"></a>data<span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">scientificName=</span><span class="fu">c</span>(<span class="st">&quot;Thunnus thynnus&quot;</span>, <span class="st">&quot;Rhincodon typus&quot;</span>, <span class="st">&quot;Luidia maculata&quot;</span>,<span class="st">&quot;Ginglymostoma cirratum&quot;</span>))</span>
+<span id="cb4-3"><a href="name_matching.html#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="name_matching.html#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># this would be your matched file from WoRMS, but for example we are generating a simple list with the species names and LSIDs</span></span>
+<span id="cb4-5"><a href="name_matching.html#cb4-5" aria-hidden="true" tabindex="-1"></a>lsids<span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">scientificName=</span><span class="fu">c</span>(<span class="st">&quot;Ginglymostoma cirratum&quot;</span>,<span class="st">&quot;Luidia maculata&quot;</span>,<span class="st">&quot;Thunnus thynnus&quot;</span>, <span class="st">&quot;Rhincodon typus&quot;</span>),</span>
+<span id="cb4-6"><a href="name_matching.html#cb4-6" aria-hidden="true" tabindex="-1"></a> <span class="at">LSID =</span> <span class="fu">c</span>(<span class="st">&quot;urn:lsid:marinespecies.org:taxname:105846&quot;</span>, <span class="st">&quot;urn:lsid:marinespecies.org:taxname:213112&quot;</span>,<span class="st">&quot;urn:lsid:marinespecies.org:taxname:127029&quot;</span>,<span class="st">&quot;urn:lsid:marinespecies.org:taxname:105847&quot;</span>))</span>
+<span id="cb4-7"><a href="name_matching.html#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="name_matching.html#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co">#merge data frames together</span></span>
+<span id="cb4-9"><a href="name_matching.html#cb4-9" aria-hidden="true" tabindex="-1"></a>matched_data<span class="ot">&lt;-</span><span class="fu">merge</span>(data, lsids, <span class="at">by =</span> <span class="st">&quot;scientificName&quot;</span>)</span>
+<span id="cb4-10"><a href="name_matching.html#cb4-10" aria-hidden="true" tabindex="-1"></a>matched_data</span></code></pre></div>
 </div>
 <div id="step-2-match-with-other-registers" class="section level4 hasAnchor" number="4.2.1.2">
 <h4><span class="header-section-number">4.2.1.2</span> Step 2: Match with other registers<a href="name_matching.html#step-2-match-with-other-registers" class="anchor-section" aria-label="Anchor link to header"></a></h4>
