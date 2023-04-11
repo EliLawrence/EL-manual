@@ -154,6 +154,7 @@ uncertain-geolocation
 how-to-use-obis-map-tool
 using-getty-thesaurus-google-maps-to-obtain-locality-coordinates
 how-to-use-marine-regions-gazetteer-tool
+dwc-terms-obtained-from-maptool-and-gazetteers
 uncertain-taxonomic-information
 changes-in-taxonomic-classification
 uncertain-measurements
