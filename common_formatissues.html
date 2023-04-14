@@ -386,7 +386,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><code>HumanObservation</code> (e.g., observation in the wild)
 <code>MachineObservation</code> (e.g., photograph, DNA sequences)</p>
 <p>For records pertaining to literature data, <code>basisOfRecord</code> should always reflect the evidence upon which the Occurrence record was based. For example, a researcher’s record based on photographs should specify <code>MachineObservation</code>, otherwise specifications should be <code>HumanObservation</code> (see <a href="https://github.com/tdwg/dwc-qa/issues/134#issuecomment-491827863">relevant GitHub discussion</a>).</p>
-<p>For specifics on when to use each of these and which other fields should be populated along with them, see the guidelines on <a href="darwin_core#record-level-terms.html">record-level terms</a>.</p>
+<p>For specifics on when to use each of these and which other fields should be populated along with them, see the guidelines on <a href="darwin_core.html#record-level-terms">record-level terms</a>.</p>
 </div>
 <div id="temporal-dates-and-times" class="section level3 hasAnchor" number="4.9.2">
 <h3><span class="header-section-number">4.9.2</span> Temporal: Dates and times<a href="common_formatissues.html#temporal-dates-and-times" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -421,7 +421,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>It is important to note that although ISO 8601 also supports ordinal dates (YYYY-DDD) and week dates (YYYY-Www-D), these formats are not supported by OBIS. Additionally, ISO 8601 guidelines for <a href="https://en.wikipedia.org/wiki/ISO_8601#Durations">durations</a> should not be used. Durations for an event (e.g., length of observation) can instead be indicated with the DwC terms <a href="https://dwc.tdwg.org/list/#dwc_startDayOfYear">startDayOfYear</a> and <a href="https://dwc.tdwg.org/list/#dwc_endDayOfYear">endDayOfYear</a>. Durations refer to the actual length of time an event (e.g., occurrence) occurred, whereas intervals indicate the time period during which an event was recorded.</p>
 <p><strong>A note about intervals…</strong>
 Take care when entering date intervals as, for example, entering 1960/1975-08-04 indicates that the event or observation started any time in 1960, and ended any time on 1975-08-04. If you know the exact time, you should specify that information.</p>
-<p>If you have a mix of dates and times for different aspects of a sampling event, you can embed this information in the Event Core table using hierarchies of date structure. To do this, you can use separate records for events, and specify each event date individually. See <a href="common_formatissues#how-to-handle-mixed-date-information.html">example</a>.</p>
+<p>If you have a mix of dates and times for different aspects of a sampling event, you can embed this information in the Event Core table using hierarchies of date structure. To do this, you can use separate records for events, and specify each event date individually. See <a href="common_formatissues.html#how-to-handle-mixed-date-information">example</a>.</p>
 <p>For uncertainty regarding the date of the event, see <a href="common_qc.html">guidelines</a>.</p>
 <div id="tips" class="section level4 hasAnchor" number="4.9.2.1">
 <h4><span class="header-section-number">4.9.2.1</span> Tips<a href="common_formatissues.html#tips" class="anchor-section" aria-label="Anchor link to header"></a></h4>

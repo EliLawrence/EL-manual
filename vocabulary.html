@@ -341,11 +341,37 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="map-your-data-with-dwc-vocabulary" class="section level3 hasAnchor" number="4.7.1">
 <h3><span class="header-section-number">4.7.1</span> Map your data with DwC vocabulary<a href="vocabulary.html#map-your-data-with-dwc-vocabulary" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>There are many possible ways of setting up your datasheets, and if you are new to OBIS you likely did not use controlled Darwin Core (DwC) or BODC vocabulary before samples were collected. In mapping your data fields to DwC we recommend documenting your choices so you have a reference to go back to should the need arise. In such a document you should take notes on the choices you made, as well as any actions you had to take (e.g. separate one column into many, convert dates or coordinates, etc.).</p>
-<p>For example, a DwC mapping reference table could look like the following:
-| Verbatim field name | Mapped DwC term | Actions taken | Notes |
-|——-|——-|————|————–|
-| date | eventDate | convert dates to ISO | |
-| coordinates| decimalLongitude, decimalLatitude | convert ddmmss to decimal degrees, separated one column into 2 for longitude and latitude | put original coordinates into verbatimCoordinates |</p>
+<p>For example, a DwC mapping reference table could look like the following:</p>
+<table style="width:100%;">
+<colgroup>
+<col width="17%" />
+<col width="17%" />
+<col width="30%" />
+<col width="35%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Verbatim field name</th>
+<th>Mapped DwC term</th>
+<th>Actions taken</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>date</td>
+<td>eventDate</td>
+<td>convert dates to ISO</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>coordinates</td>
+<td>decimalLongitude, decimalLatitude</td>
+<td>convert ddmmss to decimal degrees, separated one column into 2 for longitude and latitude</td>
+<td>put original coordinates into verbatimCoordinates</td>
+</tr>
+</tbody>
+</table>
 <p>In order to help you map your data to DwC terms, we have provided the table below which outlines some common data fields, their associated Darwin Core vocabulary, and which data table the field is likely to go in:</p>
 <table>
 <colgroup>
@@ -624,15 +650,33 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="how-to-submit-a-github-vocabulary-request" class="section level4 hasAnchor" number="4.8.2.1">
 <h4><span class="header-section-number">4.8.2.1</span> How to Submit a GitHub Vocabulary Request<a href="vocabulary.html#how-to-submit-a-github-vocabulary-request" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ol style="list-style-type: decimal">
-<li><p>Navigate to <a href="https://github.com/nvs-vocabs/OBISVocabs/issues" class="uri">https://github.com/nvs-vocabs/OBISVocabs/issues</a> and click on the New Issue button.
-<img src="images/Vocab_GithubRequest_1-NewIssue.png" style="width:50.0%" alt="Screenshot of how to request a new vocabulary on Github" /></p></li>
-<li><p>Click Get started
-<img src="images/Vocab_GithubRequest_2-GetStarted.png" style="width:50.0%" alt="Screenshot of submitting an issue to Github" /></p></li>
-<li><p>Fill in the title with short details of your request or issue. Then fill in the description. It is recommended to list any existing terms that are similar to your request, or concepts that are sub-components of the request.
-<img src="images/Vocab_GithubRequest_3-IssueSubmission.png" style="width:50.0%" alt="Screenshot for how to request a new measurementType on Github" /></p></li>
-<li><p><em>Example</em>: An issue was created to address difficulties in identifying P01 codes for sex rather than gender. Gender is a concept generally applied to humans, whereas “sex” is more applicable for animals. Thus the request was to either modify the current gender P01 code, or create a P01 code that specifies sex, not gender. At the time the request was issued, when users searched for a P01 term for “sex”, only species-specific terms were available.
-<img src="images/Vocab_GithubRequest_4-example.png" style="width:50.0%" alt="Example of previously requested new term on Github" /></p></li>
+<li>Navigate to <a href="https://github.com/nvs-vocabs/OBISVocabs/issues" class="uri">https://github.com/nvs-vocabs/OBISVocabs/issues</a> and click on the New Issue button.</li>
 </ol>
+<div class="figure">
+<img src="images/Vocab_GithubRequest_1-NewIssue.png" style="width:50.0%" alt="" />
+<p class="caption">Screenshot of how to request a new vocabulary on Github</p>
+</div>
+<ol start="2" style="list-style-type: decimal">
+<li>Click Get started</li>
+</ol>
+<div class="figure">
+<img src="images/Vocab_GithubRequest_2-GetStarted.png" style="width:50.0%" alt="" />
+<p class="caption">Screenshot of submitting an issue to Github</p>
+</div>
+<ol start="3" style="list-style-type: decimal">
+<li>Fill in the title with short details of your request or issue. Then fill in the description. It is recommended to list any existing terms that are similar to your request, or concepts that are sub-components of the request.</li>
+</ol>
+<div class="figure">
+<img src="images/Vocab_GithubRequest_3-IssueSubmission.png" style="width:50.0%" alt="" />
+<p class="caption">Screenshot for how to request a new measurementType on Github</p>
+</div>
+<ol start="4" style="list-style-type: decimal">
+<li><em>Example</em>: An issue was created to address difficulties in identifying P01 codes for sex rather than gender. Gender is a concept generally applied to humans, whereas “sex” is more applicable for animals. Thus the request was to either modify the current gender P01 code, or create a P01 code that specifies sex, not gender. At the time the request was issued, when users searched for a P01 term for “sex”, only species-specific terms were available.</li>
+</ol>
+<div class="figure">
+<img src="images/Vocab_GithubRequest_4-example.png" style="width:50.0%" alt="" />
+<p class="caption">Example of previously requested new term on Github</p>
+</div>
 
 </div>
 </div>
