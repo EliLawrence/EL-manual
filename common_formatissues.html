@@ -260,15 +260,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="5.5" data-path="common_qc.html"><a href="common_qc.html"><i class="fa fa-check"></i><b>5.5</b> Common Quality Control issues</a>
 <ul>
-<li class="chapter" data-level="5.5.1" data-path="common_qc.html"><a href="common_qc.html#missing-required-fields-1"><i class="fa fa-check"></i><b>5.5.1</b> Missing required fields</a></li>
-<li class="chapter" data-level="5.5.2" data-path="common_qc.html"><a href="common_qc.html#uncertain-temporal-range"><i class="fa fa-check"></i><b>5.5.2</b> Uncertain temporal range</a></li>
-<li class="chapter" data-level="5.5.3" data-path="common_qc.html"><a href="common_qc.html#uncertain-geolocation"><i class="fa fa-check"></i><b>5.5.3</b> Uncertain geolocation</a></li>
-<li class="chapter" data-level="5.5.4" data-path="common_qc.html"><a href="common_qc.html#how-to-use-obis-map-tool"><i class="fa fa-check"></i><b>5.5.4</b> How to use OBIS Map Tool</a></li>
-<li class="chapter" data-level="5.5.5" data-path="common_qc.html"><a href="common_qc.html#using-getty-thesaurus-google-maps-to-obtain-locality-coordinates"><i class="fa fa-check"></i><b>5.5.5</b> Using Getty Thesaurus &amp; Google Maps to obtain locality coordinates</a></li>
-<li class="chapter" data-level="5.5.6" data-path="common_qc.html"><a href="common_qc.html#how-to-use-marine-regions-gazetteer-tool"><i class="fa fa-check"></i><b>5.5.6</b> How to use Marine Regions Gazetteer tool</a></li>
-<li class="chapter" data-level="5.5.7" data-path="common_qc.html"><a href="common_qc.html#uncertain-taxonomic-information"><i class="fa fa-check"></i><b>5.5.7</b> Uncertain taxonomic information</a></li>
-<li class="chapter" data-level="5.5.8" data-path="common_qc.html"><a href="common_qc.html#uncertain-measurements"><i class="fa fa-check"></i><b>5.5.8</b> Uncertain measurements</a></li>
-<li class="chapter" data-level="5.5.9" data-path="common_qc.html"><a href="common_qc.html#non-marine-species"><i class="fa fa-check"></i><b>5.5.9</b> Non-marine species</a></li>
+<li class="chapter" data-level="5.5.1" data-path="common_qc.html"><a href="common_qc.html#uncertain-temporal-range"><i class="fa fa-check"></i><b>5.5.1</b> Uncertain temporal range</a></li>
+<li class="chapter" data-level="5.5.2" data-path="common_qc.html"><a href="common_qc.html#uncertain-geolocation"><i class="fa fa-check"></i><b>5.5.2</b> Uncertain geolocation</a></li>
+<li class="chapter" data-level="5.5.3" data-path="common_qc.html"><a href="common_qc.html#how-to-use-obis-map-tool"><i class="fa fa-check"></i><b>5.5.3</b> How to use OBIS Map Tool</a></li>
+<li class="chapter" data-level="5.5.4" data-path="common_qc.html"><a href="common_qc.html#using-getty-thesaurus-google-maps-to-obtain-locality-coordinates"><i class="fa fa-check"></i><b>5.5.4</b> Using Getty Thesaurus &amp; Google Maps to obtain locality coordinates</a></li>
+<li class="chapter" data-level="5.5.5" data-path="common_qc.html"><a href="common_qc.html#how-to-use-marine-regions-gazetteer-tool"><i class="fa fa-check"></i><b>5.5.5</b> How to use Marine Regions Gazetteer tool</a></li>
+<li class="chapter" data-level="5.5.6" data-path="common_qc.html"><a href="common_qc.html#uncertain-taxonomic-information"><i class="fa fa-check"></i><b>5.5.6</b> Uncertain taxonomic information</a></li>
+<li class="chapter" data-level="5.5.7" data-path="common_qc.html"><a href="common_qc.html#uncertain-measurements"><i class="fa fa-check"></i><b>5.5.7</b> Uncertain measurements</a></li>
+<li class="chapter" data-level="5.5.8" data-path="common_qc.html"><a href="common_qc.html#non-marine-species"><i class="fa fa-check"></i><b>5.5.8</b> Non-marine species</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>Publishing Data</b></span></li>
@@ -365,7 +364,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li><strong><code>scientificName</code></strong></li>
 </ul>
-<p>This field should contain only the <strong>originally documented</strong> scientific name down to the lowest possible taxon rank, even if there are misspellings or if it is a current synonym. Class, or even Kingdom levels are accepted if more specific taxonomic levels are unknown. Comments about misspellings, etc. can be documented in the <code>taxonRemarks</code> field.</p>
+<p>This field should contain only the <strong>originally documented</strong> scientific name down to the lowest possible taxon rank, even if there are misspellings or if it is a current synonym. Class, or even Kingdom levels are accepted if more specific taxonomic levels are unknown. Comments about misspellings, etc. can be documented in the <code>taxonRemarks</code> field. Note that there may be special cases for eDNA and DNA derived data, see <a href="dna_data.html">specific guidelines</a> for these cases.</p>
 <p>You may encounter challenges filling this field if the species name is based on description or if its taxonomy was uncertain at time of sampling. For such uncertain taxonomy situations, see our guidelines <a href="common_qc#uncertain-taxaonomic-information.html">here</a>.</p>
 <ul>
 <li><strong><code>scientificNameID</code></strong></li>

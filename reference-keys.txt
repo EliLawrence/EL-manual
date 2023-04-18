@@ -71,12 +71,12 @@ darwin-core-term-checklist-for-obis
 name-matching-strategy-for-taxonomic-quality-control
 taxon-matching-workflow
 step-1-match-with-worms
+how-to-fetch-a-full-classification-for-a-list-of-species-from-worms
+what-to-do-with-non-matching-names
 step-2-match-with-other-registers
 step-3-is-taxon-marine
 r-packages-for-taxon-matching
 taxon-match-tools-overview
-how-to-fetch-a-full-classification-for-a-list-of-species-from-worms
-what-to-do-with-non-matching-names
 how-to-format-occurrence-tables
 stepwise-guidance-to-format-an-occurrence-table-in-excel
 how-to-format-event-tables
@@ -148,7 +148,6 @@ geographic-and-data-format-quality-control
 geographical-service
 obis-data-format-validation
 common-quality-control-issues
-missing-required-fields-1
 uncertain-temporal-range
 uncertain-geolocation
 how-to-use-obis-map-tool
