@@ -284,13 +284,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.2.6" data-path="ipt.html"><a href="ipt.html#publish-on-the-ipt"><i class="fa fa-check"></i><b>6.2.6</b> Publish on the IPT</a></li>
 <li class="chapter" data-level="6.2.7" data-path="ipt.html"><a href="ipt.html#downloading-datasets-from-an-ipt"><i class="fa fa-check"></i><b>6.2.7</b> Downloading datasets from an IPT</a></li>
 </ul></li>
-<li class="chapter" data-level="6.3" data-path="data_sharing.html"><a href="data_sharing.html"><i class="fa fa-check"></i><b>6.3</b> Maintaining and sharing published data</a>
+<li class="chapter" data-level="6.3" data-path="ipt_admin.html"><a href="ipt_admin.html"><i class="fa fa-check"></i><b>6.3</b> IPT Administration Responsibilities</a>
 <ul>
-<li class="chapter" data-level="6.3.1" data-path="data_sharing.html"><a href="data_sharing.html#adding-a-doi-to-datasets"><i class="fa fa-check"></i><b>6.3.1</b> Adding a DOI to datasets</a></li>
-<li class="chapter" data-level="6.3.2" data-path="data_sharing.html"><a href="data_sharing.html#user-tracking"><i class="fa fa-check"></i><b>6.3.2</b> User tracking</a></li>
+<li class="chapter" data-level="6.3.1" data-path="ipt_admin.html"><a href="ipt_admin.html#creating-and-installing-ipts"><i class="fa fa-check"></i><b>6.3.1</b> Creating and Installing IPTs</a></li>
+<li class="chapter" data-level="6.3.2" data-path="ipt_admin.html"><a href="ipt_admin.html#registration"><i class="fa fa-check"></i><b>6.3.2</b> Registration</a></li>
+<li class="chapter" data-level="6.3.3" data-path="ipt_admin.html"><a href="ipt_admin.html#maintaining-the-ipt"><i class="fa fa-check"></i><b>6.3.3</b> Maintaining the IPT</a></li>
 </ul></li>
-<li class="chapter" data-level="6.4" data-path="data_sharing.html"><a href="data_sharing.html#update-your-data-in-obis"><i class="fa fa-check"></i><b>6.4</b> Update your data in OBIS</a></li>
-<li class="chapter" data-level="6.5" data-path="data_sharing.html"><a href="data_sharing.html#simultaneous-publishing-to-gbif"><i class="fa fa-check"></i><b>6.5</b> Simultaneous publishing to GBIF</a></li>
+<li class="chapter" data-level="6.4" data-path="data_sharing.html"><a href="data_sharing.html"><i class="fa fa-check"></i><b>6.4</b> Maintaining and sharing published data</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="data_sharing.html"><a href="data_sharing.html#adding-a-doi-to-datasets"><i class="fa fa-check"></i><b>6.4.1</b> Adding a DOI to datasets</a></li>
+<li class="chapter" data-level="6.4.2" data-path="data_sharing.html"><a href="data_sharing.html#user-tracking"><i class="fa fa-check"></i><b>6.4.2</b> User tracking</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="data_sharing.html"><a href="data_sharing.html#update-your-data-in-obis"><i class="fa fa-check"></i><b>6.5</b> Update your data in OBIS</a></li>
+<li class="chapter" data-level="6.6" data-path="data_sharing.html"><a href="data_sharing.html#simultaneous-publishing-to-gbif"><i class="fa fa-check"></i><b>6.6</b> Simultaneous publishing to GBIF</a></li>
 </ul></li>
 <li class="part"><span><b>Access Data from OBIS</b></span></li>
 <li class="chapter" data-level="7" data-path="access.html"><a href="access.html"><i class="fa fa-check"></i><b>7</b> Data access</a>
@@ -426,9 +432,12 @@ If you are making any inferences and/or decisions about locality coordinates, pl
 <ol style="list-style-type: decimal">
 <li><code>locationID</code> from MRGID: <a href="http://marineregions.org/mrgid/4289" class="uri">http://marineregions.org/mrgid/4289</a></li>
 <li><code>decimalLatitude</code> and <code>decimalLongitude</code> latitude and longitude coordinates of the location’s midpoint in decimal degrees: 44.97985204, -65.80601556</li>
-<li><code>coordinateUncertaintyInMeters</code> precision: 196726 meters
-<img src="images/MarineRegions-Gazetteer_placedetails" style="width:40.0%" alt="Screenshot of Marine Region placedetails, highlighting important information for OBIS" /></li>
+<li><code>coordinateUncertaintyInMeters</code> precision: 196726 meters</li>
 </ol>
+<div class="figure">
+<img src="images/MarineRegions-Gazetteer_placedetails.png" style="width:40.0%" alt="" />
+<p class="caption">Screenshot of Marine Region placedetails, highlighting important information for OBIS</p>
+</div>
 <p>Since we are obtaining all this locality data from Marine Regions, we must also populate the <code>locationAccordingTo</code> field. Here, we will provide the name of the gazetteer we used to obtain the coordinates for the locality - in this case you would write “Marine Regions”. In <code>georeferenceRemarks</code> we must document that the coordinates are the region’s midpoint, that locality information was inferred by geographic name, and, where applicable, place the original locality name in the field <code>verbatimLocality</code>. Finally, the location portion of our dataset would look something like this:</p>
 <table style="width:100%;">
 <colgroup>

@@ -172,6 +172,10 @@ add-metadata
 publish-on-the-ipt
 publish-your-metadata-as-a-data-paper
 downloading-datasets-from-an-ipt
+ipt-administration-responsibilities
+creating-and-installing-ipts
+registration
+maintaining-the-ipt
 maintaining-and-sharing-published-data
 adding-a-doi-to-datasets
 user-tracking
