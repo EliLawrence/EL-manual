@@ -78,9 +78,9 @@ step-3-is-taxon-marine
 r-packages-for-taxon-matching
 taxon-match-tools-overview
 how-to-format-occurrence-tables
-stepwise-guidance-to-format-an-occurrence-table-in-excel
+stepwise-guidance-to-format-an-occurrence-table-with-spreadsheets
 how-to-format-event-tables
-stepwise-guidance-to-format-event-table-in-excel
+stepwise-guidance-to-format-event-table-with-spreadsheets
 how-to-format-extendedmeasurementorfact-tables
 what-data-goes-into-emof
 how-to-structure-emof
@@ -161,7 +161,7 @@ individualcount
 non-marine-species
 data-publication-and-sharing
 licenses
-integrated-publishing-toolkit-ipt
+ipt-integrated-publishing-toolkit
 introduction-to-the-ipt
 how-to-access-the-ipt
 who-populates-the-ipt-with-datasets

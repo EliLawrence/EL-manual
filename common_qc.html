@@ -203,11 +203,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="4.3" data-path="format_occurrence.html"><a href="format_occurrence.html"><i class="fa fa-check"></i><b>4.3</b> How to format Occurrence tables</a>
 <ul>
-<li class="chapter" data-level="4.3.1" data-path="format_occurrence.html"><a href="format_occurrence.html#stepwise-guidance-to-format-an-occurrence-table-in-excel"><i class="fa fa-check"></i><b>4.3.1</b> Stepwise Guidance to Format an Occurrence Table (in Excel)</a></li>
+<li class="chapter" data-level="4.3.1" data-path="format_occurrence.html"><a href="format_occurrence.html#stepwise-guidance-to-format-an-occurrence-table-with-spreadsheets"><i class="fa fa-check"></i><b>4.3.1</b> Stepwise Guidance to Format an Occurrence Table (with spreadsheets)</a></li>
 </ul></li>
 <li class="chapter" data-level="4.4" data-path="format_event.html"><a href="format_event.html"><i class="fa fa-check"></i><b>4.4</b> How to format Event tables</a>
 <ul>
-<li class="chapter" data-level="4.4.1" data-path="format_event.html"><a href="format_event.html#stepwise-guidance-to-format-event-table-in-excel"><i class="fa fa-check"></i><b>4.4.1</b> Stepwise Guidance to Format Event Table (in Excel)</a></li>
+<li class="chapter" data-level="4.4.1" data-path="format_event.html"><a href="format_event.html#stepwise-guidance-to-format-event-table-with-spreadsheets"><i class="fa fa-check"></i><b>4.4.1</b> Stepwise Guidance to Format Event Table (with spreadsheets)</a></li>
 </ul></li>
 <li class="chapter" data-level="4.5" data-path="format_emof.html"><a href="format_emof.html"><i class="fa fa-check"></i><b>4.5</b> How to format extendedMeasurementOrFact tables</a>
 <ul>
@@ -274,7 +274,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6" data-path="data_publication.html"><a href="data_publication.html"><i class="fa fa-check"></i><b>6</b> Data publication and sharing</a>
 <ul>
 <li class="chapter" data-level="6.1" data-path="data_publication.html"><a href="data_publication.html#licenses"><i class="fa fa-check"></i><b>6.1</b> Licenses</a></li>
-<li class="chapter" data-level="6.2" data-path="ipt.html"><a href="ipt.html"><i class="fa fa-check"></i><b>6.2</b> Integrated Publishing Toolkit (IPT)</a>
+<li class="chapter" data-level="6.2" data-path="ipt.html"><a href="ipt.html"><i class="fa fa-check"></i><b>6.2</b> IPT: Integrated Publishing Toolkit</a>
 <ul>
 <li class="chapter" data-level="6.2.1" data-path="ipt.html"><a href="ipt.html#introduction-to-the-ipt"><i class="fa fa-check"></i><b>6.2.1</b> Introduction to the IPT</a></li>
 <li class="chapter" data-level="6.2.2" data-path="ipt.html"><a href="ipt.html#how-to-access-the-ipt"><i class="fa fa-check"></i><b>6.2.2</b> How to access the IPT</a></li>
@@ -410,24 +410,27 @@ If you are making any inferences and/or decisions about locality coordinates, pl
 <h3><span class="header-section-number">5.5.4</span> Using Getty Thesaurus &amp; Google Maps to obtain locality coordinates<a href="common_qc.html#using-getty-thesaurus-google-maps-to-obtain-locality-coordinates" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>For both the <a href="https://www.getty.edu/research/tools/vocabularies/tgn/">Getty thesaurus</a> and <a href="https://www.google.com/maps/">Google Maps</a> you can simply search the name of a locality, for example the Cook Strait in New Zealand. The search result on the Getty thesaurus will bring you to a page where you can obtain <code>decimalLatitude</code> and <code>decimalLongitdue</code>.</p>
 <div class="figure">
-<img src="images/getty-thesaurus-NZexample.png" style="width:50.0%" alt="" />
+<img src="images/getty-thesaurus-NZexample.png" style="width:60.0%" alt="" />
 <p class="caption">Screenshot of Cook Strait page on the Getty Thersaurus</p>
 </div>
-<p>For Google Maps, the coordinates can be found in the url after searching.
-<img src="images/google-maps-coordinates.png" style="width:50.0%" alt="Screenshot of Google Maps showing where coordinates can be foun din the URL" /></p>
+<p>For Google Maps, the coordinates can be found in the url after searching.</p>
+<div class="figure">
+<img src="images/google-maps-coordinates.png" style="width:60.0%" alt="" />
+<p class="caption">Screenshot of Google Maps showing where coordinates can be foun din the URL</p>
+</div>
 </div>
 <div id="how-to-use-marine-regions-gazetteer-tool" class="section level3 hasAnchor" number="5.5.5">
 <h3><span class="header-section-number">5.5.5</span> How to use Marine Regions Gazetteer tool<a href="common_qc.html#how-to-use-marine-regions-gazetteer-tool" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Marine Regions offers a marine gazetteer search engine to obtain geographic information and unique identifiers for marine regions. Once you have navigated to the <a href="https://www.marineregions.org/gazetteer.php?p=search">gazetteer search engine</a>, you have two options to search by: enter the name of the desired locality, or enter an MRGID code. Most likely you will have a locality name but not an MRGID. You may also select a <a href="https://www.marineregions.org/gazetteer.php?p=popup&amp;name=placetype">placetype</a> to search instead for types of regions that may be physical (e.g., seamount, bay, fjord, etc.) or administrative (e.g., exclusive economic zones, countries, etc). You can specify specific sources if known (e.g., published paper, organization, etc.). Finally, you can give a latitude/longitude coordinate with a radius around it to obtain a list of regions near that point.</p>
 <p>For this example we will search by geographic name for the Bay of Fundy.</p>
 <p><img src="images/marinegazeeteer-search.png" style="width:50.0%" alt="Marine regions gazetteer search" />
-<img src="images/marinegazeeteer-bayfundy.png" style="width:40.0%" alt="Marine regions gazetteer search" /></p>
+<img src="images/marinegazeeteer-bayfundy.png" style="width:60.0%" alt="Marine regions gazetteer search" /></p>
 <p>Our search returned 5 results from different sources (indicated in brackets). So how do we select the correct one? We can notice right away that the second result, from SeaVox SeaArea, has a preferred alternative, which when you click on the link brings you to the IHO Sea Area description for Bay of Fundy. So already we can likely drop SeaVox as a potential candidate. A good next step may be to compare the geographical extent for each to ensure it covers the desired area. If you are uncertain about exactly where your locality is, it may be better to be safe and choose a wider geographic region. Let’s compare the maps for all 5 results:</p>
-<p><img src="images/marinegazeeteer-bayfundy-1-IHO.png" style="width:40.0%" alt="Bay of Fundy source IHO" />
-<img src="images/marinegazeeteer-bayfundy-2-SeaVoX.png" style="width:40.0%" alt="Bay of Fundy source SeaVoX" />
-<img src="images/marinegazeeteer-bayfundy-3-MarRegion.png" alt="Canadian part of Bay of Fundy source Marine Region" />
-<img src="images/marinegazeeteer-bayfundy-4-MEOW.png" style="width:40.0%" alt="Bay of Fundy source MEOW" />
-<img src="images/marinegazeeteer-bayfundy-5-MarRegion.png" style="width:40.0%" alt="United States part of Bay of Fundy source Marine Region" /></p>
+<p><img src="images/marinegazeeteer-bayfundy-1-IHO.png" style="width:450.0%" alt="Bay of Fundy source IHO" />
+<img src="images/marinegazeeteer-bayfundy-2-SeaVoX.png" style="width:50.0%" alt="Bay of Fundy source SeaVoX" />
+<img src="images/marinegazeeteer-bayfundy-3-MarRegion.png" style="width:50.0%" alt="Canadian part of Bay of Fundy source Marine Region" />
+<img src="images/marinegazeeteer-bayfundy-4-MEOW.png" style="width:50.0%" alt="Bay of Fundy source MEOW" />
+<img src="images/marinegazeeteer-bayfundy-5-MarRegion.png" style="width:50.0%" alt="United States part of Bay of Fundy source Marine Region" /></p>
 <p>Notice that no region has the exact same geographic extent. Let’s select the IHO Bay of Fundy locality (the first search result) to ensure we are covering the entire area of the Bay of Fundy, but not the Gulf. Inspecting the rest of the page, there is a lot of other useful information we can use. We can populate the following OBIS fields for our dataset, copying the information outlined in the red boxes:</p>
 <ol style="list-style-type: decimal">
 <li><code>locationID</code> from MRGID: <a href="http://marineregions.org/mrgid/4289" class="uri">http://marineregions.org/mrgid/4289</a></li>
@@ -504,24 +507,18 @@ If you are making any inferences and/or decisions about locality coordinates, pl
 <td></td>
 </tr>
 <tr class="odd">
-<td>maximumDepthInMeters</td>
-<td>Depth</td>
-<td></td>
-<td>No minimum depth is provided from either Mapper or Marine Regions</td>
-</tr>
-<tr class="even">
 <td>locationID</td>
 <td></td>
 <td>MRGID</td>
 <td></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>coordinateUncertaintyInMeters</td>
 <td>radius</td>
 <td>precision (not always available)</td>
 <td></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>footprintWKT</td>
 <td>WKT</td>
 <td></td>
@@ -552,7 +549,14 @@ If you are making any inferences and/or decisions about locality coordinates, pl
 <p>If the provided genus name is unaccepted in WoRMS, it is okay to use the unaccepted name in this field. <code>scientificNameID</code> should contain the WoRMS LSID for the genus.</p>
 <p>There is a new Darwin Core term <a href="https://dwc.tdwg.org/terms/#dwc:verbatimIdentification"><code>verbatimIdentification</code></a> meant for containing the originally documented name, however this term is not yet implemented in OBIS so if you populate this field it will not be indexed alongside your data. However you can use <code>originalNameUsage</code> to document original species names.</p>
 <p>The use and definitions for additional Open Nomenclature (ON) signs (<code>identificationQualifier</code>) can be found in <a href="https://doi.org/10.1111/2041-210X.12594">Open Nomenclature in the biodiversity era</a>, which provides examples for using the main Open Nomenclature qualifiers associated with physical specimens (Figure 1). Whereas the publication <a href="https://www.frontiersin.org/articles/10.3389/fmars.2021.620702/full">Recommendations for the Standardisation of Open Taxonomic Nomenclature for Image-Based Identiﬁcations</a> provides examples and definitions for identificationQualifiers for non-physical specimens (image-based) (Figure 2).</p>
-<p><img src="images/fig1-openNomenclature.png" style="width:50.0%" alt="Figure 1. Flow diagram with the main Open Nomenclature qualifiers associated with physical specimens. The degree of confidence in the correct identifier increases from the top down. More info and figure copied from Open Nomenclature in the biodiversity era." /> <img src="images/fig2-flowDiagram.jpg" style="width:50.0%" alt="Figure 2: Flow diagram with the main Open Nomenclature qualifiers for the identification of specimens from images (non-physical, image-based) . More information and figure copied from Recommendations for the Standardisation of Open Taxonomic Nomenclature for Image-Based Identiﬁcations" /></p>
+<div class="figure">
+<img src="images/fig1-openNomenclature.png" style="width:60.0%" alt="" />
+<p class="caption">Figure 1. Flow diagram with the main Open Nomenclature qualifiers associated with physical specimens. The degree of confidence in the correct identifier increases from the top down. More info and figure copied from <a href="https://doi.org/10.1111/2041-210X.12594">Open Nomenclature in the biodiversity era</a>.</p>
+</div>
+<div class="figure">
+<img src="images/fig2-flowDiagram.jpg" style="width:60.0%" alt="" />
+<p class="caption">Figure 2: Flow diagram with the main Open Nomenclature qualifiers for the identification of specimens from images (non-physical, image-based) . More information and figure copied from <a href="https://www.frontiersin.org/articles/10.3389/fmars.2021.620702/full">Recommendations for the Standardisation of Open Taxonomic Nomenclature for Image-Based Identiﬁcations</a></p>
+</div>
 <div id="changes-in-taxonomic-classification" class="section level4 hasAnchor" number="5.5.6.1">
 <h4><span class="header-section-number">5.5.6.1</span> Changes in taxonomic classification<a href="common_qc.html#changes-in-taxonomic-classification" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Taxonomic classification can change over time - so what does that mean for your datasets when records change classification?</p>
@@ -584,14 +588,20 @@ A brief clarification on abundance and count data: abundance is the number of in
 <h3><span class="header-section-number">5.5.8</span> Non-marine species<a href="common_qc.html#non-marine-species" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>If you are given an error that your taxon is not marine, please confirm first whether the species is actually freshwater by cross referencing with WoRMS or <a href="https://www.irmng.org/">IRMNG</a>. If the species is not marine (i.e. belongs to a non-marine genus), check with the data provider as necessary for possible misidentification. Finally you can contact WoRMS at <a href="mailto:info@marinespecies.org" class="email">info@marinespecies.org</a> to discuss adding the taxon to the WoRMS register. You will be required to provide documentation in this case to confirm marine status of the taxon.</p>
 <p>Otherwise, records marked as non-marine will be dropped from the published dataset, and this will be flagged in the data quality associated with your dataset.</p>
-<p>Let’s consider an example within <a href="https://obis.org/dataset/9fbaeb21-a0dc-4a29-8237-1cd7ada266e0">this dataset</a> on benthic macroalgae. Inspecting the data quality report we can see there are three dropped records due to species not being marine.
-<img src="images/dropped-records1.png" style="width:40.0%" alt="Dropped records from a benthic macroalgae dataset" /></p>
-<p>Clicking on the dropped records we can see which three species were dropped. By scrolling to the right of the table, we can see these records have two quality flags: NO_DEPTH and NOT_MARINE.
-<img src="images/dropped-records2.png" style="width:40.0%" alt="Flags specifying why certain records were dropped" /></p>
-<p>Let’s take a look at the first species, Pseudochantransia venezuelensis. When we search for this species on <a href="https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=836900">WoRMS</a> we can see that the species is marked as freshwater.
-<img src="images/nonmarine-spp-worms.png" style="width:40.0%" /></p>
-<p>Cross-referencing with IRMNG, if we search for the genus-species, the species is not even found, an indication that it is not in the database (and also why it can be good to check multiple sources). Searching for just the genus, we can see that marine and brackish are stricken out, indicating the species is not marine.
-<img src="images/nonmarine-spp-irmng.png" style="width:40.0%" /></p>
+<p>Let’s consider an example within <a href="https://obis.org/dataset/9fbaeb21-a0dc-4a29-8237-1cd7ada266e0">this dataset</a> on benthic macroalgae. Inspecting the data quality report we can see there are three dropped records due to species not being marine.</p>
+<div class="figure">
+<img src="images/dropped-records1.png" style="width:40.0%" alt="" />
+<p class="caption">Dropped records from a benthic macroalgae dataset</p>
+</div>
+<p>Clicking on the dropped records we can see which three species were dropped. By scrolling to the right of the table, we can see these records have two quality flags: NO_DEPTH and NOT_MARINE.</p>
+<div class="figure">
+<img src="images/dropped-records2.png" style="width:40.0%" alt="" />
+<p class="caption">Flags specifying why certain records were dropped</p>
+</div>
+<p>Let’s take a look at the first species, Pseudochantransia venezuelensis. When we search for this species on <a href="https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=836900">WoRMS</a> we can see that the species is marked as freshwater.</p>
+<p><img src="images/nonmarine-spp-worms.png" style="width:60.0%" /></p>
+<p>Cross-referencing with IRMNG, if we search for the genus-species, the species is not even found, an indication that it is not in the database (and also why it can be good to check multiple sources). Searching for just the genus, we can see that marine and brackish are stricken out, indicating the species is not marine.</p>
+<p><img src="images/nonmarine-spp-irmng.png" style="width:60.0%" /></p>
 <p>If you have species that are marked as non-marine in these registers but are either supposed to be marine, or were found in a marine environment, then you should contact WoRMS to discuss adding it to the register. For additions and/or edits to environmental or distribution records of a species, contact the WoRMS Data Management Team at <a href="mailto:info@marinespecies.org" class="email">info@marinespecies.org</a> with your request along with your record or publication substantiating the addition/change.</p>
 
 </div>

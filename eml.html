@@ -203,11 +203,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="4.3" data-path="format_occurrence.html"><a href="format_occurrence.html"><i class="fa fa-check"></i><b>4.3</b> How to format Occurrence tables</a>
 <ul>
-<li class="chapter" data-level="4.3.1" data-path="format_occurrence.html"><a href="format_occurrence.html#stepwise-guidance-to-format-an-occurrence-table-in-excel"><i class="fa fa-check"></i><b>4.3.1</b> Stepwise Guidance to Format an Occurrence Table (in Excel)</a></li>
+<li class="chapter" data-level="4.3.1" data-path="format_occurrence.html"><a href="format_occurrence.html#stepwise-guidance-to-format-an-occurrence-table-with-spreadsheets"><i class="fa fa-check"></i><b>4.3.1</b> Stepwise Guidance to Format an Occurrence Table (with spreadsheets)</a></li>
 </ul></li>
 <li class="chapter" data-level="4.4" data-path="format_event.html"><a href="format_event.html"><i class="fa fa-check"></i><b>4.4</b> How to format Event tables</a>
 <ul>
-<li class="chapter" data-level="4.4.1" data-path="format_event.html"><a href="format_event.html#stepwise-guidance-to-format-event-table-in-excel"><i class="fa fa-check"></i><b>4.4.1</b> Stepwise Guidance to Format Event Table (in Excel)</a></li>
+<li class="chapter" data-level="4.4.1" data-path="format_event.html"><a href="format_event.html#stepwise-guidance-to-format-event-table-with-spreadsheets"><i class="fa fa-check"></i><b>4.4.1</b> Stepwise Guidance to Format Event Table (with spreadsheets)</a></li>
 </ul></li>
 <li class="chapter" data-level="4.5" data-path="format_emof.html"><a href="format_emof.html"><i class="fa fa-check"></i><b>4.5</b> How to format extendedMeasurementOrFact tables</a>
 <ul>
@@ -274,7 +274,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6" data-path="data_publication.html"><a href="data_publication.html"><i class="fa fa-check"></i><b>6</b> Data publication and sharing</a>
 <ul>
 <li class="chapter" data-level="6.1" data-path="data_publication.html"><a href="data_publication.html#licenses"><i class="fa fa-check"></i><b>6.1</b> Licenses</a></li>
-<li class="chapter" data-level="6.2" data-path="ipt.html"><a href="ipt.html"><i class="fa fa-check"></i><b>6.2</b> Integrated Publishing Toolkit (IPT)</a>
+<li class="chapter" data-level="6.2" data-path="ipt.html"><a href="ipt.html"><i class="fa fa-check"></i><b>6.2</b> IPT: Integrated Publishing Toolkit</a>
 <ul>
 <li class="chapter" data-level="6.2.1" data-path="ipt.html"><a href="ipt.html#introduction-to-the-ipt"><i class="fa fa-check"></i><b>6.2.1</b> Introduction to the IPT</a></li>
 <li class="chapter" data-level="6.2.2" data-path="ipt.html"><a href="ipt.html#how-to-access-the-ipt"><i class="fa fa-check"></i><b>6.2.2</b> How to access the IPT</a></li>
@@ -624,7 +624,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>The information given in this section can also help the OBIS node manager in geographic quality control. If the geographic coverage in the EML e.g. is “North Sea”, but a number of data points are outside of this scope, then this may indicate errors, and should be checked with the data provider.</p>
 <p>If the dataset covers multiple areas (e.g. samples from the North Sea and the Mediterranean Sea), then this should clearly be mentioned in the <code>geographicDescription</code> field. Note that the IPT only allows one bounding box, and you have to uncheck the “Set global coverage” box to change box bounds.</p>
 <div class="figure">
-<img src="images/ipt-ss13-meta-geo.png" style="width:50.0%" alt="" />
+<img src="images/ipt-ss13-meta-geo.png" style="width:60.0%" alt="" />
 <p class="caption">Screenshot of the Geographical Coverage section of the metadata, emphasizing how to change the bounds of the coverage box in the map.</p>
 </div>
 </div>
@@ -639,7 +639,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><em>Note:</em> OBIS also recommends to add information on the (higher) taxonomic groups in the (descriptive) dataset title and abstract.</p>
 </blockquote>
 <div class="figure">
-<img src="images/ipt-ss14-meta-taxa.png" style="width:50.0%" alt="" />
+<img src="images/ipt-ss14-meta-taxa.png" style="width:70.0%" alt="" />
 <p class="caption">Example of the Taxonomic Coverage section of the metadata</p>
 </div>
 </div>
@@ -648,7 +648,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>The temporal coverage will be a date range, which can easily be documented. If it is a single date, the start and end date will be the same. The information added here can be used as a quality check for the actual dates in the datasets.</p>
 <p>You can also document the Formation Period or the Living Time Period in this section for specimens that may not have been alive during the collection period, or to indicate the time during which the collection occurred.</p>
 <div class="figure">
-<img src="images/ipt-ss15-meta-time.png" style="width:50.0%" alt="" />
+<img src="images/ipt-ss15-meta-time.png" style="width:70.0%" alt="" />
 <p class="caption">Example of the Temporal Coverage section of the metadata</p>
 </div>
 </div>
@@ -656,8 +656,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="keywords" class="section level5 hasAnchor" number="2.4.4.1.6">
 <h5><span class="header-section-number">2.4.4.1.6</span> Keywords<a href="eml.html#keywords" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>Relevant keywords facilitate the discovery of a dataset. An indication of the represented functional groups can help in a general search (e.g. plankton, benthos, zooplankton, phytoplankton, macrobenthos, meiobenthos …). Assigned keywords can be related to taxonomy, habitat, geography or relevant keywords extracted from thesauri such as the <a href="https://vocabularyserver.com/asfa/">ASFA thesaurus</a>, the <a href="http://www.cabi.org/cabthesaurus/">CAB thesaurus</a> or <a href="https://www.earthdata.nasa.gov/learn/find-data/idn/gcmd-keywords">GCMD keywords</a>.</p>
-<p>As taxonomy and geography are already covered in previous sections, there is no need to repeat related keywords here. Please consult your data provider which (relevant) keywords can be assigned.
-<img src="images/ipt-ss16-meta-keyword.png" style="width:50.0%" alt="Example of the Keywords section of the metadata, showing input for a marine fishes dataset" /></p>
+<p>As taxonomy and geography are already covered in previous sections, there is no need to repeat related keywords here. Please consult your data provider which (relevant) keywords can be assigned.</p>
+<div class="figure">
+<img src="images/ipt-ss16-meta-keyword.png" style="width:70.0%" alt="" />
+<p class="caption">Example of the Keywords section of the metadata, showing input for a marine fishes dataset</p>
+</div>
 </div>
 <div id="project" class="section level5 hasAnchor" number="2.4.4.1.7">
 <h5><span class="header-section-number">2.4.4.1.7</span> Project<a href="eml.html#project" class="anchor-section" aria-label="Anchor link to header"></a></h5>
@@ -687,7 +690,7 @@ Part of the information entered here, can partly overlap with information given 
 <p>This IPT section should only be filled out if there are specimens held in a museum.
 If relevant, it is strongly recommended that this information is supplied by the data provider or left blank. The collection name, specimen preservation method, and curatorial units should be provided, as applicable.</p>
 <div class="figure">
-<img src="images/ipt-ss17-meta-collection.png" style="width:50.0%" alt="" />
+<img src="images/ipt-ss17-meta-collection.png" style="width:70.0%" alt="" />
 <p class="caption">Screenshot of the Collection Data page showing what information can be provided for museum specimens</p>
 </div>
 </div>

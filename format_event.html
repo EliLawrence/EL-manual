@@ -203,11 +203,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="4.3" data-path="format_occurrence.html"><a href="format_occurrence.html"><i class="fa fa-check"></i><b>4.3</b> How to format Occurrence tables</a>
 <ul>
-<li class="chapter" data-level="4.3.1" data-path="format_occurrence.html"><a href="format_occurrence.html#stepwise-guidance-to-format-an-occurrence-table-in-excel"><i class="fa fa-check"></i><b>4.3.1</b> Stepwise Guidance to Format an Occurrence Table (in Excel)</a></li>
+<li class="chapter" data-level="4.3.1" data-path="format_occurrence.html"><a href="format_occurrence.html#stepwise-guidance-to-format-an-occurrence-table-with-spreadsheets"><i class="fa fa-check"></i><b>4.3.1</b> Stepwise Guidance to Format an Occurrence Table (with spreadsheets)</a></li>
 </ul></li>
 <li class="chapter" data-level="4.4" data-path="format_event.html"><a href="format_event.html"><i class="fa fa-check"></i><b>4.4</b> How to format Event tables</a>
 <ul>
-<li class="chapter" data-level="4.4.1" data-path="format_event.html"><a href="format_event.html#stepwise-guidance-to-format-event-table-in-excel"><i class="fa fa-check"></i><b>4.4.1</b> Stepwise Guidance to Format Event Table (in Excel)</a></li>
+<li class="chapter" data-level="4.4.1" data-path="format_event.html"><a href="format_event.html#stepwise-guidance-to-format-event-table-with-spreadsheets"><i class="fa fa-check"></i><b>4.4.1</b> Stepwise Guidance to Format Event Table (with spreadsheets)</a></li>
 </ul></li>
 <li class="chapter" data-level="4.5" data-path="format_emof.html"><a href="format_emof.html"><i class="fa fa-check"></i><b>4.5</b> How to format extendedMeasurementOrFact tables</a>
 <ul>
@@ -274,7 +274,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6" data-path="data_publication.html"><a href="data_publication.html"><i class="fa fa-check"></i><b>6</b> Data publication and sharing</a>
 <ul>
 <li class="chapter" data-level="6.1" data-path="data_publication.html"><a href="data_publication.html#licenses"><i class="fa fa-check"></i><b>6.1</b> Licenses</a></li>
-<li class="chapter" data-level="6.2" data-path="ipt.html"><a href="ipt.html"><i class="fa fa-check"></i><b>6.2</b> Integrated Publishing Toolkit (IPT)</a>
+<li class="chapter" data-level="6.2" data-path="ipt.html"><a href="ipt.html"><i class="fa fa-check"></i><b>6.2</b> IPT: Integrated Publishing Toolkit</a>
 <ul>
 <li class="chapter" data-level="6.2.1" data-path="ipt.html"><a href="ipt.html#introduction-to-the-ipt"><i class="fa fa-check"></i><b>6.2.1</b> Introduction to the IPT</a></li>
 <li class="chapter" data-level="6.2.2" data-path="ipt.html"><a href="ipt.html#how-to-access-the-ipt"><i class="fa fa-check"></i><b>6.2.2</b> How to access the IPT</a></li>
@@ -379,23 +379,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Class Location | DwC:waterBody</li>
 </ul>
 <p>Terms related to measurements, either biotic (e.g., sex, lifestage) or abiotic will be included in extendedMeasurementOrFact table <em>not</em> the Event Core or Occurrence extension table.</p>
-<div id="stepwise-guidance-to-format-event-table-in-excel" class="section level3 hasAnchor" number="4.4.1">
-<h3><span class="header-section-number">4.4.1</span> Stepwise Guidance to Format Event Table (in Excel)<a href="format_event.html#stepwise-guidance-to-format-event-table-in-excel" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="stepwise-guidance-to-format-event-table-with-spreadsheets" class="section level3 hasAnchor" number="4.4.1">
+<h3><span class="header-section-number">4.4.1</span> Stepwise Guidance to Format Event Table (with spreadsheets)<a href="format_event.html#stepwise-guidance-to-format-event-table-with-spreadsheets" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Before proceeding with the below, make sure each record already has an <a href="identifiers.html">eventID</a>.</p>
 <ol style="list-style-type: decimal">
-<li>Identify columns in your data that will match with Darwin Core event fields
+<li>Add and fill the <code>parentEventID</code> and <code>eventRemarks</code> fields as applicable</li>
+<li>Identify the hierarchical event structure in your data, if present and create new records for parent Events, filling in any relevant fields</li>
+<li>Identify all columns in your data that will match with Darwin Core Event fields
 <ul>
-<li>Include any relevant abiotic measurements (ENV-DATA) related to sampling events (e.g. sampling protocols). We will add these to the eMoF table later.</li>
+<li>Include any relevant abiotic measurements (ENV-DATA) related to sampling events (e.g. sampling protocols). We will add these to the eMoF table later</li>
 </ul></li>
 <li>Copy these columns to a new sheet and name it Event</li>
-<li>Delete duplicate data so only unique events are left.</li>
-<li>Identify the hierarchical event structure in your data, if present</li>
-<li>Add and fill the <code>parentEventID</code> and <code>type</code> fields as applicable</li>
-<li>Create new records for parent Events</li>
-<li>Ensure dates and time are <a href="link%20#30">formatted according to ISO 8601 standards</a> in the eventDate field</li>
+<li>Delete duplicate data so only unique events are left</li>
+<li>Ensure dates and time are <a href="common_formatissues.html#temporal-dates-and-times">formatted according to ISO 8601 standards</a> in the eventDate field</li>
 <li>Add any other relevant fields as indicated above</li>
+<li>Map fields to Darwin Core</li>
 </ol>
-<p>Watch the video tutorial of this process.</p>
+<p>Watch the video tutorial of this process. (Link coming soon)</p>
 <p>After completing the formatting of your Event Core table, you can next format your extendedMeasurementOrFact table. To format the Occurrence extension table, see the <a href="format_occurrence.html">Occurrence table</a> section of this manual.</p>
 
 </div>

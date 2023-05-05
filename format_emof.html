@@ -203,11 +203,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="4.3" data-path="format_occurrence.html"><a href="format_occurrence.html"><i class="fa fa-check"></i><b>4.3</b> How to format Occurrence tables</a>
 <ul>
-<li class="chapter" data-level="4.3.1" data-path="format_occurrence.html"><a href="format_occurrence.html#stepwise-guidance-to-format-an-occurrence-table-in-excel"><i class="fa fa-check"></i><b>4.3.1</b> Stepwise Guidance to Format an Occurrence Table (in Excel)</a></li>
+<li class="chapter" data-level="4.3.1" data-path="format_occurrence.html"><a href="format_occurrence.html#stepwise-guidance-to-format-an-occurrence-table-with-spreadsheets"><i class="fa fa-check"></i><b>4.3.1</b> Stepwise Guidance to Format an Occurrence Table (with spreadsheets)</a></li>
 </ul></li>
 <li class="chapter" data-level="4.4" data-path="format_event.html"><a href="format_event.html"><i class="fa fa-check"></i><b>4.4</b> How to format Event tables</a>
 <ul>
-<li class="chapter" data-level="4.4.1" data-path="format_event.html"><a href="format_event.html#stepwise-guidance-to-format-event-table-in-excel"><i class="fa fa-check"></i><b>4.4.1</b> Stepwise Guidance to Format Event Table (in Excel)</a></li>
+<li class="chapter" data-level="4.4.1" data-path="format_event.html"><a href="format_event.html#stepwise-guidance-to-format-event-table-with-spreadsheets"><i class="fa fa-check"></i><b>4.4.1</b> Stepwise Guidance to Format Event Table (with spreadsheets)</a></li>
 </ul></li>
 <li class="chapter" data-level="4.5" data-path="format_emof.html"><a href="format_emof.html"><i class="fa fa-check"></i><b>4.5</b> How to format extendedMeasurementOrFact tables</a>
 <ul>
@@ -274,7 +274,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6" data-path="data_publication.html"><a href="data_publication.html"><i class="fa fa-check"></i><b>6</b> Data publication and sharing</a>
 <ul>
 <li class="chapter" data-level="6.1" data-path="data_publication.html"><a href="data_publication.html#licenses"><i class="fa fa-check"></i><b>6.1</b> Licenses</a></li>
-<li class="chapter" data-level="6.2" data-path="ipt.html"><a href="ipt.html"><i class="fa fa-check"></i><b>6.2</b> Integrated Publishing Toolkit (IPT)</a>
+<li class="chapter" data-level="6.2" data-path="ipt.html"><a href="ipt.html"><i class="fa fa-check"></i><b>6.2</b> IPT: Integrated Publishing Toolkit</a>
 <ul>
 <li class="chapter" data-level="6.2.1" data-path="ipt.html"><a href="ipt.html#introduction-to-the-ipt"><i class="fa fa-check"></i><b>6.2.1</b> Introduction to the IPT</a></li>
 <li class="chapter" data-level="6.2.2" data-path="ipt.html"><a href="ipt.html#how-to-access-the-ipt"><i class="fa fa-check"></i><b>6.2.2</b> How to access the IPT</a></li>
@@ -408,7 +408,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Be sure to copy and paste the associated occurrenceIDs and/or eventIDs for the additional measurements</li>
 </ul></li>
 <li>Fill the fields <code>measurementTypeID</code>, <code>measurementUnitID</code>, and <code>measurementValueID</code> with controlled vocabularies that suit your data (see <a href="vocabulary.html">vocabulary guidelines</a>)</li>
-<li>Repeat for any measurements in the Event table</li>
+<li>Repeat steps 3-7 for any measurements in the Event table</li>
 </ol>
 <p>Note the fields <a href="https://dwc.tdwg.org/terms/#dwc:sampleSizeValue">sampleSizeValue</a>, <a href="https://dwc.tdwg.org/terms/#dwc:samplingEffort">samplingEffort</a>, and <a href="https://dwc.tdwg.org/terms/#dwc:samplingProtocol">samplingProtocol</a> from the Occurrence table can be documented as separate measurements on different rows in the eMoF table. E.g., <code>measurementType</code> = samplingProtocol, <code>measurementValue</code> = description of protocol. Any values in <a href="https://dwc.tdwg.org/terms/#dwc:sampleSizeUnit">sampleSizeUnit</a> fields should be placed in the <code>measurementUnit</code> field when transferred to the eMoF.</p>
 <p>If you would like to export Event data to the eMoF, see some example R code below. This example was provided by <a href="https://orcid.org/0000-0002-4391-107X">Abby Benson</a> from the <a href="https://www.usgs.gov/ocean-biodiversity-information-system-usa">OBIS-USA node</a>.</p>

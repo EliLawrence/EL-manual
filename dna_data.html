@@ -203,11 +203,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="4.3" data-path="format_occurrence.html"><a href="format_occurrence.html"><i class="fa fa-check"></i><b>4.3</b> How to format Occurrence tables</a>
 <ul>
-<li class="chapter" data-level="4.3.1" data-path="format_occurrence.html"><a href="format_occurrence.html#stepwise-guidance-to-format-an-occurrence-table-in-excel"><i class="fa fa-check"></i><b>4.3.1</b> Stepwise Guidance to Format an Occurrence Table (in Excel)</a></li>
+<li class="chapter" data-level="4.3.1" data-path="format_occurrence.html"><a href="format_occurrence.html#stepwise-guidance-to-format-an-occurrence-table-with-spreadsheets"><i class="fa fa-check"></i><b>4.3.1</b> Stepwise Guidance to Format an Occurrence Table (with spreadsheets)</a></li>
 </ul></li>
 <li class="chapter" data-level="4.4" data-path="format_event.html"><a href="format_event.html"><i class="fa fa-check"></i><b>4.4</b> How to format Event tables</a>
 <ul>
-<li class="chapter" data-level="4.4.1" data-path="format_event.html"><a href="format_event.html#stepwise-guidance-to-format-event-table-in-excel"><i class="fa fa-check"></i><b>4.4.1</b> Stepwise Guidance to Format Event Table (in Excel)</a></li>
+<li class="chapter" data-level="4.4.1" data-path="format_event.html"><a href="format_event.html#stepwise-guidance-to-format-event-table-with-spreadsheets"><i class="fa fa-check"></i><b>4.4.1</b> Stepwise Guidance to Format Event Table (with spreadsheets)</a></li>
 </ul></li>
 <li class="chapter" data-level="4.5" data-path="format_emof.html"><a href="format_emof.html"><i class="fa fa-check"></i><b>4.5</b> How to format extendedMeasurementOrFact tables</a>
 <ul>
@@ -274,7 +274,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6" data-path="data_publication.html"><a href="data_publication.html"><i class="fa fa-check"></i><b>6</b> Data publication and sharing</a>
 <ul>
 <li class="chapter" data-level="6.1" data-path="data_publication.html"><a href="data_publication.html#licenses"><i class="fa fa-check"></i><b>6.1</b> Licenses</a></li>
-<li class="chapter" data-level="6.2" data-path="ipt.html"><a href="ipt.html"><i class="fa fa-check"></i><b>6.2</b> Integrated Publishing Toolkit (IPT)</a>
+<li class="chapter" data-level="6.2" data-path="ipt.html"><a href="ipt.html"><i class="fa fa-check"></i><b>6.2</b> IPT: Integrated Publishing Toolkit</a>
 <ul>
 <li class="chapter" data-level="6.2.1" data-path="ipt.html"><a href="ipt.html#introduction-to-the-ipt"><i class="fa fa-check"></i><b>6.2.1</b> Introduction to the IPT</a></li>
 <li class="chapter" data-level="6.2.2" data-path="ipt.html"><a href="ipt.html#how-to-access-the-ipt"><i class="fa fa-check"></i><b>6.2.2</b> How to access the IPT</a></li>
@@ -345,9 +345,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">4.10.1</span> DNA dervived data<a href="dna_data.html#dna-dervived-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><strong>Contents:</strong></p>
 <ul>
-<li><a href="dna_data#introduction.html">Introduction</a></li>
-<li><a href="dna_data#edna--dna-derived-data-example.html">eDNA &amp; DNA Derived use cases</a></li>
-<li><a href="dna_data#how-to-find-genetic-data-in-obis.html">How to find genetic data in OBIS</a></li>
+<li><a href="dna_data.html#introduction">Introduction</a></li>
+<li><a href="dna_data.html#edna--dna-derived-data-example">eDNA &amp; DNA Derived use cases</a></li>
+<li><a href="dna_data.html#how-to-find-genetic-data-in-obis">How to find genetic data in OBIS</a></li>
 </ul>
 <div id="introduction-1" class="section level4 hasAnchor" number="4.10.1.1">
 <h4><span class="header-section-number">4.10.1.1</span> Introduction<a href="dna_data.html#introduction-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -360,7 +360,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Name references</li>
 <li>Metadata only</li>
 </ol>
-<p>For a guide and decision tree on determining which category your data falls into, see the <a href="https://docs.gbif.org/publishing-dna-derived-data/1.0/en/#data-packaging-and-mapping">Data packaging and mapping</a> section of the GBIF guide. Refer to the <a href="dna_data#edna--dna-derived-data.html">examples below</a> for use case examples of eDNA and DNA derived data (Category 1).</p>
+<p>For a guide and decision tree on determining which category your data falls into, see the <a href="https://docs.gbif.org/publishing-dna-derived-data/1.0/en/#data-packaging-and-mapping">Data packaging and mapping</a> section of the GBIF guide. Refer to the <a href="dna_data.html#edna--dna-derived-data">examples below</a> for use case examples of eDNA and DNA derived data (Category 1).</p>
 <blockquote>
 <p>Currently, genetic data <strong>must</strong> be published with Occurrence core, not Event core. eDNA and DNA derived data are then linked to the Occurrence core data table with the use of <code>occurrenceID</code> and/or <code>eventID</code>. See below for further guidance on compiling genetic data.</p>
 </blockquote>
@@ -398,8 +398,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>DNA Derived | DwC: thresholdQuantificationCycle</li>
 <li>DNA Derived | DwC: baselineValue</li>
 </ul>
-<p>For a complete list of terms you can map to, see <a href="http://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml">the DwC DNA Derived Data extension page</a>. See the <a href="dna_data#edna--dna-derived-data.html">examples below</a> for use case examples. The Marine Biological Data Mobilization Workshop also has a <a href="https://ioos.github.io/bio_mobilization_workshop/edna-extension/#dna-derived-extension">tutorial</a> for this type of data.</p>
-<p>When your data tables are formatted and you are ready to publish it on the IPT, it will follow the same process for <a href="data_publication.html">publishing on an IPT</a>. You will upload your source files, and add the Occurrence core Darwin Core mappings, and then the DNA Derived Data Darwin Core mappings. However the extension must first be <a href="data_publication#ipt-administration.html">installed by the IPT administrator</a> (often the node manager). Once the extension is installed, you can add the Darwin Core DNA Derived Data mapping for that file.</p>
+<p>For a complete list of terms you can map to, see <a href="http://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml">the DwC DNA Derived Data extension page</a>. See the <a href="dna_data.html#edna--dna-derived-data">examples below</a> for use case examples. The Marine Biological Data Mobilization Workshop also has a <a href="https://ioos.github.io/bio_mobilization_workshop/edna-extension/#dna-derived-extension">tutorial</a> for this type of data.</p>
+<p>When your data tables are formatted and you are ready to publish it on the IPT, it will follow the same process for <a href="data_publication.html">publishing on an IPT</a>. You will upload your source files, and add the Occurrence core Darwin Core mappings, and then the DNA Derived Data Darwin Core mappings. However the extension must first be <a href="data_publication.html#ipt-administration">installed by the IPT administrator</a> (often the node manager). Once the extension is installed, you can add the Darwin Core DNA Derived Data mapping for that file.</p>
 </div>
 <div id="obis-bioinformatics-pipline" class="section level5 hasAnchor" number="4.10.1.1.2">
 <h5><span class="header-section-number">4.10.1.1.2</span> OBIS Bioinformatics Pipline<a href="dna_data.html#obis-bioinformatics-pipline" class="anchor-section" aria-label="Anchor link to header"></a></h5>
@@ -407,16 +407,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Broadly speaking, it creates a framework that receives raw sequence data from eDNA samples, cleans, aligns, classifies sequences, and finally outputs a DwC-compatible table. The pipeline is currently under development and for now only accepts CO1 data. It will be extended to include other genetic markers in the future. More details about the PacMAN pipeline can be found on its <a href="https://github.com/iobis/PacMAN-pipeline">associated GitHub repository</a>. Once fully online, we will provide guidelines on how to use the pipeline.</p>
 <p>OBIS is developing guidelines and pipelines to accept other data types, such as:</p>
 <ul>
-<li><a href="other_data_types#multimedia-data.html">Acoustic</a></li>
-<li><a href="other_data_types#multimedia-data.html">Imaging</a></li>
-<li><a href="other_data_types#tracking-data.html">Tracking</a></li>
-<li><a href="other_data_types#habitat-data.html">Habitat</a></li>
+<li><a href="other_data_types.html#multimedia-data">Acoustic</a></li>
+<li><a href="other_data_types.html#multimedia-data">Imaging</a></li>
+<li><a href="other_data_types.html#tracking-data">Tracking</a></li>
+<li><a href="other_data_types.html#habitat-data">Habitat</a></li>
 </ul>
 </div>
 </div>
 <div id="edna-dna-derived-data-example" class="section level4 hasAnchor" number="4.10.1.2">
 <h4><span class="header-section-number">4.10.1.2</span> eDNA &amp; DNA derived data example<a href="dna_data.html#edna-dna-derived-data-example" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>The following example use cases draw on both the <a href="https://docs.gbif-uat.org/publishing-dna-derived-data/1.0/en/">GBIF guide</a> and the <a href="https://rs.gbif-uat.org/extensions.html#http">DNA derived data extension</a> to illustrate how to incorporate a DNA derived data extension file into a Darwin Core archive. Note: for the purposes of this section, only required Occurrence core terms are shown, in addition to all eDNA &amp; DNA specific terms. For additional Occurrence core terms, refer to <a href="darwin_core#occurrence.html">Occurrence</a>.</p>
+<p>The following example use cases draw on both the <a href="https://docs.gbif-uat.org/publishing-dna-derived-data/1.0/en/">GBIF guide</a> and the <a href="https://rs.gbif-uat.org/extensions.html#http">DNA derived data extension</a> to illustrate how to incorporate a DNA derived data extension file into a Darwin Core archive. Note: for the purposes of this section, only required Occurrence core terms are shown, in addition to all eDNA &amp; DNA specific terms. For additional Occurrence core terms, refer to <a href="darwin_core.html#occurrence">Occurrence</a>.</p>
 <div id="edna-data-from-monterey-bay-california" class="section level5 hasAnchor" number="4.10.1.2.1">
 <h5><span class="header-section-number">4.10.1.2.1</span> eDNA data from Monterey Bay, California<a href="dna_data.html#edna-data-from-monterey-bay-california" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>The data for this example is from the use case <a href="https://www1.usgs.gov/obis-usa/ipt/resource?r=18s_monterey_bay_time_series_edna">“18S Monterey Bay Time Series: an eDNA data set from Monterey Bay, California, including years 2006, 2013 - 2016’</a>. The data from this study originate from marine filtered seawater samples that have undergone metabarcoding of the 18S V9 region.</p>
