@@ -7,6 +7,13 @@ data-sharing-agreement
 data-use-agreement
 disclaimer
 getting-help-in-obis
+frequency-asked-questions
+general
+formatting-data
+tools
+quality-control
+publishing
+accessing-data
 what-can-you-contribute-and-how
 why-publish-data-to-obis
 how-to-handle-sensitive-data
@@ -87,7 +94,7 @@ how-to-structure-emof
 stepwise-guidance-to-format-emof-table-in-excel
 choosing-vocabularies-for-your-dataset
 map-your-data-with-dwc-vocabulary
-how-to-correctly-map-emof-terms-to-preferred-bodc-vocabulary
+how-to-map-emof-terms-to-preferred-bodc-vocabulary
 measurementorfact-vocabularies
 measurementtypeid
 selecting-p01-codes-for-measurementtypeid
