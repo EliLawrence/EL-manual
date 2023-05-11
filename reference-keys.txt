@@ -133,7 +133,7 @@ dna-dervived-data
 introduction-1
 how-to-compile-and-publish-genetic-data
 obis-bioinformatics-pipline
-edna-dna-derived-data-example
+edna-and-dna-derived-data-example
 edna-data-from-monterey-bay-california
 s-rrna-gene-metabarcoding-data-of-pico--to-mesoplankton
 how-to-find-genetic-data-in-obis
