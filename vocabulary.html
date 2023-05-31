@@ -193,8 +193,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.4" data-path="formatting.html"><a href="formatting.html#data-formatting-tools"><i class="fa fa-check"></i><b>3.4</b> Data formatting tools</a></li>
 <li class="chapter" data-level="3.5" data-path="identifiers.html"><a href="identifiers.html"><i class="fa fa-check"></i><b>3.5</b> Constructing and using indentifier codes</a>
 <ul>
-<li class="chapter" data-level="3.5.1" data-path="identifiers.html"><a href="identifiers.html#eventid"><i class="fa fa-check"></i><b>3.5.1</b> eventID</a></li>
-<li class="chapter" data-level="3.5.2" data-path="identifiers.html"><a href="identifiers.html#occurrenceid"><i class="fa fa-check"></i><b>3.5.2</b> occurrenceID</a></li>
+<li class="chapter" data-level="3.5.1" data-path="identifiers.html"><a href="identifiers.html#occurrenceid"><i class="fa fa-check"></i><b>3.5.1</b> occurrenceID</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="checklist.html"><a href="checklist.html"><i class="fa fa-check"></i><b>4</b> Formatting data tables</a>
@@ -256,7 +255,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.6.3" data-path="common_qc.html"><a href="common_qc.html#how-to-use-obis-map-tool"><i class="fa fa-check"></i><b>5.6.3</b> How to use OBIS Map Tool</a></li>
 <li class="chapter" data-level="5.6.4" data-path="common_qc.html"><a href="common_qc.html#using-getty-thesaurus-google-maps-to-obtain-locality-coordinates"><i class="fa fa-check"></i><b>5.6.4</b> Using Getty Thesaurus &amp; Google Maps to obtain locality coordinates</a></li>
 <li class="chapter" data-level="5.6.5" data-path="common_qc.html"><a href="common_qc.html#how-to-use-marine-regions-gazetteer-tool"><i class="fa fa-check"></i><b>5.6.5</b> How to use Marine Regions Gazetteer tool</a></li>
-<li class="chapter" data-level="5.6.6" data-path="common_qc.html"><a href="common_qc.html#uncertain-taxonomic-information"><i class="fa fa-check"></i><b>5.6.6</b> Uncertain taxonomic information</a></li>
+<li class="chapter" data-level="5.6.6" data-path="common_qc.html"><a href="common_qc.html#low-confidence-taxonomic-identification"><i class="fa fa-check"></i><b>5.6.6</b> Low confidence taxonomic identification</a></li>
 <li class="chapter" data-level="5.6.7" data-path="common_qc.html"><a href="common_qc.html#uncertain-measurements"><i class="fa fa-check"></i><b>5.6.7</b> Uncertain measurements</a></li>
 <li class="chapter" data-level="5.6.8" data-path="common_qc.html"><a href="common_qc.html#non-marine-species"><i class="fa fa-check"></i><b>5.6.8</b> Non-marine species</a></li>
 </ul></li>
@@ -488,89 +487,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Important note!
 <strong>P01 codes are required for the <code>measurementTypeID</code> field</strong>.</p>
 </blockquote>
-<p>You can use codes from other collections (e.g. P06, Q01) for <code>measurementValueID</code> and <code>measurementUnitID</code> fields, but for <code>measurementTypeID</code> you must always use a code from the P01 collection. The BODC has a <a href="https://www.bodc.ac.uk/resources/vocabularies/vocabulary_builder/">Vocabulary Builder</a> that we recommend using to assist you in selecting a P01 code.</p>
-<div id="selecting-p01-codes-for-measurementtypeid" class="section level5 hasAnchor" number="4.7.1.1.1">
-<h5><span class="header-section-number">4.7.1.1.1</span> Selecting P01 codes for measurementTypeID<a href="vocabulary.html#selecting-p01-codes-for-measurementtypeid" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>You can use codes from other collections (e.g. P06, Q01) for <code>measurementValueID</code> and <code>measurementUnitID</code> fields, but for <code>measurementTypeID</code> you must always use a code from the P01 collection (limited exceptions, see below).</p>
+<div id="selecting-p01-codes-for-measurementtypeid-work-in-progress" class="section level5 hasAnchor" number="4.7.1.1.1">
+<h5><span class="header-section-number">4.7.1.1.1</span> Selecting P01 codes for measurementTypeID (WORK IN PROGRESS)<a href="vocabulary.html#selecting-p01-codes-for-measurementtypeid-work-in-progress" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>P01 codes are concepts that are constructed from several associated elements (see <a href="https://github.com/nvs-vocabs/P01/blob/master/P01_wheel.pdf">P01 wheel</a>) in order to describe a measurement type. It is important to understand that each element within a P01 code is meant to describe an aspect of the measurement: what is the measurement, what is the object being measured, where was the measurement taken, in what environment, by what kind of methods? By taking together all these elements, we are able to have a unique and specific description to differentiate one measurement from another. To further understand the P01 code and the semantic model it is based on, you can read documentation <a href="https://github.com/nvs-vocabs/P01">here</a>.</p>
 <p>The P01 collection is found <a href="http://vocab.nerc.ac.uk/collection/P01/current/">here</a> and can be <a href="https://vocab.nerc.ac.uk/search_nvs/P01/">searched through the NERC vocabulary server</a>.</p>
-<p>You may notice when searching for measurement types related to an occurrence that specific taxonomic codes are available to you, e.g., abundance of Notommata. For OBIS, <strong>all P01 codes should be generalized</strong> - i.e. do not select species-specific codes. Instead only choose codes for “biological entities specified elsewhere”.</p>
-<p>To assist you in selecting the correct P01 code, we worked with BODC to develop decision trees. These decision trees will help you identify each element that makes up a P01 code, and will help you understand the uniqueness of your data measurement (e.g. to differentiate abundance per unit area of the bed vs per unit volume of the water body). Any individual element may be found within different vocabulary collections, but taking them all together will point you to a P01 code that most accurately represents your measurement type.</p>
-<p>General guidelines for understanding the different elements that make up a measurementType are found below. Note that although we point to different vocabulary collections, you do not necessarily need to search these collections. We recommend using the following guides along with the <a href="https://www.bodc.ac.uk/resources/vocabularies/vocabulary_builder/">NERC vocabulary builder</a> to find P01 codes.</p>
-<ol style="list-style-type: decimal">
-<li>First identify what property is being measured. Is it an abundance, temperature measurement, length, concentration? You can identify this element in the <a href="https://vocab.nerc.ac.uk/search_nvs/S06/?searchstr=&amp;options=identifier,preflabel,altlabel,status_accepted&amp;rbaddfilter=inc&amp;searchstr2=">S06 collection</a>.</li>
-<li>Determine if the measurement is statistically derived - is it a mean, a minimum, maximum, variation? These can be found in the <a href="https://vocab.nerc.ac.uk/search_nvs/S07/?searchstr=&amp;options=identifier,preflabel,altlabel,status_accepted&amp;rbaddfilter=inc&amp;searchstr2=">S07 collection</a></li>
-<li>What are the units of the measurement? <a href="https://vocab.nerc.ac.uk/search_nvs/P06/?searchstr=&amp;options=identifier,preflabel,altlabel,status_accepted&amp;rbaddfilter=inc&amp;searchstr2=">P06</a></li>
-<li>What is the object of interest?</li>
-</ol>
-<ol style="list-style-type: lower-alpha">
-<li>For most measurements documented in OBIS, this will be “biological entity specified elsewhere” (<em>not</em> a specific species), a sub-group (<a href="https://vocab.nerc.ac.uk/search_nvs/S13/">S13</a>) or a sub-component (<a href="https://vocab.nerc.ac.uk/search_nvs/S12/">S12</a>). However it could be a chemical (<a href="https://vocab.nerc.ac.uk/search_nvs/S27/">S27</a>) or physical object or a physical phenomenon (S18-S20). Sometimes the environmental matrix itself is the object of interest (e.g. pH of water body, atmospheric temperature).</li>
-</ol>
-<ol start="5" style="list-style-type: decimal">
-<li>What is the relationship of the object to the environmental matrix? (<a href="https://vocab.nerc.ac.uk/search_nvs/S02/">S02</a>) Is it per unit weight, unit volume, in, etc.?</li>
-<li>What is the environmental matrix? (<a href="https://vocab.nerc.ac.uk/search_nvs/S21/">S21</a> or <a href="https://vocab.nerc.ac.uk/search_nvs/S23/">S23</a>) Is there a sub-component of the matrix? (<a href="https://vocab.nerc.ac.uk/search_nvs/S22/">S22</a> or <a href="https://vocab.nerc.ac.uk/search_nvs/S24/">S24</a>) This is a vitally important element in order to resolve ambiguity.</li>
-</ol>
-<ol style="list-style-type: lower-alpha">
-<li>Was the measurement taken from the sediment, from the water? Was a filter used? If the sample was filtered, the type and size is additional information that should be captured in the matrix definition. <a href="https://vocab.nerc.ac.uk/search_nvs/S22/">S22</a> or <a href="https://vocab.nerc.ac.uk/search_nvs/S24/">S24</a> contain the concepts for filtered samples.</li>
-</ol>
-<ol start="7" style="list-style-type: decimal">
-<li>What method was used to obtain the measurement? This is different from the sampling methods as mentioned in Step 5. This element refers to any methods applied after the measurement was taken such as sample preparation (<a href="https://vocab.nerc.ac.uk/search_nvs/S03/">S03</a>), analysis (<a href="https://vocab.nerc.ac.uk/search_nvs/S04/">S04</a>), or data processing (<a href="https://vocab.nerc.ac.uk/search_nvs/S05/">S05</a>). A good example would be the validation and standardization of chlorophyll-a concentration measurements.</li>
-</ol>
-</div>
-<div id="common-p01-vocabularies" class="section level5 hasAnchor" number="4.7.1.1.2">
-<h5><span class="header-section-number">4.7.1.1.2</span> Common P01 Vocabularies<a href="vocabulary.html#common-p01-vocabularies" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<p>We have provided a list of commonly used measurementTypes and associated P01 codes. However, it is extremely important to note the following before selecting a code:</p>
-<blockquote>
-<p><strong>WARNING:</strong>
-<strong>DO NOT USE A VOCABULARY CODE UNLESS YOU ARE CERTAIN IT MATCHES YOUR DATA</strong></p>
-</blockquote>
-<p>In some cases there are multiple potential P01 codes associated with a measurementType. Be sure to choose carefully. It is better to leave the field blank and return to it later than to use an incorrect vocabulary.</p>
-<table>
-<colgroup>
-<col width="30%" />
-<col width="39%" />
-<col width="30%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>measurementType</th>
-<th>Object of interest</th>
-<th>suggested measurementTypeID P01 code(s)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>sex</td>
-<td>Biological entity specified elsewhere</td>
-<td><a href="http://vocab.nerc.ac.uk/collection/P01/current/ENTSEX01/" class="uri">http://vocab.nerc.ac.uk/collection/P01/current/ENTSEX01/</a></td>
-</tr>
-<tr class="even">
-<td>Life stage</td>
-<td>Biological entity specified elsewhere</td>
-<td><a href="http://vocab.nerc.ac.uk/collection/P01/current/LSTAGE01/" class="uri">http://vocab.nerc.ac.uk/collection/P01/current/LSTAGE01/</a></td>
-</tr>
-<tr class="odd">
-<td>Length</td>
-<td>Biological entity specified elsewhere</td>
-<td><a href="https://vocab.nerc.ac.uk/search_nvs/P01/?searchstr=length%20%25entity%20specified%25&amp;options=identifier,preflabel,altlabel,status_accepted&amp;rbaddfilter=inc&amp;searchstr2=">list</a></td>
-</tr>
-<tr class="even">
-<td>Water temperature</td>
-<td></td>
-<td><a href="http://vocab.nerc.ac.uk/collection/P01/current/TEMPPR01/" class="uri">http://vocab.nerc.ac.uk/collection/P01/current/TEMPPR01/</a> OR see <a href="http://vocab.nerc.ac.uk/search_nvs/P01/?searchstr=%25temperature%25water%25&amp;options=identifier,preflabel,altlabel,status_accepted&amp;rbaddfilter=inc&amp;searchstr2=">list</a></td>
-</tr>
-<tr class="odd">
-<td>Salinity</td>
-<td></td>
-<td><a href="http://vocab.nerc.ac.uk/collection/P01/current/TEMPPR01/" class="uri">http://vocab.nerc.ac.uk/collection/P01/current/TEMPPR01/</a> OR see <a href="http://vocab.nerc.ac.uk/search_nvs/P01/?searchstr=%25salinity%25water%25&amp;options=identifier,preflabel,altlabel,status_accepted&amp;rbaddfilter=inc&amp;searchstr2=">list</a> for specific methods</td>
-</tr>
-<tr class="even">
-<td>Length of sample track</td>
-<td>Sampling track</td>
-<td><a href="http://vocab.nerc.ac.uk/collection/P01/current/LENTRACK/" class="uri">http://vocab.nerc.ac.uk/collection/P01/current/LENTRACK/</a></td>
-</tr>
-</tbody>
-</table>
-<p>For OBIS sampling instruments and methods attributes, see the Q01 collection:</p>
+<p>You may notice when searching for measurement types related to an occurrence that specific taxonomic codes are available to you, e.g., abundance of Notommata. For OBIS, <strong>all P01 codes should be generalized</strong> - i.e. <strong>do not</strong> select species-specific codes. Instead only choose codes for “biological entities specified elsewhere” when the measurement is related to an occurrence record.</p>
+<p>To assist you in selecting the correct P01 code, we are working with <a href="https://www.bodc.ac.uk/">BODC</a> to develop decision trees. These decision trees will help you understand the uniqueness of your data measurement (e.g. to differentiate abundance per unit area of the bed vs per unit volume of the water body). An individual element of a P01 code may be found within different vocabulary collections (e.g. S02, L22, S22, etc.), but combining concepts together points you to a P01 code that most accurately represents your measurement type.</p>
+<p>General guidelines for understanding the different elements that make up a measurementType are in development and will be added to this page soon. In the meantime we recommend using either the the <a href="https://vocab.seadatanet.org/p01-facet-search">SeaDataNet P01 vocabulary search</a> or the <a href="https://www.bodc.ac.uk/resources/vocabularies/vocabulary_builder/">NERC vocabulary builder</a> to assist in finding P01 codes.</p>
+<p>For measurementTypes related to sampling instruments and/or methods attributes, see the Q01 collection:</p>
 <ul>
 <li>Vocabulary: <a href="http://vocab.nerc.ac.uk/collection/Q01/current/">http://vocab.nerc.ac.uk/collection/Q01/current/</a></li>
 <li>Search: <a href="https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/Q01/">https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/Q01/</a></li>

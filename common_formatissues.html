@@ -193,8 +193,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.4" data-path="formatting.html"><a href="formatting.html#data-formatting-tools"><i class="fa fa-check"></i><b>3.4</b> Data formatting tools</a></li>
 <li class="chapter" data-level="3.5" data-path="identifiers.html"><a href="identifiers.html"><i class="fa fa-check"></i><b>3.5</b> Constructing and using indentifier codes</a>
 <ul>
-<li class="chapter" data-level="3.5.1" data-path="identifiers.html"><a href="identifiers.html#eventid"><i class="fa fa-check"></i><b>3.5.1</b> eventID</a></li>
-<li class="chapter" data-level="3.5.2" data-path="identifiers.html"><a href="identifiers.html#occurrenceid"><i class="fa fa-check"></i><b>3.5.2</b> occurrenceID</a></li>
+<li class="chapter" data-level="3.5.1" data-path="identifiers.html"><a href="identifiers.html#occurrenceid"><i class="fa fa-check"></i><b>3.5.1</b> occurrenceID</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="checklist.html"><a href="checklist.html"><i class="fa fa-check"></i><b>4</b> Formatting data tables</a>
@@ -256,7 +255,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.6.3" data-path="common_qc.html"><a href="common_qc.html#how-to-use-obis-map-tool"><i class="fa fa-check"></i><b>5.6.3</b> How to use OBIS Map Tool</a></li>
 <li class="chapter" data-level="5.6.4" data-path="common_qc.html"><a href="common_qc.html#using-getty-thesaurus-google-maps-to-obtain-locality-coordinates"><i class="fa fa-check"></i><b>5.6.4</b> Using Getty Thesaurus &amp; Google Maps to obtain locality coordinates</a></li>
 <li class="chapter" data-level="5.6.5" data-path="common_qc.html"><a href="common_qc.html#how-to-use-marine-regions-gazetteer-tool"><i class="fa fa-check"></i><b>5.6.5</b> How to use Marine Regions Gazetteer tool</a></li>
-<li class="chapter" data-level="5.6.6" data-path="common_qc.html"><a href="common_qc.html#uncertain-taxonomic-information"><i class="fa fa-check"></i><b>5.6.6</b> Uncertain taxonomic information</a></li>
+<li class="chapter" data-level="5.6.6" data-path="common_qc.html"><a href="common_qc.html#low-confidence-taxonomic-identification"><i class="fa fa-check"></i><b>5.6.6</b> Low confidence taxonomic identification</a></li>
 <li class="chapter" data-level="5.6.7" data-path="common_qc.html"><a href="common_qc.html#uncertain-measurements"><i class="fa fa-check"></i><b>5.6.7</b> Uncertain measurements</a></li>
 <li class="chapter" data-level="5.6.8" data-path="common_qc.html"><a href="common_qc.html#non-marine-species"><i class="fa fa-check"></i><b>5.6.8</b> Non-marine species</a></li>
 </ul></li>
@@ -564,7 +563,7 @@ You can also use the Canadensys <a href="https://data.canadensys.net/tools/dates
 <h3><span class="header-section-number">4.8.3</span> Historical data<a href="common_formatissues.html#historical-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Formatting historical data (data published before 1583 CE) can pose additional challenges due to restraints with the ISO 8601 standards. Namely, the shift from the Julian calendar to the currently used Gregorian calendar, as well as issues arising from the definition of <a href="https://en.wikipedia.org/wiki/Year_zero">Year Zero</a>.</p>
 <p>For records related to fossils or that have other geological contexts, the <a href="https://dwc.tdwg.org/terms/#geologicalcontext">Darwin Core class GeologicalContext</a> has terms that can be used in the Event core, Occurrence core, or Occurrence table to specify additional information. For such records, <code>eventDate</code> would be populated with the date of collection.</p>
-<p>For historical data originating from old records, such as ship logs or other archival records, we understand there can be additional issues in interpreting and formatting data according to DwC standards. Often the location, date, species, and other measurements have to be interpreted from textual descriptions or poor quality documents. As these issues can vary wildly, we currently recommend <a href="https://github.com/iobis/obis-issues/issues">submitting a Github issue</a> to get assistance with an issue.</p>
+<p>For historical data originating from old records, such as ship logs or other archival records, we understand there can be additional issues in interpreting and formatting data according to DwC standards. Often the location, date, species, and other measurements have to be interpreted from textual descriptions or poor quality documents. As these issues can vary wildly, we currently recommend <a href="https://github.com/iobis/obis-issues/issues">submitting a Github issue</a> to get assistance.</p>
 <p>More specific guidelines to address historical data complications are under development - stay tuned!</p>
 </div>
 <div id="spatial" class="section level3 hasAnchor" number="4.8.4">

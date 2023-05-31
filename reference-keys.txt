@@ -71,7 +71,6 @@ how-are-extensions-linked-to-core-tables-in-obis
 differences-between-identifiers
 data-formatting-tools
 constructing-and-using-indentifier-codes
-eventid
 occurrenceid
 formatting-data-tables
 darwin-core-term-checklist-for-obis
@@ -97,8 +96,7 @@ map-your-data-with-dwc-vocabulary
 how-to-map-emof-terms-to-preferred-bodc-vocabulary
 measurementorfact-vocabularies
 measurementtypeid
-selecting-p01-codes-for-measurementtypeid
-common-p01-vocabularies
+selecting-p01-codes-for-measurementtypeid-work-in-progress
 measurementvalueid
 measurementunitid
 requesting-new-vocabulary-terms
@@ -161,7 +159,7 @@ how-to-use-obis-map-tool
 using-getty-thesaurus-google-maps-to-obtain-locality-coordinates
 how-to-use-marine-regions-gazetteer-tool
 dwc-terms-obtained-from-maptool-and-gazetteers
-uncertain-taxonomic-information
+low-confidence-taxonomic-identification
 changes-in-taxonomic-classification
 uncertain-measurements
 individualcount
