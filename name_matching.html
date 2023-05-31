@@ -381,7 +381,7 @@ You should prioritize using LSIDs because they are unique identifiers which indi
 <p><strong>Note</strong>
 The WoRMS LSID is used for <code>DwC:scientificNameID</code>.</p>
 </blockquote>
-<p>A complete online manual is available at <a href="http://www.marinespecies.org/tutorial/taxonmatch.php">http://www.marinespecies.org/tutorial/taxonmatch.php</a>. We have also created a [video tutorial] for using the taxon match tool, including how to attach the IDs back to your own data using Excel’s vlookup function. R script to do this is shown below.</p>
+<p>A complete online manual is available at <a href="http://www.marinespecies.org/tutorial/taxonmatch.php">http://www.marinespecies.org/tutorial/taxonmatch.php</a>. A video tutorial for using the taxon match tool will be available soon. You can attach IDs obtained from WoRMS back to your own data using <a href="https://support.microsoft.com/en-us/office/vlookup-function-0bbc8083-26fe-4963-8ab8-93a18ad188a1">Excel’s vlookup function</a>. R script to do this is shown below.</p>
 <p><strong>R script for attaching Taxon Lists to ID Lists:</strong></p>
 <p>If you are familiar enough with R, you can use the <a href="https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/merge"><code>merge</code></a> function to attach the two lists to your data. We provide a short example of how to use this function below.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="name_matching.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Generate example data table with species occurences, for this example we will only have one column with the scientificName</span></span>
