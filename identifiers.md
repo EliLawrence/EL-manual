@@ -4,6 +4,7 @@
 
 * [eventID](#eventid)
 * [occurrenceID](#occurrenceid)
+
 ### eventID
 
 Using a unique identifier for each physical sample or subsample in your dataset taken at each location and time is highly recommended to ensure sample traceability and data provenance.  `eventID` is an identifier for an individual sampling or observation event, whereas `parentEventID` is an identifier for a parent event, which is composed of one or more sub-sampling (child) events (eventIDs).
@@ -58,6 +59,8 @@ _Data from [Environmental impact assessments in the eastern part of Adriatic sea
 We can see that each record has a similar eventID structure, except for the last part which indicates the event type - documented in the `eventRemarks` column. In this dataset, records with the eventID `IOF_benthos_Plominski_zaljev_2000_crs` has information applicable for records with eventIDs ending with `_stat1`, `_stat2`, `_s01`, and `_s02` because `_crs` is their parent event. Similarly, information (e.g., date of station visit, coordinates) documented in records with eventID `IOF_benthos_Plominski_zaljev_2000_stat1` is applicable for the two sample records (eventID `_s01` and `_s02`), because these samples were taken at Station 1 (indicated by the parentEventID). These eventIDs could have been nested in another way, such as `IOF_benthos_Plominsku_zaljev_2000_crs:stat1:s01` which would embed the parentEventID into the identifier.
 
  See also [De Pooter et al. 2017](https://bdj.pensoft.net/articles.php?id=10989&instance_id=3385375) for an example of an event hierarchy in a complex benthos dataset.
+
+ [![Watch this video for a demonstration on how to construct eventIDs](https://img.youtube.com/vi/Upt6LPJ0Bn8/0.jpg)](https://youtu.be/Upt6LPJ0Bn8 "01 How to construct eventIDs")
 
 ### occurrenceID
 
