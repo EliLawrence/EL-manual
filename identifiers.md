@@ -60,8 +60,6 @@ We can see that each record has a similar eventID structure, except for the last
 
  See also [De Pooter et al. 2017](https://bdj.pensoft.net/articles.php?id=10989&instance_id=3385375) for an example of an event hierarchy in a complex benthos dataset.
 
- [![Watch this video for a demonstration on how to construct eventIDs](https://img.youtube.com/vi/Upt6LPJ0Bn8/0.jpg)](https://www.youtube.com/watch?v=Upt6LPJ0Bn8 "01 How to construct eventIDs")
-
  [![Watch this video for a demonstration on how to construct eventIDs](https://img.youtube.com/vi/Upt6LPJ0Bn8/0.jpg)](https://www.youtube.com/watch?v=Upt6LPJ0Bn8)
 
  <iframe width="560" height="315"
