@@ -82,23 +82,18 @@ library(mregions)
 library(dplyr)
 library(robis)
 library(sf)
-
 #obtain Albanian EEZ as sf
 geom <- mr_shp(key = "MarineRegions:eez", filter = "Albanian Exclusive Economic Zone", maxFeatures = NULL)
-
 #get WKT for the bounding box
 wkt <- st_as_text(st_as_sfc(st_bbox(geom)), digits = 6)
-
 #fetch occurrences for bounding box
 occ <- occurrence(geometry = wkt) %>%
   st_as_sf(coords = c("decimalLongitude", "decimalLatitude"), crs = 4326)
-
 #filter using geometry
 occ_filtered <- occ %>%
   filter(st_intersects(geometry, geom, sparse = FALSE)) %>%
   as_tibble() %>%
   select(-geometry)
-
 #get taxa
 alb_taxa <- occ_filtered %>%
   group_by(phylum, class, order, family, genus, species, scientificName) %>%
