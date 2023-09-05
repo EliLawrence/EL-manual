@@ -104,5 +104,4 @@ alb_taxa <- occ_filtered %>%
   group_by(phylum, class, order, family, genus, species, scientificName) %>%
   summarize(records = n())
 ```
-
 </details>
