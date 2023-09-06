@@ -114,13 +114,12 @@
     group_by(phylum, class, order, family, genus, species, scientificName) %>%
     summarize(records = n())
   ```
-
   </details></li>
   <li><details>
   <summary>How do I convert or obtain separate elements from dates in the data download file (e.g. <code>date_start</code> field)?</summary>
   <br>
   
- The values in `date_start`, `date_mid`, and `date_end` are unix timestamps which have been calculated from the ISO date in the `eventDate` column. We can convert these numerical values to dates using the formula below.
+  The values in `date_start`, `date_mid`, and `date_end` are unix timestamps which have been calculated from the ISO date in the `eventDate` column. We can convert these numerical values to dates using the formula below.
 
   ```Excel
   =(E2/86400000)+DATE(1970,1,1)
@@ -130,12 +129,11 @@
   
   ```Excel
   =MONTH(H2)
-  ``` 
-
+  ```
   </details></li>
-<li><details>
-<summary>How do I filter by or obtain trait information for OBIS data (e.g. all benthic organisms)?</summary>
-<br>
+  <li><details>
+  <summary>How do I filter by or obtain trait information for OBIS data (e.g. all benthic organisms)?</summary>
+  <br>
   
   Currently, it is not possible to filter OBIS data by trait. To do this, we recommend using the traits database of the [World Register of Marine Species](https://www.marinespecies.org/traits/aphia.php?p=attributes). For example, searching by “functional group”, you can specify benthos, plankton, nekton, etc.
   </details></li>
