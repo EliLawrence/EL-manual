@@ -484,23 +484,23 @@ How do I load the full (.csv) export of OBIS data?
 <summary>
 <p>How do I convert or obtain separate elements from dates in the data download file (e.g. <code>date_start</code> field)?</p>
 </summary>
-<p><br></p></li>
-</ul>
+<p><br></p>
 <p>The values in <code>date_start</code>, <code>date_mid</code>, and <code>date_end</code> are unix timestamps which have been calculated from the ISO date in the <code>eventDate</code> column. We can convert these numerical values to dates using the formula below.</p>
-<pre class="excel"><code>  =(E2/86400000)+DATE(1970,1,1)</code></pre>
+<pre class="excel"><code>=(E2/86400000)+DATE(1970,1,1)</code></pre>
 <p>If, when you apply this formula, you still see numbers, you will need to set the cell formatting to Date. Once you have dates, you can obtain, e.g. months for seasonal analyses using:</p>
-<pre class="excel"><code>  =MONTH(H2)</code></pre>
+<pre class="excel"><code>=MONTH(H2)</code></pre>
 </details>
 </li>
 <li>
 <details>
 <summary>
-How do I filter by or obtain trait information for OBIS data (e.g. all benthic organisms)?
+<p>How do I filter by or obtain trait information for OBIS data (e.g. all benthic organisms)?</p>
 </summary>
 <p><br></p>
-Currently, it is not possible to filter OBIS data by trait. To do this, we recommend using the traits database of the <a href="https://www.marinespecies.org/traits/aphia.php?p=attributes">World Register of Marine Species</a>. For example, searching by “functional group”, you can specify benthos, plankton, nekton, etc.
+<p>Currently, it is not possible to filter OBIS data by trait. To do this, we recommend using the traits database of the <a href="https://www.marinespecies.org/traits/aphia.php?p=attributes">World Register of Marine Species</a>. For example, searching by “functional group”, you can specify benthos, plankton, nekton, etc.</p>
 </details>
 </li>
+</ul></li>
 </ul>
 
 </div>
