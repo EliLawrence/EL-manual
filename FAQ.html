@@ -427,9 +427,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <summary>
 How to obtain a taxon checklist for an area?
 </summary>
-<pre><code>There are a few possible ways to obtain a taxon checklist for a given area. We will obtain a checklist of species in the Albain EEZ as an example. To do this we will create a bounding box around our area of interest, and then apply filters to simplify the geometry.
+<pre><code>&lt;p&gt; There are a few possible ways to obtain a taxon checklist for a given area. We will obtain a checklist of species in the Albain EEZ as an example. To do this we will create a bounding box around our area of interest, and then apply filters to simplify the geometry.&lt;/p&gt;
 
-```R
+&lt;code&gt;
 library(mregions)
 library(dplyr)
 library(robis)
@@ -449,9 +449,8 @@ occ_filtered &lt;- occ %&gt;%
 #get taxa
 alb_taxa &lt;- occ_filtered %&gt;%
   group_by(phylum, class, order, family, genus, species, scientificName) %&gt;%
-  summarize(records = n())
-
-```</code></pre>
+  summarize(records = n())        
+&lt;/code&gt;</code></pre>
 </details></li>
 </ul>
 
