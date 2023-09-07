@@ -158,7 +158,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.3.1" data-path="policy.html"><a href="policy.html#guidelines-on-the-sharing-and-use-of-data-in-obis-1"><i class="fa fa-check"></i><b>1.3.1</b> Guidelines on the sharing and use of data in OBIS</a></li>
 </ul></li>
 <li class="chapter" data-level="1.4" data-path="gethelp.html"><a href="gethelp.html"><i class="fa fa-check"></i><b>1.4</b> Getting Help in OBIS</a></li>
-<li class="chapter" data-level="1.5" data-path="FAQ.html"><a href="FAQ.html"><i class="fa fa-check"></i><b>1.5</b> Frequency Asked Questions</a></li>
+<li class="chapter" data-level="1.5" data-path="FAQ.html"><a href="FAQ.html"><i class="fa fa-check"></i><b>1.5</b> Frequently Asked Questions</a></li>
 </ul></li>
 <li class="part"><span><b>Contributing data to OBIS</b></span></li>
 <li class="chapter" data-level="2" data-path="contribute.html"><a href="contribute.html"><i class="fa fa-check"></i><b>2</b> What can you contribute and how?</a>
@@ -476,8 +476,11 @@ You should consider carefully what combination of fields will generate a <strong
 <p><em>Data from <a href="http://ipt.vliz.be/eurobis/resource?r=iof_bent_eia_2000_10">Environmental impact assessments in the eastern part of Adriatic sea - species list of benthic invertebrates and phytobenthos (2000-2010)</a>.</em></p>
 <p>We can see that each record has a similar eventID structure, except for the last part which indicates the event type - documented in the <code>eventRemarks</code> column. In this dataset, records with the eventID <code>IOF_benthos_Plominski_zaljev_2000_crs</code> has information applicable for records with eventIDs ending with <code>_stat1</code>, <code>_stat2</code>, <code>_s01</code>, and <code>_s02</code> because <code>_crs</code> is their parent event. Similarly, information (e.g., date of station visit, coordinates) documented in records with eventID <code>IOF_benthos_Plominski_zaljev_2000_stat1</code> is applicable for the two sample records (eventID <code>_s01</code> and <code>_s02</code>), because these samples were taken at Station 1 (indicated by the parentEventID). These eventIDs could have been nested in another way, such as <code>IOF_benthos_Plominsku_zaljev_2000_crs:stat1:s01</code> which would embed the parentEventID into the identifier.</p>
 <p>See also <a href="https://bdj.pensoft.net/articles.php?id=10989&amp;instance_id=3385375">De Pooter et al. 2017</a> for an example of an event hierarchy in a complex benthos dataset.</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Upt6LPJ0Bn8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-</iframe>
+<p><iframe width="560" height="315"
+src="https://www.youtube.com/embed/Upt6LPJ0Bn8"
+frameborder="0"
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen></iframe></p>
 </div>
 <div id="occurrenceid" class="section level3 hasAnchor" number="3.5.2">
 <h3><span class="header-section-number">3.5.2</span> occurrenceID<a href="identifiers.html#occurrenceid" class="anchor-section" aria-label="Anchor link to header"></a></h3>
