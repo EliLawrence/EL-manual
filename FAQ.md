@@ -75,9 +75,9 @@
   <br>
   
   Loading the entire OBIS dataset uses *a lot* of memory and is probably not feasible on most desktop computers. You have a few potential options depending on the use case:
-  
-  * Process the data in smaller batches
-  * Load the dataset into a local database such as SQLite and use SQL queries to analyze the data
+
+  - Process the data in smaller batches
+  - Load the dataset into a local database such as SQLite and use SQL queries to analyze the data
   
   In general, we recommend you use the parquet download which is available on [here](https://obis.org/data/access/), instead of the CSV. Then in R, you can use the [`arrow`](https://arrow.apache.org/docs/r/) package to work with parquet files. We also have a short tutorial on working with parquet files in R [here](https://resources.obis.org/tutorials/arrow-obis/), with an example application of this approach [here](https://iobis.github.io/notebook-diversity-indicators/) (see first code block).
   </details></li>
@@ -114,10 +114,10 @@
     group_by(phylum, class, order, family, genus, species, scientificName) %>%
     summarize(records = n())
   ```
+
   </details></li>
   <li><details>
   <summary>How do I convert or obtain separate elements from dates in the data download file (e.g. <code>date_start</code> field)?</summary>
-  <br>
   
   The values in `date_start`, `date_mid`, and `date_end` are unix timestamps which have been calculated from the ISO date in the `eventDate` column. We can convert these numerical values to dates using the formula below.
 
@@ -130,11 +130,13 @@
   ```Excel
   =MONTH(H2)
   ```
+
   </details></li>
   <li><details>
   <summary>How do I filter by or obtain trait information for OBIS data (e.g. all benthic organisms)?</summary>
   <br>
   
   Currently, it is not possible to filter OBIS data by trait. To do this, we recommend using the traits database of the [World Register of Marine Species](https://www.marinespecies.org/traits/aphia.php?p=attributes). For example, searching by “functional group”, you can specify benthos, plankton, nekton, etc.
+  
   </details></li>
 </ul>
