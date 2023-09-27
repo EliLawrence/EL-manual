@@ -6,6 +6,12 @@ Formatting data can be challenging. This section of the manual deals with how to
 
 Deciding on your dataset structure is one of the first steps towards getting your data ready for publishing. At this step, there are no specific actions you need to do with your data, but it is important to determine which structure best suits your dataset before proceeding. Then, once you have decided on the dataset structure, you can continue formatting your data.
 
+We have created the following flow chart for an overview on how to determine what structure best suits your data.
+
+![*OBIS dataset structure decision tree*](OBIS-dataStructure.drawio)
+
+For more guidance, see the sections below.
+
 ## When to use Event Core
 
 Event Core describes **when** and **where** a specific sampling event happened and contains information such as location and date. It covers:

@@ -16,26 +16,6 @@
 
 #### Formatting Data
 
-* [Is there a checklist of all required Darwin Core fields for OBIS?](checklist.html)
-* [How does data flow in OBIS?](data_standards.html)
-* [What should I do if I do not have the data for required fields by OBIS?](common_formatissues.html#missing-required-fields)
-* [How do I construct an eventID?](identifiers.html#eventid)
-* [How do I construct occurrenceID?](identifiers.html#occurrenceid)
-* [What data goes into Occurrence core (or extension) and how do I set up this file?](format_occurrence.html)
-* [How do I set up an Event core table?](format_event.html)
-* [What data goes into extendedMeasurementOrFact and how do I set it up?](format_emof.html)
-* [How do I map Measurement or Fact terms in OBIS with preferred BODC vocabulary?](vocabulary.html#measurementorfact-vocabularies)
-* [I can't find a suitable vocabulary, how do I request a new vocabulary term?](vocabulary.html#requesting-new-vocabulary-terms)
-* [How should I match raw data fields with Darwin Core terminology?](vocabulary.html#map-your-data-with-dwc-vocabulary)
-* [How do I format dates?](common_formatissues.html#temporal-dates-and-times)
-* [How do I handle historical data?](common_formatissues.html#historical-data)
-* [How do I convert coordinates to decimal degrees?](common_formatissues.html#converting-coordinates)
-* [How do I convert  different geographical formats to WGS84?](common_formatissues.html#geographical-format-conversion)
-* [How do I compile acoustic, imaging, or other multimedia data for OBIS?](other_data_types.html#multimedia-data-acoustic-imaging)
-* [How do I compile habitat data for OBIS?](other_data_types.html#habitat-data)
-* [How do I compile tracking data for OBIS?](other_data_types.html#tracking-data)
-* [How do I compile DNA and genetic data for OBIS?](dna_data.html)
-
 <ul>
   <li><a href="checklist.html">Is there a checklist of all required Darwin Core fields for OBIS?</a></li>
   <li><a href="data_standards.html">How does data flow in OBIS?</a></li>
@@ -53,7 +33,7 @@
   <li><a href="common_formatissues.html#temporal-dates-and-times">How do I format dates?</a></li>
   <li><a href="common_formatissues.html#historical-data"> How do I handle historical data?</a></li>
   <li><a href="common_formatissues.html#converting-coordinates">How do I convert coordinates to decimal degrees?</a></li>
-  <li><a href="common_formatissues.html#geographical-format-conversion">How do I convert  different geographical formats to WGS84?</a></li>
+  <li><a href="common_formatissues.html#geographical-format-conversion">How do I convert different geographical formats to WGS84?</a></li>
   <li><a href="other_data_types.html#multimedia-data-acoustic-imaging">How do I compile acoustic, imaging, or other multimedia data for OBIS?</a></li>
   <li><a href="other_data_types.html#habitat-data">How do I compile habitat data for OBIS?</a></li>
   <li><a href="other_data_types.html#tracking-data">How do I compile tracking data for OBIS?</a></li>
@@ -89,7 +69,6 @@
 
   </details></li>
 </ul>
-
 
 #### Quality Control
 
