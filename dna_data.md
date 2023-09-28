@@ -30,7 +30,7 @@ To format datasets, you will need to have information on the sequence and possib
 
 Although this data is in multiple files, each unique sequence by sample combination is considered **one** occurrence. Therefore the data from these tables will need to be formatted to the “long format”, including a row for each sequence in each sample. See the figure below for a demonstration of how this can be done.
 
-![Combining multiple DNA data tables into one "long format" table](/images/DNA_4tables-to-one.jpg)
+![Combining multiple DNA data tables into one "long format" table](images/DNA_4tables-to-one.jpg)
 
 Doing this will help you when following the guidelines below.
 
