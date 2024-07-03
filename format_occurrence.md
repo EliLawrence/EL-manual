@@ -3,6 +3,7 @@
 If your dataset structure is [based on Occurrence core](formatting.html), or has an Occurrence extension (remember that all OBIS data have at least one occurrence record associated, regardless of what organization structure you have chosen), there are several terms that are [required](checklist.html) in your dataset by OBIS. These required data fields include the following eight terms:
 
 * `occurrenceID`
+* `eventID` (required for Occurrence extension, not required for Occurrence Core)
 * `occurrenceStatus`
 * `basisOfRecord`
 * `scientificName`
@@ -34,7 +35,7 @@ While these are the bare minimum, you should strongly consider adding other term
 * Class Taxon | DwC: taxonRank
 * Class Taxon | DwC: taxonRemarks
 
-Note that any terms related to measurements, either biotic (e.g., sex, lifestage, biomass) or abiotic will be included in extendedMeasurementOrFact table not the Occurrence table.
+Note that any terms related to measurements, either biotic (e.g., sex, lifestage, biomass) or abiotic will also be included in the extendedMeasurementOrFact table. Measurements can remain in the Occurrence table as long as they can be mapped to the appropriate DwC term (e.g. DwC:Occurrence:sex). Nnot every data aggregator outside of OBIS indexes the eMoF table, so otherwise this information may be lost.
 
 #### Stepwise Guidance to Format an Occurrence Table (with spreadsheets)
 

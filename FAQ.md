@@ -13,13 +13,21 @@
 
 #### General
 
-* [I have data and want to publish to OBIS - what do I do?](contribute.html)
-* [Why is it important to share and format data?](contribute.html#why-publish-data-to-obis)
-* [How do I handle sensitive data?](contribute.html#how-to-handle-sensitive-data)
-* [Where can I make suggestions for improvements on this Manual?](https://github.com/iobis/manual)
-* [Where can I find OBIS related training videos?](https://youtube.com/playlist?list=PLlgUwSvpCFS4TS7ZN0fhByj_3EBZ5lXbF)
-* [What are the responsibilities of OBIS node managers?](nodes.html)
-* [Where can I find marine datasets linked to the OBIS network by the GBIF registry, that now require endorising?](https://github.com/iobis/obis-network-datasets/)
+<ul>
+  <li><a href="contribute.html">I have data and want to publish to OBIS - what do I do?</a></li>
+  <li><a href="contribute.html#why-publish-data-to-obis">Why is it important to share and format data?</a></li>
+  <li><a href="contribute.html#how-to-handle-sensitive-data">How do I handle sensitive data?</a></li>
+  <li><a href="https://github.com/iobis/manual">Where can I make suggestions for improvements on this Manual?</a></li>
+  <li><a href="https://youtube.com/playlist?list=PLlgUwSvpCFS4TS7ZN0fhByj_3EBZ5lXbF">Where can I find OBIS related training videos?</a></li>
+  <li><a href="nodes.html">What are the responsibilities of OBIS node managers?</a></li>
+  <li><a href="https://github.com/iobis/obis-network-datasets/">Where can I find marine datasets linked to the OBIS network by the GBIF registry, that now require endorising?</a></li>
+  <li><details>
+  <summary>I am an OBIS node and need to update the contact information listed for my node on the OBIS website, how do I do that?</summary>
+
+  To update OBIS Node contact information listed at <https://obis.org/contact/>, you can edit the information here https://metadata.obis.org/ and signing in with your OceanExpert credentials.
+
+  </details></li>
+</ul>
 
 #### Darwin Core
 
@@ -31,7 +39,7 @@
   <li><a href="formatting.html#dataset-structure">What is the difference between Occurence Core and Event Core?</a></li>
   <li><a href="identifiers.html#introduction-to-identifiers">What is the difference between eventID, occurrenceID, organismID, taxonID, scientificNameID, recordNumber, materialEntityID, materialSampleID, and catalogNumber?</a></li>
   <li><details>
-  <summary>What is the difference between <code>individualCount</code>, and <code>organismQuantity</code>, and which one should I use?
+  <summary>What is the difference between <code>individualCount</code>, and <code>organismQuantity</code>, and which one should I use?</summary>
 
   The DwC term `individualCount` is used simply for documenting the *number of individuals* present at the time the occurrence happened. Conversely, `organismQuantity` is used to record *any type* of quantity related to an organism or occurrence. `organismQuantityType` may include the number of individuals, the % cover, biomass, the cover-abundance on the Braun-Blanquet Scale, etc. While both DwC terms can be placed in the Occurrence table, OBIS recommends also populating them in the eMoF table because of the standardization of terms and because you can link to sampling events and factual sampling information.
 
@@ -48,6 +56,7 @@
   <li><a href="identifiers.html#occurrenceid">How do I construct occurrenceID?</a></li>
   <li><a href="format_occurrence.html">What data goes into Occurrence core (or extension) and how do I set up this file?</a></li>
   <li><a href="format_event.html">How do I set up an Event core table?</a></li>
+  <li><a href="format_event.html#populating-parent-and-child-events">How should I populate parent and child event information? Do I have to populate information for child events if the parent event already contains that information?</a></li>
   <li><details>
   <summary>Do I have to provide decimalLatitude and decimalLongitude for the Event <i>and</i> Occurrence tables?</summary>
   
@@ -67,6 +76,12 @@
   <li><a href="other_data_types.html#habitat-data">How do I compile habitat data for OBIS?</a></li>
   <li><a href="other_data_types.html#tracking-data">How do I compile tracking data for OBIS?</a></li>
   <li><a href="dna_data.html">How do I compile DNA and genetic data for OBIS?</a></li>
+  <li><details>
+  <summary>What does sampleSize and organismQuantity refer to for genetic data?</summary>
+  
+  For genetic data, `sampleSizeValue` and `organismQuantity` do **not** refer to the amount sampled nor the number of organisms. Instead these fields are related to either 1) the number of sequence reads for eDNA data or 2) the number of droplets/partitions for qPCR data. See [DNA data guidelines](dna_data#.html) for more details.
+
+  </details></li>
   <li><details>
   <summary>How do I document occurrences from unknown species, those new to science, or those with temporary names? e.g. Eurythenes sp. DISCOLL.PAP.JC165.674</summary>
 

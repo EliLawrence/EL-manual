@@ -1,16 +1,16 @@
-### Darwin Core
+### Darwin Core Terms & Guidelines
 
 **Contents**
 
 - [Introduction to Darwin Core](#introduction-to-darwin-core)
-- [Darwin Core terms](#darwin-core-terms)  
+- [Darwin Core terms](#darwin-core-dwc-terms)  
 - [Darwin Core guidelines](#darwin-core-guidelines)
   - [Taxonomy and identification](#taxonomy-and-identification)
   - [Occurrence](#occurrence)  
   - [Record level terms](#record-level-terms)  
   - [Location](#location)  
   - [Event](#event)
-  - [Time](#time)  
+  - [Time](#time)
   - [Sampling](#sampling)  
 
 #### Introduction to Darwin Core
@@ -155,7 +155,7 @@ The use and definitions for additional ON signs (`identificationQualifier`) can 
 
 Examples:
 
-| scientificName      | scientificNameAuthorship                | scientificNameID                          | taxonRank | identificationQualifier  | taxonConceptID                      |
+| scientificName      | scientificNameAuthorship                | scientificNameID                          | taxonRank | identificationQualifier  | verbatimIdentification                      |
 |---------------------|-----------------------------------------|-------------------------------------------|-----------|--------------------------|-------------------------------------|
 |Pelagia              | Péron & Lesueur, 1810                   | urn:lsid:marinespecies.org:taxname:135262 | genus     | gen. nov.                |Pelagia gen. nov.                    |
 |Pelagia benovici     | Piraino, Aglieri, Scorrano & Boero, 2014| urn:lsid:marinespecies.org:taxname:851656 | species   | sp. nov                  |Pelagia benovici sp. nov             |
@@ -188,7 +188,9 @@ Both `associatedMedia`, `associatedReferences` and `associatedSequences` are glo
 
 `associatedTaxa` include a list (concatenated and separated) of identifiers or names of taxa and their associations with the Occurrence, e.g. the species occurrence was associated to the presence of kelp such as _Laminaria digitata_.
 
-The recommended vocabulary for `sex` see [BODC vocab : S10](http://vocab.nerc.ac.uk/collection/S10/current/), for `lifeStage` see [BODC vocab: S11](http://vocab.nerc.ac.uk/collection/S11/current/), `behavior` (no vocab available), and `occurrenceRemarks` can hold any comments or notes about the Occurrence.
+Data columns recording an organism's sex, life stage, and/or behaviour should be populated with controlled vocabulary. It is recommended to include the columns in preferably both the Occurrence table and the extendedMeasurementOrFact table. The recommended vocabulary for sex can be found in [BODC vocabulary collection S10](http://vocab.nerc.ac.uk/collection/S10/current/), for lifeStage in [BODC vocabulary collection S11](http://vocab.nerc.ac.uk/collection/S11/current/), and for behavior in [ICES Behaviour collection](https://vocab.ices.dk/services/api/Code/d0268a96-afc9-436e-a4db-4f61c2b9f6ba).
+
+`occurrenceRemarks` can hold any comments or notes about the Occurrence.
 
 `recordedBy` can hold a list (concatenated and separated) of names of people, groups, or organizations responsible for recording the original Occurrence. The primary collector or observer, especially one who applies a personal identifier (recordNumber), should be listed first.
 
@@ -204,13 +206,13 @@ _Data from [A summary of benthic studies in the sluice dock of Ostend during 197
 
 ##### Record level terms
 
-`basisOfRecord` (required term) specifies the nature of the record, i.e. whether the occurrence record is based on a stored specimen or an observation. In case the specimen is collected and stored in a collection (e.g. at a museum, university, research institute), the options are:
+`basisOfRecord` (required term) specifies the nature of the record, i.e. whether the occurrence record is based on a stored specimen or an observation. A full list of vocabularies with definitions for this term can be found [here](https://rs.gbif.org/vocabulary/dwc/basis_of_record_2022-02-02.xml). In case the specimen is collected and stored in a collection (e.g. at a museum, university, research institute), the options are:
 
 - `PreservedSpecimen` e.g. preserved in ethanol, tissue etc.
 - `FossilSpecimen` a fossil, which allows OBIS to make the distinction between the date of collection and the time period the specimen was assumed alive
 - `LivingSpecimen` an intentionally kept/cultivated living specimen e.g. in an aquarium or culture collection.
 
-In case no specimen is deposited, the basis of record is either `HumanObservation` (e.g bird sighting, benthic sample but specimens were discarded after counting), or `MachineObservation` (e.g. for occurrences based on automated sensors such as image recognition, etc). For records pertaining to genetic samples, basisOfRecord can be `MaterialSample` (e.g. in the DNA-derived data extension).
+In case no specimen is deposited, the basis of record is either `HumanObservation` (e.g bird sighting, benthic sample but specimens were discarded after counting), `MachineObservation` (e.g. for occurrences based on automated sensors such as image recognition, etc), or `MaterialSample` (e.g. physical sample was taken, and may have been preserved or destroyed). For records pertaining to genetic samples, basisOfRecord can be `MaterialSample` (e.g. in the DNA-derived data extension).
 
 When the basisOfRecord is either a _preservedSpecimen_, _LivingSpecimen_ or _FossilSpecimen_ please also add the `institutionCode`, `collectionCode` and `catalogNumber`, which will enable people to visit the collection and re-examine the material. Sometimes, for example in case of living specimens, a dataset can contain records pointing to the origin, the in-situ sampling position as well as a record referring to the ex-situ collection. In this case please add the event type information in `eventRemarks` (see [OBIS manual: event](darwin_core.html#event)).
 
@@ -230,7 +232,7 @@ When the basisOfRecord is either a _preservedSpecimen_, _LivingSpecimen_ or _Fos
 
 In OBIS, the spatial reference system to be documented in `geodeticDatum` is [EPSG:4326](https://epsg.io/4326). Coordinates in degrees/minutes/seconds can be converted to decimal degrees using our [coordinates tool](http://iobis.github.io/coordinates/). We also provide a [tool](https://obis.org/maptool) to check coordinates or to determine coordinates for a location (point, transect or polygon) on a map. This tool also allows geocoding location names using [marineregions.org](http://www.marineregions.org/).
 
-The name of the place or location can be provided in `locality`, and if possible linked by a `locationID` using a persistent ID from a gazetter, such as the MRGID from [MarineRegions](http://www.marineregions.org/gazetteer.php?p=search). If the species occurrence only contains the name of the `locality`, but not the exact coordinates, we recommend using a geocoding service to obtain the coordinates. [Marine Regions](http://www.marineregions.org/) has a [search interface](http://www.marineregions.org/gazetteer.php?p=search) for geographic names, and provides coordinates and often precision in meters, which can go into `coordinateUncertaintyInMeters`. Another option is to use the [Getty Thesaurus of Geographic Names](http://www.getty.edu/research/tools/vocabularies/tgn/) or [Google Maps](http://maps.google.com): after looking up a location, the decimal coordinates can be found in the page URL. Additional information about the locality can also be stored in DwC terms such as `waterBody`, `islandGroup`, `island` and `country`. `locationAccordingTo` should provide the name of the gazetteer that is used to obtain the coordinates for the locality.
+The name of the place or location can be provided in `locality`, and if possible linked by a `locationID` using a persistent ID from a gazetter, such as the MRGID from [MarineRegions](http://www.marineregions.org/gazetteer.php?p=search). If the species occurrence only contains the name of the `locality`, but not the exact coordinates, we recommend using a geocoding service to obtain the coordinates. [Marine Regions](http://www.marineregions.org/) has a [search interface](http://www.marineregions.org/gazetteer.php?p=search) for geographic names, and provides coordinates and often precision in meters, which can go into `coordinateUncertaintyInMeters`. Another option is to use the [Getty Thesaurus of Geographic Names](http://www.getty.edu/research/tools/vocabularies/tgn/) or [Google Maps](http://maps.google.com): after looking up a location, the decimal coordinates can be found in the page URL. Additional information about the locality can also be stored in DwC terms such as `waterBody`, `islandGroup`, `island` and `country`. `locationAccordingTo` should provide the name of the gazetteer that is used to obtain the coordinates for the locality. When `country` is provided, `countryCode` should also be populated and must adhere to ISO 3166-1-alpha-2 (i.e. 2 letter country codes defined by ISO 3166-1). For locations in international waters, we recommend the code `XZ`.
 
 `locationID` is an identifier for the set of location information (e.g. station ID, or MRGID from [marineregions](http://www.marineregion.org)), for example the [Balearic Plain](http://www.marineregions.org/gazetteer.php?p=details&id=3956) has MRGID: [http://marineregions.org/mrgid/3956](http://marineregions.org/mrgid/3956).
 
@@ -257,7 +259,7 @@ Example:
 
 _Data from [Adriatic and Ionian Sea mega-fauna monitoring employing ferry as platform of observation along the Ancona-Igoumenitsa-Patras lane, from December 2014 to December 2018](http://ipt.vliz.be/eurobis/resource?r=ionian_2008_2018)._
 
-Keep in mind while filling in [`minimumDepthInMeters`](http://rs.tdwg.org/dwc/terms/maximumDepthInMeters) and [`maximumDepthInMeters`](http://rs.tdwg.org/dwc/terms/minimumDepthInMeters) that this should be the depth at which the **sample was taken** and not the water column depth at that location. When fillling in any depth fields (`minimumDepthInMeters`, `maximumDepthInMeters`, [`minimumDistanceAboveSurfaceInMeters`](http://rs.tdwg.org/dwc/terms/minimumDistanceAboveSurfaceInMeters), and [`maximumDistanceAboveSurfaceInMeters`](http://rs.tdwg.org/dwc/terms/maximumDistanceAboveSurfaceInMeters)), you should also consider which information is needed to fully understand the data. In most cases (e.g. scenario 1 and 4 in the figure below), providing `minimumDepthInMeters` and `maximumDepthInMeters` is sufficient for observations of organisms at particular depths. However, in cases where an occurrence is above the sea surface, e.g. flying birds (scenario 2 and 5),  you should populate `minimumDistanceAboveSurfaceInMeters`, `maximumDistanceAboveSurfaceInMeters`, and, where relevant, you should also include [`minimumElevationInMeters`](https://dwc.tdwg.org/list/#dwc_minimumElevationInMeters) and [`maximumElevationInMeters`](https://dwc.tdwg.org/list/#dwc_maximumElevationInMeters).
+Keep in mind while filling in [`minimumDepthInMeters`](http://rs.tdwg.org/dwc/terms/maximumDepthInMeters) and [`maximumDepthInMeters`](http://rs.tdwg.org/dwc/terms/minimumDepthInMeters) that this should be the depth at which the **sample was taken** and not the water column depth at that location. When filling in any depth fields (`minimumDepthInMeters`, `maximumDepthInMeters`, [`minimumDistanceAboveSurfaceInMeters`](http://rs.tdwg.org/dwc/terms/minimumDistanceAboveSurfaceInMeters), and [`maximumDistanceAboveSurfaceInMeters`](http://rs.tdwg.org/dwc/terms/maximumDistanceAboveSurfaceInMeters)), you should also consider which information is needed to fully understand the data. In most cases (e.g. scenario 1 and 4 in the figure below), providing `minimumDepthInMeters` and `maximumDepthInMeters` is sufficient for observations of organisms at particular depths. However, in cases where an occurrence is above the sea surface, e.g. flying birds (scenario 2 and 5),  you should populate `minimumDistanceAboveSurfaceInMeters`, `maximumDistanceAboveSurfaceInMeters`, and, where relevant, you should also include [`minimumElevationInMeters`](https://dwc.tdwg.org/list/#dwc_minimumElevationInMeters) and [`maximumElevationInMeters`](https://dwc.tdwg.org/list/#dwc_maximumElevationInMeters).
 
 The `minimumDistanceAboveSurfaceInMeters` and `maximumDistanceAboveSurfaceInMeters` is the distance, in meters, above or below a reference surface or reference point. The reference surface is determined by the depth or elevation. If the depth and elevation are 0, then the reference surface is the sea surface. If a depth is given, the reference surface is the location of the depth. This can be especially useful for sediment cores taken from the sea bottom (scenario 3 in figure below). If no depth is given, then the elevation is the reference surface (scenario 5).
 
