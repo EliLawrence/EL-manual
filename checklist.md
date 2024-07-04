@@ -24,7 +24,6 @@ DNA<-c(' ',' ',' ',' ','x',' ','x',' ',' ','x','x','x','x','x','x','x','x
 
 checklist<- as.data.frame(cbind(Terms,OBISRequired,DarwinCoreClass,Event,Occurrence,eMoF,DNA))
 
-library(retractable)
 ```
 
 ```{r}
