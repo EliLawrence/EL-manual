@@ -18,6 +18,8 @@ jobs:
       - uses: r-lib/actions/setup-pandoc@v2
       - name: Install rmarkdown
         run: Rscript -e 'install.packages(c("rmarkdown", "bookdown","DT","webshot"))'
+      - name: Install phantomjs
+        run: Rscript -e 'webshot::install_phantomjs()'
       - name: Render Book
         run: Rscript build.R
       - name: Create cname file
