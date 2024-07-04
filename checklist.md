@@ -46,13 +46,7 @@ reactable::reactable(checklist,sortable=T,filterable=T, searchable=T,pagination=
                 }
                 list(color = color, fontWeight = "bold")
               }
-              ),
-            Terms = colDef(name="Term"),
-            DarwinCoreClass = colDef(name="Term’s DarwinCore Class"),
-            Event = colDef(name="Event Table"),
-            Occurrence = colDef(name="Occurrence Table"),
-            eMoF = colDef(name="eMoF Table"),
-            DNA = colDef(name="DNA Table")
+              )
             )
           )
 
