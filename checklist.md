@@ -26,7 +26,7 @@ checklist<- as.data.frame(cbind(Terms,OBISRequired,DarwinCoreClass,Event,Occurre
 
 ```
 
-```{r}
+```{r,echo=FALSE}
 
 reactable::reactable(checklist,sortable=T,filterable=T, searchable=T,pagination=F,highlight=T,
           columns = list(
