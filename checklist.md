@@ -23,23 +23,27 @@ eMoF<-c(' ','x',' ',' ','x',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '
 DNA<-c(' ',' ',' ',' ','x',' ','x',' ',' ','x','x','x','x','x','x','x','x','x','x','x','x','x','x','x','x','x','x','x','x','x',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ')
 
 checklist<- as.data.frame(cbind(Terms,OBISRequired,DarwinCoreClass,Event,Occurrence,eMoF,DNA))
+
+library(retractable)
 ```
 
 ```{r}
+
 reactable::reactable(checklist,sortable=T,filterable=T, searchable=T,pagination=F,highlight=T,
           columns = list(
-            OBISRequired = colDef(name="OBIS Required",
+            OBISRequired = reactable::colDef(
+                name="OBIS Required",
               style = function(value) {
                 color <- NA
                 if (value == "required") {
-                  color <- "darkred"
+                  color <- "#8B0000"
                 } else if (value == "strongly recommended") {
-                  color <- "darkgreen"
+                  color <- "#006600"
                 } else if (value == "recommended") {
-                  color <- "darkblue"
+                  color <- "#003366"
                 } 
                 else if (value == "optional") {
-                  color <- "orange"
+                  color <- "#FF6600"
                 }
                 list(color = color, fontWeight = "bold")
               }
