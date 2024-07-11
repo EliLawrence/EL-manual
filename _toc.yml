@@ -1,0 +1,64 @@
+
+- part: "Overview"
+  chapters:
+  - title: "Introduction"
+  file: index.Rmd
+  - title: "Data policy"
+    file: policy.md
+  - file: gethelp.md
+  - file: FAQ.md
+
+- part: "Part 1: Contributing Data to OBIS"
+  chapters:
+  - title: "Contributing"
+  file: contribute.md
+  - title: "Intro to the data standards we use"
+  file: data_standards.md
+  - title: "More about DwC"
+  file: darwin_core.md
+  - title: "more stuff data formatting"
+  file: data_format.md
+  - title: "Background info on relational databases"
+  file: relational_db.md
+  - title: "Ecological metadata language"
+  file: eml.md
+  - title: "OBIS Node info"
+  file: nodes.md
+
+- part: "Part 2: Data formatting"
+  file: formatting.md
+  file: identifiers.md
+  file: checklist.md
+  file: name_matching.md
+  file: format_occurrence.md
+  file: format_event.md
+  file: format_emof.md
+  file: dna_data.md
+  file: vocabulary.md
+  file: common_formatissues.md
+  file: examples.md
+  file: other_data_types.md
+  
+- part: "Part 3: Ensuring Data Quality"
+  file: data_qc.md
+  file: dataquality.md
+  file: mofreports.md
+  file: lifewatch_qc.md
+  file: common_qc.md
+
+- part: "Part 4: Publishing Data"
+  file: data_publication.md
+  file: ipt.md
+  file: ipt_admin.md
+  file: data_sharing.md
+  
+- part: "Part 5: Accessing Data from OBIS"
+  file: access.md
+  file: citing.md
+
+- part: "Part 6: Data Visualization and Analysis"
+  file: dataviz.md
+
+- part: "Part 7: Additional Resources"
+  file: other_resources.md
+  
