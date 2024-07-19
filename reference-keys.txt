@@ -16,7 +16,6 @@ tools
 quality-control
 publishing
 accessing-data-in-obis
-part-contributing-data-to-obis
 what-can-you-contribute-and-how
 why-publish-data-to-obis
 how-to-handle-sensitive-data
