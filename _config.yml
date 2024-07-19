@@ -13,6 +13,13 @@ kramdown:
   input: GFM
   hard_wrap: false
   auto_ids: false
-theme: jekyll-theme-minimal
+remote_theme: just-the-docs/just-the-docs
 plugins:
   - jekyll-remote-theme
+callouts:
+  warning:
+    title: Warning
+    color: red
+  highlight:
+    title: Note
+    color: yellow
