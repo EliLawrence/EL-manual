@@ -16,6 +16,7 @@ tools
 quality-control
 publishing
 accessing-data-in-obis
+part-contributing-data-to-obis
 what-can-you-contribute-and-how
 why-publish-data-to-obis
 how-to-handle-sensitive-data
@@ -65,6 +66,7 @@ obis-nodes
 terms-of-reference-of-obis-nodes
 how-to-become-an-obis-node
 obis-node-health-status-check-and-transition-strategy
+part-data-formatting
 dataset-structure
 when-to-use-event-core
 when-to-use-occurrence-core
