@@ -28,6 +28,9 @@ checklist<- as.data.frame(cbind(Terms,OBISRequired,DarwinCoreClass,Event,Occurre
 
 ```{r,echo=FALSE}
 
+DT::datatable(checklist, options = list(pageLength = 100))
+
+
 reactable::reactable(checklist,sortable=T,filterable=T, searchable=T,pagination=F,highlight=T,
           columns = list(
             OBISRequired = reactable::colDef(

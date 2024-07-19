@@ -13,6 +13,6 @@ kramdown:
   input: GFM
   hard_wrap: false
   auto_ids: false
-remote_theme: just-the-docs/just-the-docs
+theme: jekyll-theme-minimal
 plugins:
   - jekyll-remote-theme

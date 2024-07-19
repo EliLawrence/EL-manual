@@ -1,4 +1,4 @@
-# (PART\*) Data Formatting {.emphasized}
+# (PART\*) Data Formatting {-}
 
 # Dataset structure
 
