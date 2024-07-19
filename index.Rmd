@@ -32,6 +32,7 @@ output:
         before: |
           <li><a href="/">The OBIS manual</a></li>
           <li><a href="https://obis.org/">Return to OBIS.org</a></li>
+    theme: null
 documentclass: book
 biblio-style: apalike
 link-citations: yes
