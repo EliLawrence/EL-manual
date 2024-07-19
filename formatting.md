@@ -1,4 +1,4 @@
-# (PART\*) Data Formatting {-}
+# (PART\*) Data Formatting {.tabset .tabset-pills}
 
 # Dataset structure
 
