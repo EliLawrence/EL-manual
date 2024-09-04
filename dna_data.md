@@ -1,5 +1,9 @@
 ## DNA dervived data
 
+<div class="callbox-blue">
+*Note: OBIS guidelines have not yet been updated to reflect changes that allow DNA Derived data to be linked to Event core tables. We will update this page soon.*
+</div>
+
 **Contents:**
 
 - [Introduction](#introduction)
