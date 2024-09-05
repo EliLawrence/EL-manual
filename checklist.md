@@ -28,10 +28,9 @@ checklist<- as.data.frame(cbind(Terms,OBISRequired,DarwinCoreClass,Event,Occurre
 
 ```
 
-```{r,echo=FALSE}
-
-#DT::datatable(checklist, options = list(pageLength = 100))
-
+```{r, checklist, echo=FALSE}
+library(webshot)
+DT::datatable(checklist, extensions = 'Buttons', options = list(pageLength = 100, dom = 'Bfrtip', buttons = c('copy', 'csv', 'excel', 'pdf')))
 
 reactable::reactable(checklist,sortable=F,filterable=T, searchable=T, pagination=F,highlight=T, resizable=T,
           columns = list(

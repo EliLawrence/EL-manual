@@ -3,7 +3,7 @@
 **Contents**
 
 - [Introduction to Darwin Core](#introduction-to-darwin-core)
-- [Darwin Core terms](#darwin-core-terms)  
+- [Darwin Core terms](#darwin-core-dwc-terms)  
 - [Darwin Core guidelines](#darwin-core-guidelines)
   - [Taxonomy and identification](#taxonomy-and-identification)
   - [Occurrence](#occurrence)  
