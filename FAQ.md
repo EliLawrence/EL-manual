@@ -1,22 +1,50 @@
 ## Frequently Asked Questions
 
+**Content**
+
+* [General](#general)
+* [Darwin Core](#darwin-core)
+* [Formatting data](#formatting-data)
+* [Vocabulary](#vocabulary)
+* [Tools](#tools)
+* [Quality Control](#quality-control)
+* [Publishing](#publishing)
+* [Data Access](#accessing-data-in-obis)
+
 #### General
 
-* [I have data and want to publish to OBIS - what do I do?](contribute.html)
-* [Why is it important to share and format data?](contribute.html#why-publish-data-to-obis)
-* [How do I handle sensitive data?](contribute.html#how-to-handle-sensitive-data)
-* [Where can I make suggestions for improvements on this Manual?](https://github.com/iobis/manual)
-* [Where can I find OBIS related training videos?](https://youtube.com/playlist?list=PLlgUwSvpCFS4TS7ZN0fhByj_3EBZ5lXbF)
-* [What are the responsibilities of node managers?](nodes.html)
-* [Where can I find marine datasets linked to the OBIS network by the GBIF registry, that now require endorising?](https://github.com/iobis/obis-network-datasets/)
+<ul>
+  <li><a href="contribute.html">I have data and want to publish to OBIS - what do I do?</a></li>
+  <li><a href="contribute.html#why-publish-data-to-obis">Why is it important to share and format data?</a></li>
+  <li><a href="contribute.html#how-to-handle-sensitive-data">How do I handle sensitive data?</a></li>
+  <li><a href="https://github.com/iobis/manual">Where can I make suggestions for improvements on this Manual?</a></li>
+  <li><a href="https://youtube.com/playlist?list=PLlgUwSvpCFS4TS7ZN0fhByj_3EBZ5lXbF">Where can I find OBIS related training videos?</a></li>
+  <li><a href="nodes.html">What are the responsibilities of OBIS node managers?</a></li>
+  <li><a href="https://github.com/iobis/obis-network-datasets/">Where can I find marine datasets linked to the OBIS network by the GBIF registry, that now require endorising?</a></li>
+  <li><details>
+  <summary>I am an OBIS node and need to update the contact information listed for my node on the OBIS website, how do I do that?</summary>
+
+  To update OBIS Node contact information listed at <https://obis.org/contact/>, you can edit the information here https://metadata.obis.org/ by signing in with your OceanExpert credentials.
+
+  </details></li>
+</ul>
 
 #### Darwin Core
 
-* [Where can I learn about "Darwin Core"?](darwin_core.html)
-* [I am having trouble understanding how Core and Extension tables relate to each other](relational_db.html)
-* [How does the OBIS format avoid redundancy in data](relational_db.html#how-to-avoid-redundancy)
-* [How are extension tables (e.g. eMOF, occurrence) linked with the core table?](formatting.html#extensions-in-obis)
-* [What is the difference between Occurence Core and Event Core?](formatting.html#dataset-structure)
+<ul>
+  <li><a href="darwin_core.html">Where can I learn about "Darwin Core"?</a></li>
+  <li><a href="relational_db.html">I am having trouble understanding how Core and Extension tables relate to each other</a></li>
+  <li><a href="relational_db.html#how-to-avoid-redundancy">How does the OBIS format avoid redundancy in data</a></li>
+  <li><a href="formatting.html#extensions-in-obis">How are extension tables (e.g. eMOF, occurrence) linked with the core table?</a></li>
+  <li><a href="formatting.html#dataset-structure">What is the difference between Occurence Core and Event Core?</a></li>
+  <li><a href="identifiers.html#introduction-to-identifiers">What is the difference between eventID, occurrenceID, organismID, taxonID, scientificNameID, recordNumber, materialEntityID, materialSampleID, and catalogNumber?</a></li>
+  <li><details>
+  <summary>What is the difference between <code>individualCount</code>, and <code>organismQuantity</code>, and which one should I use?</summary>
+
+  The DwC term `individualCount` is used simply for documenting the *number of individuals* present at the time the occurrence happened. Conversely, `organismQuantity` is used to record *any type* of quantity related to an organism or occurrence. `organismQuantityType` may include the number of individuals, the % cover, biomass, the cover-abundance on the Braun-Blanquet Scale, etc. While both DwC terms can be placed in the Occurrence table, OBIS recommends also populating them in the eMoF table because of the standardization of terms and because you can link to sampling events and factual sampling information.
+
+  </details></li>
+</ul>
 
 #### Formatting Data
 
@@ -28,12 +56,18 @@
   <li><a href="identifiers.html#occurrenceid">How do I construct occurrenceID?</a></li>
   <li><a href="format_occurrence.html">What data goes into Occurrence core (or extension) and how do I set up this file?</a></li>
   <li><a href="format_event.html">How do I set up an Event core table?</a></li>
+  <li><a href="format_event.html#populating-parent-and-child-events">How should I populate parent and child event information? Do I have to populate information for child events if the parent event already contains that information?</a></li>
   <li><details>
   <summary>Do I have to provide decimalLatitude and decimalLongitude for the Event <i>and</i> Occurrence tables?</summary>
   
   The answer may depend on your dataset structure, but generally, no. If you have Event core, then you do not need to repeat location information in the Occurrence table (but you can if you'd like). If you are using Occurrence core, then location information must be provided in the Occurrence table.
   </details></li>
-  <li><a href="format_emof.html">What data goes into extendedMeasurementOrFact and how do I set it up?</a></li>
+  <li><a href="format_emof.html">What data goes into extendedMeasurementOrFact (eMoF) and how do I set it up?</a></li>
+  <li><details>
+  <summary>Can I have multiple eMoF tables, one for Event and one for Occurrence measurements?</summary>
+  
+  Yes, you can create multiple eMoF tables if it is simpler for you to separate Event and Occurrence measurement data. However, you must ensure all tables include the correct identifiers, i.e. eventID for measurements related to events, and occurrenceID *and* eventID for measurements associated with occurrences. When you add multiple tables of the same type in the IPT, they will be treated as if they were a single table, so there is no issue if you would like to do this.
+  </details></li>
   <li><a href="common_formatissues.html#temporal-dates-and-times">How do I format dates?</a></li>
   <li><a href="common_formatissues.html#historical-data"> How do I handle historical data?</a></li>
   <li><a href="common_formatissues.html#converting-coordinates">How do I convert coordinates to decimal degrees?</a></li>
@@ -43,7 +77,13 @@
   <li><a href="other_data_types.html#tracking-data">How do I compile tracking data for OBIS?</a></li>
   <li><a href="dna_data.html">How do I compile DNA and genetic data for OBIS?</a></li>
   <li><details>
-  <summary> How do I document occurrences from unknown species, those new to science, or those with temporary names? e.g. Eurythenes sp. DISCOLL.PAP.JC165.674</summary>
+  <summary>What does sampleSize and organismQuantity refer to for genetic data?</summary>
+  
+  For genetic data, `sampleSizeValue` and `organismQuantity` do **not** refer to the amount sampled nor the number of organisms. Instead these fields are related to either 1) the number of sequence reads for eDNA data or 2) the number of droplets/partitions for qPCR data. See [DNA data guidelines](dna_data#.html) for more details.
+
+  </details></li>
+  <li><details>
+  <summary>How do I document occurrences from unknown species, those new to science, or those with temporary names? e.g. Eurythenes sp. DISCOLL.PAP.JC165.674</summary>
 
   Occurrences unknown or new to science should be documented according to recommendations by [Horton et al. 2021](https://www.frontiersin.org/articles/10.3389/fmars.2021.620702/full). You should populate the `scientificName` field with the genus, and in `identificationQualifer` provide the ON sign 'sp.'. However you must also indicate the reason why species-level identification is unavailable. To do this, supplement 'sp.' with either stet. (stetit) or indet. (indeterminabilis). If neither of these are applicable, (e.g. for undescribed new species), add a unique taxon identifier code after 'sp.' to `identificationQualifer`. For example Eurythenes sp. DISCOLL.PAP.JC165.674.
   
@@ -54,29 +94,35 @@
 #### Vocabulary
 
 <ul>
-  <li><a href="vocabulary.html#measurementorfact-vocabularies">How do I map Measurement or Fact terms in OBIS with preferred BODC vocabulary?</a></li>
+  <li><a href="vocabulary.html#map-emof-measurement-identifiers-to-preferred-bodc-vocabulary">How do I map Measurement or Fact terms in OBIS with preferred BODC vocabulary?</a></li>
   <li><a href="vocabulary.html#requesting-new-vocabulary-terms">I can't find a suitable vocabulary, what do I do? How do I request a new vocabulary term?</a></li>
   <li><details>
   <summary>Should I use taxon-specific P01 codes to populate for measurementTypeID? e.g. <link>http://vocab.nerc.ac.uk/collection/P01/current/A15985A1</link> </summary>
 
   No. You should never use taxon-specific P01 codes. This is because the taxa are already identified in the Occurrence table, in the fields `scientificName` and `scientificNameID`.
   </details></li>
-  <li><a href="vocabulary.html#map-your-data-with-dwc-vocabulary">How should I match raw data fields with Darwin Core terminology?</a></li>
+  <li><a href="vocabulary.html#map-data-fields-to-darwin-core">How should I match raw data fields with Darwin Core terminology?</a></li>
 </ul>
 
 #### Tools
 
 <ul>
   <li><a href="name_matching.html">How do I use the WoRMS taxon match tool?</a></li>
-    <li><a href="name_matching.html#how-to-fetch-a-full-classification-for-a-list-of-species-from-worms">Can I fetch a full classification for a list of species from WoRMS?</a></li>
-    <li><a href="name_matching.html#what-to-do-with-non-matching-names">What do I do if my scientificName does not return a match from WoRMS?</a></li>
+  <li><a href="name_matching.html#how-to-fetch-a-full-classification-for-a-list-of-species-from-worms">Can I fetch a full classification for a list of species from WoRMS?</a></li>
+  <li><a href="name_matching.html#what-to-do-with-non-matching-names">What do I do if my scientificName does not return a match from WoRMS?</a></li>
+  <li><details>
+  <summary>Can scientificNameID be populated with an identifier (e.g. WoRMS LSID) representing an unaccepted taxon name?</summary>
+
+  Yes. The identifier in `scientificNameID` should always correspond with the name that is in the `scientificName` field, even if the name is an unaccepted name in WoRMS. For example, the species name "Holothuria mammiculata" was provided, but this name is unaccepted in WoRMS. The accepted name is "Holothuria (Stauropora) pervicax Selenka, 1867". In this case `scientificNameID` should correspond to the original name with LSID urn:lsid:marinespecies.org:taxname:529968 because the ID must correlate with the name as recorded in `scientificName`.
+
+  </details></li>
   <li><a href="https://sequence.obis.org/">Where can I find DNA sequences published in OBIS?</a></li>
   <li><details>
   <summary>Is there a template generator I can use to help create my Event, Occurrence, and eMoF tables?</summary>
 
-  Yes. There is an [Excel template generator](https://sios-svalbard.org/aen/template-generator/) developed by Luke Marsden & Olaf Schneider as part of the Nansen Legacy project. Note this template generator is aimed at GBIF users, so make to account for required OBIS terms.
+  Yes. There is an [Excel template generator](https://www.nordatanet.no/aen/template-generator/config%3DDarwin%20Core) developed by Luke Marsden & Olaf Schneider as part of the Nansen Legacy project. Note this template generator is aimed at GBIF users, so make to account for and include required OBIS terms.
 
-  There is also this [Excel to Darwin Core macro tool](https://zenodo.org/record/6453921#.Y9KsQkHMKmU) you can use to help generate templates.
+  There is also this [Excel to Darwin Core macro tool](https://zenodo.org/record/6453921#.Y9KsQkHMKmU) developed by GBIF Norway you can use to help generate templates.
 
   </details></li>
   <li><a href="common_qc.html#uncertain-geolocation">How do I georeference locations, including text-based descriptions?</a></li>
@@ -109,6 +155,11 @@
 #### Accessing data in OBIS
 
 <ul>
+  <li><details>
+  <summary>Can I get (or publish) other types of information from OBIS, besides occurences (e.g. bio-eco variables, DNA data, abiotic measurements, etc.)?</summary>
+
+  Yes! OBIS allows access to not only taxa occurrences, but also all kinds of measurement data including DNA data (see [Contribute](contribute.html) for a list of data accepted by OBIS). This data is recorded in the (Extended) Measurement Or Fact and DNA-Derived Data extension tables, respectively. To access this data when downloading, be sure to select MoF or DNA from the dropdown Dataset Type menu on the [advanced dataset serach page](https://obis.org/datasets). If you are obtaining data from the OBIS Mapper, make sure to check the box for MeasurementOrFact and/or DNADerivedData from the Extensions toggle section. When using the R package robis, use the `mof=TRUE` and/or `dna=TRUE` arguments. More data filter options will be added in the future.
+  </details></li>
   <li><a href="access.html#obis-homepage-and-dataset-pages">How do I download data from OBIS?</a></li>
   <li><details>
   <summary>How do I load the full (.csv) export of OBIS data?</summary>

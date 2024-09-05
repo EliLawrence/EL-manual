@@ -2,7 +2,7 @@
 
 #### What data goes into eMoF
 
-Any data related to abiotic or biotic measurements, including sampling information and protocols should be included in the eMoF table. Measurement data can also go into the  [MeasurementOrFact](https://rs.gbif.org/extension/dwc/measurements_or_facts_2022-02-02.xml) extension, however OBIS recommends using the [extendedMeasurementOrFact](https://rs.gbif.org/extension/obis/extended_measurement_or_fact.xml) instead, particularly if your data is based on an Event core table.
+Any data related to abiotic or biotic measurements, including sampling information and protocols can be included in the eMoF table. Measurement data can also go into the [MeasurementOrFact](https://rs.gbif.org/extension/dwc/measurements_or_facts_2022-02-02.xml) extension, however OBIS recommends using the [extendedMeasurementOrFact](https://rs.gbif.org/extension/obis/extended_measurement_or_fact.xml) instead, particularly if your data is based on an Event core table.
 
 Required terms for eMoF include:
 
@@ -36,7 +36,7 @@ Other potential fields are shown in the table below (also listed in the [checkli
 * Class Measurement | DwC:measurementValue
 * Class Measurement | DwC:measurementValueID
 
-*For `measurementTypeID`, `measurementUnitID`, and `measurementValueID` you must use controlled vocabulary terms. We know choosing the correct vocabulary term can be challenging, so we have provided some guidance on how to [select the correct vocabulary](vocabulary.html). It is strongly recommended to ensure these fields are filled as correctly as possible. Missing or incorrect terms will be documented in the [measurementOrFact reports](https://r.obis.org/mof/).
+> *For `measurementTypeID`, `measurementUnitID`, and `measurementValueID` you must use controlled vocabulary terms. We know choosing the correct vocabulary term can be challenging, so we have provided some guidance on how to [select the correct vocabulary](vocabulary.html) and are continuously working to improve guidelines. It is strongly recommended to ensure these fields are filled as correctly as possible. Missing or incorrect terms will be documented in the [measurementOrFact reports](https://r.obis.org/mof/).
 
 #### How to structure eMoF
 
@@ -62,6 +62,14 @@ By linking `measurementType` and `measurementValue` with the identifiers `eventI
 8. Repeat steps 3-7 for any measurements in the Event table
 
 Note the fields [sampleSizeValue](https://dwc.tdwg.org/terms/#dwc:sampleSizeValue), [samplingEffort](https://dwc.tdwg.org/terms/#dwc:samplingEffort), and [samplingProtocol](https://dwc.tdwg.org/terms/#dwc:samplingProtocol) from the Occurrence table can be documented as separate measurements on different rows in the eMoF table. E.g., `measurementType` = samplingProtocol, `measurementValue` = description of protocol. Any values in [sampleSizeUnit](https://dwc.tdwg.org/terms/#dwc:sampleSizeUnit) fields should be placed in the `measurementUnit` field when transferred to the eMoF.
+
+Watch the video tutorial for how to format the eMoF table below.
+
+  <iframe width="560" height="315"
+src="https://www.youtube.com/embed/EjM0HRrF1B4"
+frameborder="0"
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen></iframe>
 
 If you would like to export Event data to the eMoF, see some example R code below. This example was provided by [Abby Benson](https://orcid.org/0000-0002-4391-107X) from the [OBIS-USA node](https://www.usgs.gov/ocean-biodiversity-information-system-usa).
 

@@ -1,4 +1,4 @@
-## IPT Administration Responsibilities
+## IPT Admin Responsibilities
 
 If you are an IPT administrator, you are responsible for:
 
@@ -10,13 +10,13 @@ If you are an IPT administrator, you are responsible for:
 6. Make sure all relevant information and data for OBIS is available
 7. Perform necessary quality checks before the data are released to OBIS
 
-### Creating and Installing IPTs
+### Creating and Installing IPTs {.unlisted .unnumbered}
 
 OBIS nodes can decide to install and manage their IPT on their own institutional servers or use (at no charge!) the OBIS servers in Oostende, Belgium, provided as in-kind by the Flanders Marine Institute (VLIZ), which also runs the European OBIS node (EurOBIS). VLIZ also ensures the IPT instances run on the latest version (important for security updates). Here is an overview of the IPT instances hosted in Oostende: [http://ipt.iobis.org/](http://ipt.iobis.org/). Please contact the secretariat at info@iobis.org if you would like OBIS to host your IPT.
 
 To install your own IPT, please follow the instructions in the [GBIF IPT manual](https://github.com/gbif/ipt/wiki/IPT2ManualNotes.wiki#getting-started-guide).
 
-### Registration
+### Registration {.unlisted .unnumbered}
 
 When you have installed your IPT, please provide the IPT instance URL to the OBIS secretariat (helpdesk@obis.org), so your IPT is included in the data harvesting process.
 
@@ -24,9 +24,15 @@ OBIS recommends to share the data as widely as possible including with other net
 
 In order to publish data with GBIF, the OBIS node also needs to become a [data publisher in GBIF](https://www.gbif.org/become-a-publisher), and link the IPT installation with this publishing organization. OBIS nodes are encouraged to use the OBIS node name as the publishers's name, unless the host institution requires its institutional name to be used. In the latter case, reference to the OBIS node can be added in the description, as well as between brackets in the title. The name of the IPT instance can also refer to the OBIS node. OBIS nodes are also encouraged to select OBIS as the endorsing organization. In this way, the OBIS node is also listed on the [OBIS page](https://www.gbif.org/participant/304) at GBIF.
 
-A video tutorial will soon be available to help guide you on registering your OBIS node IPT with GBIF.
+The video tutorial below will help guide you on registering your OBIS node IPT with GBIF.
 
-### Maintaining the IPT
+  <iframe width="560" height="315"
+src="https://www.youtube.com/embed/HciufRG9hiI"
+frameborder="0"
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen></iframe>
+
+### Maintaining the IPT {.unlisted .unnumbered}
 
 As the IPT administrator, you must make sure the IPT is kept up to date, datasets (resources) are published in a timely manner, add, edit, or delete IPT users as required, register with GBIF as applicable, and configure the types of cores and extensions accepted by the IPT.
 
@@ -38,4 +44,4 @@ For extensions already installed, you may notice yellow flags indicating a core 
 
 ![*Screenshot demonstrating when core or extensions need to be updated*](images/iptadmin-core.png)
 
-For a detailed breakdown of administrator options, see the [IPT guide](https://github.com/gbif/ipt/wiki/IPT2ManualAdministration.wiki#administration-menu).
+For a detailed breakdown of administrator options, see the [IPT guide](https://ipt.gbif.org/manual/en/ipt/latest/administration).

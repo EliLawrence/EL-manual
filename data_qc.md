@@ -44,31 +44,38 @@ Once you have formatted your data for OBIS, or have received a formatted dataset
   * Excel > Home > Conditional Formating > Highlight cells Rules > Duplicate values...
 * [GBIF data validator](https://www.gbif.org/tools/data-validator)
 * [Python library for OBIS QC](https://github.com/cioos-siooc/pyobistools) developed by Canadian Integrated Ocean Observing System
-* R package and function Hmisc:: describe
+* R package and function [Hmisc](https://hbiostat.org/r/hmisc/):: describe
   * Can give important summary statistics and identify numbers that don’t match
 
-### Conducting QC with obistools
+### Conducting QC with obistools {.unlisted .unnumbered}
 
-To use `obistools` to conduct quality control, you can follow this general order:
+Installing `obistools`  requires the devtools package. Use the following code to install both packages:
+
+```R
+install.packages("devtools")
+devtools::install_github("iobis/obistools")
+```
+
+If you have difficulty installing `obistools`, please try updating your R packages, in particular the `vctrs` package. This can be done in RStudio in the Packages tab ("update" button) or by using the `update.packages()` command (you can choose which packages to update). If you cannot install `obistools` please reach out to helpdesk@obis.org and we will help you.
+
+To use `obistools` to conduct quality control, you can follow the general order below. Please see the [`obistools` GitHub](https://github.com/iobis/obistools) for examples of how to use the functions.
 
 1. Check that the taxa match with WoRMS
     * [`obistools::match_taxa`](https://github.com/iobis/obistools#taxon-matching)
 2. Check that all required fields are present in the occurrence table
     * [`obistools::check_fields`](https://github.com/iobis/obistools#check-required-fields)
 3. Check coordinates
-    * Plot them on a map to identify any points that appear outside the scope of the dataset [`obistools::plot_map`](https://github.com/iobis/obistools#plot-points-on-a-map)
-    * Identify points with obistools::identify_map
+    * Plot them on a map to identify any points that appear outside the scope of the dataset [`obistools::plot_map`](https://github.com/iobis/obistools#plot-points-on-a-map). Using `obistools:plot_map_leaflet()` will additionally allow you to identify the row number for a particular data point.
     * Check that points are not on land [`obistools::check_onland`](https://github.com/iobis/obistools#check-points-on-land)
     * Ensure depth ranges are valid [`obistools::check_depth`](https://github.com/iobis/obistools#check-depth)
-4. Check for [statistical outliers](https://github.com/iobis/obistools#check-outliers) which may have had data entry errors
-    * obistools::check_outliers_species and obistools::check_outliers_dataset
-5. Check that the eventID and parentEventID are structured correctly [`obistools::check_eventids`](https://github.com/iobis/obistools#check-outliers)
-    * Ensure all eventIDs in extensions have matching eventIDs in the core table [`obistools::check_extension_eventids`](https://github.com/iobis/obistools#check-eventid-in-an-extension)
-6. Check that eventDate is formatted properly [`obistools::check_eventdate`](https://github.com/iobis/obistools#check-eventdate)
+4. Check that the identifiers are present, unique, and appropriately correspond with each other [`obistools::check_eventids`](https://github.com/iobis/obistools#check-outliers). You should also check the uniqueness of the `occurrenceID` field (e.g. using `Hmisc::describe` or simple code like `length(occur$occurrenceID) == length(unique(occur$occurrenceID))`)
+    * Ensure all `eventIDs` in extensions have matching `eventIDs` in the core table [`obistools::check_extension_eventids`](https://github.com/iobis/obistools#check-eventid-in-an-extension)
+5. Check that `eventDate` is formatted properly [`obistools::check_eventdate`](https://github.com/iobis/obistools#check-eventdate)
+6. Check for statistical outliers or other anomalies with Hmisc (below)
 
-### QC with R package Hmisc
+### QC with R package Hmisc {.unlisted .unnumbered}
 
-The R package [Hmisc](https://cran.r-project.org/web/packages/Hmisc/index.html) has the function [`describe`](https://rdrr.io/cran/Hmisc/man/describe.html) which can help you identify any discrepancies in your dataset.
+The R package [Hmisc](https://hbiostat.org/r/hmisc/) has the function [`describe`](https://rdrr.io/cran/Hmisc/man/describe.html) which can help you identify any discrepancies or outliers in your dataset.
 
 It will summarize each of your variables for a given data field. This can help you quickly identify any missing data and ensure the number of unique IDs is correct. For example, in an Occurrence table with 1000 records, there should be 1000 unique occurrenceIDs.
 
@@ -103,3 +110,11 @@ lowest : CSIC_BIOFUN1_1   CSIC_BIOFUN1_10  CSIC_BIOFUN1_100 CSIC_BIOFUN1_101 CSI
 highest: CSIC_BIOFUN1_95  CSIC_BIOFUN1_96  CSIC_BIOFUN1_97  CSIC_BIOFUN1_98  CSIC_BIOFUN1_99 
 
 ```
+
+This video shows how to use both `obistools` and `Hmisc` to conduct QC checks in R.
+
+  <iframe width="560" height="315"
+src="https://www.youtube.com/embed/sNzipC6-r90"
+frameborder="0"
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen></iframe>

@@ -1,6 +1,25 @@
 ### Ecological Metadata Language
 
-OBIS (and GBIF) uses the Ecological Metadata Language (EML) as its metadata standard, which is specifically developed for the earth, environmental and ecological sciences. It is based on prior work done by the Ecological Society of America and associated efforts. EML is implemented as XML. See more information on [EML](https://knb.ecoinformatics.org/#external//emlparser/docs/index.html).
+**Content**
+
+- [Introduction](#introduction-to-eml)
+- [Gudiance on specific metadata sections](#metadata-sections)
+  - [Title](#title)
+  - [Abstract](#abstract)
+  - [People and Organizations](#people-and-organizations)
+  - [License and IP Rights](#license-and-ip-rights)
+  - [Coverage](#coverage) ([geographic](#geographic-coverage), [taxonomic](#taxonomic-coverage), [temporal](#temporal-coverage))
+  - [Keywords](#keywords)
+  - [Project](#project)
+  - [Sampling methods](#sampling-methods)
+  - [Citations](#citations)
+  - [Bibliography](#bibliography)
+  - [Collection Data](#collection-data)
+  - [External Links](#external-links)
+
+#### Introduction to EML
+
+OBIS (and GBIF) uses the Ecological Metadata Language (EML) as its metadata standard, which is specifically developed for the earth, environmental and ecological sciences. It is based on prior work done by the Ecological Society of America and associated efforts. EML is implemented as XML. See more information on [EML](https://eml.ecoinformatics.org/). When publishing on the [Integrated Publishing Toolkit (IPT)](ipt.html), you can either upload XML files with your metadata or it will be generated for you after [filling in metadata sections](ipt.html#add-metadata) directly on the IPT. There are a few resources available to help you generate XML EML files, including: [EML R package](https://docs.ropensci.org/EML/), [ezEML](https://ezeml.edirepository.org/eml/auth/login), and [Jinja EML template generator](https://jinja.palletsprojects.com/en/3.1.x/).
 
 OBIS uses the [GBIF EML profile (version 1.1)](http://rs.gbif.org/schema/eml-gbif-profile/1.1/eml-gbif-profile.xsd). In case data providers use ISO19115/ISO19139, there is a mapping available [here](http://rs.gbif.org/schema/eml-gbif-profile/1.1/eml2iso19139.xsl).
 
@@ -63,7 +82,7 @@ For OBIS, the following 4 terms are the bare minimum required: `Title`, `Citatio
       - `taxonRankValue`
       - `commonName`
 
-- `intellectualRights`: Statement about IPR, Copyright or various Property Rights. Also read the [guidelines on the sharing and use of data in OBIS](http://iobis.org/data/policy/).
+- `intellectualRights`: Statement about IPR, Copyright or various Property Rights. Also read the [guidelines on the sharing and use of data in OBIS](policy.html).
   - `para`
 - `purpose`: A description of the purpose of this dataset.
   - `para`

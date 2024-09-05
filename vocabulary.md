@@ -1,15 +1,15 @@
-## Choosing vocabularies for your dataset
+# Standardizing terms & vocabularies
 
 **Content**
 
-* [Map data fields toDarwin Core](#map-data-fields-to-darwin-core)
-* [Map eMoF measurement identifierss](#map-data-fields-to-darwin-core)
+* [Map data fields to Darwin Core](#map-data-fields-to-darwin-core)
+* [Map eMoF measurement identifiers](#map-emof-measurement-identifiers-to-preferred-vocabulary)
   * [MeasurementOrFact vocabulary background](#measurementorfact-vocabulary-background)
-  * [Guidelines to populate measurementUnitID](#guidelines-to-populate-measurementunitid)
-  * [Guidelines to populate measurementValueID](#guidelines-to-populate-measurementvalueid)
-  * [Guidelines to populate measurementTypeID](#guidelines-to-populate-measurementtypeid)
+  * [Guidelines to populate measurementUnitID](#populate-measurementunitid)
+  * [Guidelines to populate measurementValueID](#populate-measurementvalueid)
+  * [Guidelines to populate measurementTypeID](#populate-measurementtypeid)
 
-### Map data fields to Darwin Core
+## Map data fields to Darwin Core
 
 There are many possible ways of setting up your datasheets, and if you are new to OBIS you likely did not use controlled Darwin Core (DwC) or BODC vocabulary before samples were collected. In mapping your data fields to DwC we recommend documenting your choices so you have a reference to go back to should the need arise. In such a document you should take notes on the choices you made, as well as any actions you had to take (e.g. separate one column into many, convert dates or coordinates, etc.).
 
@@ -46,25 +46,26 @@ Record number, sample number, observation number | occurrenceID (either ID or in
 
 The obistools R package also has the [map_fields function](https://github.com/iobis/obistools#map-column-names-to-darwin-core-terms) that you can use to map your dataset fields to a DwC term.
 
-## Map eMoF measurement identifiers to preferred BODC vocabulary
+## Map eMoF measurement identifiers to preferred vocabulary
 
-### MeasurementOrFact vocabulary background
+### MeasurementOrFact vocabulary background {.unlisted .unnumbered}
 
 The MeasurementOrFact terms `measurementType`, `measurementValue`, and `measurementUnit` are completely unconstrained and can be populated with free text. While free text offers the advantage of capturing complex and as yet unclassified information, there is inevitable semantic heterogeneity (e.g., of spelling, wording, or language) that becomes a challenge for effective data interoperability and analysis. For example, if you were interested in finding all records related to length measurements, you would have to try to account for all the different ways “length” was recorded by data providers (length, Length, len, fork length, etc.).
 
 <div class="callbox-caution caution">
 
 **Caution:**
-You can use the [OBIS Measurement Type search tool](https://mof.obis.org/) to see the diversity of `measurementTypes` that exist across published datasets in OBIS. However any `measurementTypeIDs` listed in this tool are **solely** for consultation purposes. In some cases codes may have been incorrectly chosen for the associated `measurementType`. You should always choose `measurementTypeIDs` based on your own data and the guidelines in this manual.
+You can use the [OBIS Measurement Type search tool](https://mof.obis.org/) to see the diversity of `measurementTypes` that exist across published datasets in OBIS. However note that **any `measurementTypeIDs` listed in this tool are _solely_ for consultation purposes**. In some cases codes may have been incorrectly chosen for the associated `measurementType`. You should always choose `measurementTypeIDs` based on your own data and the guidelines in this manual.
+
 </div>
 
 The 3 identifier terms `measurementTypeID`, `measurementValueID` and `measurementUnitID` are used to standardize the measurement types, values and units.
 
 These three terms should be populated using controlled vocabularies referenced using Unique Resource Identifiers (URIs). For OBIS, we recommend using the internationally recognized [NERC Vocabulary Server](http://www.bodc.ac.uk/resources/products/web_services/vocab/), developed by the British Oceanographic Data Centre (BODC). This server can be accessed through:
 
+* SeaDataNet facet search <https://vocab.seadatanet.org/p01-facet-search> (recommended for searching the P01 collection, detailed below)
 * NERC Vocabulary Server (NVS) search <https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/>
 * Semantic Model Vocabulary Builder <https://www.bodc.ac.uk/resources/vocabularies/vocabulary_builder/>
-* SeaDataNet facet search <https://vocab.seadatanet.org/p01-facet-search>
 
 Controlled vocabularies are incredibly important to ensure data are interoperable - readable by both humans and machines and that the information is presented in an unambiguous manner. Vocabulary collections like NERC NVS2 compile vocabularies from different institutions and authorities (e.g., ISO, ICES, EUNIS), allowing you to map your data to them. In this way, you could search for a single `measurementTypeID` and obtain all related records, regardless of differences in wording or language used in the data.
 
@@ -72,7 +73,7 @@ Each vocabulary “term” in NVS is a concept that describes a specific idea or
 
 Guidelines for populating each mesaurement ID are described below.
 
-#### Guidelines to populate measurementUnitID
+### Populate measurementUnitID
 
 The `measurementUnitID` field is the easiest measurement ID field to populate. It is used to provide a URI for the unit associated with the value provided to measurementValue (e.g. cm, kg, kg/m2). This field should be populated with concepts from the **P06 collection**, BODC-approved data storage units. Documentation for this collection can be found [here](https://github.com/nvs-vocabs/P06).
 
@@ -86,34 +87,35 @@ Some examples of `measurementUnits` and the associated `measurementUnitID` inclu
 * Percent: <http://vocab.nerc.ac.uk/collection/P06/current/UPCT/>
 * Milligrams per litre: <http://vocab.nerc.ac.uk/collection/P06/current/UMGL/>
 
-#### Guidelines to populate measurementValueID
+### Populate measurementValueID
 
 The `measurementValueID` field is used to provide an identifying code for `measurementValues` that are **non-numerical** (e.g. sampling related, sex or life stage designation, etc.).
-**Note: it is not used for standardizing numeric measurements!**
 
-Unlike `measurementUnitID`, there is more than one collection which may be used to search for and use concepts from. The collection is dependent on which type of `measurementValue` you have. See the table below for some common, non-exhaustive examples.
+**Note: it is NOT used for standardizing numeric measurements!**
+
+Unlike `measurementUnitID`, there is more than one collection which may be used to search for and use concepts from. The collection is dependent on which type of `measurementValue` you have. See the table below for some common, non-exhaustive examples. Note that behaviour is an exception in that we recommend to use codes from the ICES vocabulary server, instead of NERC. A video is available on the [OBIS YouTube Vocabulary series](https://www.youtube.com/playlist?list=PLlgUwSvpCFS4hADB7Slf44V1KJauEU6Ul) that demonstrates how to find and select vocabularies for `measurementValueID` from both NREC and ICES.
 
 | Type of measurementValue | Collection | Collection Documentation| Complete Vocabulary List|
 |--------------------------|------------|-------------------------|-------------------------|
-|Sex (gender)| [S10](https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/S10/) | <https://github.com/nvs-vocabs/S10> | <http://vocab.nerc.ac.uk/collection/S10/current/|>
+|Sex (gender)| [S10](https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/S10/) | <https://github.com/nvs-vocabs/S10> | <<http://vocab.nerc.ac.uk/collection/S10/current/>|>
 |Lifestage | [S11](https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/S11/) | <https://github.com/nvs-vocabs/S11> | <http://vocab.nerc.ac.uk/collection/S11/current/> |
 |Sampling instruments and sensors (SeaVoX Device Catalogue)| [L22](https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/L22/) | <https://github.com/nvs-vocabs/L22> | <http://vocab.nerc.ac.uk/collection/L22/current> |
-|Sampling instrument categories (SeaDataNet device categories) | [L05](https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/L05/) | <https://github.com/nvs-vocabs/L05> | <http://vocab.nerc.ac.uk/collection/L05/current|>
+|Sampling instrument categories (SeaDataNet device categories) | [L05](https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/L05/) | <https://github.com/nvs-vocabs/L05> | <<http://vocab.nerc.ac.uk/collection/L05/current>|>
 |Vessels (ICES Platform Codes) | [C17](https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/C17/) | - | <http://vocab.nerc.ac.uk/collection/C17/current> |
 | European Nature Information System Level 3 Habitats | [C35](https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/C35/) | - | <https://vocab.nerc.ac.uk/collection/C35/current/>  |
+| Behaviour | ICES Behaviour collection | | <https://vocab.ices.dk/?codetypeguid=d0268a96-afc9-436e-a4db-4f61c2b9f6ba> |
 
 You can also populate `measurementValueID` with references to papers or manuals that document the sampling protocol used to obtain the measurement. To do this you should use either:
 
 * The DOI of the paper/manual
 * Handle for publications on IOC's [Ocean Best Practices repository](http://www.oceanbestpractices.net/), e.g. [http://hdl.handle.net/11329/304](http://hdl.handle.net/11329/304)
 
-#### Guidelines to populate measurementTypeID
+### Populate measurementTypeID
 
-##### The P01 Collection
+#### The P01 Collection
 
 One of the more important collections for OBIS is the [P01 collection](http://vocab.nerc.ac.uk/search_nvs/P01/?searchstr=&options=identifier,preflabel,altlabel,status_accepted&rbaddfilter=inc&searchstr2=).
 
-{: .highlight}
 > Important note!
 > **P01 codes are required for the `measurementTypeID` field**.
 
@@ -131,7 +133,7 @@ It is important to know that a semantic model, shown below, underlies each P01 c
 
 Note: Not every element is required, but it is important to think about each piece of the model and how it may or may not apply to your measurement. More details about this are described below in the mesaurementTypeID section.
 
-You can use codes from other collections (e.g. P06, Q01) for `measurementValueID` and `measurementUnitID` fields, but for `measurementTypeID` you must always use a code from the P01 collection (limited exceptions, see below).
+You can use codes from other collections (e.g. P06, QL22) for `measurementValueID` and `measurementUnitID` fields, but for `measurementTypeID` you must **always** use a code from the P01 collection.
 
 ##### Selecting P01 codes for measurementTypeID
 
@@ -145,21 +147,24 @@ There are several ways of searching for a P01 code, but we highly recommend usin
 
 When you are comfortable and understand P01 codes, you can also use the [BODC Vocabulary Builder](https://www.bodc.ac.uk/resources/vocabularies/vocabulary_builder/) or simply search for terms directly on the [NERC Vocabulary Server](http://vocab.nerc.ac.uk/search_nvs/).
 
-For measurementTypes related to sampling instruments and/or methods attributes, see the Q01 collection:
+Vocabulary for measurements related to sampling instruments and/or sampling methods can also be found in the P01 collection and are mostly classified as sampling parameters (a search keyword that can be used in the SeaDataNet Facet search). These vocabulary used to fall under the [Q01 collection](https://vocab.nerc.ac.uk/search_nvs/Q01/?searchstr=&options=identifier,preflabel,altlabel,status_accepted&rbaddfilter=inc&searchstr2=), however this collection has been deprecated and the terms have been remapped to P01 codes (see GitHub issue on this [here](https://github.com/nvs-vocabs/P01/issues/227#event-12075354240)). See below for examples of sampling-related measurements and their associated P01 code:
 
-* Vocabulary: [http://vocab.nerc.ac.uk/collection/Q01/current/](http://vocab.nerc.ac.uk/collection/Q01/current/)
-* Search: [https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/Q01/](https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/Q01/)
+* Description of sub-sampling protocol: <https://vocab.nerc.ac.uk/collection/P01/current/DSPSSP01/>
+* Length of sampling track <https://vocab.nerc.ac.uk/collection/P01/current/LENTRACK/>
+* Height of sample collector (e.g. a grab) <https://vocab.nerc.ac.uk/collection/P01/current/MTHHGHT1/0>
+* Name of sampling instrument <https://vocab.nerc.ac.uk/collection/P01/current/NMSPINST/>
+* Sample duration <https://vocab.nerc.ac.uk/collection/P01/current/AZDRZZ01/>
 
-Use the follow decision tree to help you select P01 codes for biological, chemical, and/or physical measurements.
+Use the following decision tree to help you select P01 codes for biological, chemical, physical, and/or sampling measurements. See the [OBIS YouTube Vocabulary series](https://www.youtube.com/playlist?list=PLlgUwSvpCFS4hADB7Slf44V1KJauEU6Ul) for guidance on how to use this tree and examples for different types of `measurementTypeIDs`. Note that the `measurementTypeID`:sampling measurements branch is newly developed, and we are happy to receive feedback if the suggestions are not working for you.
 
 ![Decision tree for measurement identifiers](images/P01-decisionTree.png)
 
-### Requesting new vocabulary terms
+### Request new vocabulary terms
 
 If you have already tried looking for a P01 code and were unable to identify a suitable code for your `measurementType` you must then request a code to be created. Before doing so, make sure you have not over filtered the search results. Then, to request a new term, your request must be submitted via:
 
 * Submit request through the OBIS Vocabulary GitHub repository (<https://github.com/nvs-vocabs/OBISVocabs/issues>)
-  * Requests can also be emailed to vocab.services@bodc.ac.uk if you cannot access GitHub
+  * Requests can also be emailed to <vocab.services@bodc.ac.uk> if you cannot access GitHub
 * Registration with the [BODC Vocabulary Builder](http://vocab.nerc.ac.uk/collection/P01/current/ENTSEX01/)
   * Note: these requests should be based on combinations of existing concepts
 

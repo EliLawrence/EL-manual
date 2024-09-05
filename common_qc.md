@@ -5,8 +5,8 @@
 - [Uncertain temporal range](#uncertain-temporal-range)
 - [Uncertain geolocation](#uncertain-geolocation)
   - [How to use OBIS Maptool](#how-to-use-obis-map-tool)
-  - [How to use Gazetteers to obtain geolocation information](#how-to-use-marine-regions-gazetteer-tool)
-- [Uncertain taxonomic information](#uncertain-taxonomic-information)
+  - [How to use Gazetteers to obtain geolocation information](#using-getty-thesaurus-google-maps-to-obtain-locality-coordinates)
+- [Low confidence taxonomic information](#low-confidence-taxonomic-identification)
 - [Uncertain measurements](#uncertain-measurements)
 
 ### Uncertain temporal range
@@ -17,14 +17,14 @@ When the eventDate or temporal scope of your dataset is in question or provided 
     - Be careful when entering date ranges. For example, entering 1870/1875-08-04 is equivalent to any date between 1870 and 1875-08-04. Date ranges can be used in this way to capture some level of uncertainty in when an event occurred.
 2. If only parts of the date are known (e.g., year but not month and day), you may provide the date in ISO 8601 format while excluding the unknown elements. **Do not use zero** to populate incomplete dates, simply end the date with the known information (e.g., 2011-03 instead of 2011-03-00). Additionally, if the year is unknown, you should only populate the `month` and `day` fields because `eventDate` cannot be formatted to exclude year. In these cases, `eventDate` is not necessary to fill.
 3. If date was provided as a textual description that is accurately interpretable, include the text description in the `verbatimEventDate` field. Then provide the interpreted date in ISO 8601 format in the `eventDate` field. Be sure to document any other important information in ‘eventRemarks’.
-4. For historical dates that do not conform to the ISO 8601 format, [guidelines](common_formatissues.html#historical-data) are still under development. But the dwc:class:GeologicalContext can be used to capture some information for records pertaining to fossilized specimens.
+4. For historical dates that do not conform to the ISO 8601 format, [guidelines](common_formatissues.html#historical-data) have been developed by the OBIS Historical Data Project team. The [dwc:class:GeologicalContext](https://dwc.tdwg.org/terms/#geologicalcontext) can be used to capture some information for records pertaining to fossilized specimens, and the [Chronometric Age Extension](https://chrono.tdwg.org/) can also be used. Note that currently when publishing, the Chronometric Age extension will not be aggregated with OBIS data, but this extension will be available when an individual dataset is downloaded. This applies to any other extensions not currently implemented.
 
 ### Uncertain geolocation
 
 Sometimes locality information can be difficult to interpret, especially if records originate from historical data with vague descriptions, or descriptions/names of areas that no longer exist. If your dataset is missing `decimalLongitude` and `decimalLatitude`, but the locality name is given, there are a number of approaches you can take. You can:
 
 - Use the OBIS [Map Tool](https://obis.org/maptool/) to [obtain a WKT](access.html#mapper) string for point, line, or polygon features to put in the `footprintWKT` field. The corresponding projection should be placed in the `footprintSRS` field. Note the accepted spatial reference system for OBIS is EPSG:4326 (WGS84). The [Marine Regions Gazetteer](https://www.marineregions.org/gazetteer.php?p=search) is available for use within the Map tool to help find locations.
-- Search for locations with the [Marine Regions Gazetteer](https://www.marineregions.org/gazetteer.php?p=search) to obtain coordinates and a `locationID`. For information on how to use this tool, [see below](LINK to below tutorial).
+- Search for locations with the [Marine Regions Gazetteer](https://www.marineregions.org/gazetteer.php?p=search) to obtain coordinates and a `locationID`. For information on how to use this tool, [see below](#how-to-use-marine-regions-gazetteer-tool).
   - You can also use the [Getty Thesaurus of Geographic Names](http://www.getty.edu/research/tools/vocabularies/tgn/) or Google Maps. [See below](#how-to-use-obis-map-tool)
   - **Note:** Always be sure to fill in the `georeferenceSources` field to indicate the sources you used to obtain locality information when appropriate
 - If you have a set of points, a line, or a polygon (perhaps from the Map tool), you can find the centroid of the features using either [obistools::calculate_centroid](https://github.com/iobis/obistools#calculate-centroid-and-radius-for-wkt-geometries) or [PostGIS](https://postgis.net/docs/ST_PointOnSurface.html), and then enter this coordinate into the `decimalLatitude` and `decimalLongitude` fields. This PostGIS guideline will help you select a centroid that is guaranteed to fall within your designated area.
@@ -44,14 +44,19 @@ GBIF also provides some guidelines for [difficult localities](https://docs.gbif.
 
 ### How to use OBIS Map Tool
 
-A video tutorial on how to use our Map tool will be available soon. This video covers the following topics:
+A video tutorial on how to use our Map tool is available below. This video covers the following topics:
 
 1. Estimating coordinates
-2. Geocoding using names from Marine Regions
-3. Using the line and polygon tool
-4. Obtaining and exporting WKT* strings
+2. Using the line and polygon tool
+3. Obtaining and exporting WKT strings
 
-*[Well-Known Text (WKT)](https://en.wikipedia.org/wiki/Well-known_text) strings are representations of the shape of the location and can be provided in the `footprintWKT` field. This is particularly useful for tracks, transects, tows, trawls, habitat extent, or when an exact location is not known. WKT strings can be created using the Map tool’s WKT function. The Map tool also calculates a midpoint and a radius for line or polygon features, which can then be added to `decimalLongitude`, `decimalLatitude`, and `coordinateUncertaintyInMeters`, respectively. As mentioned above, the [`obistools::calculate_centroid`](https://github.com/iobis/obistools#calculate-centroid-and-radius-for-wkt-geometries) function can be used to calculate the centroid and radius for WKT polygons. This [wktmap](https://wktmap.com/) tool can also be used to visualize and share WKT strings.
+[Well-Known Text (WKT)](https://en.wikipedia.org/wiki/Well-known_text) strings are representations of the shape of the location and can be provided in the `footprintWKT` field. This is particularly useful for tracks, transects, tows, trawls, habitat extent, or when an exact location is not known. WKT strings can be created using the Map tool’s WKT function. The Map tool also calculates a midpoint and a radius for line or polygon features, which can then be added to `decimalLongitude`, `decimalLatitude`, and `coordinateUncertaintyInMeters`, respectively. As mentioned above, the [`obistools::calculate_centroid`](https://github.com/iobis/obistools#calculate-centroid-and-radius-for-wkt-geometries) function can be used to calculate the centroid and radius for WKT polygons. This [wktmap](https://wktmap.com/) tool can also be used to visualize and share WKT strings.
+
+  <iframe width="560" height="315"
+src="https://www.youtube.com/embed/XM23WEvE364"
+frameborder="0"
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen></iframe>
 
 ### Using Getty Thesaurus & Google Maps to obtain locality coordinates
 
@@ -94,6 +99,14 @@ Since we are obtaining all this locality data from Marine Regions, we must also 
 |---|---|---|---|---|---|---|
 |Bay of Fundy | <http://marineregions.org/mrgid/4289> | 44.97985204 | -65.80601556 | 196726 | Marine Regions | Coordinates are a midpoint inferred from location name|
 
+The OBIS Mapper has built-in access to the Marine Regions Gazetteer. The video below demonstrates how to use this built-in tool, as well as how to navigate the Marine Regions Gazetter to obtain important georeferencing information to include in your data.
+  
+  <iframe width="560" height="315"
+src="https://www.youtube.com/embed/XM23WEvE364"
+frameborder="0"
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen></iframe>
+
 #### DwC Terms obtained from Maptool and Gazetteers
 
 Below is a table summarizing the different DwC terms you can obtain from the OBIS Maptool or from the Gazeteers discussed above.
@@ -119,20 +132,22 @@ In case of low confidence taxonomic identifications, and/or the scientific name 
 Take an example specimen named Pterois cf. volitans. The associated occurrence record would have the following taxonomic information:
 
 - `scientificName` = Pterois
-- `identificationQualifier` = cf.
-- `specificEpithet` = volitans
+- `identificationQualifier` = cf. volitans
+- `specificEpithet` = *leave blank*
 - `scientificNameID` = the one for Pterois
-- `taxonRank` = species
+- `taxonRank` = genus
 
 If the provided name is unaccepted in WoRMS, it is okay to use the unaccepted name in this field. `scientificNameID` should contain the [WoRMS LSID](name_matching.html) for the genus.
 
-There is a new Darwin Core term [`verbatimIdentification`](https://dwc.tdwg.org/terms/#dwc:verbatimIdentification) meant for containing the originally documented name, however this term is not yet implemented in OBIS so if you populate this field it will not be indexed alongside your data. However you can use `originalNameUsage` to document original species names.
+There is a new Darwin Core term [`verbatimIdentification`](https://dwc.tdwg.org/terms/#dwc:verbatimIdentification) meant for containing the originally documented name, however this term is not yet implemented in OBIS so if you populate this field it will not be indexed alongside your data. However you can use `identificationRemarks` to add extra information.
 
 The use and definitions for additional Open Nomenclature (ON) signs (`identificationQualifier`) can be found in [Open Nomenclature in the biodiversity era](https://doi.org/10.1111/2041-210X.12594), which provides examples for using the main Open Nomenclature qualifiers associated with physical specimens (Figure 1). Whereas the publication [Recommendations for the Standardisation of Open Taxonomic Nomenclature for Image-Based Identiﬁcations](https://www.frontiersin.org/articles/10.3389/fmars.2021.620702/full) provides examples and definitions for identificationQualifiers for image-based non-physical specimens  (Figure 2).
 
 ![*Figure 1. Flow diagram with the main Open Nomenclature qualifiers associated with physical specimens. The degree of confidence in the correct identifier increases from the top down. More info and figure copied from [Open Nomenclature in the biodiversity era](https://doi.org/10.1111/2041-210X.12594).*](images/fig1-openNomenclature.png){width=80%}
 
 ![*Figure 2: Flow diagram with the main Open Nomenclature qualifiers for the identification of specimens from images (non-physical, image-based) . More information and figure copied from [Recommendations for the Standardisation of Open Taxonomic Nomenclature for Image-Based Identiﬁcations](https://www.frontiersin.org/articles/10.3389/fmars.2021.620702/full)*](images/fig2-flowDiagram.jpg){width=80%}
+
+If the occurrence is instead unknown or new to science, it should be documented according to recommendations by [Horton et al. 2021](https://www.frontiersin.org/articles/10.3389/fmars.2021.620702/full). Populate the `scientificName` field with the genus, and in `identificationQualifer` provide the ON sign 'sp.'. Be sure to also indicate the reason why species-level identification is unavailable by supplementing 'sp.' with either stet. (stetit) or indet. (indeterminabilis). If neither of these are applicable, (e.g. for undescribed new species), add a unique taxon identifier code after 'sp.' to `identificationQualifer`. For example Eurythenes sp. DISCOLL.PAP.JC165.674. When adding a taxon identifier code, please avoid simple alphanumeric codes (i.e. Eurythenes sp. 1, Eurythenes sp. A). Like creating `eventIDs` or `occurrenceIDs`, try to provide more complex and globally unique identifiers. Identifiers could be constructed by combining higher taxonomic information with information related to a collection, institution, museum or collection code, sample number or museum accession number, expedition, dive number, or timestamp. This ensures namestrings will remain unique within OBIS. We also recommend including these temporary names on specimen labels for physical specimens.
 
 #### Changes in taxonomic classification
 

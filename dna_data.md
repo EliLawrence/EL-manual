@@ -1,24 +1,26 @@
-## DNA dervived data
+## DNA derived data
 
 <div class="callbox-blue">
+
 *Note: OBIS guidelines have not yet been updated to reflect changes that allow DNA Derived data to be linked to Event core tables. We will update this page soon.*
+
 </div>
 
 **Contents:**
 
-- [Introduction](#introduction)
+- [Introduction](#introduction-to-dna-data)
 - [How to find genetic data in OBIS](#how-to-find-genetic-data-in-obis)
-- [Guidelines for eDNA and metabarcoding data](#guidelines-for-compiling-genetic-data-edna-and-metabarcoding-datasets)
+- [Guidelines for compiling eDNA and metabarcoding data](#compiling-edna-and-metabarcoding-datasets)
   - [eDNA & DNA Derived use cases](#edna-and-dna-derived-data-example)
-  - [16S rRNA metabarcoding example](#16s-rrna-gene-metabarcoding-data-of-pico--to-mesoplankton)
+  - [16S rRNA metabarcoding example](#16s-rrna-gene-metabarcoding-data-of-pico-to-mesoplankton)
 - [Unknown sequences](#unknown-sequences)
-- [Guidelines for qPCR data](#guidelines-for-compiling-genetic-data-qpcr)
+- [Guidelines for compiling qPCR data](#compiling-qpcr-datasets)
 
-### Introduction
+### Introduction to DNA data {.unlisted .unnumbered}
 
 DNA derived data are increasingly being used to document taxon occurrences. This genetic data may come from a sampling event, an individual organism, may be linked to physical material (or not), or may result from DNA detection methods e.g., metabarcoding or qPCR. Thus genetic data may reflect a single organism, or may include information from bulk samples with many individuals. Still, DNA-derived occurrence data of species should be documented as standardized and as reproducible as possible.
 
-To ensure DNA data are useful to the broadest possible community, GBIF published a guide entitled [Publishing DNA-derived data through biodiversity data platforms](https://docs.gbif-uat.org/publishing-dna-derived-data/1.0/en/). This guide is supported by the [DNA derived data extension for Darwin Core](http://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml), which incorporates MIxS terms into the Darwin Core standard. There are 5 categories for which genetic data could fall into:  
+To ensure DNA data are useful to the broadest possible community, a community guide entitled [Publishing DNA-derived data through biodiversity data platforms](https://docs.gbif-uat.org/publishing-dna-derived-data/1.0/en/) was published by GBIF, OBIS, and others. This guide is supported by the [DNA derived data extension for Darwin Core](http://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml), which incorporates MIxS terms into the Darwin Core standard. There are 5 categories for which genetic data could fall into:  
 
 1. DNA-derived occurrences
 2. Enriched occurrences
@@ -28,7 +30,7 @@ To ensure DNA data are useful to the broadest possible community, GBIF published
 
 For a guide and decision tree on determining which category your data falls into, see the [Data packaging and mapping](https://docs.gbif.org/publishing-dna-derived-data/1.0/en/#data-packaging-and-mapping) section of the GBIF guide. Refer to the [examples below](dna_data.html#edna--dna-derived-data) for use case examples of eDNA and DNA derived data (Category 1).
 
-> Currently, genetic data **must** be published with Occurrence core, not Event core. eDNA and DNA derived data are then linked to the Occurrence core data table with the use of `occurrenceID` and/or `eventID`. See below for further guidance on compiling genetic data. A [new data model](https://www.gbif.org/new-data-model) is being developed by GBIF may change this, however as it is not implemented yet, we focus on the current Darwin Core recommendations here.
+> Currently, genetic data **must** be published with Occurrence core, not Event core. eDNA and DNA derived data are then linked to the Occurrence core data table with the use of `occurrenceID` and/or `eventID`. See below for further guidance on compiling genetic data. A [new data model](https://www.gbif.org/new-data-model) is being developed by GBIF and the OBIS community that may change this, however as it is not implemented yet, we focus on the current Darwin Core recommendations here.
 
 To format datasets, you will need to have information on the sequence and possible taxonomy for each occurrence record associated with a DNA sample. Genetic data is often recorded in multiple different files, and this might be the type of format received from data providers. Important data tables can include: an OTU-table, a taxonomy table, a sample information table, and a .fasta file with sequences. The OTU-table is a sequence by sample table, which records the quantity of each unique sequence found in each sample. Sequences are usually referred to by an ID, which is unique only in the dataset (e.g. asv1, asv2, asv3 …). The taxonomy table is a sequence by taxonomy table, which records the taxonomy linked to each unique sequence, as defined by the annotation method. The sample information table records the metadata of each sample (e.g. location, time, and collection method).  Finally the .fasta file records the actual DNA sequence that is linked to each sequence id.
 
@@ -38,13 +40,33 @@ Although this data is in multiple files, each unique sequence by sample combinat
 
 Doing this will help you when following the guidelines below.
 
-### How to find genetic data in OBIS
+### How to find genetic data in OBIS {.unlisted .unnumbered}
 
-**Sequence Search tool**
+To find genetic data in OBIS we recommend using the R package robis, using the `occurrence` function. You must set `extensions` and/or `hasextensions` to "DNADerivedData" to ensure extension records are included in the results. `hasextensions` will exclude any occurrence that does not have the specified extension, in our case, DNADerivedData. The `extensions` parameter specifies which extensions to include. To obtain the DNA data, you have to extract the information from the extension using the `unnest_extension()` function. You can specify as many fields from the Occurrence table to be included, and pass them to the `fields` parameter. See the code below for an example. See also this [vignette](https://iobis.github.io/notebook-dnaderiveddata/) for a more detailed example, including how you can work further with these sequences in R.
 
-If you want to search for sequences or related sequences in OBIS, you can do so with the [OBIS Sequence Search](https://sequence.obis.org/).
+```R
+dna_occ<-occurrence("Dinophyceae",hasextensions="DNADerivedData", extensions="DNADerivedData")
+dnaseqs <-unnest_extension(dna_datasets, "DNADerivedData", fields = c("id", "phylum", "class", "family", "genus", "species"))
+dnaseqs["DNA_sequence"]
+# A tibble: 706 × 1
+   DNA_sequence                                                                                              
+   <chr>                                                                                                     
+ 1 AGCTCCAATAGCGTATATTAAAGTTGTTGCAGTTAAAACGCTCGTAGTCGGATTTCGGGGCGGGCCGACCGGTCTGCCGATGGGTATGCACTGGCCGGCGCGTCC…
+ 2 AGCTCCAATAGCGTATATTAAAGTTGTTGCAGTTAAAACGCTCGTAGTCGGATTTCGGGGCGGGCCGACCGGTCTGCCGATGGGTATGCACTGGCCGGCGCGTCC…
+ 3 GCTCCTACCGATTGAATGATCCGGTGAGGCCCCCGGACTGCGGCGCCGCAGCTGGTTCTCCAGCCGCGACGCCGCGGGAAGCTGTCCGAACCTTATCATTTAGAG…
+ 4 AGCTCCAATAGCGTATATTAAAGTTGTTGCAGTTAAAACGCTCGTAGTCGGATTTCGGGGCGGGCCGACCGGTCTGCCGATGGGTATGCACTGGCCGGCGCGTCC…
+ 5 AGCTCCAATAGCGTATATTAAAGTTGTTGCAGTTAAAACGCTCGTAGTCGGATTTCGGGGCGGGCCGACCGGTCTGCCGATGGGTATGCACTGGCCGGCGCGTCC…
+ 6 GCTCCTACCGATTGAATGATCCGGTGAGGCCCCCGGACTGCGGCGCCGCAGCTGGTTCTCCAGCCGCGACGCCGCGGGAAGCTGTCCGAACCTTATCATTTAGAG…
+ 7 AGCTCCAATAGCGTATATTAAAGTTGTTGCAGTTAAAACGCTCGTAGTCGGATTTCGGGGCGGGCCGACCGGTCTGCCGATGGGTATGCACTGGCCGGCGCGTCC…
+ 8 AGCTCCAATAGCGTATATTAAAGTTGTTGCAGTTAAAACGCTCGTAGTCGGATTTCGGGGCGGGCCGACCGGTCTGCCGATGGGTATGCACTGGCCGGCGCGTCC…
+ 9 GCTCCTACCGATTGAATGATCCGGTGAGGCCCCCGGACTGCGGCGCCGCAGCTGGTTCTCCAGCCGCGACGCCGCGGGAAGCTGTCCGAACCTTATCATTTAGAG…
+10 AGCTCCAATAGCGTATATTAAAGTTGTTGCAGTTAAAACGCTCGTAGTCGGATTTCGGGGCGGGCCGACCGGTCTGCCGATGGGTATGCACTGGCCGGCGCGTCC…
+# … with 696 more rows
+```
 
-1. Copy your sequence in the provided box (an example sequence is provided for testing as well)
+Additionally, a prototype [Sequence Search tool](https://sequence.obis.org/) is in development that allows you to search for sequences or related sequences in OBIS. Note that the tool is not always up to date so use caution until the prototype is fully developed. To use the tool:
+
+1. Copy your sequence in the provided box (an example sequence is provided for testing)
 2. Press the Search button
 3. View results below
 4. You can also change the Minimum Alignment Score slider in the map view to see location of sequences
@@ -53,15 +75,16 @@ The search result will show you taxonomic information for species sequences that
 
 **OBIS Mapper**
 
-If you wish to find records that have the DNADerivedData extension you can add this filter when using the [Mapper](https://mapper.obis.org/).
+You can use the [OBIS Mapper](https://mapper.obis.org/) to obtain records that include the DNADerivedData extension by addding a filter for the extension when using the tool. To do this:
 
-1. Navigate to the Criteria tab
-2. Open the Extensions section
+1. From the OBIS Mapper, navigate to the Criteria tab (the plus (+) sign)
+2. Open the Extensions dropdown section
 3. Check the box for DNADerivedData
-4. Click save to create the layer
-5. [Download the data from the layer](access.html)
+4. Add any other filters you want, e.g. taxonomic, then click save to create the layer
+5. Switch to the Layers tab
+6. Download the data from the layer by clicking the green button (see [Data Access](access#mapper.html) for more on using the OBIS Mapper)
 
-### Guidelines for compiling genetic data: eDNA and metabarcoding datasets
+### Compiling eDNA and metabarcoding datasets
 
 As mentioned above, you will need to have information on the taxonomy and sequences for each occurrence record associated with a DNA sample. You should first fill in the [Occurrence core table](format_occurrence.html), and then complete the DNA Derived Data extension (as well as the eMoF extension, if applicable, for any measurements taken).
 
@@ -78,10 +101,11 @@ In addition to the [usual required terms for Occurrence datasets](format_occurre
 - Class Identification | DwC: identificationReferences
 - Class Identification | DwC: verbatimIdentification
 - Class Taxon | DwC: taxonConceptID
+- Class Material Sample | DwC:materialSampleID
 
-For `organismQuantity` and `sampleSizeValue` in eDNA datasets, the quantities recorded with sequencing studies always represent relative abundance to the total reads in the sample, and cannot be directly compared across samples. This is due to the nature of the sample processing protocol and the amplification of DNA with PCR, which biases the original quantities. In `organismQuantity`, record the amount of a unique sequence in a specific sample (i.e. 33 reads). In `sampleSizeValue`, record the total number of all reads in that specific sample (i.e. 15310 reads). This information will allow people accessing the data to calculate the relative abundance of that sequence in the sample. The fields `organismQuantityType`, and `sampleSizeUnit`, should be populated with “DNA sequence reads”, as it is of high importance that sequence abundances are not confused with organism abundances recorded by traditional methods. The abundance information can usually be found in the “OTU-table”.
+For `organismQuantity` and `sampleSizeValue` in eDNA datasets, the quantities recorded with sequencing studies always represent **relative abundance to the total reads in the sample**, and cannot be directly compared across samples. This is due to the nature of the sample processing protocol and the amplification of DNA with PCR, which biases the original quantities. In `organismQuantity`, record the **amount of a unique sequence in a specific sample** (i.e. 33 reads). In `sampleSizeValue`, record the **total number of all reads** in that specific sample (i.e. 15310 reads). This information will allow people accessing the data to calculate the relative abundance of that sequence in the sample. The fields `organismQuantityType`, and `sampleSizeUnit`, should be populated with “DNA sequence reads”, as it is of high importance that sequence abundances are not confused with organism abundances recorded by traditional methods. The abundance information can usually be found in the “OTU-table”.
 
-`associatedSequences` should contain a link to the “raw” sequences deposited in a public database or list of identifiers for the genetic sequence associated with the occurrence record (e.g. GenBank). The actual sequence of the occurrence will be documented in the DNA Derived Data extension.
+`associatedSequences` should contain a reference to the URL domain where genetic sequence information associated with the Occurrence can be found, e.g. a link, identifier, or list (concatenated and separated) of identifiers. Can link to archived raw barcode reads and/or associated genome sequences, like a public repository. It is recommended that links contain the domain name (e.g. NCBI) in the URL, for example: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA887898/. The actual sequence of the occurrence will be documented in the DNA Derived Data extension.
 
 `identificationRemarks` should be used to record information on how the taxonomic information of the occurrence was reached against which reference database, and, if possible, with which confidence. For example “RDP annotation confidence: 0.96, against reference database: GTDB”. This information should be recorded in the bioinformatic protocol of the study. Note: this information will also be recorded in the DNA derived extension in the fields `otu_seq_comp_appr` and `otu_db`.
 
@@ -92,7 +116,8 @@ For `organismQuantity` and `sampleSizeValue` in eDNA datasets, the quantities re
 `samplingProtocol` can contain free-text that briefly describes the methods used to obtain the sample, or a link to a protocol that is recorded elsewhere.
 
 **DNA Derived Data extension**
-The DNADerivedData extension is meant to capture information related to the sampled DNA, including sampling, processing, and other bioinformatic methods. The following (free-text) terms are required or highly recommended for eDNA and metabarcoding datasets. Note that some terms will be different for qPCR data (see [below](#guidelines-for-compiling-genetic-data-qpcr))
+
+The DNADerivedData extension is meant to capture information related to the sampled DNA, including sampling, processing, and other bioinformatic methods. The following (free-text) terms are required or highly recommended for eDNA and metabarcoding datasets. Note that some terms will be different for qPCR data (see [below](#compiling-qpcr-datasets))
 
 - DNA Derived | DwC: DNA_sequence
 - DNA Derived | DwC: sop
@@ -128,7 +153,7 @@ When data tables are formatted and you are ready to publish it on the IPT, it wi
 
 #### eDNA and DNA derived data example
 
-The following example use cases draw on both the [GBIF guide](https://docs.gbif-uat.org/publishing-dna-derived-data/1.0/en/) and the [DNA derived data extension](https://rs.gbif-uat.org/extensions.html#http) to illustrate how to incorporate a DNA derived data extension file into a Darwin Core archive. Note: for the purposes of this section, only required Occurrence core terms are shown, in addition to all eDNA & DNA specific terms. For additional Occurrence core terms, refer to [Occurrence](darwin_core.html#occurrence).
+The following example use cases draw on both the [DNA-derived data guide](https://docs.gbif-uat.org/publishing-dna-derived-data/1.0/en/) and the [DNA derived data extension](https://rs.gbif-uat.org/extensions.html#http) to illustrate how to incorporate a DNA derived data extension file into a Darwin Core archive. Note: for the purposes of this section, only required Occurrence core terms are shown, in addition to all eDNA & DNA specific terms. For additional Occurrence core terms, refer to [Occurrence](darwin_core.html#occurrence).
 
 ##### eDNA data from Monterey Bay, California
 
@@ -188,7 +213,7 @@ For a detailed description of the steps taken to process the data, including alg
 | GTACACACCGCCCGTC   | TGATCCTTCTGCAGGTTCACCTAC | 1391f                   | EukBr                   | Amaral-Zettler et al. 2009 |
 | GTACACACCGCCCGTC   | TGATCCTTCTGCAGGTTCACCTAC | 1391f                   | EukBr                   | Amaral-Zettler et al. 2009 |
 
-##### 16S rRNA gene metabarcoding data of Pico- to Mesoplankton
+##### 16S rRNA gene metabarcoding data of Pico to Mesoplankton
 
 DNA derived datasets can also include an extendedMeasurementsOrFact (eMoF) extension file, in addition to the Occurrence and DNA derived extensions. In this example, environmental measurements were provided in an eMoF file, in addition to the DNA derived data and occurrence data. Here we show how to incorporate such measurements in the extensions.
 
@@ -266,7 +291,7 @@ It is important to understand the significance of unknown and uncharacterized se
 
 For unknown sequences it is required to populate the `scientificName` field with “Incertae sedis”, or the lowest taxonomic information if available. For example, if it is only known which Class a sequence belongs to, populate `scientificName` with the associated Class name. Similarly, `scientificNameID` should be populated with the WoRMS LSID for the name given to `scientificName`. For records recorded as Incertae sedis, `scientificNameID` should be populated with urn:lsid:marinespecies.org:taxname:12. We recommend also populating `verbatimIdentification` with the name that was originally documented (e.g. phototrophic eukaryote).
 
-### Guidelines for compiling genetic data: qPCR
+### Compiling qPCR datasets
 
 Compiling qPCR data is a little bit different than compiling eDNA or metabarcoding data. One of the main differences is that there are no sequences recorded in the `DNA_sequence` field of the DNA derived data extension. Instead, occurrences are based on detections made using species-specific primers and either qPCR (Quantitative Polymerase Chain Reaction) or ddPCR (Droplet-Digital Polymerase Chain Reaction), no sequencing is done.
 
@@ -283,7 +308,7 @@ In addition to the Occurrence core terms, it is strongly recommend to including 
 - Class Event | DwC: samplingProtocol
 - Class Material Sample | DwC:materialSampleID
 
-For ddPCR, `organismQuantity` refers to the number of positive droplets/chambers in the sample, and `organismQuantityType` is the partition type (e.g., ddPCR droplets, dPCR chambers). `sampleSizeValue` will be populated with the number of accepted partitions, e.g. meaning accepted droplets in ddPCR or chambers in dPCR. `sampleSizeUnit` is the partition type, which should be the same as `organismQuantityType`. All four of these fields are particularly important to include for ddPCR data.
+For ddPCR, `organismQuantity` refers to the **number of positive droplets/chambers in the sample**, and `organismQuantityType` is the partition type (e.g., ddPCR droplets, dPCR chambers). `sampleSizeValue` will be populated with the **number of accepted partitions**, e.g. meaning accepted droplets in ddPCR or chambers in dPCR. `sampleSizeUnit` is the partition type, which should be the same as `organismQuantityType`. All four of these fields are particularly important to include for ddPCR data.
 
 For qPCR, these fields can be used for recording e.g. the number of copies that were calculated for the target gene in the sample. In this case `organismQuantityType` needs to contain the exact type of the measurement reported in the results. The field accepts any string, but the best practice would be to add a URI pointing to a vocabulary, as is done in the extendedMeasurementOrFact extension. The terms `sampleSizeValue` and `sampleSizeUnit` would not be used in this case.
 
@@ -343,11 +368,11 @@ As with the metabarcoding dataset, the details of the PCR conditions and primers
 
 The main terms that are important for the quantification information and are different from the metabarcoding dataset are `baselineValue`, `thresholdQuantificationCycle` and `quantificationCycle`. The terms `pcr_primer_lod`, `pcr_primer_loq`, `probeQuencher`, `probeReporter` are additional terms specific for qPCR assays. The `baselineValue` indicates the number of cycles below which the signal is considered only background noise. The `quantificationCycle` is the most important and indicates at which cycle the particular sample crossed the detection threshold, this will be different for each sample. It is recommended to record this information, but not all of this may be easily available.
 
-### OBIS Bioinformatics Pipline
+### OBIS Bioinformatics Pipeline
 
 OBIS recognizes the vast amount of data generated from marine DNA sampling, especially from eDNA sequencing. Thus we have been developing a bioinformatics pipeline to facilitate publication of this data into OBIS. The pipeline was initially developed for the [PacMAN project (Pacific Islands Marine Bioinvasions Alert Network)](https://pacman.obis.org/).
 
-Broadly speaking, it creates a framework that receives raw sequence data from eDNA samples, cleans, aligns, classifies sequences, and finally outputs a DwC-compatible table. The pipeline is currently under development and for now only accepts CO1 data. It will be extended to include other genetic markers in the future. More details about the PacMAN pipeline can be found on its [associated GitHub repository](https://github.com/iobis/PacMAN-pipeline). Once fully online, we will provide guidelines on how to use the pipeline.
+Broadly speaking, it creates a framework that receives raw sequence data from eDNA samples, cleans, aligns, classifies sequences, and finally outputs a DwC-compatible table. To note, the pipeline automatically searches for aphia-IDs from WoRMS to include in the DWC-compatible tables. In addition the output also contains a phyloseq object, which is compatible with the commonly used phyloseq R package for sequence data analysis. The pipeline is under active development. More details about the PacMAN pipeline can be found on its [associated GitHub repository](https://github.com/iobis/PacMAN-pipeline).
 
 OBIS is developing guidelines and pipelines to accept other data types, such as:
 
