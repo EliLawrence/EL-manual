@@ -18,7 +18,7 @@ jobs:
       - uses: r-lib/actions/setup-pandoc@v2
       - name: Install R packages
         run: 
-          Rscript -e 'install.packages(c("rmarkdown", "bookdown","reactable","webshot2","DT","fontawesome","rsvg","tinytex"))'
+          Rscript -e 'install.packages(c("rmarkdown", "bookdown","reactable","webshot","DT","fontawesome","rsvg","tinytex"))'
       - name: Install phamtomJS for webshot
         run: 
           Rscript -e 'webshot::install_phantomjs()'
