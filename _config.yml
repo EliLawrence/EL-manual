@@ -16,9 +16,3 @@ kramdown:
 remote_theme: just-the-docs/just-the-docs
 plugins:
   - jekyll-remote-theme
-callouts:
-  warning:
-    title: Warning
-    color: red
-  highlight:
-    color: yellow
