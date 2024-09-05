@@ -116,6 +116,7 @@ For `organismQuantity` and `sampleSizeValue` in eDNA datasets, the quantities re
 `samplingProtocol` can contain free-text that briefly describes the methods used to obtain the sample, or a link to a protocol that is recorded elsewhere.
 
 **DNA Derived Data extension**
+
 The DNADerivedData extension is meant to capture information related to the sampled DNA, including sampling, processing, and other bioinformatic methods. The following (free-text) terms are required or highly recommended for eDNA and metabarcoding datasets. Note that some terms will be different for qPCR data (see [below](#compiling-qpcr-datasets))
 
 - DNA Derived | DwC: DNA_sequence

@@ -28,6 +28,7 @@ output:
       in_header: [google_analytics.html]
     split_by: rmd
     css: "style.css"
+    fig_caption: TRUE
     config:
       toc:
         collapse: none
