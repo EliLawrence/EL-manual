@@ -18,6 +18,7 @@ Note that when you publish your dataset on the IPT, if you use a term not listed
 
 ```{r, echo=F}
 library(downloadthis)
+library(webshot)
 download_file(
     path = "docs/OBIS-termchecklist.csv",
     output_name = "OBISchecklist",
@@ -26,7 +27,6 @@ download_file(
     button_type = "default",
     has_icon = TRUE,
     icon = "fa fa-save",
-    class = "hvr-sweep-to-left",
     style = "background-color: #1e74ac; color: white; border: none; padding: 10px 20px; font-size: 16px; border-radius: 5px;
             margin-top: 5px; margin-bottom: 20px;"
   )
