@@ -70,11 +70,18 @@ The manual is designed to provide guidelines for OBIS nodes and data providers, 
 
 The OBIS manual is a dynamic document and is revised on a regular basis. We welcome suggestions for additions and changes, which can be sent to [helpdesk@obis.org](mailto:helpdesk@obis.org), the OBIS Capacity Development Task Team at [training@obis.org](mailto:training@iobis.org), and/or submitted as issues at <https://github.com/iobis/manual/issues>. 
 
+
 ## Guidelines on the sharing and use of data in OBIS
 
-It is important that our data providers, as well as all data users, are aware and agree on the [OBIS guidelines on the sharing and use of data in OBIS](policy.html), which was adoped at the [12th OBIS Steering Group](https://oceanexpert.org/event/3965). **NB:** Data users should be aware of the licenses associated with all datasets downloaded from OBIS (e.g. CC0, CC-BY, CC-BY-NC).
+It is important that our data providers, as well as all data users, are aware and agree on the [OBIS guidelines on the sharing and use of data in OBIS](policy.html), which was adoped at the [12th OBIS Steering Group](https://oceanexpert.org/event/3965).
+
+<div class="callbox-blue">
+
+`r fontawesome::fa(name="circle-exclamation", fill="darkblue")` **NB:** Data users should be aware of the licenses associated with any dataset downloaded from OBIS (e.g. CC0, CC-BY, CC-BY-NC). 
+
+</div>
 
 ## Acknowledgements
 
-This manual received contributions from (in alphabetical order): [Ward Appeltans](https://www.oceanexpert.net/expert/11770), [Abby Benson](https://orcid.org/0000-0002-4391-107X), [Samuel Bosch](https://www.oceanexpert.net/expert/26577),[Yi-Ming Gan](https://orcid.org/0000-0001-7087-2646), [Philip Goldstein](https://www.oceanexpert.net/expert/18051),[Mary Kennedy](https://www.oceanexpert.net/expert/13557), [Elizabeth Lawrence](https://oceanexpert.org/expert/50997), [Carolina Peralta Brichtova](https://oceanexpert.org/expert/26345), [Pieter Provoost](https://www.oceanexpert.net/expert/26192), [Saara Suominen](https://oceanexpert.org/expert/43352), [Serita van der Wal](https://oceanexpert.org/expert/49876), and [Leen Vandepitte](https://www.oceanexpert.net/expert/12313).
+This manual has received contributions from (in alphabetical order): [Ward Appeltans](https://www.oceanexpert.net/expert/11770), [Abby Benson](https://orcid.org/0000-0002-4391-107X), [Samuel Bosch](https://www.oceanexpert.net/expert/26577),[Yi-Ming Gan](https://orcid.org/0000-0001-7087-2646), [Philip Goldstein](https://www.oceanexpert.net/expert/18051), [Mary Kennedy](https://www.oceanexpert.net/expert/13557), [Elizabeth Lawrence](https://oceanexpert.org/expert/50997), [Carolina Peralta Brichtova](https://oceanexpert.org/expert/26345), [Pieter Provoost](https://www.oceanexpert.net/expert/26192), [Saara Suominen](https://oceanexpert.org/expert/43352), [Serita van der Wal](https://oceanexpert.org/expert/49876), and [Leen Vandepitte](https://www.oceanexpert.net/expert/12313).
  
