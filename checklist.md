@@ -16,10 +16,10 @@ Note that when you publish your dataset on the IPT, if you use a term not listed
   - x/- term is recommended only for the Occurrence core
   - -/x term is recommended only for the Occurrence extension
 
-```{r, echo=F}
+```{r, checklist-button, echo=FALSE}
 library(downloadthis)
 library(webshot)
-download_file(
+downloadthis::download_file(
     path = "docs/OBIS-termchecklist.csv",
     output_name = "OBISchecklist",
     output_extension = ".csv",
@@ -27,8 +27,7 @@ download_file(
     button_type = "default",
     has_icon = TRUE,
     icon = "fa fa-save",
-    style = "background-color: #1e74ac; color: white; border: none; padding: 10px 20px; font-size: 16px; border-radius: 5px;
-            margin-top: 5px; margin-bottom: 20px;"
+    style = "background-color: #1e74ac; color: white; border: none; padding: 10px 20px; font-size: 16px; border-radius: 5px; margin-top: 5px; margin-bottom: 20px;"
   )
 ```
 
