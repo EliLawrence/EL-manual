@@ -77,7 +77,7 @@ It is important that our data providers, as well as all data users, are aware an
 
 <div class="callbox-blue">
 
-`r fontawesome::fa(name="circle-exclamation", fill="darkblue")` **NB:** Data users should be aware of the licenses associated with any dataset downloaded from OBIS (e.g. CC0, CC-BY, CC-BY-NC). 
+`r fontawesome::fa(name="circle-exclamation", fill="darkblue")` NB: Data users should be aware of the licenses associated with any dataset downloaded from OBIS (e.g. CC0, CC-BY, CC-BY-NC).
 
 </div>
 
