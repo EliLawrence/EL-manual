@@ -28,11 +28,11 @@ if (knitr::is_html_output()) {
     button_type = "default",
     has_icon = TRUE,
     icon = "fa fa-save",
+    class="hvr-sweep-to-left",
     style = "background-color: #1e74ac; color: white; border: none; padding: 10px 20px; font-size: 16px; border-radius: 5px; margin-top: 5px; margin-bottom: 20px;"
   )
 } else {
-  cat("
-  `r fontawesome::fa(name='download', fill='green', height='1.5em')` <a href='/docs/OBIS-termchecklist.csv' download>**Click here to download the checklist.**")
+  cat("[Click here to download the checklist](https://github.com/iobis/manual/raw/refs/heads/master/docs/OBIS-termchecklist.csv)")
 }
 ```
 

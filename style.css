@@ -49,11 +49,6 @@ table {
   background-position-x: 5px;
   background-repeat: no-repeat;
 }
-.btn { /* for download buttons */
-  border-style: solid; 
-  border-width: 0 1px 4px 1px;
-  text-transform: uppercase;
-}
 .hvr-sweep-to-left {
   display: inline-block;
   vertical-align: middle;

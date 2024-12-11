@@ -111,11 +111,11 @@ if (knitr::is_html_output()) {
   has_icon = TRUE,
   icon = "fa fa-save",
   self_contained = FALSE,
+  class="hvr-sweep-to-left",
   style = "background-color: #1e74ac; color: white; border: none; padding: 10px 20px; font-size: 16px; border-radius: 5px; margin-top: 5px; margin-bottom: 20px;"
   )
 } else {
-  cat("
-  `r fontawesome::fa(name='download', fill='green', height='1.5em')` [Download the dataset](https://www.marine.csiro.au/ipt/archive.do?r=in2017_v02_wov&v=1.15)")
+  cat("[Download the dataset](https://www.marine.csiro.au/ipt/archive.do?r=in2017_v02_wov&v=1.15)")
 }
 ```
 
@@ -166,11 +166,11 @@ if (knitr::is_html_output()) {
   has_icon = TRUE,
   icon = "fa fa-save",
   self_contained = FALSE,
+  class="hvr-sweep-to-left",
   style = "background-color: #1e74ac; color: white; border: none; padding: 10px 20px; font-size: 16px; border-radius: 5px; margin-top: 5px; margin-bottom: 20px;"
 )
 } else {
-  cat("
-  `r fontawesome::fa(name='download', fill='green', height='1.5em')` [Download the dataset](https://ipt.vliz.be/eurobis/archive.do?r=cetus_cetaceans&v=1.0)")
+  cat("[Download the dataset](https://ipt.vliz.be/eurobis/archive.do?r=cetus_cetaceans&v=1.0)")
 }
 
 ```
@@ -228,18 +228,18 @@ This section deals with encoding survey and/or sighting data of sea turtles into
 ```{r button-turtle, echo=FALSE, results='asis'}
 library(webshot)
 if (knitr::is_html_output()) {
-downloadthis::download_link(
+  downloadthis::download_link(
   link = "https://ipt.vliz.be/eurobis/archive.do?r=cc_flt_cbar_13-17&v=1.0",
   button_label = "Download dataset DwC-A .zip",
   button_type = "default",
   has_icon = TRUE,
   icon = "fa fa-save",
   self_contained = FALSE,
+  class="hvr-sweep-to-left",
   style = "background-color: #1e74ac; color: white; border: none; padding: 10px 20px; font-size: 16px; border-radius: 5px; margin-top: 5px; margin-bottom: 20px;"
 )
 } else {
-  cat("
-  `r fontawesome::fa(name='download', fill='green', height='1.5em')` [Download the dataset](https://ipt.vliz.be/eurobis/archive.do?r=cc_flt_cbar_13-17&v=1.0)")
+  cat("[Download the dataset](https://ipt.vliz.be/eurobis/archive.do?r=cc_flt_cbar_13-17&v=1.0)")
 }
 ```
 
@@ -309,11 +309,11 @@ if (knitr::is_html_output()) {
   has_icon = TRUE,
   icon = "fa fa-save",
   self_contained = FALSE,
+  class="hvr-sweep-to-left",
   style = "background-color: #1e74ac; color: white; border: none; padding: 10px 20px; font-size: 16px; border-radius: 5px; margin-top: 5px; margin-bottom: 20px;"
 )
 } else {
-  cat("
-  `r fontawesome::fa(name='download', fill='green', height='1.5em')` [Download the dataset](https://ipt.vliz.be/eurobis/archive.do?r=fyto&v=1.0)")
+  cat("[Download the dataset](https://ipt.vliz.be/eurobis/archive.do?r=fyto&v=1.0)")
 }
 ```
 
@@ -373,11 +373,11 @@ if (knitr::is_html_output()) {
   has_icon = TRUE,
   icon = "fa fa-save",
   self_contained = FALSE,
+  class="hvr-sweep-to-left",
   style = "background-color: #1e74ac; color: white; border: none; padding: 10px 20px; font-size: 16px; border-radius: 5px; margin-top: 5px; margin-bottom: 20px;"
 )
 } else {
-  cat("
-  `r fontawesome::fa(name='download', fill='green', height='1.5em')` [Download the dataset](https://ipt.iobis.org/caribbeanobis/archive.do?r=seagrasssurvey_colombia&v=1.6)")
+  cat("[Download the dataset](https://ipt.iobis.org/caribbeanobis/archive.do?r=seagrasssurvey_colombia&v=1.6)")
 }
 ```
 
@@ -438,11 +438,11 @@ if (knitr::is_html_output()) {
   has_icon = TRUE,
   icon = "fa fa-save",
   self_contained = FALSE,
+  class="hvr-sweep-to-left",
   style = "background-color: #1e74ac; color: white; border: none; padding: 10px 20px; font-size: 16px; border-radius: 5px; margin-top: 5px; margin-bottom: 20px;"
 )
 } else {
-  cat("
-  `r fontawesome::fa(name='download', fill='green', height='1.5em')` [Download the dataset](https://ipt.vliz.be/eurobis/archive.do?r=lifewatch_zooplankton&v=1.0)")
+  cat("[Download the dataset](https://ipt.vliz.be/eurobis/archive.do?r=lifewatch_zooplankton&v=1.0)")
 }
 ```
 
