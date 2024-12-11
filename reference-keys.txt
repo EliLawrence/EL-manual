@@ -1,6 +1,7 @@
 fig:fig-wkt
 fig:fig-depth
 fig:fig-macroagal
+fig:fig-cetus
 introduction
 guidelines-on-the-sharing-and-use-of-data-in-obis
 acknowledgements

@@ -931,16 +931,15 @@ Figure 8.1: <em>A fictional macroalgae survey with a single site, multiple zones
 <div id="marine-mammals-abundance-and-distribution" class="section level4 unlisted unnumbered hasAnchor">
 <h4>Marine mammals abundance and distribution<a href="examples.html#marine-mammals-abundance-and-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>In this section we will explore how to encode a marine mammal survey dataset into Darwin Core using the ENV-DATA approach. As an example, sections of the actual dataset <a href="http://ipt.vliz.be/eurobis/resource?r=cetus_cetaceans">CETUS: Cetacean monitoring surveys in the Eastern North Atlantic</a> are used.</p>
-<p>$```{r fig-cetus, echo=FALSE, out.width = “95%”}
-#| fig.cap = knitr::asis_output(“_A representation of the observation events of <a href="http://ipt.vliz.be/eurobis/resource?r=cetus_cetaceans">CETUS: Cetacean monitoring surveys in the Eastern North Atlantic</a>, presenting the route <strong>Madeira</strong> as a site with three cruises (zones). Each <strong>Cruise</strong> is divided into different <strong>Transects</strong> and each transect contains a number of <strong>Positions</strong>.”)</p>
-<p>library(webshot)
-knitr::include_graphics(“images/ENV_example_CETUS.png”)</p>
-<pre class="$"><code>
-
-```{=html}
-&lt;a href=&quot;https://ipt.vliz.be/eurobis/archive.do?r=cetus_cetaceans&amp;amp;v=1.0&quot;&gt;
-&lt;button class=&quot;btn btn-default hvr-sweep-to-left&quot; style=&quot;background-color: #1e74ac; color: white; border: none; padding: 10px 20px; font-size: 16px; border-radius: 5px; margin-top: 5px; margin-bottom: 20px;&quot;&gt;&lt;i class=&quot;fa fa-save&quot;&gt;&lt;/i&gt; Download dataset DwC-A .zip&lt;/button&gt;
-&lt;/a&gt;</code></pre>
+<div class="figure"><span style="display:block;" id="fig:fig-cetus"></span>
+<img src="images/ENV_example_CETUS.png" alt="A representation of cetacean observation events from the CETUS 2022 dataset (link above) in the Eastern North Atlantic, presenting the route Madeira as a site with three cruises (zones). Each Cruise is divided into different Transects, and each transect contains a number of Positions." width="95%" />
+<p class="caption">
+Figure 8.2: A representation of cetacean observation events from the CETUS 2022 dataset (link above) in the Eastern North Atlantic, presenting the route Madeira as a site with three cruises (zones). Each Cruise is divided into different Transects, and each transect contains a number of Positions.
+</p>
+</div>
+<a href="https://ipt.vliz.be/eurobis/archive.do?r=cetus_cetaceans&amp;v=1.0">
+<button class="btn btn-default hvr-sweep-to-left" style="background-color: #1e74ac; color: white; border: none; padding: 10px 20px; font-size: 16px; border-radius: 5px; margin-top: 5px; margin-bottom: 20px;"><i class="fa fa-save"></i> Download dataset DwC-A .zip</button>
+</a>
 <p><strong>Event core:</strong></p>
 <p>Create the Event core table by extracting all events and populating attributes. As in the previous example, the events at the different levels are linked together using <code>eventID</code> and <code>parentEventID</code>. As the survey observations were made at locations of cetacean sightings during a transect instead of fixed locations, we can populate <code>footprintWKT</code> and <code>footprintSRS</code> as location information. While the authors did not provide <code>decimalLongitude</code>, <code>decimalLatitude</code>, and <code>coordinateUncertainty</code> for the first three events, we have calculate the midpoint and the uncertainty using the WKT string and <code>obistools::calculate_centroid</code>. Not all sampling was done on the same day, therefore <code>eventDate</code> is populated at the transect level. We have also mapped the author’s <code>eventRemarks</code> to the <code>eventType</code> field.</p>
 <table>
