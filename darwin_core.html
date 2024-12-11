@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>2.4.1 Darwin Core Terms &amp; Guidelines | The OBIS manual</title>
   <meta name="description" content="2.4.1 Darwin Core Terms &amp; Guidelines | The OBIS manual" />
-  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
 
   <meta property="og:title" content="2.4.1 Darwin Core Terms &amp; Guidelines | The OBIS manual" />
   <meta property="og:type" content="book" />
@@ -50,6 +50,7 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/font-awesome-6.5.2/js/script.js"></script>
 <link href="libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet" />
 <script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
@@ -70,7 +71,7 @@
 <script src="libs/core-js-2.5.3/shim.min.js"></script>
 <script src="libs/react-18.2.0/react.min.js"></script>
 <script src="libs/react-18.2.0/react-dom.min.js"></script>
-<script src="libs/reactwidget-2.0.0/react-tools.umd.cjs"></script>
+<script src="libs/reactwidget-2.0.0/react-tools.js"></script>
 <link href="libs/reactable-0.4.4/reactable.css" rel="stylesheet" />
 <script src="libs/reactable-binding-0.4.4/reactable.js"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -760,7 +761,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>The name of the place or location can be provided in <code>locality</code>, and if possible linked by a <code>locationID</code> using a persistent ID from a gazetter, such as the MRGID from <a href="http://www.marineregions.org/gazetteer.php?p=search">MarineRegions</a>. If the species occurrence only contains the name of the <code>locality</code>, but not the exact coordinates, we recommend using a geocoding service to obtain the coordinates. <a href="http://www.marineregions.org/">Marine Regions</a> has a <a href="http://www.marineregions.org/gazetteer.php?p=search">search interface</a> for geographic names, and provides coordinates and often precision in meters, which can go into <code>coordinateUncertaintyInMeters</code>. Another option is to use the <a href="http://www.getty.edu/research/tools/vocabularies/tgn/">Getty Thesaurus of Geographic Names</a> or <a href="http://maps.google.com">Google Maps</a>: after looking up a location, the decimal coordinates can be found in the page URL. Additional information about the locality can also be stored in DwC terms such as <code>waterBody</code>, <code>islandGroup</code>, <code>island</code> and <code>country</code>. <code>locationAccordingTo</code> should provide the name of the gazetteer that is used to obtain the coordinates for the locality. When <code>country</code> is provided, <code>countryCode</code> should also be populated and must adhere to ISO 3166-1-alpha-2 (i.e. 2 letter country codes defined by ISO 3166-1). For locations in international waters, we recommend the code <code>XZ</code>.</p>
 <p><code>locationID</code> is an identifier for the set of location information (e.g. station ID, or MRGID from <a href="http://www.marineregion.org">marineregions</a>), for example the <a href="http://www.marineregions.org/gazetteer.php?p=details&amp;id=3956">Balearic Plain</a> has MRGID: <a href="http://marineregions.org/mrgid/3956">http://marineregions.org/mrgid/3956</a>.</p>
 <p>A <a href="https://en.wikipedia.org/wiki/Well-known_text">Well-Known Text</a> (WKT) representation of the shape of the location can be provided in <code>footprintWKT</code>. This is particularly useful for tracks, transects, tows, trawls, habitat extent or when an exact location is not known. WKT strings can be created using our <a href="https://obis.org/maptool">WKT tool</a>. This tool also calculates a midpoint and a radius, which can then be added to <code>decimalLongitude</code>, <code>decimalLatitude</code>, and <code>coordinateUncertaintyInMeters</code> respectively. There is also an <a href="https://github.com/iobis/obistools#calculate-centroid-and-radius-for-wkt-geometries">R tool</a> to calculate the centroid and radius for WKT polygons. <a href="https://wktmap.com">wktmap.com</a> can be used to visualize and share WKT strings.</p>
-<p><img src="images/wkttool2.png" class="img-responsive"/></p>
+<div class="figure"><span style="display:block;" id="fig:fig-wkt"></span>
+<img src="images/wkttool2.png" alt="*A screenshot demonstrating the OBIS Maptool's WKT function. After generating a polygon, pressing the WKT button will open a pop-up where you can copy the string. The Locations table provides the longitude, latitude, and radius to be used in `decimalLongitude`, `decimalLatitude`, and `coordinateUncertaintyInMeters` respectively*." width="90%" />
+<p class="caption">
+Figure 2.1: <em>A screenshot demonstrating the OBIS Maptool’s WKT function. After generating a polygon, pressing the WKT button will open a pop-up where you can copy the string. The Locations table provides the longitude, latitude, and radius to be used in <code>decimalLongitude</code>, <code>decimalLatitude</code>, and <code>coordinateUncertaintyInMeters</code> respectively</em>.
+</p>
+</div>
 <p>Some examples of WKT strings:</p>
 <pre class="text"><code>LINESTRING (30 10, 10 30, 40 40)
 POLYGON ((30 10, 40 40, 20 40, 10 20, 30 10))
@@ -816,8 +822,13 @@ MULTIPOLYGON (((30 20, 45 40, 10 40, 30 20)),((15 5, 40 10, 10 20, 5 10, 15 5)))
 <p><em>Data from <a href="http://ipt.vliz.be/eurobis/resource?r=ionian_2008_2018">Adriatic and Ionian Sea mega-fauna monitoring employing ferry as platform of observation along the Ancona-Igoumenitsa-Patras lane, from December 2014 to December 2018</a>.</em></p>
 <p>Keep in mind while filling in <a href="http://rs.tdwg.org/dwc/terms/maximumDepthInMeters"><code>minimumDepthInMeters</code></a> and <a href="http://rs.tdwg.org/dwc/terms/minimumDepthInMeters"><code>maximumDepthInMeters</code></a> that this should be the depth at which the <strong>sample was taken</strong> and not the water column depth at that location. When filling in any depth fields (<code>minimumDepthInMeters</code>, <code>maximumDepthInMeters</code>, <a href="http://rs.tdwg.org/dwc/terms/minimumDistanceAboveSurfaceInMeters"><code>minimumDistanceAboveSurfaceInMeters</code></a>, and <a href="http://rs.tdwg.org/dwc/terms/maximumDistanceAboveSurfaceInMeters"><code>maximumDistanceAboveSurfaceInMeters</code></a>), you should also consider which information is needed to fully understand the data. In most cases (e.g. scenario 1 and 4 in the figure below), providing <code>minimumDepthInMeters</code> and <code>maximumDepthInMeters</code> is sufficient for observations of organisms at particular depths. However, in cases where an occurrence is above the sea surface, e.g. flying birds (scenario 2 and 5), you should populate <code>minimumDistanceAboveSurfaceInMeters</code>, <code>maximumDistanceAboveSurfaceInMeters</code>, and, where relevant, you should also include <a href="https://dwc.tdwg.org/list/#dwc_minimumElevationInMeters"><code>minimumElevationInMeters</code></a> and <a href="https://dwc.tdwg.org/list/#dwc_maximumElevationInMeters"><code>maximumElevationInMeters</code></a>.</p>
 <p>The <code>minimumDistanceAboveSurfaceInMeters</code> and <code>maximumDistanceAboveSurfaceInMeters</code> is the distance, in meters, above or below a reference surface or reference point. The reference surface is determined by the depth or elevation. If the depth and elevation are 0, then the reference surface is the sea surface. If a depth is given (i.e. value &gt;0), the reference surface is the location of the depth. This can be especially useful for sediment cores taken from the sea bottom (scenario 3 in figure and table below). In these cases the <code>minimumDistanceAboveSurfaceInMeters</code>/<code>maximumDistanceAboveSurfaceInMeters</code> would be a negative value. If no depth is given, then the elevation is the reference surface (scenario 5).</p>
-<p><img src="images/Depth-figure-updated-scen4.png" /></p>
-<p>Example values for each depth, distance above surface, and elevation field for the scenarios in the figure above are provided in the table below:</p>
+<div class="figure"><span style="display:block;" id="fig:fig-depth"></span>
+<img src="images/Depth-figure-updated-scen4.png" alt="*Illustration of different scenarios for filling depth-related DwC fields. Scenarios include: 1) a biological organism observed at a specific depth below the sea surface, 2) a bird observed above the sea surface, 3) a sediment core taken from the seabed at a given depth, 4) a net of a given length pulled through the water column at a certain depth, 5) a bird observed above land near the sea surface. Reference points (yellow crosses) do not correspond with a DwC term, but are useful to determine which depth fields may be needed to understand the location of an occurrence. Depth values are always positive, while distances above a surface can be either negative or positive, depending on whether the occurrence is above or below the reference point.*" width="80%" />
+<p class="caption">
+Figure 2.2: <em>Illustration of different scenarios for filling depth-related DwC fields. Scenarios include: 1) a biological organism observed at a specific depth below the sea surface, 2) a bird observed above the sea surface, 3) a sediment core taken from the seabed at a given depth, 4) a net of a given length pulled through the water column at a certain depth, 5) a bird observed above land near the sea surface. Reference points (yellow crosses) do not correspond with a DwC term, but are useful to determine which depth fields may be needed to understand the location of an occurrence. Depth values are always positive, while distances above a surface can be either negative or positive, depending on whether the occurrence is above or below the reference point.</em>
+</p>
+</div>
+<p>Example values for each depth, distance above surface, and elevation field for the scenarios in the figure above are provided in the table below, assuming a bottom depth of 100m:</p>
 <table>
 <colgroup>
 <col width="6%" />
