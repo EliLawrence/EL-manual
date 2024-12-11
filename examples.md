@@ -150,7 +150,7 @@ As shown in previous examples, the MeasurementOrFact extension table contains ab
 In this section we will explore how to encode a marine mammal survey dataset into Darwin Core using the ENV-DATA approach. As an example, sections of the actual dataset [CETUS: Cetacean monitoring surveys in the Eastern North Atlantic](http://ipt.vliz.be/eurobis/resource?r=cetus_cetaceans) are used.
 
 ```{r fig-cetus, echo=FALSE, out.width = "95%"}
-#| fig.cap = knitr::asis_output("*A representation of the observation events of [CETUS: Cetacean monitoring surveys in the Eastern North Atlantic](http://ipt.vliz.be/eurobis/resource?r=cetus_cetaceans), presenting the route **Madeira** as a site with three cruises (zones). Each **Cruise** is divided into different **Transects** and each transect contains a number of **Positions***.")
+#| fig.cap = knitr::asis_output("_A representation of the observation events of [CETUS: Cetacean monitoring surveys in the Eastern North Atlantic](http://ipt.vliz.be/eurobis/resource?r=cetus_cetaceans), presenting the route **Madeira** as a site with three cruises (zones). Each **Cruise** is divided into different **Transects** and each transect contains a number of **Positions**._")
 
 library(webshot)
 knitr::include_graphics("images/ENV_example_CETUS.png")
