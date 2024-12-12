@@ -101,3 +101,7 @@ table {
 .book .book-header h1 {
   opacity: 1 !important;
 }
+/* Apply styles to all brand icons */
+.fab {
+  color: #ccc;
+}
