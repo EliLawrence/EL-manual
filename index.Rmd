@@ -35,6 +35,16 @@ output:
         before: |
           <li><a href="/">The OBIS manual</a></li>
           <li><a href="https://obis.org/">Return to OBIS.org</a></li>
+      sharing:
+        facebook: true
+        github: true
+        twitter: true
+        linkedin: false
+        weibo: false
+        instapaper: false
+        vk: false
+        whatsapp: false
+        all: ['facebook', 'twitter', 'linkedin','github']
 documentclass: book
 biblio-style: apalike
 link-citations: yes
