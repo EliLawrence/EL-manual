@@ -10,7 +10,6 @@ header-includes:
   - \AtBeginEnvironment{longtable}{\tiny}
   - \AtBeginEnvironment{verbatim}{\scriptsize}
   - \usepackage[utf8]{inputenc}
-  - \usepackage{fontawesome5}
   - \DeclareUnicodeCharacter{3BC}{$\mu$}
   - \usepackage{enumitem}
   - \setlistdepth{20}
