@@ -3,13 +3,14 @@ title: "The OBIS Manual"
 site: "bookdown::bookdown_site"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 geometry: "left=2.4cm,right=2.4cm,top=2.8cm,bottom=2.8cm"
-papersize: a4paper
+papersize: a4
 classoption: openany
 urlcolor: Bittersweet
 header-includes:
   - \AtBeginEnvironment{longtable}{\tiny}
   - \AtBeginEnvironment{verbatim}{\scriptsize}
   - \usepackage[utf8]{inputenc}
+  - \usepackage{fontawesome5}
   - \DeclareUnicodeCharacter{3BC}{$\mu$}
   - \usepackage{enumitem}
   - \setlistdepth{20}
@@ -74,7 +75,7 @@ The manual is designed to provide guidelines for OBIS nodes and data providers, 
 
 <div class="callbox-blue">
 
-`r fontawesome::fa(name="youtube", fill="red")` See the [OBIS YouTube](https://www.youtube.com/playlist?list=PLlgUwSvpCFS4TS7ZN0fhByj_3EBZ5lXbF) playlist for many helpful How-to videos!
+`r fontawesome::fa(name="youtube", fill="red", prefer_type="solid")` See the [OBIS YouTube](https://www.youtube.com/playlist?list=PLlgUwSvpCFS4TS7ZN0fhByj_3EBZ5lXbF) playlist for many helpful How-to videos!
 
 </div>
 

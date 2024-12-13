@@ -213,7 +213,7 @@ For a detailed description of the steps taken to process the data, including alg
 | GTACACACCGCCCGTC   | TGATCCTTCTGCAGGTTCACCTAC | 1391f                   | EukBr                   | Amaral-Zettler et al. 2009 |
 | GTACACACCGCCCGTC   | TGATCCTTCTGCAGGTTCACCTAC | 1391f                   | EukBr                   | Amaral-Zettler et al. 2009 |
 
-##### 16S rRNA gene metabarcoding data of Pico to Mesoplankton
+##### 16S rRNA gene metabarcoding data of pico to mesoplankton
 
 DNA derived datasets can also include an extendedMeasurementsOrFact (eMoF) extension file, in addition to the Occurrence and DNA derived extensions. In this example, environmental measurements were provided in an eMoF file, in addition to the DNA derived data and occurrence data. Here we show how to incorporate such measurements in the extensions.
 
